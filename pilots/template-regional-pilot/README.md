@@ -15,3 +15,6 @@ Use this folder as a starter scaffold for a new pilot.
 - `decision-log.md`
 - `open-questions.md`
 - `review-checklist.md`
+
+## Federation Preflight
+- Before first cross-node test, run `../../docs/foundations/koi-federation-operations-runbook.md`.

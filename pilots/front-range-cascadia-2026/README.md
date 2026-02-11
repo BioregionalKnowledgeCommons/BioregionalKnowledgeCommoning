@@ -13,3 +13,6 @@ This folder contains planning, governance, and execution docs for the 2026 dual-
 
 ## Status
 - v2 establishes equal co-steward governance and KOI-optional interoperability.
+
+## Operations Reference
+- KOI federation runbook: `../../docs/foundations/koi-federation-operations-runbook.md`

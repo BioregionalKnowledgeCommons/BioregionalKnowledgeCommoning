@@ -12,6 +12,9 @@ This repository is a shared workspace for **bioregional knowledge commoning** at
 - `pilots/` — active pilot planning and execution artifacts.
 - `.github/` — collaboration templates for decisions and work items.
 
+## Operations
+- KOI federation runbook: `docs/foundations/koi-federation-operations-runbook.md`
+
 ## Active Pilot
 - Front Range + Salish Sea + Cascadia: `pilots/front-range-cascadia-2026/`
 - Pilot plan v2: `pilots/front-range-cascadia-2026/dual-bioregion-pilot-plan-v2.md`
