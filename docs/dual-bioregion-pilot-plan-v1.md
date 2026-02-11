@@ -1,5 +1,7 @@
 # Dual Bioregion Pilot Plan v1
 
+> Superseded by `docs/dual-bioregion-pilot-plan-v2.md`.
+
 ## Summary
 This pilot combines GitHub-native collaboration/discovery with KOI-net event federation for a Front Range + Salish Sea interop MVP, while standing up Cascadia immediately as a full node. The pilot runs for 8 weeks with strict consent/provenance and deterministic conflict handling.
 

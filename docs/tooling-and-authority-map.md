@@ -1,11 +1,33 @@
 # Tooling and Field Authority Map
 
 ## Tool Roles
-- GitHub: human authoring, review, collaboration, and discoverability.
-- KOI-net: signed event federation, provenance, cross-node synchronization.
-- Opal: translation adapter only (no canonical persistence role).
-- Murmurations: publish-only profile for discovery metadata.
-- Obsidian Sync: not used in this pilot.
+- GitHub: human authoring, review, collaboration, and public discoverability.
+- KOI-net: optional transport for signed event federation and provenance exchange.
+- Non-KOI node stacks (including Opal-based flows): valid peers through adapter gateways.
+- Opal: translation and orchestration adapter only (no canonical persistence role).
+- Murmurations: publish-only profile for discovery metadata in phase 1.
+- Obsidian Sync: not used as federation transport in this pilot.
+
+## KOI Optionality
+KOI is not mandatory for participation in the knowledge commoning protocol.
+
+### Participation modes
+1. KOI-native node
+- Emits and consumes KOI NEW/UPDATE/FORGET events.
+- Uses gateway translation to transport-neutral contract.
+
+2. Non-KOI node
+- Emits and consumes transport-neutral change objects directly.
+- Can remain GitHub-native/Opal-native without KOI runtime.
+
+## Transport-Neutral Contract
+All cross-network interoperability normalizes to a canonical `CommonsChange` object containing:
+- `change_id`, `entity_id`, `entity_type`, `change_type`
+- `payload`
+- `source_system` (`koi`, `github`, `opal`, `other`)
+- `provenance`
+- `consent`
+- `mapping_context`
 
 ## Dual-Canonical Authority Policy
 
@@ -16,10 +38,9 @@
 - editorial tags and labels
 - human curation notes
 
-### KOI authoritative fields
-- `rid`
-- event signature fields
-- event timestamps
+### Protocol/provenance authoritative fields (KOI or gateway)
+- stable IDs (`rid` or equivalent cross-network ID)
+- signature and event metadata
 - source node metadata
 - consent status
 - provenance chain
@@ -31,12 +52,12 @@
 - `bioregion`
 
 ## Merge Rules
-1. If field authority is GitHub, KOI export cannot overwrite it.
-2. If field authority is KOI, GitHub edits to that field are rejected and routed to conflict handling.
-3. Conflicts on shared fields go to manual review queue.
-4. Every merge/rejection records: actor, timestamp, source, before/after, and rationale.
+1. GitHub-authoritative fields cannot be overwritten by protocol exports.
+2. Protocol/provenance authoritative fields cannot be overridden by direct GitHub edits.
+3. Shared-field conflicts are queued for manual review.
+4. Every merge/rejection records actor, timestamp, source, before/after, and rationale.
 
 ## Conflict Severity
-- High: consent/provenance mismatch, RID mismatch, type mismatch.
+- High: consent/provenance mismatch, stable-ID mismatch, type mismatch.
 - Medium: canonical slug or bioregion mismatch.
 - Low: non-authoritative annotation differences.

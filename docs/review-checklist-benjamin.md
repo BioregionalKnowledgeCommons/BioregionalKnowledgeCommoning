@@ -1,19 +1,24 @@
-# Benjamin Review Checklist
+# Co-Steward Review Checklist
+
+## Governance
+- [ ] Darren, Benjamin, and Shawn are defined as equal co-stewards.
+- [ ] 2-of-3 decision policy is consistently applied.
+- [ ] Decision-log requirements are explicit for architecture/governance changes.
 
 ## Architecture
-- [ ] Topology is correct for Front Range, Salish Sea, and Cascadia responsibilities.
-- [ ] Cascadia full-node role is clear and justified for phase 1.
-- [ ] KOI-net and GitHub responsibilities are unambiguous.
+- [ ] KOI-optional participation model is clear and implementable.
+- [ ] Front Range non-KOI role is clear for phase 1.
+- [ ] Adapter gateway responsibilities are unambiguous.
 
-## Governance and Consent
+## Ontology Commoning
+- [ ] Mapping lifecycle is defined (proposal, review, approval, publication).
+- [ ] Human-in-the-loop controls are explicit.
+- [ ] Unmapped concepts are preserved and surfaced for ontology evolution.
+
+## Consent and Sovereignty
 - [ ] Consent boundaries are explicit and enforceable.
+- [ ] Restricted knowledge handling is testable.
 - [ ] Provenance requirements are adequate.
-- [ ] Policy for restricted data is explicit and testable.
-
-## Dual-Canonical Sync
-- [ ] Field authority map is complete enough for v1.
-- [ ] Conflict routing and manual resolution path is practical.
-- [ ] Audit requirements are sufficient.
 
 ## Execution Plan
 - [ ] 8-week sequencing is realistic.
@@ -22,4 +27,4 @@
 
 ## Risks
 - [ ] Highest-risk integration points are correctly identified.
-- [ ] Rollback plan is sufficient for early pilot operations.
+- [ ] Rollback and failure recovery are sufficient for pilot operations.
