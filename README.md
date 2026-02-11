@@ -17,6 +17,10 @@ This repository is a shared workspace for **bioregional knowledge commoning** at
 - Pilot plan v2: `pilots/front-range-cascadia-2026/dual-bioregion-pilot-plan-v2.md`
 - Pilot charter: `pilots/front-range-cascadia-2026/pilot-charter.md`
 
+## Pilot Scaffold
+- Regional pilot template: `pilots/template-regional-pilot/`
+- Pilot index and startup steps: `pilots/README.md`
+
 ## Key Resources
 - Bioregional Knowledge Commons Summary (and links to the three-part series):
   https://darrenzal.github.io/Quartz/BioregionalKnowledgeCommonsSummary
