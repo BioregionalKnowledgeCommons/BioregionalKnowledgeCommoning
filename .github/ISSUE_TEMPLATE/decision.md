@@ -31,4 +31,5 @@ Final choice and owner.
 - [ ] Action 2
 
 ## Decision Log
-If accepted, add a row in `docs/decision-log.md`.
+If accepted, add a row in the relevant decision log.
+For the current pilot, use `pilots/front-range-cascadia-2026/decision-log.md`.

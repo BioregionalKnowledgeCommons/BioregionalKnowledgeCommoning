@@ -5,7 +5,7 @@ What changed and why?
 Closes #
 
 ## Decision Log Update
-- [ ] I added or confirmed required updates in `docs/decision-log.md` for material decisions.
+- [ ] I added or confirmed required updates in the relevant decision log for material decisions (pilot default: `pilots/front-range-cascadia-2026/decision-log.md`).
 - [ ] No decision-log update was needed for this PR.
 
 ## Validation

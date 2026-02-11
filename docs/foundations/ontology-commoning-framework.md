@@ -42,5 +42,6 @@ Define how ontology mappings evolve through collective governance while respecti
 - Sensitive/Indigenous knowledge mappings require consent checks before cross-node publication.
 
 ## Outputs
-- Mapping decisions and rationale in `docs/decision-log.md` and mapping artifacts.
+- Mapping decisions and rationale in the relevant pilot decision log and mapping artifacts.
+- Current pilot default: `pilots/front-range-cascadia-2026/decision-log.md`.
 - Versioned mapping policy updates in pull requests with reviewer sign-off.

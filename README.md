@@ -1,33 +1,34 @@
 # Bioregional Knowledge Commoning
 
-Collaboration workspace for the Front Range + Salish Sea + Cascadia pilot.
+This repository is a shared workspace for **bioregional knowledge commoning** at multiple scales: foundational frameworks, interoperability patterns, and active pilot implementations.
 
-## Inputs
-- Benjamin's note: https://hackmd.io/@QDX_mTmlTSmHf6-gudIFPQ/BJ2r8EtPZe
-- Darren's response: https://hackmd.io/@DarrenZal/BJRqZjYPbl
+## Purpose
+- Build practical, federated approaches to bioregional knowledge sharing.
+- Support ontological commoning and knowledge sovereignty.
+- Incubate pilots that can inform broader commons infrastructure.
 
-## Current Plan
-- Pilot plan v2: `docs/dual-bioregion-pilot-plan-v2.md`
-- Pilot charter: `docs/pilot-charter.md`
-- Tooling and authority map: `docs/tooling-and-authority-map.md`
-- Ontology commoning framework: `docs/ontology-commoning-framework.md`
-- Transcription and processing pipeline: `docs/transcription-and-processing-pipeline.md`
+## Repository Structure
+- `docs/foundations/` — reusable frameworks and methods.
+- `pilots/` — active pilot planning and execution artifacts.
+- `.github/` — collaboration templates for decisions and work items.
+
+## Active Pilot
+- Front Range + Salish Sea + Cascadia: `pilots/front-range-cascadia-2026/`
+- Pilot plan v2: `pilots/front-range-cascadia-2026/dual-bioregion-pilot-plan-v2.md`
+- Pilot charter: `pilots/front-range-cascadia-2026/pilot-charter.md`
 
 ## Key Resources
-- Bioregional Knowledge Commons Summary (and links to the three-part series): https://darrenzal.github.io/Quartz/BioregionalKnowledgeCommonsSummary
-- Mapping Bioregional Practices & Patterns proposal (source): https://docs.google.com/document/d/1_6GVoM1D7vmI6q4oqIxkqleo1afVS73LBThbXDBdMME/edit?tab=t.oioon0fguaet
+- Bioregional Knowledge Commons Summary (and links to the three-part series):
+  https://darrenzal.github.io/Quartz/BioregionalKnowledgeCommonsSummary
+- Mapping Bioregional Practices & Patterns proposal (source):
+  https://docs.google.com/document/d/1_6GVoM1D7vmI6q4oqIxkqleo1afVS73LBThbXDBdMME/edit?tab=t.oioon0fguaet
+- OpenCivics note:
+  https://hackmd.io/@QDX_mTmlTSmHf6-gudIFPQ/BJ2r8EtPZe
+- Darren response:
+  https://hackmd.io/@DarrenZal/BJRqZjYPbl
 
 ## Collaboration Workflow
-1. Open an issue for each decision or work item using `.github/ISSUE_TEMPLATE/`.
-2. Propose changes through pull requests.
-3. Every accepted material decision must add an entry to `docs/decision-log.md`.
-4. Use `docs/review-checklist-benjamin.md` for structured co-steward review.
-
-## Core Defaults (v2)
-- Co-steward governance: Darren, Benjamin, and Shawn on equal footing.
-- Major decisions use 2-of-3 co-steward approval.
-- KOI is optional at protocol level; interoperability uses a transport-neutral commons change contract.
-- Front Range can participate without KOI via adapter gateway.
-- Opal remains adapter/translation layer.
-- Murmurations remains publish-only for discovery in phase 1.
-- Obsidian Sync remains out of scope for transport in this pilot.
+1. Open an issue using `.github/ISSUE_TEMPLATE/`.
+2. Propose changes via pull request.
+3. For pilot decisions, log accepted decisions in the pilot decision log.
+4. Use pilot review checklists for structured multi-steward review.
