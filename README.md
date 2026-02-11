@@ -14,6 +14,7 @@ This repository is a shared workspace for **bioregional knowledge commoning** at
 
 ## Operations
 - KOI federation runbook: `docs/foundations/koi-federation-operations-runbook.md`
+- Discovery and peering are currently intro-based + explicit trust decisions (documented in the runbook).
 
 ## Active Pilot
 - Front Range + Salish Sea + Cascadia: `pilots/front-range-cascadia-2026/`

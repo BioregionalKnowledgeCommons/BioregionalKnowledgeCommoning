@@ -6,6 +6,24 @@ Operational checklist for standing up and troubleshooting KOI-net federation bet
 - Applies to coordinator/leaf and peer/peer KOI-net topologies.
 - Focused on production issues observed in real deployment (Octo ↔ Cowichan, February 2026).
 
+## Discovery and Connection Policy
+
+Current discovery model is intentional and explicit:
+
+1. Out-of-band introduction
+- Share node URL + `/koi-net/health` endpoint through trusted channels.
+
+2. Identity verification
+- Confirm `node_rid` + `public_key` from `/koi-net/health` before creating edges.
+
+3. Explicit peering decision
+- Leaf nodes connect to their designated coordinator.
+- Peer networks connect to a small trusted set of peers.
+- Start with narrow `rid_types`, then expand after validation.
+
+4. Operational bootstrap
+- Use `scripts/connect-koi-peer.sh` (Octo repo) to upsert node/edge + handshake + reciprocal SQL.
+
 ## Minimum Federation Contract
 
 All of these must be true:
@@ -29,6 +47,7 @@ All of these must be true:
 5. Poll + confirm loop healthy
 - Poll requests return `200`.
 - Delivered events are followed by confirms.
+- No recurring `400 No public key for ...` after first handshake cycle.
 
 ## Bring-Up Sequence
 
@@ -120,4 +139,3 @@ docker exec regen-koi-postgres psql -U postgres -d <db> -c \
 5. Poll works but no events processed
 - Cause: signed response cannot be verified (missing peer key), or rid type filters exclude data.
 - Fix: verify key presence and `rid_types` on the edge.
-
