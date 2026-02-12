@@ -11,8 +11,15 @@ This folder contains planning, governance, and execution docs for the 2026 dual-
 - Review checklist: `review-checklist-benjamin.md`
 - Decision log: `decision-log.md`
 
+## Layer Alignment
+This pilot validates the layered model:
+- Pattern language: `../../docs/foundations/pattern-language-for-bioregional-knowledge-commoning-v0.1.md`
+- Meta-protocol: `../../docs/foundations/knowledge-commoning-meta-protocol-v0.1.md`
+- Reference profile: `../../docs/foundations/commonschange-reference-profile-v0.1.md`
+
 ## Status
 - v2 establishes equal co-steward governance and KOI-optional interoperability.
+- Pilot includes both event-oriented and snapshot-friendly interoperability assumptions.
 
 ## Operations Reference
 - KOI federation runbook: `../../docs/foundations/koi-federation-operations-runbook.md`

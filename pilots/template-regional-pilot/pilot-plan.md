@@ -14,10 +14,24 @@
 ### Out
 - [Item]
 
+## Layer Validation
+### Pattern Language Hypotheses
+1. [Hypothesis]
+2. [Hypothesis]
+
+### Meta-Protocol Hypotheses
+1. [Hypothesis]
+2. [Hypothesis]
+
+### Reference Profile Hypotheses
+1. [Hypothesis]
+2. [Hypothesis]
+
 ## Architecture
 - [Topology]
 - [Contracts/interfaces]
 - [Adapter/gateway decisions]
+- [Event mode, snapshot mode, or both]
 
 ## Execution Plan
 1. Week 1: [Milestone]

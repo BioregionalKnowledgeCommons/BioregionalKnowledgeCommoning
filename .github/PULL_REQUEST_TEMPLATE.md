@@ -1,6 +1,12 @@
 ## Summary
 What changed and why?
 
+## Layer Impact
+- [ ] Pattern Language
+- [ ] Meta-Protocol
+- [ ] Reference Profile(s)
+- [ ] Pilot-only implementation
+
 ## Linked Issues
 Closes #
 
@@ -12,6 +18,10 @@ Closes #
 - [ ] Contract/schema checks pass.
 - [ ] Relevant docs updated.
 - [ ] Acceptance criteria from linked work item are met.
+
+## Governance and Sovereignty Check
+- [ ] Required rights/consent slots are preserved in affected artifacts.
+- [ ] No new universal licensing assumption was introduced.
 
 ## Risks and Rollback
 What is the primary risk, and how would we revert safely?

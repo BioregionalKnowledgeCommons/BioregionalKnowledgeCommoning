@@ -3,42 +3,47 @@
 ## Tool Roles
 - GitHub: human authoring, review, collaboration, and public discoverability.
 - KOI-net: optional transport for signed event federation and provenance exchange.
-- Non-KOI node stacks (including Opal-based flows): valid peers through adapter gateways.
-- Opal: translation and orchestration adapter only (no canonical persistence role).
+- Non-KOI stacks (including Opal-based flows): valid peers through adapter gateways.
+- Opal: translation and orchestration adapter role, not canonical persistence.
 - Murmurations: publish-only profile for discovery metadata in phase 1.
 - Obsidian Sync: not used as federation transport in this pilot.
 
-## KOI Optionality
-KOI is not mandatory for participation in the knowledge commoning protocol.
+## Participation Profiles
+| Profile | Role in this pilot | Required output |
+|---|---|---|
+| Non-KOI Node | Front Range baseline path | Meta-protocol compatible artifacts (event and/or snapshot) |
+| KOI Full Node | Cascadia + Salish Sea path | KOI events plus translation to/from reference profile |
+| KOI Gateway/Partial | Optional hybrid path | Adapter-mediated translation between local stack and reference profile |
 
-### Participation modes
-1. KOI-native node
-- Emits and consumes KOI NEW/UPDATE/FORGET events.
-- Uses gateway translation to transport-neutral contract.
+KOI is optional for protocol participation.
 
-2. Non-KOI node
-- Emits and consumes transport-neutral change objects directly.
-- Can remain GitHub-native/Opal-native without KOI runtime.
+## Meta-Protocol Commitments (Canonical)
+Any cross-network artifact must include:
+- what is shared (`payload`)
+- who attests (`attestations`)
+- who can use/how (`rights_and_consent`)
 
-## Transport-Neutral Contract
-All cross-network interoperability normalizes to a canonical `CommonsChange` object containing:
-- `change_id`, `entity_id`, `entity_type`, `change_type`
-- `payload`
-- `source_system` (`koi`, `github`, `opal`, `other`)
-- `provenance`
-- `consent`
-- `mapping_context`
+## CommonsChange Reference Profile (Pilot Implementation)
+Canonical profile fields:
+- `change_id`, `artifact_id`, `mode`, `change_type`
+- `payload`, `attestations`, `rights_and_consent`
+- `published_at`, `local_type`, `canonical_type`, `mapping_context`
+
+Non-canonical adapter metadata:
+- transport details (for example KOI endpoint references)
+- source stack identifiers
+- signature mechanism details
 
 ## Dual-Canonical Authority Policy
 
-### GitHub authoritative fields
+### GitHub Authoritative Fields
 - `title`
 - `summary`
 - markdown narrative body
 - editorial tags and labels
 - human curation notes
 
-### Protocol/provenance authoritative fields (KOI or gateway)
+### Protocol/Provenance Authoritative Fields
 - stable IDs (`rid` or equivalent cross-network ID)
 - signature and event metadata
 - source node metadata
@@ -46,8 +51,8 @@ All cross-network interoperability normalizes to a canonical `CommonsChange` obj
 - provenance chain
 - cross-reference IDs
 
-### Shared fields (manual conflict path)
-- `entity_type`
+### Shared Fields (Manual Conflict Path)
+- `canonical_type`
 - canonical slug
 - `bioregion`
 

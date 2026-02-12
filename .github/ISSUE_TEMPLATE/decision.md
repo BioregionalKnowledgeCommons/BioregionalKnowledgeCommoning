@@ -9,6 +9,12 @@ assignees: []
 ## Context
 What changed, what prompted this, and what is impacted?
 
+## Layer Impact
+- [ ] Pattern Language
+- [ ] Meta-Protocol
+- [ ] Reference Profile(s)
+- [ ] Pilot-only implementation
+
 ## Options
 1. Option A
 2. Option B
@@ -16,6 +22,11 @@ What changed, what prompted this, and what is impacted?
 
 ## Recommended Option
 State one recommendation and why.
+
+## Governance and Sovereignty Impact
+- Consent and rights impact:
+- Steward authority impact:
+- Interop impact:
 
 ## Implications
 - Technical

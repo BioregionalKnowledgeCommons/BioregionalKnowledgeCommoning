@@ -5,10 +5,16 @@
 - [ ] 2-of-3 decision policy is consistently applied.
 - [ ] Decision-log requirements are explicit for architecture/governance changes.
 
+## Layer Alignment
+- [ ] Pattern language assumptions are explicit.
+- [ ] Meta-protocol commitments are explicit (what, who attests, who can use/how).
+- [ ] `CommonsChange` is framed as a reference profile, not universal protocol.
+
 ## Architecture
 - [ ] KOI-optional participation model is clear and implementable.
 - [ ] Front Range non-KOI role is clear for phase 1.
 - [ ] Adapter gateway responsibilities are unambiguous.
+- [ ] Snapshot-mode path is testable.
 
 ## Ontology Commoning
 - [ ] Mapping lifecycle is defined (proposal, review, approval, publication).
@@ -17,6 +23,7 @@
 
 ## Consent and Sovereignty
 - [ ] Consent boundaries are explicit and enforceable.
+- [ ] Required rights/consent slots are present.
 - [ ] Restricted knowledge handling is testable.
 - [ ] Provenance requirements are adequate.
 

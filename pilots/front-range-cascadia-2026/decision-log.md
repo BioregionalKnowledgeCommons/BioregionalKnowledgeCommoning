@@ -17,3 +17,6 @@
 | 2026-02-11 | KOI is optional in protocol participation | Support plural infrastructure and reduce integration exclusion | Darren/Benjamin/Shawn | Accepted | KOI-required topology |
 | 2026-02-11 | Front Range may run non-KOI stack via adapter gateway | Respect local tooling autonomy while preserving interoperability | Darren/Benjamin/Shawn | Accepted | Direct KOI-only peer assumption |
 | 2026-02-11 | Ontology commoning and transcription pipeline added to pilot scope | Align pilot with BKC proposal and ontological pluriversality commitments | Darren/Benjamin/Shawn | Accepted | v1 implementation scope |
+| 2026-02-12 | Layer model adopted: Pattern Language + Meta-Protocol + Reference Profiles | Separate social design from machine interop while retaining implementable paths | Darren/Benjamin/Shawn | Accepted | Implicit single-layer protocol framing |
+| 2026-02-12 | `CommonsChange` treated as optional reference profile | Keep interop concrete without imposing one universal serialization | Darren/Benjamin/Shawn | Accepted | `CommonsChange` as de facto universal contract |
+| 2026-02-12 | Snapshot-mode participation accepted in pilot | Include non-event-native stacks in interoperability testing | Darren/Benjamin/Shawn | Accepted | Event-only interoperability assumption |
