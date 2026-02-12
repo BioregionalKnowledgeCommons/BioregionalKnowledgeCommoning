@@ -21,16 +21,10 @@ This folder is the documentation index for the Bioregional Knowledge Commoning r
 - [Transcription and processing pipeline](./foundations/transcription-and-processing-pipeline.md): consent-aware interview-to-mapping workflow.
 - [KOI federation operations runbook](./foundations/koi-federation-operations-runbook.md): operational KOI peering and troubleshooting procedures.
 
-## Legacy Compatibility Stubs
-These files are kept for backwards-compatible links and point to the current pilot location under `pilots/front-range-cascadia-2026/`.
-
-- [decision-log.md](./decision-log.md): moved to the active pilot decision log.
-- [dual-bioregion-pilot-plan-v1.md](./dual-bioregion-pilot-plan-v1.md): moved to pilot folder.
-- [dual-bioregion-pilot-plan-v2.md](./dual-bioregion-pilot-plan-v2.md): moved to pilot folder.
-- [open-questions.md](./open-questions.md): moved to pilot folder.
-- [pilot-charter.md](./pilot-charter.md): moved to pilot folder.
-- [review-checklist-benjamin.md](./review-checklist-benjamin.md): moved to pilot folder.
-- [tooling-and-authority-map.md](./tooling-and-authority-map.md): moved to pilot folder.
-
 ## Active Pilot Docs
 - [Front Range + Salish Sea + Cascadia pilot folder](../pilots/front-range-cascadia-2026/README.md)
+- [Pilot plan v2](../pilots/front-range-cascadia-2026/dual-bioregion-pilot-plan-v2.md)
+- [Pilot charter](../pilots/front-range-cascadia-2026/pilot-charter.md)
+- [Pilot tooling and authority map](../pilots/front-range-cascadia-2026/tooling-and-authority-map.md)
+- [Pilot open questions](../pilots/front-range-cascadia-2026/open-questions.md)
+- [Pilot decision log](../pilots/front-range-cascadia-2026/decision-log.md)
