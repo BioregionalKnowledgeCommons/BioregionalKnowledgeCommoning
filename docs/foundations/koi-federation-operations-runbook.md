@@ -49,6 +49,19 @@ All of these must be true:
 - Delivered events are followed by confirms.
 - No recurring `400 No public key for ...` after first handshake cycle.
 
+6. Strict-mode coordination
+- Keep strict validation disabled during initial bootstrap:
+  - `KOI_STRICT_MODE=false`
+  - `KOI_REQUIRE_SIGNED_ENVELOPES=false`
+  - `KOI_REQUIRE_SIGNED_RESPONSES=false`
+  - `KOI_ENFORCE_TARGET_MATCH=false`
+  - `KOI_ENFORCE_SOURCE_KEY_RID_BINDING=false`
+- Enable strict mode only after all peers confirm signed-envelope compatibility.
+
+7. Endpoint taxonomy clarity
+- KOI core: `/koi-net/events/broadcast`, `/events/poll`, `/manifests/fetch`, `/bundles/fetch`, `/rids/fetch`
+- Octo extensions: `/koi-net/handshake`, `/events/confirm`, `/health`
+
 ## Bring-Up Sequence
 
 1. Set node env
@@ -68,6 +81,10 @@ All of these must be true:
 5. Verify traffic and confirmations
 - Poll logs show `200`.
 - Delivery and confirmation counters increase.
+
+6. Optional strict-mode cutover
+- After stable federation, enable `KOI_STRICT_MODE=true` on all peers in a coordinated window.
+- Re-run health/log checks and confirm no recurring `400/401`.
 
 ## SQL Upsert Patterns
 
@@ -116,6 +133,9 @@ docker exec regen-koi-postgres psql -U postgres -d <db> -c \
   "SELECT count(*) FROM koi_net_events WHERE '<peer_rid>' = ANY(delivered_to);"
 docker exec regen-koi-postgres psql -U postgres -d <db> -c \
   "SELECT count(*) FROM koi_net_events WHERE '<peer_rid>' = ANY(confirmed_by);"
+
+# Protocol flags (strict mode and endpoint model)
+curl -s http://127.0.0.1:8351/koi-net/health | python3 -m json.tool
 ```
 
 ## Failure Modes
@@ -139,3 +159,16 @@ docker exec regen-koi-postgres psql -U postgres -d <db> -c \
 5. Poll works but no events processed
 - Cause: signed response cannot be verified (missing peer key), or rid type filters exclude data.
 - Fix: verify key presence and `rid_types` on the edge.
+
+6. `401 UNSIGNED_ENVELOPE_REQUIRED` or `401 INVALID_SIGNATURE`
+- Cause: strict mode is enabled but one side is not yet signed-envelope compatible.
+- Fix: temporarily disable strict mode, complete peer upgrade, then re-enable together.
+
+## Federation Readiness Checklist
+
+- [ ] `KOI_BASE_URL` is peer-reachable and `/koi-net/*` is exposed.
+- [ ] `koi_net_nodes` contains peer `public_key` entries on both sides.
+- [ ] `koi_net_edges` uses `source_node=<provider>`, `target_node=<poller>`.
+- [ ] Poll loop returns `200`, and confirm counters increase.
+- [ ] `/koi-net/health` shows expected `node_rid`, `public_key`, and protocol flags.
+- [ ] Strict-mode cutover was coordinated (or intentionally deferred).
