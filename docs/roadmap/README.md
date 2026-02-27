@@ -51,29 +51,57 @@ python3 scripts/build_semantic_roadmap.py
 
 ## GitHub Project sync
 
-Sync selected roadmap node kinds into a GitHub Project (draft items managed with
-title prefix `SR:<node_id> | ...`).
+Sync selected roadmap node kinds into a GitHub Project.
+
+### Modes
+
+- `--mode draft` (legacy): manages Project draft items only.
+- `--mode issue` (recommended): manages real GitHub issues and maps:
+  - Project fields: `Status`, `Priority`, `Start date`, `Target date`
+  - Optional dependency field: `Blocked by` (text)
+  - Repo metadata: labels (`kind:*`, `horizon:*`, `tag:*`, `status:*`) and milestones
+
+### Recommended commands (issue-backed)
 
 Dry-run:
 
 ```bash
 python3 scripts/sync_roadmap_to_github_project.py \
   --owner BioregionalKnowledgeCommons \
-  --project 1
+  --project 1 \
+  --repo BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning \
+  --mode issue \
+  --ensure-fields
 ```
 
 Apply:
 
 ```bash
-python3 scripts/sync_roadmap_to_github_project.py \
+python3 -u scripts/sync_roadmap_to_github_project.py \
   --owner BioregionalKnowledgeCommons \
   --project 1 \
+  --repo BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning \
+  --mode issue \
+  --ensure-fields \
+  --archive-stale \
   --apply
 ```
 
-Optional:
+### Legacy command (draft mode)
+
+```bash
+python3 scripts/sync_roadmap_to_github_project.py \
+  --owner BioregionalKnowledgeCommons \
+  --project 1 \
+  --mode draft \
+  --apply
+```
+
+### Useful options
+
 - `--kinds initiative,work_item,milestone` (default)
-- `--archive-stale` to archive previously managed items no longer in the model
+- `--archive-stale`: archive managed project items no longer in scope (or old `SR:` duplicates during issue-mode migration)
+- `--blocked-by-field "Blocked by"`: custom project field name for unresolved dependencies projection
 
 ## Update workflow
 
