@@ -1,0 +1,27 @@
+name: Roadmap CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate-roadmap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate roadmap model
+        run: python3 scripts/build_semantic_roadmap.py --check
+
+      - name: Regenerate roadmap projection
+        run: python3 scripts/build_semantic_roadmap.py
+
+      - name: Ensure generated roadmap is committed
+        run: git diff --exit-code docs/roadmap/ROADMAP.md

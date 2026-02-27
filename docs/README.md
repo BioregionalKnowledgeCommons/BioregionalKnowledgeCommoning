@@ -4,10 +4,17 @@ This folder is the documentation index for the Bioregional Knowledge Commoning r
 
 ## Start Here
 - [Foundations index](./foundations/README.md): all reusable cross-pilot frameworks.
+- [Semantic roadmap index](./roadmap/README.md): machine-readable roadmap graph + generated human roadmap.
 - [Pattern language v0.1](./foundations/pattern-language-for-bioregional-knowledge-commoning-v0.1.md): recurring social and governance design patterns.
 - [Meta-protocol v0.1](./foundations/knowledge-commoning-meta-protocol-v0.1.md): thin interoperability commitments.
 - [CommonsChange reference profile v0.1](./foundations/commonschange-reference-profile-v0.1.md): one implementable profile for exchange.
 - [Bioregion onboarding playbook](./foundations/bioregion-onboarding-playbook.md): single-node-first and swarm-from-start setup tracks.
+
+## Roadmap Documents
+- [Semantic roadmap index](./roadmap/README.md): update workflow and graph semantics.
+- [Generated human roadmap](./roadmap/ROADMAP.md): current execution view from canonical roadmap data.
+- [Canonical roadmap model](./roadmap/semantic-roadmap.json): source of truth.
+- [Roadmap schema](./roadmap/semantic-roadmap.schema.json): machine-validation contract.
 
 ## Foundations Documents
 - [Pattern language](./foundations/pattern-language-for-bioregional-knowledge-commoning-v0.1.md): pattern set for participation, consent boundaries, bridges, and holonic nesting.

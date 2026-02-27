@@ -21,6 +21,7 @@ This repository uses a three-layer model:
 
 ## Start Here
 - Foundations index: `docs/foundations/README.md`
+- Semantic roadmap index: `docs/roadmap/README.md`
 - Pattern language: `docs/foundations/pattern-language-for-bioregional-knowledge-commoning-v0.1.md`
 - Meta-protocol: `docs/foundations/knowledge-commoning-meta-protocol-v0.1.md`
 - CommonsChange profile: `docs/foundations/commonschange-reference-profile-v0.1.md`

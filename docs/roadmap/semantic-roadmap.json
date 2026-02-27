@@ -1,0 +1,553 @@
+{
+  "@context": "./semantic-roadmap.context.json",
+  "roadmap_id": "bkc.roadmap.2026.part-b",
+  "program": "Bioregional Knowledge Commons",
+  "version": "0.1.0",
+  "as_of": "2026-02-27",
+  "owners": [
+    {
+      "id": "owner.darren",
+      "name": "Darren Zal",
+      "role": "lead-steward"
+    },
+    {
+      "id": "owner.benjamin",
+      "name": "Benjamin Life",
+      "role": "co-steward"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "outcome.showcase-reliable",
+      "kind": "outcome",
+      "title": "Showcase reliability remains high across 4 nodes",
+      "summary": "Keep live demo and preflight stable while new capabilities land.",
+      "status": "in_progress",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "operations",
+        "demo"
+      ],
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/DEMO-CHECKPOINT.md",
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ]
+    },
+    {
+      "id": "outcome.policy-governed-sharing",
+      "kind": "outcome",
+      "title": "Consent and policy are enforceable in runtime behavior",
+      "summary": "Data classes and consent semantics govern search, chat, ingest, and sharing.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "governance",
+        "policy"
+      ],
+      "source_docs": [
+        "../foundations/rights-licensing-consent-policy-slots.md",
+        "../foundations/knowledge-commoning-meta-protocol-v0.1.md"
+      ]
+    },
+    {
+      "id": "outcome.secure-federation-ops",
+      "kind": "outcome",
+      "title": "Federation security controls are tested and drillable",
+      "summary": "Security lane and key incident runbook are part of routine operations.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "security",
+        "federation"
+      ],
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/DEMO-CHECKPOINT.md",
+        "external:Octo/docs/koi-protocol-alignment-master.md"
+      ]
+    },
+    {
+      "id": "outcome.eval-driven-kg-chat",
+      "kind": "outcome",
+      "title": "KG chat roadmap decisions are evaluation-driven",
+      "summary": "GraphRAG and federation-chat changes are gated by measurable quality/cost criteria.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "tags": [
+        "chat",
+        "evaluation"
+      ],
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ]
+    },
+    {
+      "id": "initiative.part-b-kg-chat",
+      "kind": "initiative",
+      "title": "Part B knowledge-graph chat roadmap",
+      "summary": "B1 retrieval hardening, B2 GraphRAG v1, B3 federated chat policy, B4 TBFF flow integration, B5 eval gates.",
+      "status": "in_progress",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "chat",
+        "roadmap"
+      ],
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ]
+    },
+    {
+      "id": "initiative.part-b-security-addendum",
+      "kind": "initiative",
+      "title": "Part B security and governance addendum",
+      "summary": "Weave in data-class matrix, security lane, key lifecycle, and evidence grading without derailing execution.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "security",
+        "governance"
+      ],
+      "source_docs": [
+        "external:claude-plans/soft-stargazing-crab.md"
+      ]
+    },
+    {
+      "id": "initiative.tbff-knowledge-flow-pilot",
+      "kind": "initiative",
+      "title": "Knowledge to flow funding pilot integration",
+      "summary": "Codify and test the KOI-to-TBFF loop with evidence write-back and governance traceability.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "tags": [
+        "finance",
+        "integration"
+      ],
+      "source_docs": [
+        "external:RegenAI/koi-processor/docs/tbff-integration-contract.md"
+      ]
+    },
+    {
+      "id": "work.s1-data-class-matrix",
+      "kind": "work_item",
+      "title": "Define and publish data-class policy matrix",
+      "summary": "Canonical classes and action matrix for read/search/chat/ingest/share.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/rights-licensing-consent-policy-slots.md"
+      ]
+    },
+    {
+      "id": "work.s2-security-lane",
+      "kind": "work_item",
+      "title": "Add security lane to operational checkpoints",
+      "summary": "Prompt-injection, poisoning, auth abuse, inversion, and key compromise checks.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/DEMO-CHECKPOINT.md"
+      ]
+    },
+    {
+      "id": "work.s3-key-lifecycle-runbook",
+      "kind": "work_item",
+      "title": "Publish key lifecycle and incident runbook",
+      "summary": "Issuance, rotation, revocation, break-glass, and post-incident audit steps.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:Octo/docs/koi-federation-operations-runbook.md"
+      ]
+    },
+    {
+      "id": "work.s6-evidence-grading",
+      "kind": "work_item",
+      "title": "Introduce evidence grading in architecture decisions",
+      "summary": "Tag decisions by evidence quality: standards, peer-reviewed, official docs, preprint, vendor opinion.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../../pilots/front-range-cascadia-2026/decision-log.md"
+      ]
+    },
+    {
+      "id": "work.b5-eval-gates",
+      "kind": "work_item",
+      "title": "Define B5 chat evaluation gates",
+      "summary": "Set measurable gates for quality, latency, and cost before promoting chat architecture changes.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ]
+    },
+    {
+      "id": "work.b2-graphrag-v1",
+      "kind": "work_item",
+      "title": "Prototype GraphRAG v1",
+      "summary": "Evaluate graph-guided retrieval and comparison against current hybrid retrieval stack.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ]
+    },
+    {
+      "id": "work.b3-federated-chat-policy",
+      "kind": "work_item",
+      "title": "Implement federated chat policy boundaries",
+      "summary": "Enforce node-sovereign policy in cross-node chat fan-out and synthesis paths.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ]
+    },
+    {
+      "id": "work.b4-tbff-flow-integration",
+      "kind": "work_item",
+      "title": "Implement TBFF flow write-back loop",
+      "summary": "Move from contract-only to running integration with governance traceability.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:RegenAI/koi-processor/docs/tbff-integration-contract.md"
+      ]
+    },
+    {
+      "id": "work.s4-ucan-bridge-spike",
+      "kind": "work_item",
+      "title": "UCAN bridge spike",
+      "summary": "Design and prototype one capability-delegation path without replacing current auth.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:claude-plans/soft-stargazing-crab.md"
+      ]
+    },
+    {
+      "id": "work.s5-tee-spike",
+      "kind": "work_item",
+      "title": "TEE confidential RAG spike",
+      "summary": "Benchmark one bounded TEE candidate against current runtime and decide go/no-go.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:claude-plans/soft-stargazing-crab.md"
+      ]
+    },
+    {
+      "id": "decision.node-sovereign-default",
+      "kind": "decision",
+      "title": "Keep node-sovereign runtime as default",
+      "summary": "Each node owns its own KG and reasoning path; BFF orchestrates and proxies.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md",
+        "external:BioregionKnwoledgeCommons/demo-architecture.md"
+      ]
+    },
+    {
+      "id": "decision.bff-control-plane",
+      "kind": "decision",
+      "title": "Use BFF as external control plane boundary",
+      "summary": "Expose stable external API through BFF and keep internal node URLs private.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/DEMO-CHECKPOINT.md",
+        "external:bioregional-commons-web/README.md"
+      ]
+    },
+    {
+      "id": "risk.low-rigor-sources",
+      "kind": "risk",
+      "title": "Architecture drift from low-rigor sources",
+      "summary": "Roadmap may overfit to marketing/vendor claims without evidence grading.",
+      "status": "in_progress",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren"
+    },
+    {
+      "id": "risk.auth-migration-regression",
+      "kind": "risk",
+      "title": "Auth regression during UCAN migration exploration",
+      "summary": "Production WebAuthn/JWT steward paths could regress if migration is not isolated.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren"
+    },
+    {
+      "id": "risk.chat-latency-regression",
+      "kind": "risk",
+      "title": "Latency regression from privacy-heavy runtime changes",
+      "summary": "TEE or encrypted retrieval approaches may exceed practical chat latency bounds.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren"
+    },
+    {
+      "id": "milestone.part-b-p0-complete",
+      "kind": "milestone",
+      "title": "Part B P0 controls complete",
+      "summary": "S1, S2, S3, S6 and B5 are implemented and checkpointed.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "due_date": "2026-03-15"
+    },
+    {
+      "id": "milestone.part-b-spikes-reviewed",
+      "kind": "milestone",
+      "title": "UCAN and TEE spikes reviewed",
+      "summary": "Decision memo complete with go/no-go outcomes for production planning.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "due_date": "2026-04-30"
+    },
+    {
+      "id": "metric.security-preflight-runtime",
+      "kind": "metric",
+      "title": "Security preflight runtime",
+      "summary": "Target: full security lane runs in 45 minutes or less.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "metadata": {
+        "target": "<=45m",
+        "type": "duration"
+      }
+    },
+    {
+      "id": "metric.chat-p95-latency",
+      "kind": "metric",
+      "title": "Federated chat p95 latency",
+      "summary": "Target: federated chat p95 remains within practical demo and operator bounds.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "metadata": {
+        "target": "<=2.0s",
+        "type": "latency"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "work.s1-data-class-matrix",
+      "to": "initiative.part-b-security-addendum",
+      "type": "delivers"
+    },
+    {
+      "from": "work.s2-security-lane",
+      "to": "initiative.part-b-security-addendum",
+      "type": "delivers"
+    },
+    {
+      "from": "work.s3-key-lifecycle-runbook",
+      "to": "initiative.part-b-security-addendum",
+      "type": "delivers"
+    },
+    {
+      "from": "work.s6-evidence-grading",
+      "to": "initiative.part-b-security-addendum",
+      "type": "delivers"
+    },
+    {
+      "from": "work.b2-graphrag-v1",
+      "to": "initiative.part-b-kg-chat",
+      "type": "delivers"
+    },
+    {
+      "from": "work.b3-federated-chat-policy",
+      "to": "initiative.part-b-kg-chat",
+      "type": "delivers"
+    },
+    {
+      "from": "work.b4-tbff-flow-integration",
+      "to": "initiative.tbff-knowledge-flow-pilot",
+      "type": "delivers"
+    },
+    {
+      "from": "work.b5-eval-gates",
+      "to": "initiative.part-b-kg-chat",
+      "type": "delivers"
+    },
+    {
+      "from": "work.s4-ucan-bridge-spike",
+      "to": "initiative.part-b-security-addendum",
+      "type": "delivers"
+    },
+    {
+      "from": "work.s5-tee-spike",
+      "to": "initiative.part-b-security-addendum",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.part-b-security-addendum",
+      "to": "outcome.policy-governed-sharing",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.part-b-security-addendum",
+      "to": "outcome.secure-federation-ops",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.part-b-kg-chat",
+      "to": "outcome.eval-driven-kg-chat",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.part-b-kg-chat",
+      "to": "outcome.showcase-reliable",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.tbff-knowledge-flow-pilot",
+      "to": "outcome.showcase-reliable",
+      "type": "delivers"
+    },
+    {
+      "from": "work.s2-security-lane",
+      "to": "risk.auth-migration-regression",
+      "type": "mitigates"
+    },
+    {
+      "from": "work.s6-evidence-grading",
+      "to": "risk.low-rigor-sources",
+      "type": "mitigates"
+    },
+    {
+      "from": "work.s5-tee-spike",
+      "to": "risk.chat-latency-regression",
+      "type": "mitigates"
+    },
+    {
+      "from": "decision.node-sovereign-default",
+      "to": "initiative.part-b-kg-chat",
+      "type": "informs"
+    },
+    {
+      "from": "decision.bff-control-plane",
+      "to": "initiative.tbff-knowledge-flow-pilot",
+      "type": "informs"
+    },
+    {
+      "from": "work.s1-data-class-matrix",
+      "to": "work.s2-security-lane",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.s1-data-class-matrix",
+      "to": "work.b3-federated-chat-policy",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b5-eval-gates",
+      "to": "work.b2-graphrag-v1",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b5-eval-gates",
+      "to": "work.s4-ucan-bridge-spike",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b5-eval-gates",
+      "to": "work.s5-tee-spike",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.s1-data-class-matrix",
+      "to": "milestone.part-b-p0-complete",
+      "type": "delivers"
+    },
+    {
+      "from": "work.s2-security-lane",
+      "to": "milestone.part-b-p0-complete",
+      "type": "delivers"
+    },
+    {
+      "from": "work.s3-key-lifecycle-runbook",
+      "to": "milestone.part-b-p0-complete",
+      "type": "delivers"
+    },
+    {
+      "from": "work.s6-evidence-grading",
+      "to": "milestone.part-b-p0-complete",
+      "type": "delivers"
+    },
+    {
+      "from": "work.b5-eval-gates",
+      "to": "milestone.part-b-p0-complete",
+      "type": "delivers"
+    },
+    {
+      "from": "work.s4-ucan-bridge-spike",
+      "to": "milestone.part-b-spikes-reviewed",
+      "type": "delivers"
+    },
+    {
+      "from": "work.s5-tee-spike",
+      "to": "milestone.part-b-spikes-reviewed",
+      "type": "delivers"
+    },
+    {
+      "from": "metric.security-preflight-runtime",
+      "to": "outcome.secure-federation-ops",
+      "type": "measures"
+    },
+    {
+      "from": "metric.chat-p95-latency",
+      "to": "outcome.eval-driven-kg-chat",
+      "type": "measures"
+    }
+  ]
+}

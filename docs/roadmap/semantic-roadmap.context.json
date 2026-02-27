@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "id": "@id",
+    "type": "@type",
+    "title": "https://schema.org/name",
+    "summary": "https://schema.org/description",
+    "status": "https://schema.org/actionStatus",
+    "priority": "https://schema.org/category",
+    "horizon": "https://schema.org/temporalCoverage",
+    "owner": {
+      "@id": "https://schema.org/accountablePerson",
+      "@type": "@id"
+    },
+    "due_date": {
+      "@id": "https://schema.org/deadline",
+      "@type": "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "source_docs": {
+      "@id": "http://www.w3.org/ns/prov#hadPrimarySource",
+      "@container": "@set"
+    },
+    "metadata": "https://schema.org/additionalProperty",
+    "depends_on": "https://w3id.org/security#dependsOn",
+    "delivers": "https://schema.org/result",
+    "mitigates": "https://schema.org/mitigates",
+    "informs": "https://schema.org/subjectOf",
+    "measures": "https://schema.org/measurementTechnique"
+  }
+}
