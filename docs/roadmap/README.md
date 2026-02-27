@@ -49,6 +49,32 @@ python3 scripts/build_semantic_roadmap.py --check
 python3 scripts/build_semantic_roadmap.py
 ```
 
+## GitHub Project sync
+
+Sync selected roadmap node kinds into a GitHub Project (draft items managed with
+title prefix `SR:<node_id> | ...`).
+
+Dry-run:
+
+```bash
+python3 scripts/sync_roadmap_to_github_project.py \
+  --owner BioregionalKnowledgeCommons \
+  --project 1
+```
+
+Apply:
+
+```bash
+python3 scripts/sync_roadmap_to_github_project.py \
+  --owner BioregionalKnowledgeCommons \
+  --project 1 \
+  --apply
+```
+
+Optional:
+- `--kinds initiative,work_item,milestone` (default)
+- `--archive-stale` to archive previously managed items no longer in the model
+
 ## Update workflow
 
 1. Edit `semantic-roadmap.json`.
