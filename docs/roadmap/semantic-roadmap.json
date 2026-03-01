@@ -2,8 +2,8 @@
   "@context": "./semantic-roadmap.context.json",
   "roadmap_id": "bkc.roadmap.2026.part-b",
   "program": "Bioregional Knowledge Commons",
-  "version": "0.1.0",
-  "as_of": "2026-02-27",
+  "version": "0.2.0",
+  "as_of": "2026-03-01",
   "owners": [
     {
       "id": "owner.darren",
@@ -137,6 +137,90 @@
       ],
       "source_docs": [
         "external:RegenAI/koi-processor/docs/tbff-integration-contract.md"
+      ]
+    },
+    {
+      "id": "initiative.build-day-sprint-mar5",
+      "kind": "initiative",
+      "title": "Mar 5 Build Day sprint — interop and demo readiness",
+      "summary": "Completed pre-demo sprint: B1 retrieval hardening, A2A agent card, swarm entity seeding, chat scoring, commons pre-stage helper. All items done as of 2026-03-01.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "demo",
+        "interop",
+        "sprint"
+      ],
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md",
+        "../../pilots/front-range-cascadia-2026/mar5-build-day-runbook.md"
+      ]
+    },
+    {
+      "id": "work.b1-chat-retrieval-hardening",
+      "kind": "work_item",
+      "title": "B1 — Chat retrieval hardening",
+      "summary": "Upgraded /chat to search doc chunks (koi_memory_chunks), 2-hop relationship CTE (LIMIT 50), web source context. Enhanced bioregional system prompt with citation instructions. Latency <6s, returns 6-8 sources.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ]
+    },
+    {
+      "id": "work.a2a-agent-card",
+      "kind": "work_item",
+      "title": "A2A agent card deployment",
+      "summary": "15-tool KOI contract published as A2A Agent Card at /.well-known/agent-card.json and /.well-known/agent.json. Persisted outside Quartz rebuild path via /root/bkc-static/ restoration hook.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ]
+    },
+    {
+      "id": "work.entity-seeding-swarm-actors",
+      "kind": "work_item",
+      "title": "Swarm actor entity seeding",
+      "summary": "Seeded 20 entities (6 people, 7 orgs, 6 concepts, 1 meeting) + 15 relationships to Octo and FR nodes. Enables graph-grounded answers to 'Who is AG Neyer connected to?' for Mar 5 demo.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ]
+    },
+    {
+      "id": "work.chat-fanout-scoring",
+      "kind": "work_item",
+      "title": "Chat fanout scoring and all-node responses",
+      "summary": "Improved best-answer selection to weight source_count (70% length + 30pts/source). Added selection_rationale field. All 4 nodes always present in node_responses; failed nodes include error field.",
+      "status": "done",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:bioregional-commons-web/web/src/app/api/chat/route.ts"
+      ]
+    },
+    {
+      "id": "work.commons-prestage-helper",
+      "kind": "work_item",
+      "title": "Commons pre-stage helper (KOI-net share runbook)",
+      "summary": "Added SSH/curl command to runbook for pre-staging commons intake entity via KOI-net share (recipient_type=commons) from FR → Octo. Enables Segment 3 governance membrane demo.",
+      "status": "done",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../../pilots/front-range-cascadia-2026/mar5-build-day-runbook.md"
       ]
     },
     {
@@ -379,6 +463,36 @@
     }
   ],
   "edges": [
+    {
+      "from": "work.b1-chat-retrieval-hardening",
+      "to": "initiative.build-day-sprint-mar5",
+      "type": "delivers"
+    },
+    {
+      "from": "work.a2a-agent-card",
+      "to": "initiative.build-day-sprint-mar5",
+      "type": "delivers"
+    },
+    {
+      "from": "work.entity-seeding-swarm-actors",
+      "to": "initiative.build-day-sprint-mar5",
+      "type": "delivers"
+    },
+    {
+      "from": "work.chat-fanout-scoring",
+      "to": "initiative.build-day-sprint-mar5",
+      "type": "delivers"
+    },
+    {
+      "from": "work.commons-prestage-helper",
+      "to": "initiative.build-day-sprint-mar5",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.build-day-sprint-mar5",
+      "to": "outcome.showcase-reliable",
+      "type": "delivers"
+    },
     {
       "from": "work.s1-data-class-matrix",
       "to": "initiative.part-b-security-addendum",

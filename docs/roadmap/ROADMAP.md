@@ -2,9 +2,9 @@
 
 - Program: **Bioregional Knowledge Commons**
 - Roadmap ID: `bkc.roadmap.2026.part-b`
-- Version: `0.1.0`
-- As of: `2026-02-27`
-- Generated: `2026-02-27 09:36 UTC`
+- Version: `0.2.0`
+- As of: `2026-03-01`
+- Generated: `2026-03-01 08:05 UTC`
 
 ## Status Summary
 
@@ -13,7 +13,7 @@
 | `in_progress` | 3 |
 | `planned` | 21 |
 | `blocked` | 0 |
-| `done` | 2 |
+| `done` | 8 |
 | `deprecated` | 0 |
 
 ## Outcomes
@@ -32,6 +32,7 @@
 | `initiative.part-b-kg-chat` | Part B knowledge-graph chat roadmap | `in_progress` | `P0` | `0-30d` | `owner.darren` |
 | `initiative.part-b-security-addendum` | Part B security and governance addendum | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `initiative.tbff-knowledge-flow-pilot` | Knowledge to flow funding pilot integration | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `initiative.build-day-sprint-mar5` | Mar 5 Build Day sprint — interop and demo readiness | `done` | `P0` | `0-30d` | `owner.darren` |
 
 ## Work Items
 
@@ -47,19 +48,29 @@
 | `work.b2-graphrag-v1` | Prototype GraphRAG v1 | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.s5-tee-spike` | TEE confidential RAG spike | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.s4-ucan-bridge-spike` | UCAN bridge spike | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `work.a2a-agent-card` | A2A agent card deployment | `done` | `P0` | `0-30d` | `owner.darren` |
+| `work.b1-chat-retrieval-hardening` | B1 — Chat retrieval hardening | `done` | `P0` | `0-30d` | `owner.darren` |
+| `work.entity-seeding-swarm-actors` | Swarm actor entity seeding | `done` | `P0` | `0-30d` | `owner.darren` |
+| `work.chat-fanout-scoring` | Chat fanout scoring and all-node responses | `done` | `P1` | `0-30d` | `owner.darren` |
+| `work.commons-prestage-helper` | Commons pre-stage helper (KOI-net share runbook) | `done` | `P1` | `0-30d` | `owner.darren` |
 
 ### Dependency Execution Order (depends_on)
 
-1. `work.b4-tbff-flow-integration` — Implement TBFF flow write-back loop (planned)
-2. `work.b5-eval-gates` — Define B5 chat evaluation gates (planned)
-3. `work.s1-data-class-matrix` — Define and publish data-class policy matrix (planned)
-4. `work.s3-key-lifecycle-runbook` — Publish key lifecycle and incident runbook (planned)
-5. `work.s6-evidence-grading` — Introduce evidence grading in architecture decisions (planned)
-6. `work.b2-graphrag-v1` — Prototype GraphRAG v1 (planned)
-7. `work.s4-ucan-bridge-spike` — UCAN bridge spike (planned)
-8. `work.s5-tee-spike` — TEE confidential RAG spike (planned)
-9. `work.s2-security-lane` — Add security lane to operational checkpoints (planned)
-10. `work.b3-federated-chat-policy` — Implement federated chat policy boundaries (planned)
+1. `work.a2a-agent-card` — A2A agent card deployment (done)
+2. `work.b1-chat-retrieval-hardening` — B1 — Chat retrieval hardening (done)
+3. `work.b4-tbff-flow-integration` — Implement TBFF flow write-back loop (planned)
+4. `work.b5-eval-gates` — Define B5 chat evaluation gates (planned)
+5. `work.chat-fanout-scoring` — Chat fanout scoring and all-node responses (done)
+6. `work.commons-prestage-helper` — Commons pre-stage helper (KOI-net share runbook) (done)
+7. `work.entity-seeding-swarm-actors` — Swarm actor entity seeding (done)
+8. `work.s1-data-class-matrix` — Define and publish data-class policy matrix (planned)
+9. `work.s3-key-lifecycle-runbook` — Publish key lifecycle and incident runbook (planned)
+10. `work.s6-evidence-grading` — Introduce evidence grading in architecture decisions (planned)
+11. `work.b2-graphrag-v1` — Prototype GraphRAG v1 (planned)
+12. `work.s4-ucan-bridge-spike` — UCAN bridge spike (planned)
+13. `work.s5-tee-spike` — TEE confidential RAG spike (planned)
+14. `work.s2-security-lane` — Add security lane to operational checkpoints (planned)
+15. `work.b3-federated-chat-policy` — Implement federated chat policy boundaries (planned)
 
 ## Risks and Mitigations
 
