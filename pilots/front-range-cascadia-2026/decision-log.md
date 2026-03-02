@@ -20,3 +20,8 @@
 | 2026-02-12 | Layer model adopted: Pattern Language + Meta-Protocol + Reference Profiles | Separate social design from machine interop while retaining implementable paths | Darren/Benjamin/Shawn | Accepted | Implicit single-layer protocol framing |
 | 2026-02-12 | `CommonsChange` treated as optional reference profile | Keep interop concrete without imposing one universal serialization | Darren/Benjamin/Shawn | Accepted | `CommonsChange` as de facto universal contract |
 | 2026-02-12 | Snapshot-mode participation accepted in pilot | Include non-event-native stacks in interoperability testing | Darren/Benjamin/Shawn | Accepted | Event-only interoperability assumption |
+| 2026-03-02 | Ecosystem entities seeded on Octo (14 entities) and FR (7 entities) | Enrich graph for build day demo; coalition people, orgs, concepts, bioregions | Darren | Accepted | - |
+| 2026-03-02 | FR watershed context seeded: 15 SNOTEL stations + 3 stream gauges + Lake Powell + supporting entities | Makes FR node alive with real ecological data for demo segments 2 and 5 | Darren | Accepted | - |
+| 2026-03-02 | Dedupe strategy: search-by-name+type before ingest, consistent document_rid for retry safety | Prevent accidental duplicates while allowing safe retries | Darren | Accepted | - |
+| 2026-03-02 | SNOTEL selection: CO stations in lat 39-41 / lon -107 to -105, diverse elevation 6280-10560ft | Prioritize Front Range corridor with representative elevation spread | Darren | Accepted | - |
+| 2026-03-02 | Entity naming: SNOTEL stations prefixed "SNOTEL: {name}" | Distinguishes monitoring stations from geographic locations in search | Darren | Accepted | - |

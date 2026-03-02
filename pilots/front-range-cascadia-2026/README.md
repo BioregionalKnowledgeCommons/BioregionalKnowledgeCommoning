@@ -12,6 +12,10 @@ This folder contains planning, governance, and execution docs for the 2026 dual-
 - Review checklist: `review-checklist-benjamin.md`
 - Decision log: `decision-log.md`
 
+## Partner Onboarding
+- **Quickstart guide**: `partner-quickstart.md` — ingest your first entity in <15 min
+- Full contract: `../../../Octo/docs/integration/summarizer-ingest-contract.md`
+
 ## Mar 5 Build Day
 - Runbook: `mar5-build-day-runbook.md`
 - Smoke test: `demo-smoke.sh` (run with `INGEST_TOKEN=<token> bash demo-smoke.sh`)
@@ -19,6 +23,10 @@ This folder contains planning, governance, and execution docs for the 2026 dual-
 - Summarizer architecture: `summarizer-vanguard-architecture.md`
 - Telos doc: `../../docs/bioregional-swarm-telos.md`
 - Follow-ups template: `build-day-followups-2026-03-05.md`
+
+## FR Watershed Data
+- Seed manifest: `fr-watershed-seed-manifest.json` (15 SNOTEL + 3 gauges + Lake Powell)
+- Manifest builder: `build-fr-watershed-manifest.py` (reproducible selection from data.json)
 
 ## Layer Alignment
 This pilot validates the layered model:

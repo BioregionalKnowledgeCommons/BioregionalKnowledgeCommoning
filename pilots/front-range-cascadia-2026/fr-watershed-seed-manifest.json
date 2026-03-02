@@ -1,0 +1,216 @@
+{
+  "source": "nou-techne/watershed-data-collection",
+  "data_fetched_at": "2026-03-01T19:01:11.048324+00:00",
+  "basin": "Colorado River Basin",
+  "selection_criteria": {
+    "snotel": "Colorado stations, lat 39-41 / lon -107 to -105, diverse elevation",
+    "gauges": "First 3 from Colorado River Basin",
+    "reservoirs": "Lake Powell"
+  },
+  "snotel_stations": [
+    {
+      "triplet": "09070000:CO:USGS",
+      "name": "Eagle R bl Gypsum",
+      "state": "CO",
+      "elevation_ft": 6280.0,
+      "latitude": 39.64943,
+      "longitude": -106.95366,
+      "swe_in": null,
+      "swe_median_in": null,
+      "pct_of_median": null
+    },
+    {
+      "triplet": "09237450:CO:USGS",
+      "name": "Yampa R ab Stagecoach Reservoir",
+      "state": "CO",
+      "elevation_ft": 7240.0,
+      "latitude": 40.26426,
+      "longitude": -106.89177,
+      "swe_in": null,
+      "swe_median_in": null,
+      "pct_of_median": null
+    },
+    {
+      "triplet": "09038500:CO:USGS",
+      "name": "Williams Fk bl Williams Fk Reservoir",
+      "state": "CO",
+      "elevation_ft": 7640.0,
+      "latitude": 40.03593,
+      "longitude": -106.20502,
+      "swe_in": null,
+      "swe_median_in": null,
+      "pct_of_median": null
+    },
+    {
+      "triplet": "9265:CO:COOP",
+      "name": "Yampa",
+      "state": "CO",
+      "elevation_ft": 7860.0,
+      "latitude": 40.15629,
+      "longitude": -106.91103,
+      "swe_in": null,
+      "swe_median_in": null,
+      "pct_of_median": null
+    },
+    {
+      "triplet": "09021000:CO:USGS",
+      "name": "Willow Ck bl Willow Ck Reservoir",
+      "state": "CO",
+      "elevation_ft": 8040.0,
+      "latitude": 40.14582,
+      "longitude": -105.94002,
+      "swe_in": null,
+      "swe_median_in": null,
+      "pct_of_median": null
+    },
+    {
+      "triplet": "5800643A:CO:USGS",
+      "name": "Fix Ditch",
+      "state": "CO",
+      "elevation_ft": 8250.0,
+      "latitude": 40.11864,
+      "longitude": -106.93453,
+      "swe_in": null,
+      "swe_median_in": null,
+      "pct_of_median": null
+    },
+    {
+      "triplet": "5800738A:CO:USGS",
+      "name": "Lindsey Ditch",
+      "state": "CO",
+      "elevation_ft": 8590.0,
+      "latitude": 40.09158,
+      "longitude": -106.96851,
+      "swe_in": null,
+      "swe_median_in": null,
+      "pct_of_median": null
+    },
+    {
+      "triplet": "793:CO:SNTL",
+      "name": "Stillwater Creek",
+      "state": "CO",
+      "elevation_ft": 8760.0,
+      "latitude": 40.22532,
+      "longitude": -105.9198,
+      "swe_in": 3.3,
+      "swe_median_in": null,
+      "pct_of_median": null
+    },
+    {
+      "triplet": "09009020:CO:BOR",
+      "name": "Dillon Reservoir",
+      "state": "CO",
+      "elevation_ft": 9020.0,
+      "latitude": 39.62123,
+      "longitude": -106.06198,
+      "swe_in": null,
+      "swe_median_in": null,
+      "pct_of_median": null
+    },
+    {
+      "triplet": "940:CO:SNTL",
+      "name": "Lost Dog",
+      "state": "CO",
+      "elevation_ft": 9350.0,
+      "latitude": 40.81557,
+      "longitude": -106.74833,
+      "swe_in": 14.2,
+      "swe_median_in": 19.1,
+      "pct_of_median": 74.3
+    },
+    {
+      "triplet": "05K19:CO:SNOW",
+      "name": "Vasquez",
+      "state": "CO",
+      "elevation_ft": 9500.0,
+      "latitude": 39.85436,
+      "longitude": -105.82186,
+      "swe_in": null,
+      "swe_median_in": null,
+      "pct_of_median": null
+    },
+    {
+      "triplet": "05K03:CO:SNOW",
+      "name": "Berthoud Pass",
+      "state": "CO",
+      "elevation_ft": 9720.0,
+      "latitude": 39.83139,
+      "longitude": -105.75701,
+      "swe_in": null,
+      "swe_median_in": null,
+      "pct_of_median": null
+    },
+    {
+      "triplet": "CO0016:CO:USGS",
+      "name": "No Name Diversion",
+      "state": "CO",
+      "elevation_ft": 10170.0,
+      "latitude": 39.18351,
+      "longitude": -106.71938,
+      "swe_in": null,
+      "swe_median_in": null,
+      "pct_of_median": null
+    },
+    {
+      "triplet": "970:CO:SNTL",
+      "name": "Jones Pass",
+      "state": "CO",
+      "elevation_ft": 10430.0,
+      "latitude": 39.7645,
+      "longitude": -105.90655,
+      "swe_in": 7.5,
+      "swe_median_in": 12.0,
+      "pct_of_median": 62.5
+    },
+    {
+      "triplet": "06K04:CO:SNOW",
+      "name": "Independence Pass",
+      "state": "CO",
+      "elevation_ft": 10560.0,
+      "latitude": 39.07537,
+      "longitude": -106.61211,
+      "swe_in": null,
+      "swe_median_in": null,
+      "pct_of_median": null
+    }
+  ],
+  "stream_gauges": [
+    {
+      "site_id": "09070500",
+      "name": "Colorado River near Dotsero, CO",
+      "state": "CO",
+      "latitude": 39.6446111,
+      "longitude": -107.0780139,
+      "median_discharge_cfs": 860.0,
+      "pct_of_median": 88.6
+    },
+    {
+      "site_id": "09095500",
+      "name": "Colorado River near Cameo, CO",
+      "state": "CO",
+      "latitude": 39.2391463,
+      "longitude": -108.2661946,
+      "median_discharge_cfs": 1540.0,
+      "pct_of_median": 83.8
+    },
+    {
+      "site_id": "09163500",
+      "name": "Colorado River nr CO-UT state line",
+      "state": "CO",
+      "latitude": 39.1327434,
+      "longitude": -109.02707585,
+      "median_discharge_cfs": 2950.0,
+      "pct_of_median": 73.2
+    }
+  ],
+  "reservoirs": [
+    {
+      "site_id": "09379900",
+      "name": "Lake Powell (Glen Canyon Dam)",
+      "elevation_ft": 3530.5,
+      "fill_pct": 48.6,
+      "latitude": 36.9366548,
+      "longitude": -111.4840472
+    }
+  ]
+}
