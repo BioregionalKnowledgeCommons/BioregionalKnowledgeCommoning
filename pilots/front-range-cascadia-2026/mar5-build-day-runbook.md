@@ -122,32 +122,54 @@ ssh root@45.132.245.30 'curl -s -X POST http://127.0.0.1:8355/koi-net/share \
 
 ---
 
-### Segment 4 — TBFF Bridge (Evidence Loop) (5 min)
+### Segment 4 — Live Summarizer Pipeline (5-10 min)
 
-**What you're showing:** Knowledge → capital connection. Evidence loop closing.
+**What you're showing:** Transcript → entities → graph → grounded answer in one flow. This is the mind-blowing moment.
 
 **Steps:**
-1. Show an Evidence entity in the entity browser (or create one live via chat/demo)
-2. Explain: *"In this system, governance decisions and project outcomes are stored as Evidence entities with unique RIDs. These RIDs can be referenced by capital allocation systems — bounties, grants, work orders."*
-3. Show the TBFF bridge concept: *"We have a bridge that converts Knowledge entities → Evidence claims → Hypercerts (planned) and EAS attestations. The owocki PRD describes exactly this model. We've already built the knowledge half."*
-4. Say: *"Your bounty of 1k USDC for the bioregional swarm — when it's allocated, that allocation becomes an Evidence entity in this graph. The evidence loop closes: knowledge informs capital, capital flows are themselves knowledge."*
+1. Paste a real transcript snippet (from the build day itself or a pre-tested golden fixture)
+2. Show entity resolution cascade: "AG Neyer" → Tier 1 exact match → canonical URI
+3. Show entities appearing in graph search results immediately after ingest
+4. Ask chat a question only answerable from the just-ingested knowledge
+5. Show the CAT receipt with provenance chain
+6. Say: *"What you just saw: unstructured text became graph-grounded knowledge in one flow. The entities were deduplicated against the existing graph. The provenance chain is auditable. Any Summarizer — yours, ours, anyone's — can do this by posting to the ingest contract."*
 
-**Note:** This segment is more concept + live demo of entities than a live capital transaction. The Hypercerts integration is planned, not yet deployed.
+**Fallback:** If live transcript isn't ready, use a golden fixture (pre-tested clean transcript with known entities). The demo still shows the full pipeline.
+
+**Mind-blowing moments in this segment:**
+- *"The people in this room are already in the graph"* — search for any attendee's name
+- *"Paste a transcript, get a knowledge graph"* — live Summarizer demo
+- Show `curl /.well-known/agent-card.json` returning the 15-tool contract
+
+**Note:** This replaces the previous TBFF/Evidence Loop segment. The TBFF concept can be mentioned briefly in Segment 5 (coalition asks) when discussing the capital plane.
 
 ---
 
-### Segment 5 — Open Question to the Room (10 min)
+### Segment 5 — Three-Plane Telos + Coalition Asks (5-10 min)
 
-**What you're showing:** BKC is an infrastructure provider, not a competitor. Inviting collaboration.
+**What you're showing:** The three-plane architecture and concrete coalition asks. BKC = knowledge plane (live). Capture commitments.
 
 **Steps:**
-1. Switch to the Two-Plane Architecture diagram (from the positioning one-pager)
-2. Say: *"BKC is the knowledge plane. You're building the action plane. The natural integration seam is: your Summarizer writes to our `/ingest`; your agents query our `/chat`. Here's the MCP/A2A surface. The 15-tool KOI contract is ready to be published as an A2A Agent Card — any agent in the room can auto-discover BKC's capabilities."*
-3. Open to questions:
-   - *"Who wants to wire up their Summarizer?"* (to AG Neyer)
-   - *"Who wants to reference knowledge-graph-grounded evidence in your bounty allocations?"* (to owocki)
-   - *"Who wants their task completions logged as Evidence entities?"* (to Todd)
-4. End with: *"The pattern language doc I shared in Telegram documents what BKC has built as 8 reusable patterns. Take the patterns. Fork the implementation. Build your own holonic node."*
+1. Show the telos diagram (from `docs/bioregional-swarm-telos.md`):
+   - Knowledge Plane (BKC) — live, federated, governed
+   - Coordination Plane (Clawsmos + co-op.us) — agents talking
+   - Capital Plane (owockibot) — value flowing
+   - Cross-cutting: Trust, Location, Governance
+2. Frame: *"No single project builds all three planes. The coalition exists because each plane needs the others. BKC has built the knowledge plane. It's live. Now we need to wire the planes together."*
+3. Specific asks:
+   - *"Who wires the first external ingest pipeline?"* (AG Neyer / Todd)
+   - *"Who owns the social narrative for the owockibot audience?"* (Tommy)
+   - *"When is the first recurring sprint?"* (owocki proposed Fridays noon-3pm)
+   - *"What's the scope for a GG25-29 bioregional swarms round?"* (owocki)
+4. Capture commitments in `build-day-followups-2026-03-05.md` (have template ready)
+5. End with: *"The architecture is open. The governance is explicit. The claims are auditable. The invitation is real."*
+
+**Demo priority stack (if time compresses):**
+1. 4-node reality proof — NEVER cut
+2. Live Summarizer pipeline — the differentiator
+3. Commons governance membrane
+4. Grounded chat (can fold into Summarizer demo)
+5. Coalition roadmap framing and asks
 
 ---
 
@@ -175,9 +197,9 @@ If external integration is not ready, run the core demo using only the existing 
 | Setup/intro | 0:00–0:02 | Skip intro, go straight to globe |
 | Globe: 4-node federation | 0:02–0:04 | Move to chat at 0:04 |
 | Chat: grounded knowledge | 0:04–0:09 | Cut to commons intake at 0:09 |
-| Commons intake governance | 0:09–0:14 | Cut to TBFF at 0:14 |
-| TBFF bridge / evidence loop | 0:14–0:19 | Cut to open discussion at 0:19 |
-| Open discussion | 0:19–0:30 | Hard stop at 0:30 |
+| Commons intake governance | 0:09–0:14 | Cut to Summarizer at 0:14 |
+| Live Summarizer pipeline | 0:14–0:22 | Cut to telos/asks at 0:22 |
+| Three-plane telos + asks | 0:22–0:30 | Hard stop at 0:30 |
 
 ---
 
@@ -236,4 +258,4 @@ After the segment:
 
 ---
 
-*Runbook owner: Darren Zal | Last updated: 2026-02-28 | Gate C deadline: 2026-03-04 18:00 MT*
+*Runbook owner: Darren Zal | Last updated: 2026-03-02 | Status: DRAFT-HARDENING — Segments 4+5 updated Mar 2, pending Gate C validation | Gate C deadline: 2026-03-04 18:00 MT*
