@@ -159,6 +159,18 @@
             "minLength": 1
           }
         },
+        "completed_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "github_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "bounty_url": {
+          "type": "string",
+          "format": "uri"
+        },
         "metadata": {
           "type": "object",
           "additionalProperties": true
