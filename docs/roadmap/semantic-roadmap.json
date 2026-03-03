@@ -749,6 +749,21 @@
     },
 
     {
+      "id": "work.octo-branch-consolidation",
+      "kind": "work_item",
+      "title": "Merge Octo feature branch into canonical main + consolidate overlays into vendor",
+      "summary": "Merge feature/koi-net-slice3-commons-intake into canonical BKC branch. Consolidate Octo overlay files (web_router.py, quality_gates.py, cat_receipts.py, llm_enricher.py, commitment_router.py) into vendor/koi-processor so deploy.sh can manage them. Update vendor pin.txt. Apply pending migrations 056+057 to all nodes. Run smoke test 6/6 post-merge.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md",
+        "external:Octo/CLAUDE.md"
+      ]
+    },
+
+    {
       "id": "work.c0-commitment-ontology",
       "kind": "work_item",
       "title": "C0 — Add Commitment entity types and predicates to ontology",
@@ -1398,6 +1413,16 @@
       "from": "initiative.commitment-pooling-integration",
       "to": "outcome.capital-loop-provable",
       "type": "delivers"
+    },
+    {
+      "from": "work.octo-branch-consolidation",
+      "to": "outcome.showcase-reliable",
+      "type": "delivers"
+    },
+    {
+      "from": "work.c0-commitment-registry",
+      "to": "work.octo-branch-consolidation",
+      "type": "depends_on"
     },
     {
       "from": "work.c0-commitment-registry",
