@@ -11,6 +11,9 @@ Cross-pilot frameworks that can be reused across bioregional knowledge commoning
 - [Rights/licensing/consent policy slots](./rights-licensing-consent-policy-slots.md): required policy metadata slots without universal value mandates.
 - [Bioregion onboarding playbook](./bioregion-onboarding-playbook.md): practical 30/60/90 day onboarding tracks and readiness gates.
 
+## Capital Coordination
+- [Commitment pooling foundations](./commitment-pooling-foundations.md): philosophical foundations, technical model (Sarafu/CLC DAO tiers, state machine), integration seams (TBFF/owockibot/co-op.us/KOI-net/GE), and governance guidance. Ontology types: `Commitment`, `CommitmentPool`, `CommitmentAction`. API: `/commitments/` and `/pools/`.
+
 ## Existing Operational Docs
 - [Ontology commoning framework](./ontology-commoning-framework.md): mapping lifecycle, governance, and approval rules.
 - [Transcription and processing pipeline](./transcription-and-processing-pipeline.md): consent-aware interview-to-knowledge workflow.

@@ -2,18 +2,18 @@
 
 - Program: **Bioregional Knowledge Commons**
 - Roadmap ID: `bkc.roadmap.2026.part-b`
-- Version: `0.3.1`
+- Version: `0.4.0`
 - As of: `2026-03-03`
-- Generated: `2026-03-03 04:15 UTC`
+- Generated: `2026-03-03 07:30 UTC`
 
 ## Status Summary
 
 | Status | Count |
 |---|---|
 | `in_progress` | 6 |
-| `planned` | 32 |
+| `planned` | 45 |
 | `blocked` | 0 |
-| `done` | 12 |
+| `done` | 15 |
 | `deprecated` | 0 |
 
 ## Outcomes
@@ -25,6 +25,7 @@
 | `outcome.policy-governed-sharing` | Consent and policy are enforceable in runtime behavior | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `outcome.secure-federation-ops` | Federation security controls are tested and drillable | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `outcome.eval-driven-kg-chat` | KG chat roadmap decisions are evaluation-driven | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `outcome.commitment-pools-provable` | Commitment pooling is provable end-to-end in at least one bioregion | `planned` | `P1` | `Q3-2026` | `owner.darren` |
 
 ## Initiatives
 
@@ -34,6 +35,7 @@
 | `initiative.part-b-kg-chat` | Part B knowledge-graph chat roadmap | `in_progress` | `P0` | `0-30d` | `owner.darren` |
 | `initiative.part-b-security-addendum` | Part B security and governance addendum | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `initiative.build-day-sprint-mar5` | Mar 5 Build Day sprint — interop and demo readiness | `done` | `P0` | `0-30d` | `owner.darren` |
+| `initiative.commitment-pooling-integration` | Commitment pooling integration — C0/C1/C2 track | `planned` | `P1` | `30-90d` | `owner.darren` |
 
 ## Work Items
 
@@ -65,6 +67,25 @@
 | `work.chat-fanout-scoring` | Chat fanout scoring and all-node responses | `done` | `P1` | `0-30d` | `owner.darren` |
 | `work.commons-prestage-helper` | Commons pre-stage helper (KOI-net share runbook) | `done` | `P1` | `0-30d` | `owner.darren` |
 
+### C-Series: Commitment Pooling Track
+
+| ID | Title | Status | Priority | Horizon | Owner |
+|---|---|---|---|---|---|
+| `work.c0-commitment-ontology` | C0 — Add Commitment entity types and predicates to ontology | `done` | `P1` | `0-30d` | `owner.darren` |
+| `work.c0-commitment-registry` | C0 — Commitment registry API (create, get, state transition, evidence link) | `done` | `P1` | `0-30d` | `owner.darren` |
+| `work.c0-commitment-philosophy-doc` | C0 — Commitment pooling foundations document | `done` | `P1` | `0-30d` | `owner.darren` |
+| `work.c0-commitment-governance-extension` | C0 — Extend commons governance membrane to commitment lifecycle | `planned` | `P1` | `0-30d` | `owner.darren` |
+| `work.c0-evidence-commitment-bridge` | C0 — Wire Evidence entities to proves_commitment predicate | `planned` | `P1` | `0-30d` | `owner.darren` |
+| `work.c1-commitment-pool-api` | C1 — CommitmentPool full mechanics (threshold, activation, governance) | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `work.c1-tbff-commitment-threshold` | C1 — Extend TBFF threshold policy to include commitment activation gates | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `work.c1-pool-governance-membrane` | C1 — Steward approval flow for pool creation and activation | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `work.c1-demurrage-policy-spec` | C1 — Design optional demurrage policy for stale unredeemed pledges (spec only) | `planned` | `P2` | `30-90d` | `owner.darren` |
+| `work.c1-ge-protocol-study` | C1 — Grassroots Economics / Sarafu protocol compatibility analysis | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `work.c2-commitment-koi-net-events` | C2 — Extend KOI-net protocol to carry ECDSA-signed commitment events | `planned` | `P1` | `Q3-2026` | `owner.darren` |
+| `work.c2-cross-node-pool-aggregation` | C2 — Cross-bioregion commitment pooling via federated events | `planned` | `P1` | `Q3-2026` | `owner.darren` |
+| `work.c2-hypercert-from-commitment` | C2 — Hypercerts minted from REDEEMED commitment + linked Evidence | `planned` | `P2` | `Q3-2026` | `owner.darren` |
+| `work.c2-regenerate-cascadia-pilot` | C2 — Pilot commitment pool with Regenerate Cascadia | `planned` | `P1` | `Q3-2026` | `owner.darren` |
+
 ### Dependency Execution Order (depends_on)
 
 1. `work.a2a-agent-card` — A2A agent card deployment (done)
@@ -91,6 +112,16 @@
 22. `work.tbff-receipt-to-evidence-v0` — TBFF receipt to Evidence write-back v0 (planned)
 23. `work.external-pipeline-1-live` — External ingest pipeline #1 live (planned)
 24. `work.external-pipeline-2-live` — External ingest pipeline #2 live (planned)
+25. `work.c0-commitment-ontology` — C0 — Add Commitment entity types and predicates to ontology (done)
+26. `work.c0-commitment-registry` — C0 — Commitment registry API (done) → depends on: c0-commitment-ontology
+27. `work.c0-commitment-governance-extension` — C0 — Extend commons governance membrane (planned) → depends on: c0-commitment-registry
+28. `work.c0-evidence-commitment-bridge` — C0 — Wire Evidence → proves_commitment (planned) → depends on: c0-commitment-registry
+29. `work.c1-commitment-pool-api` — C1 — CommitmentPool full mechanics (planned) → depends on: c0-commitment-registry
+30. `work.c1-tbff-commitment-threshold` — C1 — TBFF commitment threshold gates (planned) → depends on: c1-commitment-pool-api, tbff-threshold-policy-v0
+31. `work.c1-pool-governance-membrane` — C1 — Pool governance membrane (planned) → depends on: c0-commitment-governance-extension
+32. `work.c2-commitment-koi-net-events` — C2 — KOI-net commitment events (planned) → depends on: c1-commitment-pool-api
+33. `work.c2-cross-node-pool-aggregation` — C2 — Cross-bioregion pooling (planned) → depends on: c2-commitment-koi-net-events
+34. `work.c2-regenerate-cascadia-pilot` — C2 — Regenerate Cascadia pilot (planned) → depends on: c1-commitment-pool-api
 
 ## Risks and Mitigations
 
@@ -115,6 +146,7 @@
 |---|---|---|---|---|---|
 | `decision.node-sovereign-default` | Keep node-sovereign runtime as default | `done` | `P0` | `0-30d` | `owner.darren` |
 | `decision.bff-control-plane` | Use BFF as external control plane boundary | `done` | `P0` | `0-30d` | `owner.darren` |
+| `decision.commitment-pooling-native-first` | Implement commitment pooling natively; GE compatibility study runs in parallel | `done` | `P1` | `0-30d` | `owner.darren` |
 
 ## Metrics
 
@@ -125,6 +157,8 @@
 | `metric.security-preflight-runtime` | Security preflight runtime | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `metric.weekly-public-artifacts` | Weekly public artifacts shipped | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `metric.chat-p95-latency` | Federated chat p95 latency | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `metric.commitment-pledges-created` | Commitment pledges created | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `metric.commitment-pools-active` | Commitment pools activated | `planned` | `P1` | `Q3-2026` | `owner.darren` |
 
 ## Canonical Sources
 

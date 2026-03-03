@@ -2,7 +2,7 @@
   "@context": "./semantic-roadmap.context.json",
   "roadmap_id": "bkc.roadmap.2026.part-b",
   "program": "Bioregional Knowledge Commons",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "as_of": "2026-03-03",
   "owners": [
     {
@@ -705,6 +705,296 @@
         "target": ">=1/week",
         "type": "rate"
       }
+    },
+
+    {
+      "id": "outcome.commitment-pools-provable",
+      "kind": "outcome",
+      "title": "Commitment pooling is provable end-to-end in at least one bioregion",
+      "summary": "A community can pledge, pool, fulfill, prove with Evidence, and redeem a commitment within the BKC system. Capital flows are visible, routable, and accountable.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "Q3-2026",
+      "owner": "owner.darren",
+      "tags": [
+        "commitment-pooling",
+        "capital",
+        "economics"
+      ],
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md",
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ]
+    },
+
+    {
+      "id": "initiative.commitment-pooling-integration",
+      "kind": "initiative",
+      "title": "Commitment pooling integration — C0/C1/C2 track",
+      "summary": "Extend BKC's Capital Plane with commitment pooling as a first-class economic primitive. C0: ontology + registry API. C1: pool mechanics + TBFF threshold gates. C2: KOI-net federation + GE/Sarafu bridge.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "tags": [
+        "commitment-pooling",
+        "capital",
+        "economics",
+        "grassroots-economics"
+      ],
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md",
+        "../bioregional-ai-swarms-positioning.md"
+      ]
+    },
+
+    {
+      "id": "work.c0-commitment-ontology",
+      "kind": "work_item",
+      "title": "C0 — Add Commitment entity types and predicates to ontology",
+      "summary": "Added Commitment, CommitmentPool, CommitmentAction entity types and 6 new predicates (pledges_commitment, aggregates_commitments, proves_commitment, redeems_via, governs_pool, disputes) to bkc-ontology.jsonld v1.1.0.",
+      "status": "done",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:Octo/ontology/bkc-ontology.jsonld",
+        "../foundations/commitment-pooling-foundations.md"
+      ]
+    },
+
+    {
+      "id": "work.c0-commitment-registry",
+      "kind": "work_item",
+      "title": "C0 — Commitment registry API (create, get, state transition, evidence link)",
+      "summary": "REST API at /commitments/ and /pools/ for full commitment lifecycle. POST /commitments/create, PATCH /{rid}/state, POST /{rid}/link-evidence. Migrations 056 (registry) + 057 (pools). Router mounted in personal_ingest_api.py.",
+      "status": "done",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:Octo/koi-processor/api/routers/commitment_router.py",
+        "external:Octo/koi-processor/migrations/056_commitment_registry.sql",
+        "external:Octo/koi-processor/migrations/057_commitment_pools.sql"
+      ]
+    },
+
+    {
+      "id": "work.c0-commitment-governance-extension",
+      "kind": "work_item",
+      "title": "C0 — Extend commons governance membrane to commitment lifecycle",
+      "summary": "Wire commitment state transitions (PROPOSED → VERIFIED) through the existing steward approval flow in the commons governance membrane. Commitment review joins the existing decision audit log.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:Octo/koi-processor/api/routers/commitment_router.py",
+        "../foundations/commitment-pooling-foundations.md"
+      ]
+    },
+
+    {
+      "id": "work.c0-evidence-commitment-bridge",
+      "kind": "work_item",
+      "title": "C0 — Wire Evidence entities to proves_commitment predicate",
+      "summary": "Link existing Evidence entities to Commitment pledges via proves_commitment predicate. TBFF receipt write-back can now reference the commitment it fulfills. Link endpoint: POST /commitments/{rid}/link-evidence.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:Octo/koi-processor/api/routers/commitment_router.py",
+        "../foundations/bioregional-ai-swarms-pattern-language.md"
+      ]
+    },
+
+    {
+      "id": "work.c0-commitment-philosophy-doc",
+      "kind": "work_item",
+      "title": "C0 — Commitment pooling foundations document",
+      "summary": "Written commitment-pooling-foundations.md in docs/foundations/. Covers philosophy (4 pillars), technical model (Sarafu/CLC DAO tiers, state machine, demurrage), integration seams (TBFF/owockibot/co-op.us/KOI-net/GE), governance guidance (Sangat-grade, consent, pattern language alignment), and adoption pathway.",
+      "status": "done",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md"
+      ]
+    },
+
+    {
+      "id": "work.c1-commitment-pool-api",
+      "kind": "work_item",
+      "title": "C1 — CommitmentPool full mechanics (threshold, activation, governance)",
+      "summary": "Complete pool lifecycle: POST /pools/{id}/pledge (with auto-activation on threshold), steward approval flow for pool creation, GET /pools/{id}/status with threshold progress. Pool-level CAT receipts and KOI-net event emission.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:Octo/koi-processor/api/routers/commitment_router.py",
+        "../foundations/commitment-pooling-foundations.md"
+      ]
+    },
+
+    {
+      "id": "work.c1-tbff-commitment-threshold",
+      "kind": "work_item",
+      "title": "C1 — Extend TBFF threshold policy to include commitment activation gates",
+      "summary": "owockibot sees pool activation events as triggers. CommitmentPool threshold crossing → owockibot allocation proposal (≤$500 auto) or multisig escalation. Commitment pooling becomes a trigger, not just a parallel system.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md",
+        "../bioregional-ai-swarms-positioning.md"
+      ]
+    },
+
+    {
+      "id": "work.c1-pool-governance-membrane",
+      "kind": "work_item",
+      "title": "C1 — Steward approval flow for pool creation and activation",
+      "summary": "Pool creation and activation decisions recorded in koi_commons_decisions (migration 053 extension). Stewards approve new pools before forming state. Mirrors existing commons intake governance membrane.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md"
+      ]
+    },
+
+    {
+      "id": "work.c1-demurrage-policy-spec",
+      "kind": "work_item",
+      "title": "C1 — Design optional demurrage policy for stale unredeemed pledges (spec only)",
+      "summary": "Document demurrage mechanics for per-pool configuration (monthly decay rate, grace period, community fund routing). Spec only — no implementation until first pilot pool establishes baseline redemption rhythms.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md"
+      ]
+    },
+
+    {
+      "id": "work.c1-ge-protocol-study",
+      "kind": "work_item",
+      "title": "C1 — Grassroots Economics / Sarafu protocol compatibility analysis",
+      "summary": "Deep technical study of CIC Stack + CLC DAO specification. Write compatibility analysis: CIC Stack ↔ KOI-net event format. Identify bridge points for Phase 3 CLC DAO integration. Output: technical memo with go/no-go recommendation for C2 bridge.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md"
+      ]
+    },
+
+    {
+      "id": "work.c2-commitment-koi-net-events",
+      "kind": "work_item",
+      "title": "C2 — Extend KOI-net protocol to carry ECDSA-signed commitment events",
+      "summary": "New event types: commitment.proposed, commitment.verified, commitment.pooled, commitment.redeemed. ECDSA-signed using existing envelope format. Enables cross-bioregion commitment visibility and routing.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "Q3-2026",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md",
+        "external:Octo/docs/koi-protocol-alignment-master.md"
+      ]
+    },
+
+    {
+      "id": "work.c2-cross-node-pool-aggregation",
+      "kind": "work_item",
+      "title": "C2 — Cross-bioregion commitment pooling via federated events",
+      "summary": "Leaf-node commitment pools aggregate into meta-regional pools via KOI-net federation. Leaf pools pledge capacity upward; coordinator pool routes credits multi-hop. Requires C2-commitment-koi-net-events.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "Q3-2026",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md"
+      ]
+    },
+
+    {
+      "id": "work.c2-hypercert-from-commitment",
+      "kind": "work_item",
+      "title": "C2 — Hypercerts minted from REDEEMED commitment + linked Evidence",
+      "summary": "When a commitment is REDEEMED and its Evidence entity is created, mint a Hypercert encoding the impact claim. Links commitment pooling to the broader regenerative finance stack. Depends on Q2 Hypercert work.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "Q3-2026",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md"
+      ]
+    },
+
+    {
+      "id": "work.c2-regenerate-cascadia-pilot",
+      "kind": "work_item",
+      "title": "C2 — Pilot commitment pool with Regenerate Cascadia",
+      "summary": "First real-world commitment pool: Regenerate Cascadia members pledge watershed stewardship hours. Pool activates at threshold, TBFF evidence writes back fulfillment, Hypercert minted. Demonstration of full C0–C2 stack.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "Q3-2026",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md",
+        "../../pilots/front-range-cascadia-2026/dual-bioregion-pilot-plan-v2.md"
+      ]
+    },
+
+    {
+      "id": "decision.commitment-pooling-native-first",
+      "kind": "decision",
+      "title": "Implement commitment pooling natively; GE compatibility study runs in parallel",
+      "summary": "Native BKC implementation proceeds immediately (C0 done, C1 planned). Grassroots Economics protocol compatibility study runs in parallel without blocking delivery. Bridge to CLC DAO added in C2 once pattern is proven locally.",
+      "status": "done",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md"
+      ]
+    },
+
+    {
+      "id": "metric.commitment-pledges-created",
+      "kind": "metric",
+      "title": "Commitment pledges created",
+      "summary": "Count of Commitment entities in PROPOSED or higher state across all nodes.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "metadata": {
+        "target": ">=1",
+        "type": "count"
+      }
+    },
+
+    {
+      "id": "metric.commitment-pools-active",
+      "kind": "metric",
+      "title": "Commitment pools activated",
+      "summary": "Count of CommitmentPool entities in 'active' state with at least one VERIFIED pledge.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "Q3-2026",
+      "owner": "owner.darren",
+      "metadata": {
+        "target": ">=1",
+        "type": "count"
+      }
     }
   ],
   "edges": [
@@ -1036,6 +1326,157 @@
     {
       "from": "metric.weekly-public-artifacts",
       "to": "outcome.showcase-reliable",
+      "type": "measures"
+    },
+
+    {
+      "from": "work.c0-commitment-ontology",
+      "to": "initiative.commitment-pooling-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.c0-commitment-registry",
+      "to": "initiative.commitment-pooling-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.c0-commitment-philosophy-doc",
+      "to": "initiative.commitment-pooling-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.c0-commitment-governance-extension",
+      "to": "initiative.commitment-pooling-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.c0-evidence-commitment-bridge",
+      "to": "initiative.commitment-pooling-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.c1-commitment-pool-api",
+      "to": "initiative.commitment-pooling-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.c1-tbff-commitment-threshold",
+      "to": "initiative.commitment-pooling-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.c1-pool-governance-membrane",
+      "to": "initiative.commitment-pooling-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.c1-ge-protocol-study",
+      "to": "initiative.commitment-pooling-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.c2-commitment-koi-net-events",
+      "to": "initiative.commitment-pooling-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.c2-cross-node-pool-aggregation",
+      "to": "initiative.commitment-pooling-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.c2-regenerate-cascadia-pilot",
+      "to": "initiative.commitment-pooling-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.commitment-pooling-integration",
+      "to": "outcome.commitment-pools-provable",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.commitment-pooling-integration",
+      "to": "outcome.capital-loop-provable",
+      "type": "delivers"
+    },
+    {
+      "from": "work.c0-commitment-registry",
+      "to": "work.c0-commitment-ontology",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.c0-commitment-governance-extension",
+      "to": "work.c0-commitment-registry",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.c0-evidence-commitment-bridge",
+      "to": "work.c0-commitment-registry",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.c1-commitment-pool-api",
+      "to": "work.c0-commitment-registry",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.c1-tbff-commitment-threshold",
+      "to": "work.c1-commitment-pool-api",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.c1-tbff-commitment-threshold",
+      "to": "work.tbff-threshold-policy-v0",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.c1-pool-governance-membrane",
+      "to": "work.c0-commitment-governance-extension",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.c2-commitment-koi-net-events",
+      "to": "work.c1-commitment-pool-api",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.c2-cross-node-pool-aggregation",
+      "to": "work.c2-commitment-koi-net-events",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.c2-hypercert-from-commitment",
+      "to": "work.c1-commitment-pool-api",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.c2-regenerate-cascadia-pilot",
+      "to": "work.c1-commitment-pool-api",
+      "type": "depends_on"
+    },
+    {
+      "from": "decision.commitment-pooling-native-first",
+      "to": "initiative.commitment-pooling-integration",
+      "type": "informs"
+    },
+    {
+      "from": "work.c0-commitment-ontology",
+      "to": "work.c0-commitment-philosophy-doc",
+      "type": "references"
+    },
+    {
+      "from": "work.c1-ge-protocol-study",
+      "to": "work.c2-commitment-koi-net-events",
+      "type": "informs"
+    },
+    {
+      "from": "metric.commitment-pledges-created",
+      "to": "outcome.commitment-pools-provable",
+      "type": "measures"
+    },
+    {
+      "from": "metric.commitment-pools-active",
+      "to": "outcome.commitment-pools-provable",
       "type": "measures"
     }
   ]
