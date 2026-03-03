@@ -2,7 +2,7 @@
   "@context": "./semantic-roadmap.context.json",
   "roadmap_id": "bkc.roadmap.2026.part-b",
   "program": "Bioregional Knowledge Commons",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "as_of": "2026-03-03",
   "owners": [
     {
@@ -14,24 +14,89 @@
       "id": "owner.benjamin",
       "name": "Benjamin Life",
       "role": "co-steward"
+    },
+    {
+      "id": "owner.owocki",
+      "name": "Kevin Owocki",
+      "role": "bounty-lead"
+    },
+    {
+      "id": "owner.todd",
+      "name": "Todd Youngblood",
+      "role": "a2a-lead"
+    },
+    {
+      "id": "owner.aaron",
+      "name": "Aaron Gabriel Neyer",
+      "role": "sensing-lead"
     }
   ],
   "nodes": [
     {
-      "id": "outcome.showcase-reliable",
+      "id": "outcome.bioregional-swarm-live",
       "kind": "outcome",
-      "title": "Showcase reliability remains high across 4 nodes",
-      "summary": "Keep live demo and preflight stable while new capabilities land.",
+      "title": "Bioregional AI swarm coordination operational",
+      "summary": "Multi-org AI swarm coordinating ecological sensing, capital allocation, and knowledge commoning across bioregions.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "180-365d",
+      "owner": "owner.darren",
+      "tags": [
+        "swarm"
+      ]
+    },
+    {
+      "id": "outcome.capital-loop-provable",
+      "kind": "outcome",
+      "title": "Capital allocation loop is provable end-to-end",
+      "summary": "At least one real allocation is linked to machine-readable evidence and provenance receipts.",
       "status": "in_progress",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
       "tags": [
-        "operations",
-        "demo"
+        "finance",
+        "evidence",
+        "tbff"
       ],
       "source_docs": [
-        "external:BioregionKnwoledgeCommons/DEMO-CHECKPOINT.md",
+        "../bioregional-ai-swarms-positioning.md",
+        "../foundations/bioregional-ai-swarms-pattern-language.md"
+      ]
+    },
+    {
+      "id": "outcome.commitment-pools-provable",
+      "kind": "outcome",
+      "title": "Commitment pooling is provable end-to-end in at least one bioregion",
+      "summary": "A community can pledge, pool, fulfill, prove with Evidence, and redeem a commitment within the BKC system. Capital flows are visible, routable, and accountable.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "Q3-2026",
+      "owner": "owner.darren",
+      "tags": [
+        "commitment-pooling",
+        "capital",
+        "economics"
+      ],
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md",
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ]
+    },
+    {
+      "id": "outcome.eval-driven-kg-chat",
+      "kind": "outcome",
+      "title": "KG chat roadmap decisions are evaluation-driven",
+      "summary": "GraphRAG and federation-chat changes are gated by measurable quality/cost criteria.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "tags": [
+        "chat",
+        "evaluation"
+      ],
+      "source_docs": [
         "external:BioregionKnwoledgeCommons/CLAUDE.md"
       ]
     },
@@ -72,21 +137,150 @@
       ]
     },
     {
-      "id": "outcome.eval-driven-kg-chat",
+      "id": "outcome.showcase-reliable",
       "kind": "outcome",
-      "title": "KG chat roadmap decisions are evaluation-driven",
-      "summary": "GraphRAG and federation-chat changes are gated by measurable quality/cost criteria.",
+      "title": "Showcase reliability remains high across 4 nodes",
+      "summary": "Keep live demo and preflight stable while new capabilities land.",
+      "status": "in_progress",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "operations",
+        "demo"
+      ],
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/DEMO-CHECKPOINT.md",
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ]
+    },
+    {
+      "id": "initiative.build-day-sprint-mar5",
+      "kind": "initiative",
+      "title": "Mar 5 Build Day sprint — interop and demo readiness",
+      "summary": "Completed pre-demo sprint: B1 retrieval hardening, A2A agent card, swarm entity seeding, chat scoring, commons pre-stage helper. All items done as of 2026-03-01.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "demo",
+        "interop",
+        "sprint"
+      ],
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md",
+        "../../pilots/front-range-cascadia-2026/mar5-build-day-runbook.md"
+      ],
+      "completed_date": "2026-03-01"
+    },
+    {
+      "id": "initiative.commitment-pooling-integration",
+      "kind": "initiative",
+      "title": "Commitment pooling integration — C0/C1/C2 track",
+      "summary": "Extend BKC's Capital Plane with commitment pooling as a first-class economic primitive. C0: ontology + registry API. C1: pool mechanics + TBFF threshold gates. C2: KOI-net federation + GE/Sarafu bridge.",
       "status": "planned",
       "priority": "P1",
       "horizon": "30-90d",
       "owner": "owner.darren",
       "tags": [
-        "chat",
-        "evaluation"
+        "commitment-pooling",
+        "capital",
+        "economics",
+        "grassroots-economics"
       ],
       "source_docs": [
-        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+        "../foundations/commitment-pooling-foundations.md",
+        "../bioregional-ai-swarms-positioning.md"
       ]
+    },
+    {
+      "id": "initiative.nou-a2a-coordination",
+      "kind": "initiative",
+      "title": "A2A agent coordination protocol (co-op.us Waves A–E)",
+      "summary": "Agent-to-agent coordination protocol from nou-techne enabling autonomous agent interop across the coalition.",
+      "status": "in_progress",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.todd",
+      "tags": [
+        "a2a"
+      ],
+      "source_docs": [
+        "https://github.com/nou-techne/nou-techne/blob/main/docs/api/API_ROADMAP.md"
+      ]
+    },
+    {
+      "id": "initiative.owocki-financing-facility",
+      "kind": "initiative",
+      "title": "Bioregional financing facility (Allo QF + Hypercerts)",
+      "summary": "Deploy Allo Protocol quadratic funding and Hypercerts for provable, evidence-linked bioregional capital allocation.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "90-180d",
+      "owner": "owner.owocki",
+      "tags": [
+        "swarm",
+        "bounty"
+      ]
+    },
+    {
+      "id": "initiative.owocki-multiregion-expansion",
+      "kind": "initiative",
+      "title": "Multi-bioregion swarm expansion beyond Colorado",
+      "summary": "Expand bioregional AI swarm coordination pattern to additional bioregions beyond Colorado River Basin.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "180-365d",
+      "owner": "owner.owocki",
+      "tags": [
+        "swarm",
+        "bounty"
+      ]
+    },
+    {
+      "id": "initiative.owocki-sensing-layer",
+      "kind": "initiative",
+      "title": "Ecological sensing agents — Colorado River Basin",
+      "summary": "AI sensing agents monitoring Colorado River Basin ecology, feeding bioregional knowledge commons and capital allocation.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.owocki",
+      "tags": [
+        "swarm",
+        "bounty"
+      ]
+    },
+    {
+      "id": "initiative.owocki-swarm-foundation",
+      "kind": "initiative",
+      "title": "owocki bounty board + Safe treasury operational",
+      "summary": "Gitcoin bounty board and Safe treasury live for bioregional AI swarm coordination and capital allocation.",
+      "status": "in_progress",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.owocki",
+      "tags": [
+        "swarm",
+        "bounty"
+      ]
+    },
+    {
+      "id": "initiative.part-a-foundation",
+      "kind": "initiative",
+      "title": "Part A: Foundation, federation, and visualization",
+      "summary": "Built the full BKC stack from zero: 4 federated KOI nodes, 3D web dashboard with entity browser, WebAuthn passkey auth, semantic roadmap, and governance workspace. 135 commits across 3 repos in 24 days.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "foundation",
+        "federation",
+        "visualization"
+      ],
+      "completed_date": "2026-02-28"
     },
     {
       "id": "initiative.part-b-kg-chat",
@@ -142,36 +336,592 @@
       ]
     },
     {
-      "id": "initiative.build-day-sprint-mar5",
+      "id": "initiative.watershed-sensing",
       "kind": "initiative",
-      "title": "Mar 5 Build Day sprint — interop and demo readiness",
-      "summary": "Completed pre-demo sprint: B1 retrieval hardening, A2A agent card, swarm entity seeding, chat scoring, commons pre-stage helper. All items done as of 2026-03-01.",
+      "title": "Colorado River Basin open watershed data (USGS + SNOTEL)",
+      "summary": "Open watershed data infrastructure for Colorado River Basin using USGS stream gauges and SNOTEL snow telemetry.",
+      "status": "in_progress",
+      "priority": "P2",
+      "horizon": "30-90d",
+      "owner": "owner.aaron",
+      "tags": [
+        "sensing",
+        "watershed"
+      ],
+      "source_docs": [
+        "https://nou-techne.github.io/watershed-data-collection/"
+      ]
+    },
+    {
+      "id": "work.bff-live-integration",
+      "kind": "work",
+      "title": "BFF layer + live KOI node integration + entity browser + search",
+      "summary": "Built Next.js Backend-for-Frontend proxy connecting web dashboard to all 4 KOI nodes. Entity browser with type filtering and detail pages.",
       "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
       "tags": [
-        "demo",
-        "interop",
-        "sprint"
+        "web",
+        "integration"
       ],
-      "source_docs": [
-        "external:BioregionKnwoledgeCommons/CLAUDE.md",
-        "../../pilots/front-range-cascadia-2026/mar5-build-day-runbook.md"
-      ]
+      "completed_date": "2026-02-20"
     },
     {
-      "id": "work.b1-chat-retrieval-hardening",
-      "kind": "work_item",
-      "title": "B1 — Chat retrieval hardening",
-      "summary": "Upgraded /chat to search doc chunks (koi_memory_chunks), 2-hop relationship CTE (LIMIT 50), web source context. Enhanced bioregional system prompt with citation instructions. Latency <6s, returns 6-8 sources.",
+      "id": "work.demo-smoke-test-suite",
+      "kind": "work",
+      "title": "demo-smoke.sh — automated 6-check preflight for all 4 nodes",
+      "summary": "Created automated smoke test script checking health, entity count, search, chat, ingest, and federation across all nodes.",
+      "status": "done",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "testing",
+        "operations"
+      ],
+      "completed_date": "2026-03-02"
+    },
+    {
+      "id": "work.four-node-parity",
+      "kind": "work",
+      "title": "All 4 nodes at same codebase version, smoke tested",
+      "summary": "Brought Octo, GV, FR, and CV nodes to identical codebase version with full smoke test suite passing on all.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "deployment",
+        "operations"
+      ],
+      "completed_date": "2026-02-26"
+    },
+    {
+      "id": "work.fr-node-deployment",
+      "kind": "work",
+      "title": "Front Range KOI node deployed (localhost:8355)",
+      "summary": "Deployed FR KOI node on Octo server at port 8355 with separate database and venv, federating with Octo coordinator.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "deployment",
+        "federation"
+      ],
+      "completed_date": "2026-02-19"
+    },
+    {
+      "id": "work.governance-pilot-workspace",
+      "kind": "work",
+      "title": "Dual-bioregion pilot workspace + V2 triad governance model",
+      "summary": "Created BioregionalKnowledgeCommoning repo with foundations docs, pilot plans, and V2 triad governance (node-sovereign + pilot-chartered + commons-governed).",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "governance",
+        "pilot"
+      ],
+      "completed_date": "2026-02-11"
+    },
+    {
+      "id": "work.gv-node-deployment",
+      "kind": "work",
+      "title": "Greater Victoria leaf node deployed to remote server (poly)",
+      "summary": "Deployed GV KOI node to poly server (37.27.48.12) with dedicated database, systemd service, and federation peering.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "deployment",
+        "federation"
+      ],
+      "completed_date": "2026-02-19"
+    },
+    {
+      "id": "work.koi-federation-wiring",
+      "kind": "work",
+      "title": "KOI-net federation infrastructure (poller, event emission, peer sync)",
+      "summary": "Wired KOI-net federation protocol with ECDSA-signed envelopes, event polling, and peer synchronization between nodes.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "federation",
+        "koi-net"
+      ],
+      "completed_date": "2026-02-09"
+    },
+    {
+      "id": "work.koi-protocol-alignment",
+      "kind": "work",
+      "title": "P5–P9 KOI-net protocol alignment + ECDSA key encryption",
+      "summary": "Aligned KOI processor with protocol phases P5 through P9 including ECDSA key management and encrypted event envelopes.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "federation",
+        "protocol"
+      ],
+      "completed_date": "2026-02-19"
+    },
+    {
+      "id": "work.llm-openai-migration",
+      "kind": "work",
+      "title": "LLM backend migrated from Gemini to OpenAI (gpt-4o-mini)",
+      "summary": "Migrated LLM enrichment backend from Google Gemini to OpenAI gpt-4o-mini with dispatcher pattern preserving Gemini as fallback.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "llm",
+        "infrastructure"
+      ],
+      "completed_date": "2026-03-03"
+    },
+    {
+      "id": "work.native-land-watersheds",
+      "kind": "work",
+      "title": "Native Land Digital API + GRDC watershed data integration",
+      "summary": "Integrated Native Land Digital territories API and GRDC watershed boundary data into the web visualizer.",
+      "status": "done",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "visualization",
+        "data"
+      ],
+      "completed_date": "2026-02-12"
+    },
+    {
+      "id": "work.octo-initial-setup",
+      "kind": "work",
+      "title": "Octo agent initial setup + holonic federation architecture",
+      "summary": "Created Octo agent with OpenClaw workspace, established holonic network design with coordinator/leaf node topology.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "foundation",
+        "federation"
+      ],
+      "completed_date": "2026-02-08"
+    },
+    {
+      "id": "work.passkey-auth",
+      "kind": "work",
+      "title": "WebAuthn passkey auth + steward authorization per node",
+      "summary": "Implemented WebAuthn passkey authentication with one-tap sign-in, steward role authorization per node, and dual-layer JWT validation.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "auth",
+        "security"
+      ],
+      "completed_date": "2026-02-26"
+    },
+    {
+      "id": "work.quality-gates-cat-receipts",
+      "kind": "work",
+      "title": "Quality gates (4-stage pipeline) + CAT receipts (migration 055)",
+      "summary": "Built 4-stage quality gate pipeline for content assessment and CAT (Content Assessment Token) receipt system with database migration.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "quality",
+        "infrastructure"
+      ],
+      "completed_date": "2026-02-28"
+    },
+    {
+      "id": "work.semantic-roadmap-model",
+      "kind": "work",
+      "title": "Semantic roadmap model + generator + CI validation",
+      "summary": "Designed semantic roadmap JSON schema with typed nodes (outcome, initiative, work, milestone, decision), generator script, and validation.",
+      "status": "done",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "roadmap",
+        "tooling"
+      ],
+      "completed_date": "2026-02-27"
+    },
+    {
+      "id": "work.web-visualizer-phase1",
+      "kind": "work",
+      "title": "3D globe visualizer + NASA imagery + ecoregion overlays",
+      "summary": "Built interactive Three.js globe with NASA Blue Marble imagery, ecoregion data overlays, and node location markers.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "visualization",
+        "web"
+      ],
+      "completed_date": "2026-02-10"
+    },
+    {
+      "id": "milestone.coalition-kickoff",
+      "kind": "milestone",
+      "title": "First bioregional swarm build day",
+      "summary": "BKC + owocki + Todd + Aaron first joint build day — coalition work coordinated and demoed.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "due_date": "2026-03-05"
+    },
+    {
+      "id": "milestone.first-federation-event",
+      "kind": "milestone",
+      "title": "First KOI-net signed event exchanged between nodes",
+      "summary": "First successful ECDSA-signed KOI-net event transmitted and verified between federated nodes.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "federation"
+      ],
+      "completed_date": "2026-02-09"
+    },
+    {
+      "id": "milestone.four-nodes-live",
+      "kind": "milestone",
+      "title": "All 4 KOI nodes deployed and federating",
+      "summary": "Octo (coordinator), GV, FR, and CV nodes all live with bidirectional federation.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "federation",
+        "deployment"
+      ],
+      "completed_date": "2026-02-26"
+    },
+    {
+      "id": "milestone.friday-sprint-cadence",
+      "kind": "milestone",
+      "title": "Weekly coalition sprint cadence established",
+      "summary": "First Friday recurring sprint executed with all coalition members and recap published.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "due_date": "2026-03-07"
+    },
+    {
+      "id": "milestone.part-b-p0-complete",
+      "kind": "milestone",
+      "title": "Part B P0 controls complete",
+      "summary": "S1, S2, S3, S6 and B5 are implemented and checkpointed.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "due_date": "2026-03-15"
+    },
+    {
+      "id": "milestone.part-b-spikes-reviewed",
+      "kind": "milestone",
+      "title": "UCAN and TEE spikes reviewed",
+      "summary": "Decision memo complete with go/no-go outcomes for production planning.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "due_date": "2026-04-30"
+    },
+    {
+      "id": "milestone.post-demo-proof-pack-2026-03-05",
+      "kind": "milestone",
+      "title": "Post-demo proof pack published",
+      "summary": "Within two hours of demo end: one clip, one architecture visual, one shipped summary post are published.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "due_date": "2026-03-05"
+    },
+    {
+      "id": "milestone.recurring-sprint-kickoff-2026-03-07",
+      "kind": "milestone",
+      "title": "First recurring Friday sprint executed",
+      "summary": "Run the first post-demo sprint and capture commitments/outcomes in a public recap.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "due_date": "2026-03-07"
+    },
+    {
+      "id": "milestone.swarm-strawmap-published",
+      "kind": "milestone",
+      "title": "Swarm strawmap published for owockibot/Twitter",
+      "summary": "Coalition roadmap merged and published as machine-readable JSON + web visualization for owockibot and social distribution.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "due_date": "2026-03-03",
+      "completed_date": "2026-03-02"
+    },
+    {
+      "id": "milestone.tbff-v0-writeback-demo-2026-03-14",
+      "kind": "milestone",
+      "title": "TBFF v0 write-back demo complete",
+      "summary": "Demonstrate thresholded flow decision logged to KOI Evidence entities with provenance.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "due_date": "2026-03-14"
+    },
+    {
+      "id": "milestone.two-pipelines-one-allocation-2026-03-21",
+      "kind": "milestone",
+      "title": "Two external pipelines and one evidence-linked allocation",
+      "summary": "Hit interop and capital-loop proof thresholds: two partner pipelines plus one allocation with evidence receipts.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "due_date": "2026-03-21"
+    },
+    {
+      "id": "milestone.web-dashboard-live",
+      "kind": "milestone",
+      "title": "Web dashboard live at sslip.io with BFF proxy",
+      "summary": "3D globe dashboard serving live data from all KOI nodes via BFF proxy at https://45.132.245.30.sslip.io.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "web",
+        "deployment"
+      ],
+      "completed_date": "2026-02-20"
+    },
+    {
+      "id": "decision.adopt-koi-net",
+      "kind": "decision",
+      "title": "Adopt KOI-net as federation protocol (ECDSA-signed envelopes)",
+      "summary": "Chose BlockScience KOI-net as the federation protocol for inter-node communication, using ECDSA-signed event envelopes for integrity.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "architecture",
+        "federation"
+      ],
+      "completed_date": "2026-02-08"
+    },
+    {
+      "id": "decision.bff-control-plane",
+      "kind": "decision",
+      "title": "Use BFF as external control plane boundary",
+      "summary": "Expose stable external API through BFF and keep internal node URLs private.",
       "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
       "source_docs": [
-        "external:BioregionKnwoledgeCommons/CLAUDE.md"
-      ]
+        "external:BioregionKnwoledgeCommons/DEMO-CHECKPOINT.md",
+        "external:bioregional-commons-web/README.md"
+      ],
+      "completed_date": "2026-02-20"
+    },
+    {
+      "id": "decision.commitment-pooling-native-first",
+      "kind": "decision",
+      "title": "Implement commitment pooling natively; GE compatibility study runs in parallel",
+      "summary": "Native BKC implementation proceeds immediately (C0 done, C1 planned). Grassroots Economics protocol compatibility study runs in parallel without blocking delivery. Bridge to CLC DAO added in C2 once pattern is proven locally.",
+      "status": "done",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md"
+      ],
+      "completed_date": "2026-03-03"
+    },
+    {
+      "id": "decision.node-sovereign-default",
+      "kind": "decision",
+      "title": "Keep node-sovereign runtime as default",
+      "summary": "Each node owns its own KG and reasoning path; BFF orchestrates and proxies.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md",
+        "external:BioregionKnwoledgeCommons/demo-architecture.md"
+      ],
+      "completed_date": "2026-02-20"
+    },
+    {
+      "id": "decision.v2-triad-governance",
+      "kind": "decision",
+      "title": "V2 triad governance: node-sovereign + pilot-chartered + commons-governed",
+      "summary": "Established three-tier governance model where nodes retain sovereignty, pilots operate under charters, and commons decisions require collective consent.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "governance",
+        "architecture"
+      ],
+      "completed_date": "2026-02-11"
+    },
+    {
+      "id": "metric.allocations-with-evidence-receipts",
+      "kind": "metric",
+      "title": "Allocations with evidence receipts",
+      "summary": "Number of capital allocations with linked KOI Evidence receipts and provenance references.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "metadata": {
+        "target": ">=1",
+        "type": "count"
+      }
+    },
+    {
+      "id": "metric.chat-p95-latency",
+      "kind": "metric",
+      "title": "Federated chat p95 latency",
+      "summary": "Target: federated chat p95 remains within practical demo and operator bounds.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "metadata": {
+        "target": "<=2.0s",
+        "type": "latency"
+      }
+    },
+    {
+      "id": "metric.commitment-pledges-created",
+      "kind": "metric",
+      "title": "Commitment pledges created",
+      "summary": "Count of Commitment entities in PROPOSED or higher state across all nodes.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "metadata": {
+        "target": ">=1",
+        "type": "count"
+      }
+    },
+    {
+      "id": "metric.commitment-pools-active",
+      "kind": "metric",
+      "title": "Commitment pools activated",
+      "summary": "Count of CommitmentPool entities in 'active' state with at least one VERIFIED pledge.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "Q3-2026",
+      "owner": "owner.darren",
+      "metadata": {
+        "target": ">=1",
+        "type": "count"
+      }
+    },
+    {
+      "id": "metric.external-pipelines-live",
+      "kind": "metric",
+      "title": "External pipelines live",
+      "summary": "Count of independent external pipelines writing successfully to /ingest.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "metadata": {
+        "target": ">=2",
+        "type": "count"
+      }
+    },
+    {
+      "id": "metric.security-preflight-runtime",
+      "kind": "metric",
+      "title": "Security preflight runtime",
+      "summary": "Target: full security lane runs in 45 minutes or less.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "metadata": {
+        "target": "<=45m",
+        "type": "duration"
+      }
+    },
+    {
+      "id": "metric.weekly-public-artifacts",
+      "kind": "metric",
+      "title": "Weekly public artifacts shipped",
+      "summary": "Weekly count of externally shareable artifacts (clip, visual, shipped summary).",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "metadata": {
+        "target": ">=1/week",
+        "type": "rate"
+      }
+    },
+    {
+      "id": "risk.auth-migration-regression",
+      "kind": "risk",
+      "title": "Auth regression during UCAN migration exploration",
+      "summary": "Production WebAuthn/JWT steward paths could regress if migration is not isolated.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren"
+    },
+    {
+      "id": "risk.chat-latency-regression",
+      "kind": "risk",
+      "title": "Latency regression from privacy-heavy runtime changes",
+      "summary": "TEE or encrypted retrieval approaches may exceed practical chat latency bounds.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren"
+    },
+    {
+      "id": "risk.low-rigor-sources",
+      "kind": "risk",
+      "title": "Architecture drift from low-rigor sources",
+      "summary": "Roadmap may overfit to marketing/vendor claims without evidence grading.",
+      "status": "in_progress",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren"
     },
     {
       "id": "work.a2a-agent-card",
@@ -184,111 +934,22 @@
       "owner": "owner.darren",
       "source_docs": [
         "external:BioregionKnwoledgeCommons/CLAUDE.md"
-      ]
+      ],
+      "completed_date": "2026-03-01"
     },
     {
-      "id": "work.entity-seeding-swarm-actors",
+      "id": "work.b1-chat-retrieval-hardening",
       "kind": "work_item",
-      "title": "Swarm actor entity seeding",
-      "summary": "Seeded 20 entities (6 people, 7 orgs, 6 concepts, 1 meeting) + 15 relationships to Octo and FR nodes. Enables graph-grounded answers to 'Who is AG Neyer connected to?' for Mar 5 demo.",
+      "title": "B1 — Chat retrieval hardening",
+      "summary": "Upgraded /chat to search doc chunks (koi_memory_chunks), 2-hop relationship CTE (LIMIT 50), web source context. Enhanced bioregional system prompt with citation instructions. Latency <6s, returns 6-8 sources.",
       "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
       "source_docs": [
         "external:BioregionKnwoledgeCommons/CLAUDE.md"
-      ]
-    },
-    {
-      "id": "work.chat-fanout-scoring",
-      "kind": "work_item",
-      "title": "Chat fanout scoring and all-node responses",
-      "summary": "Improved best-answer selection to weight source_count (70% length + 30pts/source). Added selection_rationale field. All 4 nodes always present in node_responses; failed nodes include error field.",
-      "status": "done",
-      "priority": "P1",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "source_docs": [
-        "external:bioregional-commons-web/web/src/app/api/chat/route.ts"
-      ]
-    },
-    {
-      "id": "work.commons-prestage-helper",
-      "kind": "work_item",
-      "title": "Commons pre-stage helper (KOI-net share runbook)",
-      "summary": "Added SSH/curl command to runbook for pre-staging commons intake entity via KOI-net share (recipient_type=commons) from FR → Octo. Enables Segment 3 governance membrane demo.",
-      "status": "done",
-      "priority": "P1",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "source_docs": [
-        "../../pilots/front-range-cascadia-2026/mar5-build-day-runbook.md"
-      ]
-    },
-    {
-      "id": "work.s1-data-class-matrix",
-      "kind": "work_item",
-      "title": "Define and publish data-class policy matrix",
-      "summary": "Canonical classes and action matrix for read/search/chat/ingest/share.",
-      "status": "planned",
-      "priority": "P0",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "source_docs": [
-        "../foundations/rights-licensing-consent-policy-slots.md"
-      ]
-    },
-    {
-      "id": "work.s2-security-lane",
-      "kind": "work_item",
-      "title": "Add security lane to operational checkpoints",
-      "summary": "Prompt-injection, poisoning, auth abuse, inversion, and key compromise checks.",
-      "status": "planned",
-      "priority": "P0",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "source_docs": [
-        "external:BioregionKnwoledgeCommons/DEMO-CHECKPOINT.md"
-      ]
-    },
-    {
-      "id": "work.s3-key-lifecycle-runbook",
-      "kind": "work_item",
-      "title": "Publish key lifecycle and incident runbook",
-      "summary": "Issuance, rotation, revocation, break-glass, and post-incident audit steps.",
-      "status": "planned",
-      "priority": "P0",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "source_docs": [
-        "external:Octo/docs/koi-federation-operations-runbook.md"
-      ]
-    },
-    {
-      "id": "work.s6-evidence-grading",
-      "kind": "work_item",
-      "title": "Introduce evidence grading in architecture decisions",
-      "summary": "Tag decisions by evidence quality: standards, peer-reviewed, official docs, preprint, vendor opinion.",
-      "status": "planned",
-      "priority": "P0",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "source_docs": [
-        "../../pilots/front-range-cascadia-2026/decision-log.md"
-      ]
-    },
-    {
-      "id": "work.b5-eval-gates",
-      "kind": "work_item",
-      "title": "Define B5 chat evaluation gates",
-      "summary": "Set measurable gates for quality, latency, and cost before promoting chat architecture changes.",
-      "status": "planned",
-      "priority": "P0",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "source_docs": [
-        "external:BioregionKnwoledgeCommons/CLAUDE.md"
-      ]
+      ],
+      "completed_date": "2026-03-01"
     },
     {
       "id": "work.b2-graphrag-v1",
@@ -331,225 +992,301 @@
       ]
     },
     {
-      "id": "work.s4-ucan-bridge-spike",
+      "id": "work.b5-eval-gates",
       "kind": "work_item",
-      "title": "UCAN bridge spike",
-      "summary": "Design and prototype one capability-delegation path without replacing current auth.",
+      "title": "Define B5 chat evaluation gates",
+      "summary": "Set measurable gates for quality, latency, and cost before promoting chat architecture changes.",
       "status": "planned",
-      "priority": "P1",
-      "horizon": "30-90d",
+      "priority": "P0",
+      "horizon": "0-30d",
       "owner": "owner.darren",
       "source_docs": [
-        "external:claude-plans/soft-stargazing-crab.md"
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
       ]
     },
     {
-      "id": "work.s5-tee-spike",
+      "id": "work.c0-commitment-governance-extension",
       "kind": "work_item",
-      "title": "TEE confidential RAG spike",
-      "summary": "Benchmark one bounded TEE candidate against current runtime and decide go/no-go.",
+      "title": "C0 — Extend commons governance membrane to commitment lifecycle",
+      "summary": "Wire commitment state transitions (PROPOSED → VERIFIED) through the existing steward approval flow in the commons governance membrane. Commitment review joins the existing decision audit log.",
       "status": "planned",
       "priority": "P1",
-      "horizon": "30-90d",
-      "owner": "owner.darren",
-      "source_docs": [
-        "external:claude-plans/soft-stargazing-crab.md"
-      ]
-    },
-    {
-      "id": "decision.node-sovereign-default",
-      "kind": "decision",
-      "title": "Keep node-sovereign runtime as default",
-      "summary": "Each node owns its own KG and reasoning path; BFF orchestrates and proxies.",
-      "status": "done",
-      "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
       "source_docs": [
-        "external:BioregionKnwoledgeCommons/CLAUDE.md",
-        "external:BioregionKnwoledgeCommons/demo-architecture.md"
+        "external:Octo/koi-processor/api/routers/commitment_router.py",
+        "../foundations/commitment-pooling-foundations.md"
       ]
     },
     {
-      "id": "decision.bff-control-plane",
-      "kind": "decision",
-      "title": "Use BFF as external control plane boundary",
-      "summary": "Expose stable external API through BFF and keep internal node URLs private.",
-      "status": "done",
-      "priority": "P0",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "source_docs": [
-        "external:BioregionKnwoledgeCommons/DEMO-CHECKPOINT.md",
-        "external:bioregional-commons-web/README.md"
-      ]
-    },
-    {
-      "id": "risk.low-rigor-sources",
-      "kind": "risk",
-      "title": "Architecture drift from low-rigor sources",
-      "summary": "Roadmap may overfit to marketing/vendor claims without evidence grading.",
-      "status": "in_progress",
-      "priority": "P0",
-      "horizon": "0-30d",
-      "owner": "owner.darren"
-    },
-    {
-      "id": "risk.auth-migration-regression",
-      "kind": "risk",
-      "title": "Auth regression during UCAN migration exploration",
-      "summary": "Production WebAuthn/JWT steward paths could regress if migration is not isolated.",
-      "status": "planned",
-      "priority": "P1",
-      "horizon": "30-90d",
-      "owner": "owner.darren"
-    },
-    {
-      "id": "risk.chat-latency-regression",
-      "kind": "risk",
-      "title": "Latency regression from privacy-heavy runtime changes",
-      "summary": "TEE or encrypted retrieval approaches may exceed practical chat latency bounds.",
-      "status": "planned",
-      "priority": "P1",
-      "horizon": "30-90d",
-      "owner": "owner.darren"
-    },
-    {
-      "id": "milestone.part-b-p0-complete",
-      "kind": "milestone",
-      "title": "Part B P0 controls complete",
-      "summary": "S1, S2, S3, S6 and B5 are implemented and checkpointed.",
-      "status": "planned",
-      "priority": "P0",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "due_date": "2026-03-15"
-    },
-    {
-      "id": "milestone.part-b-spikes-reviewed",
-      "kind": "milestone",
-      "title": "UCAN and TEE spikes reviewed",
-      "summary": "Decision memo complete with go/no-go outcomes for production planning.",
-      "status": "planned",
-      "priority": "P1",
-      "horizon": "30-90d",
-      "owner": "owner.darren",
-      "due_date": "2026-04-30"
-    },
-    {
-      "id": "metric.security-preflight-runtime",
-      "kind": "metric",
-      "title": "Security preflight runtime",
-      "summary": "Target: full security lane runs in 45 minutes or less.",
-      "status": "planned",
-      "priority": "P0",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "metadata": {
-        "target": "<=45m",
-        "type": "duration"
-      }
-    },
-    {
-      "id": "metric.chat-p95-latency",
-      "kind": "metric",
-      "title": "Federated chat p95 latency",
-      "summary": "Target: federated chat p95 remains within practical demo and operator bounds.",
-      "status": "planned",
-      "priority": "P1",
-      "horizon": "30-90d",
-      "owner": "owner.darren",
-      "metadata": {
-        "target": "<=2.0s",
-        "type": "latency"
-      }
-    },
-    {
-      "id": "work.swarm-map-infographic",
+      "id": "work.c0-commitment-ontology",
       "kind": "work_item",
-      "title": "Three-plane swarm map infographic",
-      "summary": "Published self-contained architecture visual at /commons/swarm-map.html for demo and social distribution.",
+      "title": "C0 — Add Commitment entity types and predicates to ontology",
+      "summary": "Added Commitment, CommitmentPool, CommitmentAction entity types and 6 new predicates (pledges_commitment, aggregates_commitments, proves_commitment, redeems_via, governs_pool, disputes) to bkc-ontology.jsonld v1.1.0.",
       "status": "done",
-      "priority": "P0",
+      "priority": "P1",
       "horizon": "0-30d",
       "owner": "owner.darren",
       "source_docs": [
-        "external:bioregional-commons-web/web/public/swarm-map.html"
-      ]
+        "external:Octo/ontology/bkc-ontology.jsonld",
+        "../foundations/commitment-pooling-foundations.md"
+      ],
+      "completed_date": "2026-03-03"
     },
     {
-      "id": "work.seed-build-day-entities-script",
+      "id": "work.c0-commitment-philosophy-doc",
       "kind": "work_item",
-      "title": "Build-day entity seeding operator script",
-      "summary": "Added operator script with dedupe checks, ingest error handling, rollback URI log, and post-seed verification guidance.",
+      "title": "C0 — Commitment pooling foundations document",
+      "summary": "Written commitment-pooling-foundations.md in docs/foundations/. Covers philosophy (4 pillars), technical model (Sarafu/CLC DAO tiers, state machine, demurrage), integration seams (TBFF/owockibot/co-op.us/KOI-net/GE), governance guidance (Sangat-grade, consent, pattern language alignment), and adoption pathway.",
       "status": "done",
-      "priority": "P0",
+      "priority": "P1",
       "horizon": "0-30d",
       "owner": "owner.darren",
       "source_docs": [
-        "../../pilots/front-range-cascadia-2026/seed-build-day-entities.sh"
-      ]
+        "../foundations/commitment-pooling-foundations.md"
+      ],
+      "completed_date": "2026-03-03"
     },
     {
-      "id": "work.telegram-gate-metric-alignment",
+      "id": "work.c0-commitment-pooling",
       "kind": "work_item",
-      "title": "Gate messaging metric alignment",
-      "summary": "Aligned gate templates and runbook messaging to canonical live stats, ingest/governance distinctions, and build-day claims.",
+      "title": "C0: Commitment pooling — ontology, migrations, API router",
+      "summary": "Ontology v1.1.0 adds Commitment/CommitmentPool/CommitmentAction (3 types, 6 predicates). Migrations 056+057 create commitment registry with 9-state lifecycle and threshold-activated pools. 10 API endpoints across /commitments/* and /pools/*. Grounded in Grassroots Economics / Sarafu heritage.",
       "status": "done",
-      "priority": "P0",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "source_docs": [
-        "../../pilots/front-range-cascadia-2026/telegram-gate-templates.md",
-        "../../pilots/front-range-cascadia-2026/mar5-build-day-runbook.md"
-      ]
-    },
-    {
-      "id": "outcome.capital-loop-provable",
-      "kind": "outcome",
-      "title": "Capital allocation loop is provable end-to-end",
-      "summary": "At least one real allocation is linked to machine-readable evidence and provenance receipts.",
-      "status": "in_progress",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
       "tags": [
-        "finance",
-        "evidence",
-        "tbff"
+        "commitment-pooling",
+        "ontology",
+        "api"
       ],
       "source_docs": [
-        "../bioregional-ai-swarms-positioning.md",
+        "external:BioregionalKnowledgeCommoning/docs/foundations/commitment-pooling-integration.md",
+        "external:Octo/ontology/bkc-ontology.jsonld"
+      ],
+      "completed_date": "2026-03-03"
+    },
+    {
+      "id": "work.c0-commitment-registry",
+      "kind": "work_item",
+      "title": "C0 — Commitment registry API (create, get, state transition, evidence link)",
+      "summary": "REST API at /commitments/ and /pools/ for full commitment lifecycle. POST /commitments/create, PATCH /{rid}/state, POST /{rid}/link-evidence. Migrations 056 (registry) + 057 (pools). Router mounted in personal_ingest_api.py.",
+      "status": "done",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:Octo/koi-processor/api/routers/commitment_router.py",
+        "external:Octo/koi-processor/migrations/056_commitment_registry.sql",
+        "external:Octo/koi-processor/migrations/057_commitment_pools.sql"
+      ],
+      "completed_date": "2026-03-03"
+    },
+    {
+      "id": "work.c0-evidence-commitment-bridge",
+      "kind": "work_item",
+      "title": "C0 — Wire Evidence entities to proves_commitment predicate",
+      "summary": "Link existing Evidence entities to Commitment pledges via proves_commitment predicate. TBFF receipt write-back can now reference the commitment it fulfills. Link endpoint: POST /commitments/{rid}/link-evidence.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:Octo/koi-processor/api/routers/commitment_router.py",
         "../foundations/bioregional-ai-swarms-pattern-language.md"
       ]
     },
     {
-      "id": "work.tbff-threshold-policy-v0",
+      "id": "work.c1-commitment-pool-api",
       "kind": "work_item",
-      "title": "TBFF threshold policy v0",
-      "summary": "Define threshold bands, authority boundaries, and override procedure with Shawn for production-safe flow funding decisions.",
+      "title": "C1 — CommitmentPool full mechanics (threshold, activation, governance)",
+      "summary": "Complete pool lifecycle: POST /pools/{id}/pledge (with auto-activation on threshold), steward approval flow for pool creation, GET /pools/{id}/status with threshold progress. Pool-level CAT receipts and KOI-net event emission.",
       "status": "planned",
-      "priority": "P0",
-      "horizon": "0-30d",
+      "priority": "P1",
+      "horizon": "30-90d",
       "owner": "owner.darren",
       "source_docs": [
-        "../bioregional-ai-swarms-positioning.md",
-        "../../pilots/front-range-cascadia-2026/decision-log.md"
+        "external:Octo/koi-processor/api/routers/commitment_router.py",
+        "../foundations/commitment-pooling-foundations.md"
       ]
     },
     {
-      "id": "work.tbff-receipt-to-evidence-v0",
+      "id": "work.c1-demurrage-policy-spec",
       "kind": "work_item",
-      "title": "TBFF receipt to Evidence write-back v0",
-      "summary": "Map flow-funding receipts to KOI Evidence entities with stable RID links for auditable capital decisions.",
+      "title": "C1 — Design optional demurrage policy for stale unredeemed pledges (spec only)",
+      "summary": "Document demurrage mechanics for per-pool configuration (monthly decay rate, grace period, community fund routing). Spec only — no implementation until first pilot pool establishes baseline redemption rhythms.",
       "status": "planned",
+      "priority": "P2",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md"
+      ]
+    },
+    {
+      "id": "work.c1-entity-mirror-graphrag",
+      "kind": "work_item",
+      "title": "C1: Commitment entity registry mirror + GraphRAG",
+      "summary": "Mirror commitment entities into entity_registry so chat/RAG can discover them. Add junction table for partial fulfillment evidence. Extend GraphRAG queries to traverse commitment predicates.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "tags": [
+        "commitment-pooling",
+        "graphrag"
+      ]
+    },
+    {
+      "id": "work.c1-ge-protocol-study",
+      "kind": "work_item",
+      "title": "C1 — Grassroots Economics / Sarafu protocol compatibility analysis",
+      "summary": "Deep technical study of CIC Stack + CLC DAO specification. Write compatibility analysis: CIC Stack ↔ KOI-net event format. Identify bridge points for Phase 3 CLC DAO integration. Output: technical memo with go/no-go recommendation for C2 bridge.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md"
+      ]
+    },
+    {
+      "id": "work.c1-pool-governance-membrane",
+      "kind": "work_item",
+      "title": "C1 — Steward approval flow for pool creation and activation",
+      "summary": "Pool creation and activation decisions recorded in koi_commons_decisions (migration 053 extension). Stewards approve new pools before forming state. Mirrors existing commons intake governance membrane.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md"
+      ]
+    },
+    {
+      "id": "work.c1-tbff-commitment-threshold",
+      "kind": "work_item",
+      "title": "C1 — Extend TBFF threshold policy to include commitment activation gates",
+      "summary": "owockibot sees pool activation events as triggers. CommitmentPool threshold crossing → owockibot allocation proposal (≤$500 auto) or multisig escalation. Commitment pooling becomes a trigger, not just a parallel system.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md",
+        "../bioregional-ai-swarms-positioning.md"
+      ]
+    },
+    {
+      "id": "work.c2-commitment-federation",
+      "kind": "work_item",
+      "title": "C2: Federated commitment pooling across bioregions",
+      "summary": "Extend KOI-net federation to share commitment pool state across nodes. Cross-bioregion commitment routing via trust networks. Multi-hop credit clearing between pools.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "90-180d",
+      "owner": "owner.darren",
+      "tags": [
+        "commitment-pooling",
+        "federation"
+      ]
+    },
+    {
+      "id": "work.c2-commitment-koi-net-events",
+      "kind": "work_item",
+      "title": "C2 — Extend KOI-net protocol to carry ECDSA-signed commitment events",
+      "summary": "New event types: commitment.proposed, commitment.verified, commitment.pooled, commitment.redeemed. ECDSA-signed using existing envelope format. Enables cross-bioregion commitment visibility and routing.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "Q3-2026",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md",
+        "external:Octo/docs/koi-protocol-alignment-master.md"
+      ]
+    },
+    {
+      "id": "work.c2-cross-node-pool-aggregation",
+      "kind": "work_item",
+      "title": "C2 — Cross-bioregion commitment pooling via federated events",
+      "summary": "Leaf-node commitment pools aggregate into meta-regional pools via KOI-net federation. Leaf pools pledge capacity upward; coordinator pool routes credits multi-hop. Requires C2-commitment-koi-net-events.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "Q3-2026",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md"
+      ]
+    },
+    {
+      "id": "work.c2-hypercert-from-commitment",
+      "kind": "work_item",
+      "title": "C2 — Hypercerts minted from REDEEMED commitment + linked Evidence",
+      "summary": "When a commitment is REDEEMED and its Evidence entity is created, mint a Hypercert encoding the impact claim. Links commitment pooling to the broader regenerative finance stack. Depends on Q2 Hypercert work.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "Q3-2026",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md"
+      ]
+    },
+    {
+      "id": "work.c2-regenerate-cascadia-pilot",
+      "kind": "work_item",
+      "title": "C2 — Pilot commitment pool with Regenerate Cascadia",
+      "summary": "First real-world commitment pool: Regenerate Cascadia members pledge watershed stewardship hours. Pool activates at threshold, TBFF evidence writes back fulfillment, Hypercert minted. Demonstration of full C0–C2 stack.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "Q3-2026",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md",
+        "../../pilots/front-range-cascadia-2026/dual-bioregion-pilot-plan-v2.md"
+      ]
+    },
+    {
+      "id": "work.chat-fanout-scoring",
+      "kind": "work_item",
+      "title": "Chat fanout scoring and all-node responses",
+      "summary": "Improved best-answer selection to weight source_count (70% length + 30pts/source). Added selection_rationale field. All 4 nodes always present in node_responses; failed nodes include error field.",
+      "status": "done",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:bioregional-commons-web/web/src/app/api/chat/route.ts"
+      ],
+      "completed_date": "2026-02-28"
+    },
+    {
+      "id": "work.commons-prestage-helper",
+      "kind": "work_item",
+      "title": "Commons pre-stage helper (KOI-net share runbook)",
+      "summary": "Added SSH/curl command to runbook for pre-staging commons intake entity via KOI-net share (recipient_type=commons) from FR → Octo. Enables Segment 3 governance membrane demo.",
+      "status": "done",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../../pilots/front-range-cascadia-2026/mar5-build-day-runbook.md"
+      ],
+      "completed_date": "2026-03-01"
+    },
+    {
+      "id": "work.entity-seeding-swarm-actors",
+      "kind": "work_item",
+      "title": "Swarm actor entity seeding",
+      "summary": "Seeded 20 entities (6 people, 7 orgs, 6 concepts, 1 meeting) + 15 relationships to Octo and FR nodes. Enables graph-grounded answers to 'Who is AG Neyer connected to?' for Mar 5 demo.",
+      "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
       "source_docs": [
-        "../foundations/bioregional-ai-swarms-pattern-language.md",
-        "../../pilots/front-range-cascadia-2026/decision-log.md"
-      ]
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "completed_date": "2026-03-01"
     },
     {
       "id": "work.external-pipeline-1-live",
@@ -580,174 +1317,22 @@
       ]
     },
     {
-      "id": "work.owocki-tranche-proposal-v1",
+      "id": "work.nou-agent-auth-wave-a",
       "kind": "work_item",
-      "title": "Owocki milestone tranche proposal v1",
-      "summary": "Ship a tranche-based funding ask tied to delivered proofs: integration, evidence-linked allocation, and weekly artifacts.",
-      "status": "planned",
-      "priority": "P0",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "source_docs": [
-        "../../pilots/front-range-cascadia-2026/telegram-gate-templates.md",
-        "../bioregional-ai-swarms-positioning.md"
-      ]
-    },
-    {
-      "id": "work.web-ingest-ui",
-      "kind": "work_item",
-      "title": "Web ingest UI pipeline (URL → entity → confirm → receipt)",
-      "summary": "Full steward-authenticated ingest flow at /commons/ingest. URL→gpt-4o-mini extraction→preview grouped by type→frozen-payload confirm via /web/ingest BFF→receipt with new/resolved/relationships counts. Bugs fixed post-review: ingestion_stats, double-LLM-call, BFF flatten, useWebPreview interface.",
+      "title": "Agent bearer-token auth live (Wave A shipped)",
+      "summary": "Wave A of nou-techne A2A protocol: agent bearer-token authentication is live and operational.",
       "status": "done",
-      "priority": "P0",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "source_docs": [
-        "external:bioregional-commons-web/web/src/components/ingest/IngestPanel.tsx",
-        "external:BioregionKnwoledgeCommons/CLAUDE.md"
-      ]
-    },
-    {
-      "id": "work.weekly-proof-pack",
-      "kind": "work_item",
-      "title": "Weekly proof pack publishing cadence",
-      "summary": "Publish one short clip, one architecture visual, and one what-shipped post each week to convert momentum into funding confidence.",
-      "status": "planned",
-      "priority": "P0",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "source_docs": [
-        "../../pilots/front-range-cascadia-2026/mar5-build-day-runbook.md"
-      ]
-    },
-    {
-      "id": "milestone.post-demo-proof-pack-2026-03-05",
-      "kind": "milestone",
-      "title": "Post-demo proof pack published",
-      "summary": "Within two hours of demo end: one clip, one architecture visual, one shipped summary post are published.",
-      "status": "planned",
-      "priority": "P0",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "due_date": "2026-03-05"
-    },
-    {
-      "id": "milestone.recurring-sprint-kickoff-2026-03-07",
-      "kind": "milestone",
-      "title": "First recurring Friday sprint executed",
-      "summary": "Run the first post-demo sprint and capture commitments/outcomes in a public recap.",
-      "status": "planned",
-      "priority": "P0",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "due_date": "2026-03-07"
-    },
-    {
-      "id": "milestone.tbff-v0-writeback-demo-2026-03-14",
-      "kind": "milestone",
-      "title": "TBFF v0 write-back demo complete",
-      "summary": "Demonstrate thresholded flow decision logged to KOI Evidence entities with provenance.",
-      "status": "planned",
-      "priority": "P0",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "due_date": "2026-03-14"
-    },
-    {
-      "id": "milestone.two-pipelines-one-allocation-2026-03-21",
-      "kind": "milestone",
-      "title": "Two external pipelines and one evidence-linked allocation",
-      "summary": "Hit interop and capital-loop proof thresholds: two partner pipelines plus one allocation with evidence receipts.",
-      "status": "planned",
-      "priority": "P0",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "due_date": "2026-03-21"
-    },
-    {
-      "id": "metric.external-pipelines-live",
-      "kind": "metric",
-      "title": "External pipelines live",
-      "summary": "Count of independent external pipelines writing successfully to /ingest.",
-      "status": "planned",
-      "priority": "P0",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "metadata": {
-        "target": ">=2",
-        "type": "count"
-      }
-    },
-    {
-      "id": "metric.allocations-with-evidence-receipts",
-      "kind": "metric",
-      "title": "Allocations with evidence receipts",
-      "summary": "Number of capital allocations with linked KOI Evidence receipts and provenance references.",
-      "status": "planned",
-      "priority": "P0",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "metadata": {
-        "target": ">=1",
-        "type": "count"
-      }
-    },
-    {
-      "id": "metric.weekly-public-artifacts",
-      "kind": "metric",
-      "title": "Weekly public artifacts shipped",
-      "summary": "Weekly count of externally shareable artifacts (clip, visual, shipped summary).",
-      "status": "planned",
-      "priority": "P0",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "metadata": {
-        "target": ">=1/week",
-        "type": "rate"
-      }
-    },
-
-    {
-      "id": "outcome.commitment-pools-provable",
-      "kind": "outcome",
-      "title": "Commitment pooling is provable end-to-end in at least one bioregion",
-      "summary": "A community can pledge, pool, fulfill, prove with Evidence, and redeem a commitment within the BKC system. Capital flows are visible, routable, and accountable.",
-      "status": "planned",
       "priority": "P1",
-      "horizon": "Q3-2026",
-      "owner": "owner.darren",
+      "horizon": "0-30d",
+      "owner": "owner.todd",
       "tags": [
-        "commitment-pooling",
-        "capital",
-        "economics"
+        "a2a"
       ],
       "source_docs": [
-        "../foundations/commitment-pooling-foundations.md",
-        "external:BioregionKnwoledgeCommons/CLAUDE.md"
-      ]
-    },
-
-    {
-      "id": "initiative.commitment-pooling-integration",
-      "kind": "initiative",
-      "title": "Commitment pooling integration — C0/C1/C2 track",
-      "summary": "Extend BKC's Capital Plane with commitment pooling as a first-class economic primitive. C0: ontology + registry API. C1: pool mechanics + TBFF threshold gates. C2: KOI-net federation + GE/Sarafu bridge.",
-      "status": "planned",
-      "priority": "P1",
-      "horizon": "30-90d",
-      "owner": "owner.darren",
-      "tags": [
-        "commitment-pooling",
-        "capital",
-        "economics",
-        "grassroots-economics"
+        "https://github.com/nou-techne/nou-techne/blob/main/docs/api/API_ROADMAP.md"
       ],
-      "source_docs": [
-        "../foundations/commitment-pooling-foundations.md",
-        "../bioregional-ai-swarms-positioning.md"
-      ]
+      "completed_date": "2026-02-25"
     },
-
     {
       "id": "work.octo-branch-consolidation",
       "kind": "work_item",
@@ -762,254 +1347,214 @@
         "external:Octo/CLAUDE.md"
       ]
     },
-
     {
-      "id": "work.c0-commitment-ontology",
+      "id": "work.owocki-tranche-proposal-v1",
       "kind": "work_item",
-      "title": "C0 — Add Commitment entity types and predicates to ontology",
-      "summary": "Added Commitment, CommitmentPool, CommitmentAction entity types and 6 new predicates (pledges_commitment, aggregates_commitments, proves_commitment, redeems_via, governs_pool, disputes) to bkc-ontology.jsonld v1.1.0.",
-      "status": "done",
-      "priority": "P1",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "source_docs": [
-        "external:Octo/ontology/bkc-ontology.jsonld",
-        "../foundations/commitment-pooling-foundations.md"
-      ]
-    },
-
-    {
-      "id": "work.c0-commitment-registry",
-      "kind": "work_item",
-      "title": "C0 — Commitment registry API (create, get, state transition, evidence link)",
-      "summary": "REST API at /commitments/ and /pools/ for full commitment lifecycle. POST /commitments/create, PATCH /{rid}/state, POST /{rid}/link-evidence. Migrations 056 (registry) + 057 (pools). Router mounted in personal_ingest_api.py.",
-      "status": "done",
-      "priority": "P1",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "source_docs": [
-        "external:Octo/koi-processor/api/routers/commitment_router.py",
-        "external:Octo/koi-processor/migrations/056_commitment_registry.sql",
-        "external:Octo/koi-processor/migrations/057_commitment_pools.sql"
-      ]
-    },
-
-    {
-      "id": "work.c0-commitment-governance-extension",
-      "kind": "work_item",
-      "title": "C0 — Extend commons governance membrane to commitment lifecycle",
-      "summary": "Wire commitment state transitions (PROPOSED → VERIFIED) through the existing steward approval flow in the commons governance membrane. Commitment review joins the existing decision audit log.",
+      "title": "Owocki milestone tranche proposal v1",
+      "summary": "Ship a tranche-based funding ask tied to delivered proofs: integration, evidence-linked allocation, and weekly artifacts.",
       "status": "planned",
-      "priority": "P1",
+      "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
       "source_docs": [
-        "external:Octo/koi-processor/api/routers/commitment_router.py",
-        "../foundations/commitment-pooling-foundations.md"
-      ]
-    },
-
-    {
-      "id": "work.c0-evidence-commitment-bridge",
-      "kind": "work_item",
-      "title": "C0 — Wire Evidence entities to proves_commitment predicate",
-      "summary": "Link existing Evidence entities to Commitment pledges via proves_commitment predicate. TBFF receipt write-back can now reference the commitment it fulfills. Link endpoint: POST /commitments/{rid}/link-evidence.",
-      "status": "planned",
-      "priority": "P1",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "source_docs": [
-        "external:Octo/koi-processor/api/routers/commitment_router.py",
-        "../foundations/bioregional-ai-swarms-pattern-language.md"
-      ]
-    },
-
-    {
-      "id": "work.c0-commitment-philosophy-doc",
-      "kind": "work_item",
-      "title": "C0 — Commitment pooling foundations document",
-      "summary": "Written commitment-pooling-foundations.md in docs/foundations/. Covers philosophy (4 pillars), technical model (Sarafu/CLC DAO tiers, state machine, demurrage), integration seams (TBFF/owockibot/co-op.us/KOI-net/GE), governance guidance (Sangat-grade, consent, pattern language alignment), and adoption pathway.",
-      "status": "done",
-      "priority": "P1",
-      "horizon": "0-30d",
-      "owner": "owner.darren",
-      "source_docs": [
-        "../foundations/commitment-pooling-foundations.md"
-      ]
-    },
-
-    {
-      "id": "work.c1-commitment-pool-api",
-      "kind": "work_item",
-      "title": "C1 — CommitmentPool full mechanics (threshold, activation, governance)",
-      "summary": "Complete pool lifecycle: POST /pools/{id}/pledge (with auto-activation on threshold), steward approval flow for pool creation, GET /pools/{id}/status with threshold progress. Pool-level CAT receipts and KOI-net event emission.",
-      "status": "planned",
-      "priority": "P1",
-      "horizon": "30-90d",
-      "owner": "owner.darren",
-      "source_docs": [
-        "external:Octo/koi-processor/api/routers/commitment_router.py",
-        "../foundations/commitment-pooling-foundations.md"
-      ]
-    },
-
-    {
-      "id": "work.c1-tbff-commitment-threshold",
-      "kind": "work_item",
-      "title": "C1 — Extend TBFF threshold policy to include commitment activation gates",
-      "summary": "owockibot sees pool activation events as triggers. CommitmentPool threshold crossing → owockibot allocation proposal (≤$500 auto) or multisig escalation. Commitment pooling becomes a trigger, not just a parallel system.",
-      "status": "planned",
-      "priority": "P1",
-      "horizon": "30-90d",
-      "owner": "owner.darren",
-      "source_docs": [
-        "../foundations/commitment-pooling-foundations.md",
+        "../../pilots/front-range-cascadia-2026/telegram-gate-templates.md",
         "../bioregional-ai-swarms-positioning.md"
       ]
     },
-
     {
-      "id": "work.c1-pool-governance-membrane",
+      "id": "work.s1-data-class-matrix",
       "kind": "work_item",
-      "title": "C1 — Steward approval flow for pool creation and activation",
-      "summary": "Pool creation and activation decisions recorded in koi_commons_decisions (migration 053 extension). Stewards approve new pools before forming state. Mirrors existing commons intake governance membrane.",
+      "title": "Define and publish data-class policy matrix",
+      "summary": "Canonical classes and action matrix for read/search/chat/ingest/share.",
       "status": "planned",
-      "priority": "P1",
-      "horizon": "30-90d",
-      "owner": "owner.darren",
-      "source_docs": [
-        "../foundations/commitment-pooling-foundations.md"
-      ]
-    },
-
-    {
-      "id": "work.c1-demurrage-policy-spec",
-      "kind": "work_item",
-      "title": "C1 — Design optional demurrage policy for stale unredeemed pledges (spec only)",
-      "summary": "Document demurrage mechanics for per-pool configuration (monthly decay rate, grace period, community fund routing). Spec only — no implementation until first pilot pool establishes baseline redemption rhythms.",
-      "status": "planned",
-      "priority": "P2",
-      "horizon": "30-90d",
-      "owner": "owner.darren",
-      "source_docs": [
-        "../foundations/commitment-pooling-foundations.md"
-      ]
-    },
-
-    {
-      "id": "work.c1-ge-protocol-study",
-      "kind": "work_item",
-      "title": "C1 — Grassroots Economics / Sarafu protocol compatibility analysis",
-      "summary": "Deep technical study of CIC Stack + CLC DAO specification. Write compatibility analysis: CIC Stack ↔ KOI-net event format. Identify bridge points for Phase 3 CLC DAO integration. Output: technical memo with go/no-go recommendation for C2 bridge.",
-      "status": "planned",
-      "priority": "P1",
-      "horizon": "30-90d",
-      "owner": "owner.darren",
-      "source_docs": [
-        "../foundations/commitment-pooling-foundations.md"
-      ]
-    },
-
-    {
-      "id": "work.c2-commitment-koi-net-events",
-      "kind": "work_item",
-      "title": "C2 — Extend KOI-net protocol to carry ECDSA-signed commitment events",
-      "summary": "New event types: commitment.proposed, commitment.verified, commitment.pooled, commitment.redeemed. ECDSA-signed using existing envelope format. Enables cross-bioregion commitment visibility and routing.",
-      "status": "planned",
-      "priority": "P1",
-      "horizon": "Q3-2026",
-      "owner": "owner.darren",
-      "source_docs": [
-        "../foundations/commitment-pooling-foundations.md",
-        "external:Octo/docs/koi-protocol-alignment-master.md"
-      ]
-    },
-
-    {
-      "id": "work.c2-cross-node-pool-aggregation",
-      "kind": "work_item",
-      "title": "C2 — Cross-bioregion commitment pooling via federated events",
-      "summary": "Leaf-node commitment pools aggregate into meta-regional pools via KOI-net federation. Leaf pools pledge capacity upward; coordinator pool routes credits multi-hop. Requires C2-commitment-koi-net-events.",
-      "status": "planned",
-      "priority": "P1",
-      "horizon": "Q3-2026",
-      "owner": "owner.darren",
-      "source_docs": [
-        "../foundations/commitment-pooling-foundations.md"
-      ]
-    },
-
-    {
-      "id": "work.c2-hypercert-from-commitment",
-      "kind": "work_item",
-      "title": "C2 — Hypercerts minted from REDEEMED commitment + linked Evidence",
-      "summary": "When a commitment is REDEEMED and its Evidence entity is created, mint a Hypercert encoding the impact claim. Links commitment pooling to the broader regenerative finance stack. Depends on Q2 Hypercert work.",
-      "status": "planned",
-      "priority": "P2",
-      "horizon": "Q3-2026",
-      "owner": "owner.darren",
-      "source_docs": [
-        "../foundations/commitment-pooling-foundations.md"
-      ]
-    },
-
-    {
-      "id": "work.c2-regenerate-cascadia-pilot",
-      "kind": "work_item",
-      "title": "C2 — Pilot commitment pool with Regenerate Cascadia",
-      "summary": "First real-world commitment pool: Regenerate Cascadia members pledge watershed stewardship hours. Pool activates at threshold, TBFF evidence writes back fulfillment, Hypercert minted. Demonstration of full C0–C2 stack.",
-      "status": "planned",
-      "priority": "P1",
-      "horizon": "Q3-2026",
-      "owner": "owner.darren",
-      "source_docs": [
-        "../foundations/commitment-pooling-foundations.md",
-        "../../pilots/front-range-cascadia-2026/dual-bioregion-pilot-plan-v2.md"
-      ]
-    },
-
-    {
-      "id": "decision.commitment-pooling-native-first",
-      "kind": "decision",
-      "title": "Implement commitment pooling natively; GE compatibility study runs in parallel",
-      "summary": "Native BKC implementation proceeds immediately (C0 done, C1 planned). Grassroots Economics protocol compatibility study runs in parallel without blocking delivery. Bridge to CLC DAO added in C2 once pattern is proven locally.",
-      "status": "done",
-      "priority": "P1",
+      "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
       "source_docs": [
-        "../foundations/commitment-pooling-foundations.md"
+        "../foundations/rights-licensing-consent-policy-slots.md"
       ]
     },
-
     {
-      "id": "metric.commitment-pledges-created",
-      "kind": "metric",
-      "title": "Commitment pledges created",
-      "summary": "Count of Commitment entities in PROPOSED or higher state across all nodes.",
+      "id": "work.s2-security-lane",
+      "kind": "work_item",
+      "title": "Add security lane to operational checkpoints",
+      "summary": "Prompt-injection, poisoning, auth abuse, inversion, and key compromise checks.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/DEMO-CHECKPOINT.md"
+      ]
+    },
+    {
+      "id": "work.s3-key-lifecycle-runbook",
+      "kind": "work_item",
+      "title": "Publish key lifecycle and incident runbook",
+      "summary": "Issuance, rotation, revocation, break-glass, and post-incident audit steps.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:Octo/docs/koi-federation-operations-runbook.md"
+      ]
+    },
+    {
+      "id": "work.s4-ucan-bridge-spike",
+      "kind": "work_item",
+      "title": "UCAN bridge spike",
+      "summary": "Design and prototype one capability-delegation path without replacing current auth.",
       "status": "planned",
       "priority": "P1",
       "horizon": "30-90d",
       "owner": "owner.darren",
-      "metadata": {
-        "target": ">=1",
-        "type": "count"
-      }
+      "source_docs": [
+        "external:claude-plans/soft-stargazing-crab.md"
+      ]
     },
-
     {
-      "id": "metric.commitment-pools-active",
-      "kind": "metric",
-      "title": "Commitment pools activated",
-      "summary": "Count of CommitmentPool entities in 'active' state with at least one VERIFIED pledge.",
+      "id": "work.s5-tee-spike",
+      "kind": "work_item",
+      "title": "TEE confidential RAG spike",
+      "summary": "Benchmark one bounded TEE candidate against current runtime and decide go/no-go.",
       "status": "planned",
       "priority": "P1",
-      "horizon": "Q3-2026",
+      "horizon": "30-90d",
       "owner": "owner.darren",
-      "metadata": {
-        "target": ">=1",
-        "type": "count"
-      }
+      "source_docs": [
+        "external:claude-plans/soft-stargazing-crab.md"
+      ]
+    },
+    {
+      "id": "work.s6-evidence-grading",
+      "kind": "work_item",
+      "title": "Introduce evidence grading in architecture decisions",
+      "summary": "Tag decisions by evidence quality: standards, peer-reviewed, official docs, preprint, vendor opinion.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../../pilots/front-range-cascadia-2026/decision-log.md"
+      ]
+    },
+    {
+      "id": "work.seed-build-day-entities-script",
+      "kind": "work_item",
+      "title": "Build-day entity seeding operator script",
+      "summary": "Added operator script with dedupe checks, ingest error handling, rollback URI log, and post-seed verification guidance.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../../pilots/front-range-cascadia-2026/seed-build-day-entities.sh"
+      ],
+      "completed_date": "2026-03-02"
+    },
+    {
+      "id": "work.swarm-map-infographic",
+      "kind": "work_item",
+      "title": "Three-plane swarm map infographic",
+      "summary": "Published self-contained architecture visual at /commons/swarm-map.html for demo and social distribution.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:bioregional-commons-web/web/public/swarm-map.html"
+      ],
+      "completed_date": "2026-03-02"
+    },
+    {
+      "id": "work.tbff-receipt-to-evidence-v0",
+      "kind": "work_item",
+      "title": "TBFF receipt to Evidence write-back v0",
+      "summary": "Map flow-funding receipts to KOI Evidence entities with stable RID links for auditable capital decisions.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/bioregional-ai-swarms-pattern-language.md",
+        "../../pilots/front-range-cascadia-2026/decision-log.md"
+      ]
+    },
+    {
+      "id": "work.tbff-threshold-policy-v0",
+      "kind": "work_item",
+      "title": "TBFF threshold policy v0",
+      "summary": "Define threshold bands, authority boundaries, and override procedure with Shawn for production-safe flow funding decisions.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../bioregional-ai-swarms-positioning.md",
+        "../../pilots/front-range-cascadia-2026/decision-log.md"
+      ]
+    },
+    {
+      "id": "work.telegram-gate-metric-alignment",
+      "kind": "work_item",
+      "title": "Gate messaging metric alignment",
+      "summary": "Aligned gate templates and runbook messaging to canonical live stats, ingest/governance distinctions, and build-day claims.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../../pilots/front-range-cascadia-2026/telegram-gate-templates.md",
+        "../../pilots/front-range-cascadia-2026/mar5-build-day-runbook.md"
+      ],
+      "completed_date": "2026-03-02"
+    },
+    {
+      "id": "work.watershed-realtime-dashboard",
+      "kind": "work_item",
+      "title": "Real-time basin dashboard: reservoirs, snow, stream gauges",
+      "summary": "Live dashboard visualizing Colorado River Basin reservoir levels, snowpack, and stream gauge data from USGS/SNOTEL.",
+      "status": "done",
+      "priority": "P2",
+      "horizon": "0-30d",
+      "owner": "owner.aaron",
+      "tags": [
+        "sensing",
+        "watershed"
+      ],
+      "source_docs": [
+        "https://nou-techne.github.io/watershed-data-collection/"
+      ],
+      "completed_date": "2026-02-28"
+    },
+    {
+      "id": "work.web-ingest-ui",
+      "kind": "work_item",
+      "title": "Web ingest UI pipeline (URL → entity → confirm → receipt)",
+      "summary": "Full steward-authenticated ingest flow at /commons/ingest. URL→gpt-4o-mini extraction→preview grouped by type→frozen-payload confirm via /web/ingest BFF→receipt with new/resolved/relationships counts. Bugs fixed post-review: ingestion_stats, double-LLM-call, BFF flatten, useWebPreview interface.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:bioregional-commons-web/web/src/components/ingest/IngestPanel.tsx",
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "completed_date": "2026-03-03"
+    },
+    {
+      "id": "work.weekly-proof-pack",
+      "kind": "work_item",
+      "title": "Weekly proof pack publishing cadence",
+      "summary": "Publish one short clip, one architecture visual, and one what-shipped post each week to convert momentum into funding confidence.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../../pilots/front-range-cascadia-2026/mar5-build-day-runbook.md"
+      ]
     }
   ],
   "edges": [
@@ -1343,7 +1888,6 @@
       "to": "outcome.showcase-reliable",
       "type": "measures"
     },
-
     {
       "from": "work.c0-commitment-ontology",
       "to": "initiative.commitment-pooling-integration",
@@ -1503,6 +2047,256 @@
       "from": "metric.commitment-pools-active",
       "to": "outcome.commitment-pools-provable",
       "type": "measures"
+    },
+    {
+      "from": "work.nou-agent-auth-wave-a",
+      "to": "initiative.nou-a2a-coordination",
+      "type": "delivers"
+    },
+    {
+      "from": "work.watershed-realtime-dashboard",
+      "to": "initiative.watershed-sensing",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.owocki-swarm-foundation",
+      "to": "outcome.capital-loop-provable",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.owocki-sensing-layer",
+      "to": "initiative.tbff-knowledge-flow-pilot",
+      "type": "informs"
+    },
+    {
+      "from": "initiative.watershed-sensing",
+      "to": "initiative.owocki-sensing-layer",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.owocki-financing-facility",
+      "to": "initiative.tbff-knowledge-flow-pilot",
+      "type": "informs"
+    },
+    {
+      "from": "initiative.nou-a2a-coordination",
+      "to": "initiative.part-b-kg-chat",
+      "type": "informs"
+    },
+    {
+      "from": "initiative.owocki-swarm-foundation",
+      "to": "outcome.bioregional-swarm-live",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.owocki-sensing-layer",
+      "to": "outcome.bioregional-swarm-live",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.owocki-financing-facility",
+      "to": "outcome.bioregional-swarm-live",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.owocki-multiregion-expansion",
+      "to": "outcome.bioregional-swarm-live",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.nou-a2a-coordination",
+      "to": "outcome.bioregional-swarm-live",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.watershed-sensing",
+      "to": "outcome.bioregional-swarm-live",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.part-b-kg-chat",
+      "to": "outcome.bioregional-swarm-live",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.tbff-knowledge-flow-pilot",
+      "to": "outcome.bioregional-swarm-live",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.owocki-swarm-foundation",
+      "to": "milestone.coalition-kickoff",
+      "type": "delivers"
+    },
+    {
+      "from": "milestone.coalition-kickoff",
+      "to": "milestone.friday-sprint-cadence",
+      "type": "delivers"
+    },
+    {
+      "from": "work.c0-commitment-pooling",
+      "to": "initiative.owocki-financing-facility",
+      "type": "delivers"
+    },
+    {
+      "from": "work.c0-commitment-pooling",
+      "to": "outcome.capital-loop-provable",
+      "type": "delivers"
+    },
+    {
+      "from": "work.c1-entity-mirror-graphrag",
+      "to": "work.c0-commitment-pooling",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.c1-entity-mirror-graphrag",
+      "to": "initiative.owocki-financing-facility",
+      "type": "delivers"
+    },
+    {
+      "from": "work.c2-commitment-federation",
+      "to": "work.c1-entity-mirror-graphrag",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.c2-commitment-federation",
+      "to": "outcome.bioregional-swarm-live",
+      "type": "delivers"
+    },
+    {
+      "from": "work.tbff-receipt-to-evidence-v0",
+      "to": "work.c0-commitment-pooling",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.octo-initial-setup",
+      "to": "initiative.part-a-foundation",
+      "type": "delivers"
+    },
+    {
+      "from": "work.koi-federation-wiring",
+      "to": "initiative.part-a-foundation",
+      "type": "delivers"
+    },
+    {
+      "from": "work.web-visualizer-phase1",
+      "to": "initiative.part-a-foundation",
+      "type": "delivers"
+    },
+    {
+      "from": "work.governance-pilot-workspace",
+      "to": "initiative.part-a-foundation",
+      "type": "delivers"
+    },
+    {
+      "from": "work.native-land-watersheds",
+      "to": "initiative.part-a-foundation",
+      "type": "delivers"
+    },
+    {
+      "from": "work.koi-protocol-alignment",
+      "to": "initiative.part-a-foundation",
+      "type": "delivers"
+    },
+    {
+      "from": "work.gv-node-deployment",
+      "to": "initiative.part-a-foundation",
+      "type": "delivers"
+    },
+    {
+      "from": "work.fr-node-deployment",
+      "to": "initiative.part-a-foundation",
+      "type": "delivers"
+    },
+    {
+      "from": "work.bff-live-integration",
+      "to": "initiative.part-a-foundation",
+      "type": "delivers"
+    },
+    {
+      "from": "work.passkey-auth",
+      "to": "initiative.part-a-foundation",
+      "type": "delivers"
+    },
+    {
+      "from": "work.four-node-parity",
+      "to": "initiative.part-a-foundation",
+      "type": "delivers"
+    },
+    {
+      "from": "work.semantic-roadmap-model",
+      "to": "initiative.part-a-foundation",
+      "type": "delivers"
+    },
+    {
+      "from": "work.quality-gates-cat-receipts",
+      "to": "initiative.part-a-foundation",
+      "type": "delivers"
+    },
+    {
+      "from": "work.demo-smoke-test-suite",
+      "to": "initiative.part-a-foundation",
+      "type": "delivers"
+    },
+    {
+      "from": "work.llm-openai-migration",
+      "to": "initiative.part-a-foundation",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.part-a-foundation",
+      "to": "outcome.showcase-reliable",
+      "type": "delivers"
+    },
+    {
+      "from": "work.koi-federation-wiring",
+      "to": "milestone.first-federation-event",
+      "type": "delivers"
+    },
+    {
+      "from": "work.four-node-parity",
+      "to": "milestone.four-nodes-live",
+      "type": "delivers"
+    },
+    {
+      "from": "work.bff-live-integration",
+      "to": "milestone.web-dashboard-live",
+      "type": "delivers"
+    },
+    {
+      "from": "decision.adopt-koi-net",
+      "to": "initiative.part-a-foundation",
+      "type": "informs"
+    },
+    {
+      "from": "decision.v2-triad-governance",
+      "to": "initiative.part-a-foundation",
+      "type": "informs"
+    },
+    {
+      "from": "work.octo-initial-setup",
+      "to": "work.koi-federation-wiring",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.koi-federation-wiring",
+      "to": "work.gv-node-deployment",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.koi-federation-wiring",
+      "to": "work.fr-node-deployment",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.web-visualizer-phase1",
+      "to": "work.bff-live-integration",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.bff-live-integration",
+      "to": "work.passkey-auth",
+      "type": "depends_on"
     }
   ]
 }
