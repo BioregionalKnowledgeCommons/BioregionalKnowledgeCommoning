@@ -1,0 +1,70 @@
+name: Roadmap Suggestion
+description: Propose a new node, edge, or change to the BKC roadmap
+title: "[Roadmap] "
+labels: ["roadmap"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to suggest additions or changes to [`roadmap-data.json`](https://github.com/BioregionalKnowledgeCommons/bioregional-commons-web/blob/main/web/public/roadmap-data.json).
+        See [CONTRIBUTING-roadmap.md](https://github.com/BioregionalKnowledgeCommons/bioregional-commons-web/blob/main/CONTRIBUTING-roadmap.md) for schema reference.
+
+  - type: input
+    id: node_id
+    attributes:
+      label: Node ID (if updating an existing node)
+      description: Dot-separated ID, e.g. `work.b2-graphrag-v1`. Leave blank if proposing a new node.
+      placeholder: e.g. initiative.owocki-swarm-foundation
+    validations:
+      required: false
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind (for new nodes)
+      description: What type of node is this?
+      options:
+        - outcome
+        - initiative
+        - work_item
+        - decision
+        - risk
+        - milestone
+        - metric
+    validations:
+      required: false
+
+  - type: textarea
+    id: proposed_change
+    attributes:
+      label: Proposed Change
+      description: |
+        For new nodes: paste the full JSON object.
+        For updates: describe what fields should change and to what values.
+      placeholder: |
+        {
+          "id": "work.your-slug",
+          "kind": "work_item",
+          "title": "...",
+          ...
+        }
+    validations:
+      required: true
+
+  - type: textarea
+    id: edges_to_add
+    attributes:
+      label: Edges to Add or Remove
+      description: List any new edges connecting this node to existing nodes.
+      placeholder: |
+        { "from": "work.your-slug", "to": "outcome.bioregional-swarm-live", "type": "delivers" }
+    validations:
+      required: false
+
+  - type: textarea
+    id: justification
+    attributes:
+      label: Justification
+      description: Why should this be added? What decision, conversation, or event prompted this?
+    validations:
+      required: true
