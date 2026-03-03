@@ -39,7 +39,7 @@
 >
 > **Knowledge Plane** (BKC) — persistent truth layer
 > - 4-node federation live: Salish Sea, Front Range, Greater Victoria, Cowichan Valley
-> - 640+ entities, governance membrane (staged → approved → ingested), graph-grounded chat with 6-8 cited sources
+> - 641 entities, governance membrane (staged → approved → ingested), graph-grounded chat with 6-8 cited sources
 > - Summarizer pipeline ready: transcript → entities → federated graph
 >
 > **Coordination Plane** (Clawsmos + co-op.us) — real-time agent layer
