@@ -2,8 +2,8 @@
   "@context": "./semantic-roadmap.context.json",
   "roadmap_id": "bkc.roadmap.2026.part-b",
   "program": "Bioregional Knowledge Commons",
-  "version": "0.2.0",
-  "as_of": "2026-03-01",
+  "version": "0.3.0",
+  "as_of": "2026-03-03",
   "owners": [
     {
       "id": "owner.darren",
@@ -126,17 +126,19 @@
       "id": "initiative.tbff-knowledge-flow-pilot",
       "kind": "initiative",
       "title": "Knowledge to flow funding pilot integration",
-      "summary": "Codify and test the KOI-to-TBFF loop with evidence write-back and governance traceability.",
-      "status": "planned",
-      "priority": "P1",
-      "horizon": "30-90d",
+      "summary": "Execute TBFF v0 in production scope: threshold policy, flow write-back, and evidence receipts tied to real allocations.",
+      "status": "in_progress",
+      "priority": "P0",
+      "horizon": "0-30d",
       "owner": "owner.darren",
       "tags": [
         "finance",
-        "integration"
+        "integration",
+        "tbff"
       ],
       "source_docs": [
-        "external:RegenAI/koi-processor/docs/tbff-integration-contract.md"
+        "../bioregional-ai-swarms-positioning.md",
+        "../foundations/bioregional-ai-swarms-pattern-language.md"
       ]
     },
     {
@@ -318,13 +320,14 @@
       "id": "work.b4-tbff-flow-integration",
       "kind": "work_item",
       "title": "Implement TBFF flow write-back loop",
-      "summary": "Move from contract-only to running integration with governance traceability.",
-      "status": "planned",
-      "priority": "P1",
-      "horizon": "30-90d",
+      "summary": "Take TBFF from design to running loop: flow decisions become KOI evidence-linked records with provenance.",
+      "status": "in_progress",
+      "priority": "P0",
+      "horizon": "0-30d",
       "owner": "owner.darren",
       "source_docs": [
-        "external:RegenAI/koi-processor/docs/tbff-integration-contract.md"
+        "../bioregional-ai-swarms-positioning.md",
+        "../foundations/bioregional-ai-swarms-pattern-language.md"
       ]
     },
     {
@@ -459,6 +462,234 @@
       "metadata": {
         "target": "<=2.0s",
         "type": "latency"
+      }
+    },
+    {
+      "id": "work.swarm-map-infographic",
+      "kind": "work_item",
+      "title": "Three-plane swarm map infographic",
+      "summary": "Published self-contained architecture visual at /commons/swarm-map.html for demo and social distribution.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:bioregional-commons-web/web/public/swarm-map.html"
+      ]
+    },
+    {
+      "id": "work.seed-build-day-entities-script",
+      "kind": "work_item",
+      "title": "Build-day entity seeding operator script",
+      "summary": "Added operator script with dedupe checks, ingest error handling, rollback URI log, and post-seed verification guidance.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../../pilots/front-range-cascadia-2026/seed-build-day-entities.sh"
+      ]
+    },
+    {
+      "id": "work.telegram-gate-metric-alignment",
+      "kind": "work_item",
+      "title": "Gate messaging metric alignment",
+      "summary": "Aligned gate templates and runbook messaging to canonical live stats, ingest/governance distinctions, and build-day claims.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../../pilots/front-range-cascadia-2026/telegram-gate-templates.md",
+        "../../pilots/front-range-cascadia-2026/mar5-build-day-runbook.md"
+      ]
+    },
+    {
+      "id": "outcome.capital-loop-provable",
+      "kind": "outcome",
+      "title": "Capital allocation loop is provable end-to-end",
+      "summary": "At least one real allocation is linked to machine-readable evidence and provenance receipts.",
+      "status": "in_progress",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "finance",
+        "evidence",
+        "tbff"
+      ],
+      "source_docs": [
+        "../bioregional-ai-swarms-positioning.md",
+        "../foundations/bioregional-ai-swarms-pattern-language.md"
+      ]
+    },
+    {
+      "id": "work.tbff-threshold-policy-v0",
+      "kind": "work_item",
+      "title": "TBFF threshold policy v0",
+      "summary": "Define threshold bands, authority boundaries, and override procedure with Shawn for production-safe flow funding decisions.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../bioregional-ai-swarms-positioning.md",
+        "../../pilots/front-range-cascadia-2026/decision-log.md"
+      ]
+    },
+    {
+      "id": "work.tbff-receipt-to-evidence-v0",
+      "kind": "work_item",
+      "title": "TBFF receipt to Evidence write-back v0",
+      "summary": "Map flow-funding receipts to KOI Evidence entities with stable RID links for auditable capital decisions.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/bioregional-ai-swarms-pattern-language.md",
+        "../../pilots/front-range-cascadia-2026/decision-log.md"
+      ]
+    },
+    {
+      "id": "work.external-pipeline-1-live",
+      "kind": "work_item",
+      "title": "External ingest pipeline #1 live",
+      "summary": "One external collaborator pipeline writes valid payloads to /ingest on a repeatable schedule with error handling.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../../pilots/front-range-cascadia-2026/mar5-build-day-runbook.md",
+        "../../pilots/front-range-cascadia-2026/partner-quickstart.md"
+      ]
+    },
+    {
+      "id": "work.external-pipeline-2-live",
+      "kind": "work_item",
+      "title": "External ingest pipeline #2 live",
+      "summary": "Second independent external pipeline is integrated so interop is not single-partner fragile.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../../pilots/front-range-cascadia-2026/mar5-build-day-runbook.md",
+        "../../pilots/front-range-cascadia-2026/partner-quickstart.md"
+      ]
+    },
+    {
+      "id": "work.owocki-tranche-proposal-v1",
+      "kind": "work_item",
+      "title": "Owocki milestone tranche proposal v1",
+      "summary": "Ship a tranche-based funding ask tied to delivered proofs: integration, evidence-linked allocation, and weekly artifacts.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../../pilots/front-range-cascadia-2026/telegram-gate-templates.md",
+        "../bioregional-ai-swarms-positioning.md"
+      ]
+    },
+    {
+      "id": "work.weekly-proof-pack",
+      "kind": "work_item",
+      "title": "Weekly proof pack publishing cadence",
+      "summary": "Publish one short clip, one architecture visual, and one what-shipped post each week to convert momentum into funding confidence.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../../pilots/front-range-cascadia-2026/mar5-build-day-runbook.md"
+      ]
+    },
+    {
+      "id": "milestone.post-demo-proof-pack-2026-03-05",
+      "kind": "milestone",
+      "title": "Post-demo proof pack published",
+      "summary": "Within two hours of demo end: one clip, one architecture visual, one shipped summary post are published.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "due_date": "2026-03-05"
+    },
+    {
+      "id": "milestone.recurring-sprint-kickoff-2026-03-07",
+      "kind": "milestone",
+      "title": "First recurring Friday sprint executed",
+      "summary": "Run the first post-demo sprint and capture commitments/outcomes in a public recap.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "due_date": "2026-03-07"
+    },
+    {
+      "id": "milestone.tbff-v0-writeback-demo-2026-03-14",
+      "kind": "milestone",
+      "title": "TBFF v0 write-back demo complete",
+      "summary": "Demonstrate thresholded flow decision logged to KOI Evidence entities with provenance.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "due_date": "2026-03-14"
+    },
+    {
+      "id": "milestone.two-pipelines-one-allocation-2026-03-21",
+      "kind": "milestone",
+      "title": "Two external pipelines and one evidence-linked allocation",
+      "summary": "Hit interop and capital-loop proof thresholds: two partner pipelines plus one allocation with evidence receipts.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "due_date": "2026-03-21"
+    },
+    {
+      "id": "metric.external-pipelines-live",
+      "kind": "metric",
+      "title": "External pipelines live",
+      "summary": "Count of independent external pipelines writing successfully to /ingest.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "metadata": {
+        "target": ">=2",
+        "type": "count"
+      }
+    },
+    {
+      "id": "metric.allocations-with-evidence-receipts",
+      "kind": "metric",
+      "title": "Allocations with evidence receipts",
+      "summary": "Number of capital allocations with linked KOI Evidence receipts and provenance references.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "metadata": {
+        "target": ">=1",
+        "type": "count"
+      }
+    },
+    {
+      "id": "metric.weekly-public-artifacts",
+      "kind": "metric",
+      "title": "Weekly public artifacts shipped",
+      "summary": "Weekly count of externally shareable artifacts (clip, visual, shipped summary).",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "metadata": {
+        "target": ">=1/week",
+        "type": "rate"
       }
     }
   ],
@@ -661,6 +892,131 @@
     {
       "from": "metric.chat-p95-latency",
       "to": "outcome.eval-driven-kg-chat",
+      "type": "measures"
+    },
+    {
+      "from": "work.swarm-map-infographic",
+      "to": "initiative.build-day-sprint-mar5",
+      "type": "delivers"
+    },
+    {
+      "from": "work.seed-build-day-entities-script",
+      "to": "initiative.build-day-sprint-mar5",
+      "type": "delivers"
+    },
+    {
+      "from": "work.telegram-gate-metric-alignment",
+      "to": "initiative.build-day-sprint-mar5",
+      "type": "delivers"
+    },
+    {
+      "from": "work.tbff-threshold-policy-v0",
+      "to": "initiative.tbff-knowledge-flow-pilot",
+      "type": "delivers"
+    },
+    {
+      "from": "work.tbff-receipt-to-evidence-v0",
+      "to": "initiative.tbff-knowledge-flow-pilot",
+      "type": "delivers"
+    },
+    {
+      "from": "work.external-pipeline-1-live",
+      "to": "initiative.tbff-knowledge-flow-pilot",
+      "type": "delivers"
+    },
+    {
+      "from": "work.external-pipeline-2-live",
+      "to": "initiative.tbff-knowledge-flow-pilot",
+      "type": "delivers"
+    },
+    {
+      "from": "work.weekly-proof-pack",
+      "to": "outcome.showcase-reliable",
+      "type": "delivers"
+    },
+    {
+      "from": "work.owocki-tranche-proposal-v1",
+      "to": "outcome.showcase-reliable",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.tbff-knowledge-flow-pilot",
+      "to": "outcome.capital-loop-provable",
+      "type": "delivers"
+    },
+    {
+      "from": "work.tbff-threshold-policy-v0",
+      "to": "work.b4-tbff-flow-integration",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b4-tbff-flow-integration",
+      "to": "work.tbff-receipt-to-evidence-v0",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b4-tbff-flow-integration",
+      "to": "work.external-pipeline-1-live",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.external-pipeline-1-live",
+      "to": "work.external-pipeline-2-live",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.weekly-proof-pack",
+      "to": "work.owocki-tranche-proposal-v1",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.weekly-proof-pack",
+      "to": "milestone.post-demo-proof-pack-2026-03-05",
+      "type": "delivers"
+    },
+    {
+      "from": "work.weekly-proof-pack",
+      "to": "milestone.recurring-sprint-kickoff-2026-03-07",
+      "type": "delivers"
+    },
+    {
+      "from": "work.tbff-threshold-policy-v0",
+      "to": "milestone.tbff-v0-writeback-demo-2026-03-14",
+      "type": "delivers"
+    },
+    {
+      "from": "work.tbff-receipt-to-evidence-v0",
+      "to": "milestone.tbff-v0-writeback-demo-2026-03-14",
+      "type": "delivers"
+    },
+    {
+      "from": "work.external-pipeline-1-live",
+      "to": "milestone.two-pipelines-one-allocation-2026-03-21",
+      "type": "delivers"
+    },
+    {
+      "from": "work.external-pipeline-2-live",
+      "to": "milestone.two-pipelines-one-allocation-2026-03-21",
+      "type": "delivers"
+    },
+    {
+      "from": "work.tbff-receipt-to-evidence-v0",
+      "to": "milestone.two-pipelines-one-allocation-2026-03-21",
+      "type": "delivers"
+    },
+    {
+      "from": "metric.external-pipelines-live",
+      "to": "outcome.capital-loop-provable",
+      "type": "measures"
+    },
+    {
+      "from": "metric.allocations-with-evidence-receipts",
+      "to": "outcome.capital-loop-provable",
+      "type": "measures"
+    },
+    {
+      "from": "metric.weekly-public-artifacts",
+      "to": "outcome.showcase-reliable",
       "type": "measures"
     }
   ]

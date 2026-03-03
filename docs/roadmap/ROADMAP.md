@@ -2,24 +2,25 @@
 
 - Program: **Bioregional Knowledge Commons**
 - Roadmap ID: `bkc.roadmap.2026.part-b`
-- Version: `0.2.0`
-- As of: `2026-03-01`
-- Generated: `2026-03-01 08:05 UTC`
+- Version: `0.3.0`
+- As of: `2026-03-03`
+- Generated: `2026-03-03 00:14 UTC`
 
 ## Status Summary
 
 | Status | Count |
 |---|---|
-| `in_progress` | 3 |
-| `planned` | 21 |
+| `in_progress` | 6 |
+| `planned` | 32 |
 | `blocked` | 0 |
-| `done` | 8 |
+| `done` | 11 |
 | `deprecated` | 0 |
 
 ## Outcomes
 
 | ID | Title | Status | Priority | Horizon | Owner |
 |---|---|---|---|---|---|
+| `outcome.capital-loop-provable` | Capital allocation loop is provable end-to-end | `in_progress` | `P0` | `0-30d` | `owner.darren` |
 | `outcome.showcase-reliable` | Showcase reliability remains high across 4 nodes | `in_progress` | `P0` | `0-30d` | `owner.darren` |
 | `outcome.policy-governed-sharing` | Consent and policy are enforceable in runtime behavior | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `outcome.secure-federation-ops` | Federation security controls are tested and drillable | `planned` | `P0` | `0-30d` | `owner.darren` |
@@ -29,28 +30,37 @@
 
 | ID | Title | Status | Priority | Horizon | Owner |
 |---|---|---|---|---|---|
+| `initiative.tbff-knowledge-flow-pilot` | Knowledge to flow funding pilot integration | `in_progress` | `P0` | `0-30d` | `owner.darren` |
 | `initiative.part-b-kg-chat` | Part B knowledge-graph chat roadmap | `in_progress` | `P0` | `0-30d` | `owner.darren` |
 | `initiative.part-b-security-addendum` | Part B security and governance addendum | `planned` | `P0` | `0-30d` | `owner.darren` |
-| `initiative.tbff-knowledge-flow-pilot` | Knowledge to flow funding pilot integration | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `initiative.build-day-sprint-mar5` | Mar 5 Build Day sprint — interop and demo readiness | `done` | `P0` | `0-30d` | `owner.darren` |
 
 ## Work Items
 
 | ID | Title | Status | Priority | Horizon | Owner |
 |---|---|---|---|---|---|
+| `work.b4-tbff-flow-integration` | Implement TBFF flow write-back loop | `in_progress` | `P0` | `0-30d` | `owner.darren` |
 | `work.s2-security-lane` | Add security lane to operational checkpoints | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.b5-eval-gates` | Define B5 chat evaluation gates | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.s1-data-class-matrix` | Define and publish data-class policy matrix | `planned` | `P0` | `0-30d` | `owner.darren` |
+| `work.external-pipeline-1-live` | External ingest pipeline #1 live | `planned` | `P0` | `0-30d` | `owner.darren` |
+| `work.external-pipeline-2-live` | External ingest pipeline #2 live | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.s6-evidence-grading` | Introduce evidence grading in architecture decisions | `planned` | `P0` | `0-30d` | `owner.darren` |
+| `work.owocki-tranche-proposal-v1` | Owocki milestone tranche proposal v1 | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.s3-key-lifecycle-runbook` | Publish key lifecycle and incident runbook | `planned` | `P0` | `0-30d` | `owner.darren` |
-| `work.b4-tbff-flow-integration` | Implement TBFF flow write-back loop | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `work.tbff-receipt-to-evidence-v0` | TBFF receipt to Evidence write-back v0 | `planned` | `P0` | `0-30d` | `owner.darren` |
+| `work.tbff-threshold-policy-v0` | TBFF threshold policy v0 | `planned` | `P0` | `0-30d` | `owner.darren` |
+| `work.weekly-proof-pack` | Weekly proof pack publishing cadence | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.b3-federated-chat-policy` | Implement federated chat policy boundaries | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.b2-graphrag-v1` | Prototype GraphRAG v1 | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.s5-tee-spike` | TEE confidential RAG spike | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.s4-ucan-bridge-spike` | UCAN bridge spike | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.a2a-agent-card` | A2A agent card deployment | `done` | `P0` | `0-30d` | `owner.darren` |
 | `work.b1-chat-retrieval-hardening` | B1 — Chat retrieval hardening | `done` | `P0` | `0-30d` | `owner.darren` |
+| `work.seed-build-day-entities-script` | Build-day entity seeding operator script | `done` | `P0` | `0-30d` | `owner.darren` |
+| `work.telegram-gate-metric-alignment` | Gate messaging metric alignment | `done` | `P0` | `0-30d` | `owner.darren` |
 | `work.entity-seeding-swarm-actors` | Swarm actor entity seeding | `done` | `P0` | `0-30d` | `owner.darren` |
+| `work.swarm-map-infographic` | Three-plane swarm map infographic | `done` | `P0` | `0-30d` | `owner.darren` |
 | `work.chat-fanout-scoring` | Chat fanout scoring and all-node responses | `done` | `P1` | `0-30d` | `owner.darren` |
 | `work.commons-prestage-helper` | Commons pre-stage helper (KOI-net share runbook) | `done` | `P1` | `0-30d` | `owner.darren` |
 
@@ -58,19 +68,28 @@
 
 1. `work.a2a-agent-card` — A2A agent card deployment (done)
 2. `work.b1-chat-retrieval-hardening` — B1 — Chat retrieval hardening (done)
-3. `work.b4-tbff-flow-integration` — Implement TBFF flow write-back loop (planned)
-4. `work.b5-eval-gates` — Define B5 chat evaluation gates (planned)
-5. `work.chat-fanout-scoring` — Chat fanout scoring and all-node responses (done)
-6. `work.commons-prestage-helper` — Commons pre-stage helper (KOI-net share runbook) (done)
-7. `work.entity-seeding-swarm-actors` — Swarm actor entity seeding (done)
-8. `work.s1-data-class-matrix` — Define and publish data-class policy matrix (planned)
-9. `work.s3-key-lifecycle-runbook` — Publish key lifecycle and incident runbook (planned)
-10. `work.s6-evidence-grading` — Introduce evidence grading in architecture decisions (planned)
-11. `work.b2-graphrag-v1` — Prototype GraphRAG v1 (planned)
-12. `work.s4-ucan-bridge-spike` — UCAN bridge spike (planned)
-13. `work.s5-tee-spike` — TEE confidential RAG spike (planned)
-14. `work.s2-security-lane` — Add security lane to operational checkpoints (planned)
-15. `work.b3-federated-chat-policy` — Implement federated chat policy boundaries (planned)
+3. `work.b5-eval-gates` — Define B5 chat evaluation gates (planned)
+4. `work.chat-fanout-scoring` — Chat fanout scoring and all-node responses (done)
+5. `work.commons-prestage-helper` — Commons pre-stage helper (KOI-net share runbook) (done)
+6. `work.entity-seeding-swarm-actors` — Swarm actor entity seeding (done)
+7. `work.s1-data-class-matrix` — Define and publish data-class policy matrix (planned)
+8. `work.s3-key-lifecycle-runbook` — Publish key lifecycle and incident runbook (planned)
+9. `work.s6-evidence-grading` — Introduce evidence grading in architecture decisions (planned)
+10. `work.seed-build-day-entities-script` — Build-day entity seeding operator script (done)
+11. `work.swarm-map-infographic` — Three-plane swarm map infographic (done)
+12. `work.tbff-threshold-policy-v0` — TBFF threshold policy v0 (planned)
+13. `work.telegram-gate-metric-alignment` — Gate messaging metric alignment (done)
+14. `work.weekly-proof-pack` — Weekly proof pack publishing cadence (planned)
+15. `work.b2-graphrag-v1` — Prototype GraphRAG v1 (planned)
+16. `work.s4-ucan-bridge-spike` — UCAN bridge spike (planned)
+17. `work.s5-tee-spike` — TEE confidential RAG spike (planned)
+18. `work.s2-security-lane` — Add security lane to operational checkpoints (planned)
+19. `work.b3-federated-chat-policy` — Implement federated chat policy boundaries (planned)
+20. `work.b4-tbff-flow-integration` — Implement TBFF flow write-back loop (in_progress)
+21. `work.owocki-tranche-proposal-v1` — Owocki milestone tranche proposal v1 (planned)
+22. `work.tbff-receipt-to-evidence-v0` — TBFF receipt to Evidence write-back v0 (planned)
+23. `work.external-pipeline-1-live` — External ingest pipeline #1 live (planned)
+24. `work.external-pipeline-2-live` — External ingest pipeline #2 live (planned)
 
 ## Risks and Mitigations
 
@@ -82,7 +101,11 @@
 
 | ID | Title | Status | Priority | Horizon | Owner |
 |---|---|---|---|---|---|
+| `milestone.recurring-sprint-kickoff-2026-03-07` | First recurring Friday sprint executed | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `milestone.part-b-p0-complete` | Part B P0 controls complete | `planned` | `P0` | `0-30d` | `owner.darren` |
+| `milestone.post-demo-proof-pack-2026-03-05` | Post-demo proof pack published | `planned` | `P0` | `0-30d` | `owner.darren` |
+| `milestone.tbff-v0-writeback-demo-2026-03-14` | TBFF v0 write-back demo complete | `planned` | `P0` | `0-30d` | `owner.darren` |
+| `milestone.two-pipelines-one-allocation-2026-03-21` | Two external pipelines and one evidence-linked allocation | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `milestone.part-b-spikes-reviewed` | UCAN and TEE spikes reviewed | `planned` | `P1` | `30-90d` | `owner.darren` |
 
 ## Decisions
@@ -96,7 +119,10 @@
 
 | ID | Title | Status | Priority | Horizon | Owner |
 |---|---|---|---|---|---|
+| `metric.allocations-with-evidence-receipts` | Allocations with evidence receipts | `planned` | `P0` | `0-30d` | `owner.darren` |
+| `metric.external-pipelines-live` | External pipelines live | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `metric.security-preflight-runtime` | Security preflight runtime | `planned` | `P0` | `0-30d` | `owner.darren` |
+| `metric.weekly-public-artifacts` | Weekly public artifacts shipped | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `metric.chat-p95-latency` | Federated chat p95 latency | `planned` | `P1` | `30-90d` | `owner.darren` |
 
 ## Canonical Sources
