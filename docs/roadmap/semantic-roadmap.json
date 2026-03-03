@@ -157,7 +157,7 @@
     {
       "id": "initiative.build-day-sprint-mar5",
       "kind": "initiative",
-      "title": "Mar 5 Build Day sprint — interop and demo readiness",
+      "title": "Mar 5 Build Day sprint \u2014 interop and demo readiness",
       "summary": "Completed pre-demo sprint: B1 retrieval hardening, A2A agent card, swarm entity seeding, chat scoring, commons pre-stage helper. All items done as of 2026-03-01.",
       "status": "done",
       "priority": "P0",
@@ -177,7 +177,7 @@
     {
       "id": "initiative.commitment-pooling-integration",
       "kind": "initiative",
-      "title": "Commitment pooling integration — C0/C1/C2 track",
+      "title": "Commitment pooling integration \u2014 C0/C1/C2 track",
       "summary": "Extend BKC's Capital Plane with commitment pooling as a first-class economic primitive. C0: ontology + registry API. C1: pool mechanics + TBFF threshold gates. C2: KOI-net federation + GE/Sarafu bridge.",
       "status": "planned",
       "priority": "P1",
@@ -197,7 +197,7 @@
     {
       "id": "initiative.nou-a2a-coordination",
       "kind": "initiative",
-      "title": "A2A agent coordination protocol (co-op.us Waves A–E)",
+      "title": "A2A agent coordination protocol (co-op.us Waves A\u2013E)",
       "summary": "Agent-to-agent coordination protocol from nou-techne enabling autonomous agent interop across the coalition.",
       "status": "in_progress",
       "priority": "P1",
@@ -241,7 +241,7 @@
     {
       "id": "initiative.owocki-sensing-layer",
       "kind": "initiative",
-      "title": "Ecological sensing agents — Colorado River Basin",
+      "title": "Ecological sensing agents \u2014 Colorado River Basin",
       "summary": "AI sensing agents monitoring Colorado River Basin ecology, feeding bioregional knowledge commons and capital allocation.",
       "status": "planned",
       "priority": "P1",
@@ -354,7 +354,7 @@
     },
     {
       "id": "work.bff-live-integration",
-      "kind": "work",
+      "kind": "work_item",
       "title": "BFF layer + live KOI node integration + entity browser + search",
       "summary": "Built Next.js Backend-for-Frontend proxy connecting web dashboard to all 4 KOI nodes. Entity browser with type filtering and detail pages.",
       "status": "done",
@@ -369,8 +369,8 @@
     },
     {
       "id": "work.demo-smoke-test-suite",
-      "kind": "work",
-      "title": "demo-smoke.sh — automated 6-check preflight for all 4 nodes",
+      "kind": "work_item",
+      "title": "demo-smoke.sh \u2014 automated 6-check preflight for all 4 nodes",
       "summary": "Created automated smoke test script checking health, entity count, search, chat, ingest, and federation across all nodes.",
       "status": "done",
       "priority": "P1",
@@ -384,7 +384,7 @@
     },
     {
       "id": "work.four-node-parity",
-      "kind": "work",
+      "kind": "work_item",
       "title": "All 4 nodes at same codebase version, smoke tested",
       "summary": "Brought Octo, GV, FR, and CV nodes to identical codebase version with full smoke test suite passing on all.",
       "status": "done",
@@ -399,7 +399,7 @@
     },
     {
       "id": "work.fr-node-deployment",
-      "kind": "work",
+      "kind": "work_item",
       "title": "Front Range KOI node deployed (localhost:8355)",
       "summary": "Deployed FR KOI node on Octo server at port 8355 with separate database and venv, federating with Octo coordinator.",
       "status": "done",
@@ -414,7 +414,7 @@
     },
     {
       "id": "work.governance-pilot-workspace",
-      "kind": "work",
+      "kind": "work_item",
       "title": "Dual-bioregion pilot workspace + V2 triad governance model",
       "summary": "Created BioregionalKnowledgeCommoning repo with foundations docs, pilot plans, and V2 triad governance (node-sovereign + pilot-chartered + commons-governed).",
       "status": "done",
@@ -429,7 +429,7 @@
     },
     {
       "id": "work.gv-node-deployment",
-      "kind": "work",
+      "kind": "work_item",
       "title": "Greater Victoria leaf node deployed to remote server (poly)",
       "summary": "Deployed GV KOI node to poly server (37.27.48.12) with dedicated database, systemd service, and federation peering.",
       "status": "done",
@@ -444,7 +444,7 @@
     },
     {
       "id": "work.koi-federation-wiring",
-      "kind": "work",
+      "kind": "work_item",
       "title": "KOI-net federation infrastructure (poller, event emission, peer sync)",
       "summary": "Wired KOI-net federation protocol with ECDSA-signed envelopes, event polling, and peer synchronization between nodes.",
       "status": "done",
@@ -459,8 +459,8 @@
     },
     {
       "id": "work.koi-protocol-alignment",
-      "kind": "work",
-      "title": "P5–P9 KOI-net protocol alignment + ECDSA key encryption",
+      "kind": "work_item",
+      "title": "P5\u2013P9 KOI-net protocol alignment + ECDSA key encryption",
       "summary": "Aligned KOI processor with protocol phases P5 through P9 including ECDSA key management and encrypted event envelopes.",
       "status": "done",
       "priority": "P0",
@@ -474,7 +474,7 @@
     },
     {
       "id": "work.llm-openai-migration",
-      "kind": "work",
+      "kind": "work_item",
       "title": "LLM backend migrated from Gemini to OpenAI (gpt-4o-mini)",
       "summary": "Migrated LLM enrichment backend from Google Gemini to OpenAI gpt-4o-mini with dispatcher pattern preserving Gemini as fallback.",
       "status": "done",
@@ -489,7 +489,7 @@
     },
     {
       "id": "work.native-land-watersheds",
-      "kind": "work",
+      "kind": "work_item",
       "title": "Native Land Digital API + GRDC watershed data integration",
       "summary": "Integrated Native Land Digital territories API and GRDC watershed boundary data into the web visualizer.",
       "status": "done",
@@ -504,7 +504,7 @@
     },
     {
       "id": "work.octo-initial-setup",
-      "kind": "work",
+      "kind": "work_item",
       "title": "Octo agent initial setup + holonic federation architecture",
       "summary": "Created Octo agent with OpenClaw workspace, established holonic network design with coordinator/leaf node topology.",
       "status": "done",
@@ -519,7 +519,7 @@
     },
     {
       "id": "work.passkey-auth",
-      "kind": "work",
+      "kind": "work_item",
       "title": "WebAuthn passkey auth + steward authorization per node",
       "summary": "Implemented WebAuthn passkey authentication with one-tap sign-in, steward role authorization per node, and dual-layer JWT validation.",
       "status": "done",
@@ -534,7 +534,7 @@
     },
     {
       "id": "work.quality-gates-cat-receipts",
-      "kind": "work",
+      "kind": "work_item",
       "title": "Quality gates (4-stage pipeline) + CAT receipts (migration 055)",
       "summary": "Built 4-stage quality gate pipeline for content assessment and CAT (Content Assessment Token) receipt system with database migration.",
       "status": "done",
@@ -549,7 +549,7 @@
     },
     {
       "id": "work.semantic-roadmap-model",
-      "kind": "work",
+      "kind": "work_item",
       "title": "Semantic roadmap model + generator + CI validation",
       "summary": "Designed semantic roadmap JSON schema with typed nodes (outcome, initiative, work, milestone, decision), generator script, and validation.",
       "status": "done",
@@ -564,7 +564,7 @@
     },
     {
       "id": "work.web-visualizer-phase1",
-      "kind": "work",
+      "kind": "work_item",
       "title": "3D globe visualizer + NASA imagery + ecoregion overlays",
       "summary": "Built interactive Three.js globe with NASA Blue Marble imagery, ecoregion data overlays, and node location markers.",
       "status": "done",
@@ -581,7 +581,7 @@
       "id": "milestone.coalition-kickoff",
       "kind": "milestone",
       "title": "First bioregional swarm build day",
-      "summary": "BKC + owocki + Todd + Aaron first joint build day — coalition work coordinated and demoed.",
+      "summary": "BKC + owocki + Todd + Aaron first joint build day \u2014 coalition work coordinated and demoed.",
       "status": "planned",
       "priority": "P0",
       "horizon": "0-30d",
@@ -940,7 +940,7 @@
     {
       "id": "work.b1-chat-retrieval-hardening",
       "kind": "work_item",
-      "title": "B1 — Chat retrieval hardening",
+      "title": "B1 \u2014 Chat retrieval hardening",
       "summary": "Upgraded /chat to search doc chunks (koi_memory_chunks), 2-hop relationship CTE (LIMIT 50), web source context. Enhanced bioregional system prompt with citation instructions. Latency <6s, returns 6-8 sources.",
       "status": "done",
       "priority": "P0",
@@ -1007,8 +1007,8 @@
     {
       "id": "work.c0-commitment-governance-extension",
       "kind": "work_item",
-      "title": "C0 — Extend commons governance membrane to commitment lifecycle",
-      "summary": "Wire commitment state transitions (PROPOSED → VERIFIED) through the existing steward approval flow in the commons governance membrane. Commitment review joins the existing decision audit log.",
+      "title": "C0 \u2014 Extend commons governance membrane to commitment lifecycle",
+      "summary": "Wire commitment state transitions (PROPOSED \u2192 VERIFIED) through the existing steward approval flow in the commons governance membrane. Commitment review joins the existing decision audit log.",
       "status": "planned",
       "priority": "P1",
       "horizon": "0-30d",
@@ -1021,7 +1021,7 @@
     {
       "id": "work.c0-commitment-ontology",
       "kind": "work_item",
-      "title": "C0 — Add Commitment entity types and predicates to ontology",
+      "title": "C0 \u2014 Add Commitment entity types and predicates to ontology",
       "summary": "Added Commitment, CommitmentPool, CommitmentAction entity types and 6 new predicates (pledges_commitment, aggregates_commitments, proves_commitment, redeems_via, governs_pool, disputes) to bkc-ontology.jsonld v1.1.0.",
       "status": "done",
       "priority": "P1",
@@ -1036,7 +1036,7 @@
     {
       "id": "work.c0-commitment-philosophy-doc",
       "kind": "work_item",
-      "title": "C0 — Commitment pooling foundations document",
+      "title": "C0 \u2014 Commitment pooling foundations document",
       "summary": "Written commitment-pooling-foundations.md in docs/foundations/. Covers philosophy (4 pillars), technical model (Sarafu/CLC DAO tiers, state machine, demurrage), integration seams (TBFF/owockibot/co-op.us/KOI-net/GE), governance guidance (Sangat-grade, consent, pattern language alignment), and adoption pathway.",
       "status": "done",
       "priority": "P1",
@@ -1050,7 +1050,7 @@
     {
       "id": "work.c0-commitment-pooling",
       "kind": "work_item",
-      "title": "C0: Commitment pooling — ontology, migrations, API router",
+      "title": "C0: Commitment pooling \u2014 ontology, migrations, API router",
       "summary": "Ontology v1.1.0 adds Commitment/CommitmentPool/CommitmentAction (3 types, 6 predicates). Migrations 056+057 create commitment registry with 9-state lifecycle and threshold-activated pools. 10 API endpoints across /commitments/* and /pools/*. Grounded in Grassroots Economics / Sarafu heritage.",
       "status": "done",
       "priority": "P0",
@@ -1070,7 +1070,7 @@
     {
       "id": "work.c0-commitment-registry",
       "kind": "work_item",
-      "title": "C0 — Commitment registry API (create, get, state transition, evidence link)",
+      "title": "C0 \u2014 Commitment registry API (create, get, state transition, evidence link)",
       "summary": "REST API at /commitments/ and /pools/ for full commitment lifecycle. POST /commitments/create, PATCH /{rid}/state, POST /{rid}/link-evidence. Migrations 056 (registry) + 057 (pools). Router mounted in personal_ingest_api.py.",
       "status": "done",
       "priority": "P1",
@@ -1086,7 +1086,7 @@
     {
       "id": "work.c0-evidence-commitment-bridge",
       "kind": "work_item",
-      "title": "C0 — Wire Evidence entities to proves_commitment predicate",
+      "title": "C0 \u2014 Wire Evidence entities to proves_commitment predicate",
       "summary": "Link existing Evidence entities to Commitment pledges via proves_commitment predicate. TBFF receipt write-back can now reference the commitment it fulfills. Link endpoint: POST /commitments/{rid}/link-evidence.",
       "status": "planned",
       "priority": "P1",
@@ -1100,7 +1100,7 @@
     {
       "id": "work.c1-commitment-pool-api",
       "kind": "work_item",
-      "title": "C1 — CommitmentPool full mechanics (threshold, activation, governance)",
+      "title": "C1 \u2014 CommitmentPool full mechanics (threshold, activation, governance)",
       "summary": "Complete pool lifecycle: POST /pools/{id}/pledge (with auto-activation on threshold), steward approval flow for pool creation, GET /pools/{id}/status with threshold progress. Pool-level CAT receipts and KOI-net event emission.",
       "status": "planned",
       "priority": "P1",
@@ -1114,8 +1114,8 @@
     {
       "id": "work.c1-demurrage-policy-spec",
       "kind": "work_item",
-      "title": "C1 — Design optional demurrage policy for stale unredeemed pledges (spec only)",
-      "summary": "Document demurrage mechanics for per-pool configuration (monthly decay rate, grace period, community fund routing). Spec only — no implementation until first pilot pool establishes baseline redemption rhythms.",
+      "title": "C1 \u2014 Design optional demurrage policy for stale unredeemed pledges (spec only)",
+      "summary": "Document demurrage mechanics for per-pool configuration (monthly decay rate, grace period, community fund routing). Spec only \u2014 no implementation until first pilot pool establishes baseline redemption rhythms.",
       "status": "planned",
       "priority": "P2",
       "horizon": "30-90d",
@@ -1141,8 +1141,8 @@
     {
       "id": "work.c1-ge-protocol-study",
       "kind": "work_item",
-      "title": "C1 — Grassroots Economics / Sarafu protocol compatibility analysis",
-      "summary": "Deep technical study of CIC Stack + CLC DAO specification. Write compatibility analysis: CIC Stack ↔ KOI-net event format. Identify bridge points for Phase 3 CLC DAO integration. Output: technical memo with go/no-go recommendation for C2 bridge.",
+      "title": "C1 \u2014 Grassroots Economics / Sarafu protocol compatibility analysis",
+      "summary": "Deep technical study of CIC Stack + CLC DAO specification. Write compatibility analysis: CIC Stack \u2194 KOI-net event format. Identify bridge points for Phase 3 CLC DAO integration. Output: technical memo with go/no-go recommendation for C2 bridge.",
       "status": "planned",
       "priority": "P1",
       "horizon": "30-90d",
@@ -1154,7 +1154,7 @@
     {
       "id": "work.c1-pool-governance-membrane",
       "kind": "work_item",
-      "title": "C1 — Steward approval flow for pool creation and activation",
+      "title": "C1 \u2014 Steward approval flow for pool creation and activation",
       "summary": "Pool creation and activation decisions recorded in koi_commons_decisions (migration 053 extension). Stewards approve new pools before forming state. Mirrors existing commons intake governance membrane.",
       "status": "planned",
       "priority": "P1",
@@ -1167,8 +1167,8 @@
     {
       "id": "work.c1-tbff-commitment-threshold",
       "kind": "work_item",
-      "title": "C1 — Extend TBFF threshold policy to include commitment activation gates",
-      "summary": "owockibot sees pool activation events as triggers. CommitmentPool threshold crossing → owockibot allocation proposal (≤$500 auto) or multisig escalation. Commitment pooling becomes a trigger, not just a parallel system.",
+      "title": "C1 \u2014 Extend TBFF threshold policy to include commitment activation gates",
+      "summary": "owockibot sees pool activation events as triggers. CommitmentPool threshold crossing \u2192 owockibot allocation proposal (\u2264$500 auto) or multisig escalation. Commitment pooling becomes a trigger, not just a parallel system.",
       "status": "planned",
       "priority": "P1",
       "horizon": "30-90d",
@@ -1195,7 +1195,7 @@
     {
       "id": "work.c2-commitment-koi-net-events",
       "kind": "work_item",
-      "title": "C2 — Extend KOI-net protocol to carry ECDSA-signed commitment events",
+      "title": "C2 \u2014 Extend KOI-net protocol to carry ECDSA-signed commitment events",
       "summary": "New event types: commitment.proposed, commitment.verified, commitment.pooled, commitment.redeemed. ECDSA-signed using existing envelope format. Enables cross-bioregion commitment visibility and routing.",
       "status": "planned",
       "priority": "P1",
@@ -1209,7 +1209,7 @@
     {
       "id": "work.c2-cross-node-pool-aggregation",
       "kind": "work_item",
-      "title": "C2 — Cross-bioregion commitment pooling via federated events",
+      "title": "C2 \u2014 Cross-bioregion commitment pooling via federated events",
       "summary": "Leaf-node commitment pools aggregate into meta-regional pools via KOI-net federation. Leaf pools pledge capacity upward; coordinator pool routes credits multi-hop. Requires C2-commitment-koi-net-events.",
       "status": "planned",
       "priority": "P1",
@@ -1222,7 +1222,7 @@
     {
       "id": "work.c2-hypercert-from-commitment",
       "kind": "work_item",
-      "title": "C2 — Hypercerts minted from REDEEMED commitment + linked Evidence",
+      "title": "C2 \u2014 Hypercerts minted from REDEEMED commitment + linked Evidence",
       "summary": "When a commitment is REDEEMED and its Evidence entity is created, mint a Hypercert encoding the impact claim. Links commitment pooling to the broader regenerative finance stack. Depends on Q2 Hypercert work.",
       "status": "planned",
       "priority": "P2",
@@ -1235,8 +1235,8 @@
     {
       "id": "work.c2-regenerate-cascadia-pilot",
       "kind": "work_item",
-      "title": "C2 — Pilot commitment pool with Regenerate Cascadia",
-      "summary": "First real-world commitment pool: Regenerate Cascadia members pledge watershed stewardship hours. Pool activates at threshold, TBFF evidence writes back fulfillment, Hypercert minted. Demonstration of full C0–C2 stack.",
+      "title": "C2 \u2014 Pilot commitment pool with Regenerate Cascadia",
+      "summary": "First real-world commitment pool: Regenerate Cascadia members pledge watershed stewardship hours. Pool activates at threshold, TBFF evidence writes back fulfillment, Hypercert minted. Demonstration of full C0\u2013C2 stack.",
       "status": "planned",
       "priority": "P1",
       "horizon": "Q3-2026",
@@ -1264,7 +1264,7 @@
       "id": "work.commons-prestage-helper",
       "kind": "work_item",
       "title": "Commons pre-stage helper (KOI-net share runbook)",
-      "summary": "Added SSH/curl command to runbook for pre-staging commons intake entity via KOI-net share (recipient_type=commons) from FR → Octo. Enables Segment 3 governance membrane demo.",
+      "summary": "Added SSH/curl command to runbook for pre-staging commons intake entity via KOI-net share (recipient_type=commons) from FR \u2192 Octo. Enables Segment 3 governance membrane demo.",
       "status": "done",
       "priority": "P1",
       "horizon": "0-30d",
@@ -1531,8 +1531,8 @@
     {
       "id": "work.web-ingest-ui",
       "kind": "work_item",
-      "title": "Web ingest UI pipeline (URL → entity → confirm → receipt)",
-      "summary": "Full steward-authenticated ingest flow at /commons/ingest. URL→gpt-4o-mini extraction→preview grouped by type→frozen-payload confirm via /web/ingest BFF→receipt with new/resolved/relationships counts. Bugs fixed post-review: ingestion_stats, double-LLM-call, BFF flatten, useWebPreview interface.",
+      "title": "Web ingest UI pipeline (URL \u2192 entity \u2192 confirm \u2192 receipt)",
+      "summary": "Full steward-authenticated ingest flow at /commons/ingest. URL\u2192gpt-4o-mini extraction\u2192preview grouped by type\u2192frozen-payload confirm via /web/ingest BFF\u2192receipt with new/resolved/relationships counts. Bugs fixed post-review: ingestion_stats, double-LLM-call, BFF flatten, useWebPreview interface.",
       "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
