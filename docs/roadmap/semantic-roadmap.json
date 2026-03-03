@@ -2,7 +2,7 @@
   "@context": "./semantic-roadmap.context.json",
   "roadmap_id": "bkc.roadmap.2026.part-b",
   "program": "Bioregional Knowledge Commons",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "as_of": "2026-03-03",
   "owners": [
     {
@@ -594,6 +594,20 @@
       ]
     },
     {
+      "id": "work.web-ingest-ui",
+      "kind": "work_item",
+      "title": "Web ingest UI pipeline (URL → entity → confirm → receipt)",
+      "summary": "Full steward-authenticated ingest flow at /commons/ingest. URL→gpt-4o-mini extraction→preview grouped by type→frozen-payload confirm via /web/ingest BFF→receipt with new/resolved/relationships counts. Bugs fixed post-review: ingestion_stats, double-LLM-call, BFF flatten, useWebPreview interface.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:bioregional-commons-web/web/src/components/ingest/IngestPanel.tsx",
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ]
+    },
+    {
       "id": "work.weekly-proof-pack",
       "kind": "work_item",
       "title": "Weekly proof pack publishing cadence",
@@ -927,6 +941,11 @@
     {
       "from": "work.external-pipeline-2-live",
       "to": "initiative.tbff-knowledge-flow-pilot",
+      "type": "delivers"
+    },
+    {
+      "from": "work.web-ingest-ui",
+      "to": "outcome.showcase-reliable",
       "type": "delivers"
     },
     {

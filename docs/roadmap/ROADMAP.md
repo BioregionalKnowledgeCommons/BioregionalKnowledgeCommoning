@@ -2,9 +2,9 @@
 
 - Program: **Bioregional Knowledge Commons**
 - Roadmap ID: `bkc.roadmap.2026.part-b`
-- Version: `0.3.0`
+- Version: `0.3.1`
 - As of: `2026-03-03`
-- Generated: `2026-03-03 00:14 UTC`
+- Generated: `2026-03-03 04:15 UTC`
 
 ## Status Summary
 
@@ -13,7 +13,7 @@
 | `in_progress` | 6 |
 | `planned` | 32 |
 | `blocked` | 0 |
-| `done` | 11 |
+| `done` | 12 |
 | `deprecated` | 0 |
 
 ## Outcomes
@@ -50,6 +50,7 @@
 | `work.s3-key-lifecycle-runbook` | Publish key lifecycle and incident runbook | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.tbff-receipt-to-evidence-v0` | TBFF receipt to Evidence write-back v0 | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.tbff-threshold-policy-v0` | TBFF threshold policy v0 | `planned` | `P0` | `0-30d` | `owner.darren` |
+| `work.web-ingest-ui` | Web ingest UI pipeline (URL → entity → confirm → receipt) | `done` | `P0` | `0-30d` | `owner.darren` |
 | `work.weekly-proof-pack` | Weekly proof pack publishing cadence | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.b3-federated-chat-policy` | Implement federated chat policy boundaries | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.b2-graphrag-v1` | Prototype GraphRAG v1 | `planned` | `P1` | `30-90d` | `owner.darren` |
