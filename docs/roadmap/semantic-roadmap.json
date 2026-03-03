@@ -71,7 +71,7 @@
       "summary": "A community can pledge, pool, fulfill, prove with Evidence, and redeem a commitment within the BKC system. Capital flows are visible, routable, and accountable.",
       "status": "planned",
       "priority": "P1",
-      "horizon": "Q3-2026",
+      "horizon": "180-365d",
       "owner": "owner.darren",
       "tags": [
         "commitment-pooling",
@@ -844,7 +844,7 @@
       "summary": "Count of CommitmentPool entities in 'active' state with at least one VERIFIED pledge.",
       "status": "planned",
       "priority": "P1",
-      "horizon": "Q3-2026",
+      "horizon": "180-365d",
       "owner": "owner.darren",
       "metadata": {
         "target": ">=1",
@@ -1199,7 +1199,7 @@
       "summary": "New event types: commitment.proposed, commitment.verified, commitment.pooled, commitment.redeemed. ECDSA-signed using existing envelope format. Enables cross-bioregion commitment visibility and routing.",
       "status": "planned",
       "priority": "P1",
-      "horizon": "Q3-2026",
+      "horizon": "180-365d",
       "owner": "owner.darren",
       "source_docs": [
         "../foundations/commitment-pooling-foundations.md",
@@ -1213,7 +1213,7 @@
       "summary": "Leaf-node commitment pools aggregate into meta-regional pools via KOI-net federation. Leaf pools pledge capacity upward; coordinator pool routes credits multi-hop. Requires C2-commitment-koi-net-events.",
       "status": "planned",
       "priority": "P1",
-      "horizon": "Q3-2026",
+      "horizon": "180-365d",
       "owner": "owner.darren",
       "source_docs": [
         "../foundations/commitment-pooling-foundations.md"
@@ -1226,7 +1226,7 @@
       "summary": "When a commitment is REDEEMED and its Evidence entity is created, mint a Hypercert encoding the impact claim. Links commitment pooling to the broader regenerative finance stack. Depends on Q2 Hypercert work.",
       "status": "planned",
       "priority": "P2",
-      "horizon": "Q3-2026",
+      "horizon": "180-365d",
       "owner": "owner.darren",
       "source_docs": [
         "../foundations/commitment-pooling-foundations.md"
@@ -1239,7 +1239,7 @@
       "summary": "First real-world commitment pool: Regenerate Cascadia members pledge watershed stewardship hours. Pool activates at threshold, TBFF evidence writes back fulfillment, Hypercert minted. Demonstration of full C0\u2013C2 stack.",
       "status": "planned",
       "priority": "P1",
-      "horizon": "Q3-2026",
+      "horizon": "180-365d",
       "owner": "owner.darren",
       "source_docs": [
         "../foundations/commitment-pooling-foundations.md",
