@@ -131,6 +131,7 @@
         "horizon": {
           "type": "string",
           "enum": [
+            "historical",
             "0-30d",
             "30-90d",
             "90-180d",
