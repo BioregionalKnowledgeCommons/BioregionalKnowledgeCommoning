@@ -1703,7 +1703,8 @@
       "source_docs": [
         "https://commodityecology.blogspot.com/",
         "https://wiki.p2pfoundation.net/Commodity_Ecology"
-      ]
+      ],
+      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/116"
     },
     {
       "id": "work.ce-whitaker-pawar-ingest",
@@ -1714,7 +1715,8 @@
       "priority": "P2",
       "horizon": "90-180d",
       "owner": "owner.darren",
-      "tags": ["ecology", "ingest"]
+      "tags": ["ecology", "ingest"],
+      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/119"
     },
     {
       "id": "work.ce-category-taxonomy",
@@ -1725,7 +1727,8 @@
       "priority": "P2",
       "horizon": "90-180d",
       "owner": "owner.darren",
-      "tags": ["ecology", "ontology", "seeding"]
+      "tags": ["ecology", "ontology", "seeding"],
+      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/117"
     },
     {
       "id": "work.ce-ontology-extension",
@@ -1736,7 +1739,8 @@
       "priority": "P2",
       "horizon": "90-180d",
       "owner": "owner.darren",
-      "tags": ["ecology", "ontology"]
+      "tags": ["ecology", "ontology"],
+      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/118"
     },
     {
       "id": "work.ce-three-questions-protocol",
@@ -1747,7 +1751,8 @@
       "priority": "P2",
       "horizon": "90-180d",
       "owner": "owner.darren",
-      "tags": ["ecology", "protocol"]
+      "tags": ["ecology", "protocol"],
+      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/121"
     },
     {
       "id": "work.ce-ecoregion-mapping",
@@ -1758,7 +1763,8 @@
       "priority": "P2",
       "horizon": "90-180d",
       "owner": "owner.darren",
-      "tags": ["ecology", "bioregion", "mapping"]
+      "tags": ["ecology", "bioregion", "mapping"],
+      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/120"
     },
     {
       "id": "work.ce-mobile-app-spec",
@@ -1769,7 +1775,8 @@
       "priority": "P2",
       "horizon": "90-180d",
       "owner": "owner.darren",
-      "tags": ["ecology", "mobile", "ict4sd"]
+      "tags": ["ecology", "mobile", "ict4sd"],
+      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/122"
     }
   ],
   "edges": [
