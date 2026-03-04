@@ -2,18 +2,18 @@
 
 - Program: **Bioregional Knowledge Commons**
 - Roadmap ID: `bkc.roadmap.2026.part-b`
-- Version: `0.4.0`
-- As of: `2026-03-03`
-- Generated: `2026-03-03 07:30 UTC`
+- Version: `0.5.2`
+- As of: `2026-03-04`
+- Generated: `2026-03-04 10:58 UTC`
 
 ## Status Summary
 
 | Status | Count |
 |---|---|
-| `in_progress` | 6 |
-| `planned` | 45 |
+| `in_progress` | 9 |
+| `planned` | 64 |
 | `blocked` | 0 |
-| `done` | 15 |
+| `done` | 41 |
 | `deprecated` | 0 |
 
 ## Outcomes
@@ -25,7 +25,9 @@
 | `outcome.policy-governed-sharing` | Consent and policy are enforceable in runtime behavior | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `outcome.secure-federation-ops` | Federation security controls are tested and drillable | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `outcome.eval-driven-kg-chat` | KG chat roadmap decisions are evaluation-driven | `planned` | `P1` | `30-90d` | `owner.darren` |
-| `outcome.commitment-pools-provable` | Commitment pooling is provable end-to-end in at least one bioregion | `planned` | `P1` | `Q3-2026` | `owner.darren` |
+| `outcome.bioregional-swarm-live` | Bioregional AI swarm coordination operational | `planned` | `P1` | `180-365d` | `owner.darren` |
+| `outcome.commitment-pools-provable` | Commitment pooling is provable end-to-end in at least one bioregion | `planned` | `P1` | `180-365d` | `owner.darren` |
+| `outcome.regional-sustainability-rubric-live` | Commodity Ecology rubric active in at least one bioregion | `planned` | `P2` | `180-365d` | `owner.darren` |
 
 ## Initiatives
 
@@ -33,9 +35,17 @@
 |---|---|---|---|---|---|
 | `initiative.tbff-knowledge-flow-pilot` | Knowledge to flow funding pilot integration | `in_progress` | `P0` | `0-30d` | `owner.darren` |
 | `initiative.part-b-kg-chat` | Part B knowledge-graph chat roadmap | `in_progress` | `P0` | `0-30d` | `owner.darren` |
+| `initiative.owocki-swarm-foundation` | owocki bounty board + Safe treasury operational | `in_progress` | `P1` | `0-30d` | `owner.owocki` |
+| `initiative.nou-a2a-coordination` | A2A agent coordination protocol (co-op.us Waves A–E) | `in_progress` | `P1` | `30-90d` | `owner.todd` |
+| `initiative.watershed-sensing` | Colorado River Basin open watershed data (USGS + SNOTEL) | `in_progress` | `P2` | `30-90d` | `owner.aaron` |
 | `initiative.part-b-security-addendum` | Part B security and governance addendum | `planned` | `P0` | `0-30d` | `owner.darren` |
-| `initiative.build-day-sprint-mar5` | Mar 5 Build Day sprint — interop and demo readiness | `done` | `P0` | `0-30d` | `owner.darren` |
 | `initiative.commitment-pooling-integration` | Commitment pooling integration — C0/C1/C2 track | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `initiative.owocki-sensing-layer` | Ecological sensing agents — Colorado River Basin | `planned` | `P1` | `30-90d` | `owner.owocki` |
+| `initiative.owocki-financing-facility` | Bioregional financing facility (Allo QF + Hypercerts) | `planned` | `P1` | `90-180d` | `owner.owocki` |
+| `initiative.commodity-ecology-integration` | Commodity Ecology regional sustainability rubric integration | `planned` | `P2` | `90-180d` | `owner.darren` |
+| `initiative.owocki-multiregion-expansion` | Multi-bioregion swarm expansion beyond Colorado | `planned` | `P2` | `180-365d` | `owner.owocki` |
+| `initiative.build-day-sprint-mar5` | Mar 5 Build Day sprint — interop and demo readiness | `done` | `P0` | `0-30d` | `owner.darren` |
+| `initiative.part-a-foundation` | Part A: Foundation, federation, and visualization | `done` | `P0` | `historical` | `owner.darren` |
 
 ## Work Items
 
@@ -48,81 +58,134 @@
 | `work.external-pipeline-1-live` | External ingest pipeline #1 live | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.external-pipeline-2-live` | External ingest pipeline #2 live | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.s6-evidence-grading` | Introduce evidence grading in architecture decisions | `planned` | `P0` | `0-30d` | `owner.darren` |
+| `work.octo-branch-consolidation` | Merge Octo feature branch into canonical main + consolidate overlays into vendor | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.owocki-tranche-proposal-v1` | Owocki milestone tranche proposal v1 | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.s3-key-lifecycle-runbook` | Publish key lifecycle and incident runbook | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.tbff-receipt-to-evidence-v0` | TBFF receipt to Evidence write-back v0 | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.tbff-threshold-policy-v0` | TBFF threshold policy v0 | `planned` | `P0` | `0-30d` | `owner.darren` |
-| `work.octo-branch-consolidation` | Merge Octo feature branch into canonical main + consolidate overlays into vendor | `planned` | `P0` | `0-30d` | `owner.darren` |
-| `work.web-ingest-ui` | Web ingest UI pipeline (URL → entity → confirm → receipt) | `done` | `P0` | `0-30d` | `owner.darren` |
 | `work.weekly-proof-pack` | Weekly proof pack publishing cadence | `planned` | `P0` | `0-30d` | `owner.darren` |
-| `work.b3-federated-chat-policy` | Implement federated chat policy boundaries | `planned` | `P1` | `30-90d` | `owner.darren` |
-| `work.b2-graphrag-v1` | Prototype GraphRAG v1 | `planned` | `P1` | `30-90d` | `owner.darren` |
-| `work.s5-tee-spike` | TEE confidential RAG spike | `planned` | `P1` | `30-90d` | `owner.darren` |
-| `work.s4-ucan-bridge-spike` | UCAN bridge spike | `planned` | `P1` | `30-90d` | `owner.darren` |
-| `work.a2a-agent-card` | A2A agent card deployment | `done` | `P0` | `0-30d` | `owner.darren` |
-| `work.b1-chat-retrieval-hardening` | B1 — Chat retrieval hardening | `done` | `P0` | `0-30d` | `owner.darren` |
-| `work.seed-build-day-entities-script` | Build-day entity seeding operator script | `done` | `P0` | `0-30d` | `owner.darren` |
-| `work.telegram-gate-metric-alignment` | Gate messaging metric alignment | `done` | `P0` | `0-30d` | `owner.darren` |
-| `work.entity-seeding-swarm-actors` | Swarm actor entity seeding | `done` | `P0` | `0-30d` | `owner.darren` |
-| `work.swarm-map-infographic` | Three-plane swarm map infographic | `done` | `P0` | `0-30d` | `owner.darren` |
-| `work.chat-fanout-scoring` | Chat fanout scoring and all-node responses | `done` | `P1` | `0-30d` | `owner.darren` |
-| `work.commons-prestage-helper` | Commons pre-stage helper (KOI-net share runbook) | `done` | `P1` | `0-30d` | `owner.darren` |
-
-### C-Series: Commitment Pooling Track
-
-| ID | Title | Status | Priority | Horizon | Owner |
-|---|---|---|---|---|---|
-| `work.c0-commitment-ontology` | C0 — Add Commitment entity types and predicates to ontology | `done` | `P1` | `0-30d` | `owner.darren` |
-| `work.c0-commitment-registry` | C0 — Commitment registry API (create, get, state transition, evidence link) | `done` | `P1` | `0-30d` | `owner.darren` |
-| `work.c0-commitment-philosophy-doc` | C0 — Commitment pooling foundations document | `done` | `P1` | `0-30d` | `owner.darren` |
 | `work.c0-commitment-governance-extension` | C0 — Extend commons governance membrane to commitment lifecycle | `planned` | `P1` | `0-30d` | `owner.darren` |
 | `work.c0-evidence-commitment-bridge` | C0 — Wire Evidence entities to proves_commitment predicate | `planned` | `P1` | `0-30d` | `owner.darren` |
 | `work.c1-commitment-pool-api` | C1 — CommitmentPool full mechanics (threshold, activation, governance) | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.c1-tbff-commitment-threshold` | C1 — Extend TBFF threshold policy to include commitment activation gates | `planned` | `P1` | `30-90d` | `owner.darren` |
-| `work.c1-pool-governance-membrane` | C1 — Steward approval flow for pool creation and activation | `planned` | `P1` | `30-90d` | `owner.darren` |
-| `work.c1-demurrage-policy-spec` | C1 — Design optional demurrage policy for stale unredeemed pledges (spec only) | `planned` | `P2` | `30-90d` | `owner.darren` |
 | `work.c1-ge-protocol-study` | C1 — Grassroots Economics / Sarafu protocol compatibility analysis | `planned` | `P1` | `30-90d` | `owner.darren` |
-| `work.c2-commitment-koi-net-events` | C2 — Extend KOI-net protocol to carry ECDSA-signed commitment events | `planned` | `P1` | `Q3-2026` | `owner.darren` |
-| `work.c2-cross-node-pool-aggregation` | C2 — Cross-bioregion commitment pooling via federated events | `planned` | `P1` | `Q3-2026` | `owner.darren` |
-| `work.c2-hypercert-from-commitment` | C2 — Hypercerts minted from REDEEMED commitment + linked Evidence | `planned` | `P2` | `Q3-2026` | `owner.darren` |
-| `work.c2-regenerate-cascadia-pilot` | C2 — Pilot commitment pool with Regenerate Cascadia | `planned` | `P1` | `Q3-2026` | `owner.darren` |
+| `work.c1-pool-governance-membrane` | C1 — Steward approval flow for pool creation and activation | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `work.c1-entity-mirror-graphrag` | C1: Commitment entity registry mirror + GraphRAG | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `work.b3-federated-chat-policy` | Implement federated chat policy boundaries | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `work.b2-graphrag-v1` | Prototype GraphRAG v1 | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `work.s5-tee-spike` | TEE confidential RAG spike | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `work.s4-ucan-bridge-spike` | UCAN bridge spike | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `work.c2-cross-node-pool-aggregation` | C2 — Cross-bioregion commitment pooling via federated events | `planned` | `P1` | `180-365d` | `owner.darren` |
+| `work.c2-commitment-koi-net-events` | C2 — Extend KOI-net protocol to carry ECDSA-signed commitment events | `planned` | `P1` | `180-365d` | `owner.darren` |
+| `work.c2-regenerate-cascadia-pilot` | C2 — Pilot commitment pool with Regenerate Cascadia | `planned` | `P1` | `180-365d` | `owner.darren` |
+| `work.c1-demurrage-policy-spec` | C1 — Design optional demurrage policy for stale unredeemed pledges (spec only) | `planned` | `P2` | `30-90d` | `owner.darren` |
+| `work.c2-commitment-federation` | C2: Federated commitment pooling across bioregions | `planned` | `P2` | `90-180d` | `owner.darren` |
+| `work.ce-category-taxonomy` | Define 130 CE material/technology categories as BKC Concept entities | `planned` | `P2` | `90-180d` | `owner.darren` |
+| `work.ce-ontology-extension` | Extend BKC ontology with Commodity Ecology entity types | `planned` | `P2` | `90-180d` | `owner.darren` |
+| `work.ce-whitaker-pawar-ingest` | Ingest Whitaker & Pawar 2020 Commodity Ecology paper into KOI | `planned` | `P2` | `90-180d` | `owner.darren` |
+| `work.ce-ecoregion-mapping` | Map CE 867 ecoregion zones to BKC bioregion nodes | `planned` | `P2` | `90-180d` | `owner.darren` |
+| `work.ce-three-questions-protocol` | Model CE three regional sustainability questions as BKC Protocol | `planned` | `P2` | `90-180d` | `owner.darren` |
+| `work.ce-mobile-app-spec` | Write BKC-CE mobile app integration spec (CEMVC-compatible) | `planned` | `P2` | `90-180d` | `owner.darren` |
+| `work.c2-hypercert-from-commitment` | C2 — Hypercerts minted from REDEEMED commitment + linked Evidence | `planned` | `P2` | `180-365d` | `owner.darren` |
+| `work.a2a-agent-card` | A2A agent card deployment | `done` | `P0` | `0-30d` | `owner.darren` |
+| `work.b1-chat-retrieval-hardening` | B1 — Chat retrieval hardening | `done` | `P0` | `0-30d` | `owner.darren` |
+| `work.seed-build-day-entities-script` | Build-day entity seeding operator script | `done` | `P0` | `0-30d` | `owner.darren` |
+| `work.c0-commitment-pooling` | C0: Commitment pooling — ontology, migrations, API router | `done` | `P0` | `0-30d` | `owner.darren` |
+| `work.telegram-gate-metric-alignment` | Gate messaging metric alignment | `done` | `P0` | `0-30d` | `owner.darren` |
+| `work.llm-openai-migration` | LLM backend migrated from Gemini to OpenAI (gpt-4o-mini) | `done` | `P0` | `0-30d` | `owner.darren` |
+| `work.entity-seeding-swarm-actors` | Swarm actor entity seeding | `done` | `P0` | `0-30d` | `owner.darren` |
+| `work.swarm-map-infographic` | Three-plane swarm map infographic | `done` | `P0` | `0-30d` | `owner.darren` |
+| `work.web-ingest-ui` | Web ingest UI pipeline (URL → entity → confirm → receipt) | `done` | `P0` | `0-30d` | `owner.darren` |
+| `work.web-visualizer-phase1` | 3D globe visualizer + NASA imagery + ecoregion overlays | `done` | `P0` | `historical` | `owner.darren` |
+| `work.four-node-parity` | All 4 nodes at same codebase version, smoke tested | `done` | `P0` | `historical` | `owner.darren` |
+| `work.bff-live-integration` | BFF layer + live KOI node integration + entity browser + search | `done` | `P0` | `historical` | `owner.darren` |
+| `work.governance-pilot-workspace` | Dual-bioregion pilot workspace + V2 triad governance model | `done` | `P0` | `historical` | `owner.darren` |
+| `work.fr-node-deployment` | Front Range KOI node deployed (localhost:8355) | `done` | `P0` | `historical` | `owner.darren` |
+| `work.gv-node-deployment` | Greater Victoria leaf node deployed to remote server (poly) | `done` | `P0` | `historical` | `owner.darren` |
+| `work.koi-federation-wiring` | KOI-net federation infrastructure (poller, event emission, peer sync) | `done` | `P0` | `historical` | `owner.darren` |
+| `work.octo-initial-setup` | Octo agent initial setup + holonic federation architecture | `done` | `P0` | `historical` | `owner.darren` |
+| `work.koi-protocol-alignment` | P5–P9 KOI-net protocol alignment + ECDSA key encryption | `done` | `P0` | `historical` | `owner.darren` |
+| `work.quality-gates-cat-receipts` | Quality gates (4-stage pipeline) + CAT receipts (migration 055) | `done` | `P0` | `historical` | `owner.darren` |
+| `work.passkey-auth` | WebAuthn passkey auth + steward authorization per node | `done` | `P0` | `historical` | `owner.darren` |
+| `work.c0-commitment-ontology` | C0 — Add Commitment entity types and predicates to ontology | `done` | `P1` | `0-30d` | `owner.darren` |
+| `work.c0-commitment-philosophy-doc` | C0 — Commitment pooling foundations document | `done` | `P1` | `0-30d` | `owner.darren` |
+| `work.c0-commitment-registry` | C0 — Commitment registry API (create, get, state transition, evidence link) | `done` | `P1` | `0-30d` | `owner.darren` |
+| `work.commons-prestage-helper` | Commons pre-stage helper (KOI-net share runbook) | `done` | `P1` | `0-30d` | `owner.darren` |
+| `work.demo-smoke-test-suite` | demo-smoke.sh — automated 6-check preflight for all 4 nodes | `done` | `P1` | `0-30d` | `owner.darren` |
+| `work.nou-agent-auth-wave-a` | Agent bearer-token auth live (Wave A shipped) | `done` | `P1` | `historical` | `owner.todd` |
+| `work.chat-fanout-scoring` | Chat fanout scoring and all-node responses | `done` | `P1` | `historical` | `owner.darren` |
+| `work.native-land-watersheds` | Native Land Digital API + GRDC watershed data integration | `done` | `P1` | `historical` | `owner.darren` |
+| `work.semantic-roadmap-model` | Semantic roadmap model + generator + CI validation | `done` | `P1` | `historical` | `owner.darren` |
+| `work.watershed-realtime-dashboard` | Real-time basin dashboard: reservoirs, snow, stream gauges | `done` | `P2` | `historical` | `owner.aaron` |
 
 ### Dependency Execution Order (depends_on)
 
 1. `work.a2a-agent-card` — A2A agent card deployment (done)
 2. `work.b1-chat-retrieval-hardening` — B1 — Chat retrieval hardening (done)
 3. `work.b5-eval-gates` — Define B5 chat evaluation gates (planned)
-4. `work.chat-fanout-scoring` — Chat fanout scoring and all-node responses (done)
-5. `work.commons-prestage-helper` — Commons pre-stage helper (KOI-net share runbook) (done)
-6. `work.entity-seeding-swarm-actors` — Swarm actor entity seeding (done)
-7. `work.s1-data-class-matrix` — Define and publish data-class policy matrix (planned)
-8. `work.s3-key-lifecycle-runbook` — Publish key lifecycle and incident runbook (planned)
-9. `work.s6-evidence-grading` — Introduce evidence grading in architecture decisions (planned)
-10. `work.seed-build-day-entities-script` — Build-day entity seeding operator script (done)
-11. `work.swarm-map-infographic` — Three-plane swarm map infographic (done)
-12. `work.tbff-threshold-policy-v0` — TBFF threshold policy v0 (planned)
-13. `work.telegram-gate-metric-alignment` — Gate messaging metric alignment (done)
-14. `work.weekly-proof-pack` — Weekly proof pack publishing cadence (planned)
-15. `work.b2-graphrag-v1` — Prototype GraphRAG v1 (planned)
-16. `work.s4-ucan-bridge-spike` — UCAN bridge spike (planned)
-17. `work.s5-tee-spike` — TEE confidential RAG spike (planned)
-18. `work.s2-security-lane` — Add security lane to operational checkpoints (planned)
-19. `work.b3-federated-chat-policy` — Implement federated chat policy boundaries (planned)
-20. `work.b4-tbff-flow-integration` — Implement TBFF flow write-back loop (in_progress)
-21. `work.owocki-tranche-proposal-v1` — Owocki milestone tranche proposal v1 (planned)
-22. `work.tbff-receipt-to-evidence-v0` — TBFF receipt to Evidence write-back v0 (planned)
-23. `work.external-pipeline-1-live` — External ingest pipeline #1 live (planned)
-24. `work.external-pipeline-2-live` — External ingest pipeline #2 live (planned)
-25. `work.c0-commitment-ontology` — C0 — Add Commitment entity types and predicates to ontology (done)
-26. `work.c0-commitment-registry` — C0 — Commitment registry API (done) → depends on: c0-commitment-ontology
-27. `work.c0-commitment-governance-extension` — C0 — Extend commons governance membrane (planned) → depends on: c0-commitment-registry
-28. `work.c0-evidence-commitment-bridge` — C0 — Wire Evidence → proves_commitment (planned) → depends on: c0-commitment-registry
-29. `work.c1-commitment-pool-api` — C1 — CommitmentPool full mechanics (planned) → depends on: c0-commitment-registry
-30. `work.c1-tbff-commitment-threshold` — C1 — TBFF commitment threshold gates (planned) → depends on: c1-commitment-pool-api, tbff-threshold-policy-v0
-31. `work.c1-pool-governance-membrane` — C1 — Pool governance membrane (planned) → depends on: c0-commitment-governance-extension
-32. `work.c2-commitment-koi-net-events` — C2 — KOI-net commitment events (planned) → depends on: c1-commitment-pool-api
-33. `work.c2-cross-node-pool-aggregation` — C2 — Cross-bioregion pooling (planned) → depends on: c2-commitment-koi-net-events
-34. `work.c2-regenerate-cascadia-pilot` — C2 — Regenerate Cascadia pilot (planned) → depends on: c1-commitment-pool-api
+4. `work.c0-commitment-philosophy-doc` — C0 — Commitment pooling foundations document (done)
+5. `work.c0-evidence-commitment-bridge` — C0 — Wire Evidence entities to proves_commitment predicate (planned)
+6. `work.c1-demurrage-policy-spec` — C1 — Design optional demurrage policy for stale unredeemed pledges (spec only) (planned)
+7. `work.c1-ge-protocol-study` — C1 — Grassroots Economics / Sarafu protocol compatibility analysis (planned)
+8. `work.c1-pool-governance-membrane` — C1 — Steward approval flow for pool creation and activation (planned)
+9. `work.c1-tbff-commitment-threshold` — C1 — Extend TBFF threshold policy to include commitment activation gates (planned)
+10. `work.c2-commitment-federation` — C2: Federated commitment pooling across bioregions (planned)
+11. `work.c2-cross-node-pool-aggregation` — C2 — Cross-bioregion commitment pooling via federated events (planned)
+12. `work.c2-hypercert-from-commitment` — C2 — Hypercerts minted from REDEEMED commitment + linked Evidence (planned)
+13. `work.c2-regenerate-cascadia-pilot` — C2 — Pilot commitment pool with Regenerate Cascadia (planned)
+14. `work.ce-ecoregion-mapping` — Map CE 867 ecoregion zones to BKC bioregion nodes (planned)
+15. `work.ce-mobile-app-spec` — Write BKC-CE mobile app integration spec (CEMVC-compatible) (planned)
+16. `work.ce-ontology-extension` — Extend BKC ontology with Commodity Ecology entity types (planned)
+17. `work.ce-three-questions-protocol` — Model CE three regional sustainability questions as BKC Protocol (planned)
+18. `work.ce-whitaker-pawar-ingest` — Ingest Whitaker & Pawar 2020 Commodity Ecology paper into KOI (planned)
+19. `work.chat-fanout-scoring` — Chat fanout scoring and all-node responses (done)
+20. `work.commons-prestage-helper` — Commons pre-stage helper (KOI-net share runbook) (done)
+21. `work.demo-smoke-test-suite` — demo-smoke.sh — automated 6-check preflight for all 4 nodes (done)
+22. `work.entity-seeding-swarm-actors` — Swarm actor entity seeding (done)
+23. `work.four-node-parity` — All 4 nodes at same codebase version, smoke tested (done)
+24. `work.governance-pilot-workspace` — Dual-bioregion pilot workspace + V2 triad governance model (done)
+25. `work.koi-protocol-alignment` — P5–P9 KOI-net protocol alignment + ECDSA key encryption (done)
+26. `work.llm-openai-migration` — LLM backend migrated from Gemini to OpenAI (gpt-4o-mini) (done)
+27. `work.native-land-watersheds` — Native Land Digital API + GRDC watershed data integration (done)
+28. `work.nou-agent-auth-wave-a` — Agent bearer-token auth live (Wave A shipped) (done)
+29. `work.octo-initial-setup` — Octo agent initial setup + holonic federation architecture (done)
+30. `work.quality-gates-cat-receipts` — Quality gates (4-stage pipeline) + CAT receipts (migration 055) (done)
+31. `work.s1-data-class-matrix` — Define and publish data-class policy matrix (planned)
+32. `work.s3-key-lifecycle-runbook` — Publish key lifecycle and incident runbook (planned)
+33. `work.s6-evidence-grading` — Introduce evidence grading in architecture decisions (planned)
+34. `work.seed-build-day-entities-script` — Build-day entity seeding operator script (done)
+35. `work.semantic-roadmap-model` — Semantic roadmap model + generator + CI validation (done)
+36. `work.swarm-map-infographic` — Three-plane swarm map infographic (done)
+37. `work.telegram-gate-metric-alignment` — Gate messaging metric alignment (done)
+38. `work.watershed-realtime-dashboard` — Real-time basin dashboard: reservoirs, snow, stream gauges (done)
+39. `work.web-ingest-ui` — Web ingest UI pipeline (URL → entity → confirm → receipt) (done)
+40. `work.web-visualizer-phase1` — 3D globe visualizer + NASA imagery + ecoregion overlays (done)
+41. `work.weekly-proof-pack` — Weekly proof pack publishing cadence (planned)
+42. `work.b2-graphrag-v1` — Prototype GraphRAG v1 (planned)
+43. `work.s4-ucan-bridge-spike` — UCAN bridge spike (planned)
+44. `work.s5-tee-spike` — TEE confidential RAG spike (planned)
+45. `work.c0-commitment-governance-extension` — C0 — Extend commons governance membrane to commitment lifecycle (planned)
+46. `work.tbff-threshold-policy-v0` — TBFF threshold policy v0 (planned)
+47. `work.c1-entity-mirror-graphrag` — C1: Commitment entity registry mirror + GraphRAG (planned)
+48. `work.c2-commitment-koi-net-events` — C2 — Extend KOI-net protocol to carry ECDSA-signed commitment events (planned)
+49. `work.ce-category-taxonomy` — Define 130 CE material/technology categories as BKC Concept entities (planned)
+50. `work.koi-federation-wiring` — KOI-net federation infrastructure (poller, event emission, peer sync) (done)
+51. `work.s2-security-lane` — Add security lane to operational checkpoints (planned)
+52. `work.b3-federated-chat-policy` — Implement federated chat policy boundaries (planned)
+53. `work.bff-live-integration` — BFF layer + live KOI node integration + entity browser + search (done)
+54. `work.owocki-tranche-proposal-v1` — Owocki milestone tranche proposal v1 (planned)
+55. `work.b4-tbff-flow-integration` — Implement TBFF flow write-back loop (in_progress)
+56. `work.c1-commitment-pool-api` — C1 — CommitmentPool full mechanics (threshold, activation, governance) (planned)
+57. `work.gv-node-deployment` — Greater Victoria leaf node deployed to remote server (poly) (done)
+58. `work.fr-node-deployment` — Front Range KOI node deployed (localhost:8355) (done)
+59. `work.passkey-auth` — WebAuthn passkey auth + steward authorization per node (done)
+60. `work.tbff-receipt-to-evidence-v0` — TBFF receipt to Evidence write-back v0 (planned)
+61. `work.external-pipeline-1-live` — External ingest pipeline #1 live (planned)
+62. `work.c0-commitment-registry` — C0 — Commitment registry API (create, get, state transition, evidence link) (done)
+63. `work.c0-commitment-pooling` — C0: Commitment pooling — ontology, migrations, API router (done)
+64. `work.external-pipeline-2-live` — External ingest pipeline #2 live (planned)
+65. `work.octo-branch-consolidation` — Merge Octo feature branch into canonical main + consolidate overlays into vendor (planned)
+66. `work.c0-commitment-ontology` — C0 — Add Commitment entity types and predicates to ontology (done)
 
 ## Risks and Mitigations
 
@@ -134,19 +197,27 @@
 
 | ID | Title | Status | Priority | Horizon | Owner |
 |---|---|---|---|---|---|
+| `milestone.coalition-kickoff` | First bioregional swarm build day | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `milestone.recurring-sprint-kickoff-2026-03-07` | First recurring Friday sprint executed | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `milestone.part-b-p0-complete` | Part B P0 controls complete | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `milestone.post-demo-proof-pack-2026-03-05` | Post-demo proof pack published | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `milestone.tbff-v0-writeback-demo-2026-03-14` | TBFF v0 write-back demo complete | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `milestone.two-pipelines-one-allocation-2026-03-21` | Two external pipelines and one evidence-linked allocation | `planned` | `P0` | `0-30d` | `owner.darren` |
+| `milestone.friday-sprint-cadence` | Weekly coalition sprint cadence established | `planned` | `P1` | `0-30d` | `owner.darren` |
 | `milestone.part-b-spikes-reviewed` | UCAN and TEE spikes reviewed | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `milestone.swarm-strawmap-published` | Swarm strawmap published for owockibot/Twitter | `done` | `P0` | `0-30d` | `owner.darren` |
+| `milestone.four-nodes-live` | All 4 KOI nodes deployed and federating | `done` | `P0` | `historical` | `owner.darren` |
+| `milestone.first-federation-event` | First KOI-net signed event exchanged between nodes | `done` | `P0` | `historical` | `owner.darren` |
+| `milestone.web-dashboard-live` | Web dashboard live at sslip.io with BFF proxy | `done` | `P0` | `historical` | `owner.darren` |
 
 ## Decisions
 
 | ID | Title | Status | Priority | Horizon | Owner |
 |---|---|---|---|---|---|
-| `decision.node-sovereign-default` | Keep node-sovereign runtime as default | `done` | `P0` | `0-30d` | `owner.darren` |
-| `decision.bff-control-plane` | Use BFF as external control plane boundary | `done` | `P0` | `0-30d` | `owner.darren` |
+| `decision.adopt-koi-net` | Adopt KOI-net as federation protocol (ECDSA-signed envelopes) | `done` | `P0` | `historical` | `owner.darren` |
+| `decision.node-sovereign-default` | Keep node-sovereign runtime as default | `done` | `P0` | `historical` | `owner.darren` |
+| `decision.bff-control-plane` | Use BFF as external control plane boundary | `done` | `P0` | `historical` | `owner.darren` |
+| `decision.v2-triad-governance` | V2 triad governance: node-sovereign + pilot-chartered + commons-governed | `done` | `P0` | `historical` | `owner.darren` |
 | `decision.commitment-pooling-native-first` | Implement commitment pooling natively; GE compatibility study runs in parallel | `done` | `P1` | `0-30d` | `owner.darren` |
 
 ## Metrics
@@ -157,9 +228,9 @@
 | `metric.external-pipelines-live` | External pipelines live | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `metric.security-preflight-runtime` | Security preflight runtime | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `metric.weekly-public-artifacts` | Weekly public artifacts shipped | `planned` | `P0` | `0-30d` | `owner.darren` |
-| `metric.chat-p95-latency` | Federated chat p95 latency | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `metric.commitment-pledges-created` | Commitment pledges created | `planned` | `P1` | `30-90d` | `owner.darren` |
-| `metric.commitment-pools-active` | Commitment pools activated | `planned` | `P1` | `Q3-2026` | `owner.darren` |
+| `metric.chat-p95-latency` | Federated chat p95 latency | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `metric.commitment-pools-active` | Commitment pools activated | `planned` | `P1` | `180-365d` | `owner.darren` |
 
 ## Canonical Sources
 

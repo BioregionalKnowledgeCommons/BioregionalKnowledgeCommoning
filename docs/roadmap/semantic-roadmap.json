@@ -2,8 +2,8 @@
   "@context": "./semantic-roadmap.context.json",
   "roadmap_id": "bkc.roadmap.2026.part-b",
   "program": "Bioregional Knowledge Commons",
-  "version": "0.5.1",
-  "as_of": "2026-03-03",
+  "version": "0.5.2",
+  "as_of": "2026-03-04",
   "owners": [
     {
       "id": "owner.darren",
@@ -164,7 +164,7 @@
     {
       "id": "initiative.build-day-sprint-mar5",
       "kind": "initiative",
-      "title": "Mar 5 Build Day sprint — interop and demo readiness",
+      "title": "Mar 5 Build Day sprint \u2014 interop and demo readiness",
       "summary": "Completed pre-demo sprint: B1 retrieval hardening, A2A agent card, swarm entity seeding, chat scoring, commons pre-stage helper. All items done as of 2026-03-01.",
       "status": "done",
       "priority": "P0",
@@ -185,7 +185,7 @@
     {
       "id": "initiative.commitment-pooling-integration",
       "kind": "initiative",
-      "title": "Commitment pooling integration — C0/C1/C2 track",
+      "title": "Commitment pooling integration \u2014 C0/C1/C2 track",
       "summary": "Extend BKC's Capital Plane with commitment pooling as a first-class economic primitive. C0: ontology + registry API. C1: pool mechanics + TBFF threshold gates. C2: KOI-net federation + GE/Sarafu bridge.",
       "status": "planned",
       "priority": "P1",
@@ -206,7 +206,7 @@
     {
       "id": "initiative.nou-a2a-coordination",
       "kind": "initiative",
-      "title": "A2A agent coordination protocol (co-op.us Waves A–E)",
+      "title": "A2A agent coordination protocol (co-op.us Waves A\u2013E)",
       "summary": "Agent-to-agent coordination protocol from nou-techne enabling autonomous agent interop across the coalition.",
       "status": "in_progress",
       "priority": "P1",
@@ -233,7 +233,10 @@
         "swarm",
         "bounty"
       ],
-      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/51"
+      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/51",
+      "source_docs": [
+        "https://gist.github.com/owocki/7277012d126fdf3b948ba1f4bc6771ad"
+      ]
     },
     {
       "id": "initiative.owocki-multiregion-expansion",
@@ -248,12 +251,15 @@
         "swarm",
         "bounty"
       ],
-      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/56"
+      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/56",
+      "source_docs": [
+        "https://gist.github.com/owocki/7277012d126fdf3b948ba1f4bc6771ad"
+      ]
     },
     {
       "id": "initiative.owocki-sensing-layer",
       "kind": "initiative",
-      "title": "Ecological sensing agents — Colorado River Basin",
+      "title": "Ecological sensing agents \u2014 Colorado River Basin",
       "summary": "AI sensing agents monitoring Colorado River Basin ecology, feeding bioregional knowledge commons and capital allocation.",
       "status": "planned",
       "priority": "P1",
@@ -263,7 +269,10 @@
         "swarm",
         "bounty"
       ],
-      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/53"
+      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/53",
+      "source_docs": [
+        "https://gist.github.com/owocki/7277012d126fdf3b948ba1f4bc6771ad"
+      ]
     },
     {
       "id": "initiative.owocki-swarm-foundation",
@@ -278,7 +287,11 @@
         "swarm",
         "bounty"
       ],
-      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/54"
+      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/54",
+      "source_docs": [
+        "https://gist.github.com/owocki/7277012d126fdf3b948ba1f4bc6771ad",
+        "https://x.com/owockibot/status/2026311912716407103"
+      ]
     },
     {
       "id": "initiative.part-a-foundation",
@@ -390,7 +403,7 @@
     {
       "id": "work.demo-smoke-test-suite",
       "kind": "work_item",
-      "title": "demo-smoke.sh — automated 6-check preflight for all 4 nodes",
+      "title": "demo-smoke.sh \u2014 automated 6-check preflight for all 4 nodes",
       "summary": "Created automated smoke test script checking health, entity count, search, chat, ingest, and federation across all nodes.",
       "status": "done",
       "priority": "P1",
@@ -486,7 +499,7 @@
     {
       "id": "work.koi-protocol-alignment",
       "kind": "work_item",
-      "title": "P5–P9 KOI-net protocol alignment + ECDSA key encryption",
+      "title": "P5\u2013P9 KOI-net protocol alignment + ECDSA key encryption",
       "summary": "Aligned KOI processor with protocol phases P5 through P9 including ECDSA key management and encrypted event envelopes.",
       "status": "done",
       "priority": "P0",
@@ -615,7 +628,7 @@
       "id": "milestone.coalition-kickoff",
       "kind": "milestone",
       "title": "First bioregional swarm build day",
-      "summary": "BKC + owocki + Todd + Aaron first joint build day — coalition work coordinated and demoed.",
+      "summary": "BKC + owocki + Todd + Aaron first joint build day \u2014 coalition work coordinated and demoed.",
       "status": "planned",
       "priority": "P0",
       "horizon": "0-30d",
@@ -1002,7 +1015,7 @@
     {
       "id": "work.b1-chat-retrieval-hardening",
       "kind": "work_item",
-      "title": "B1 — Chat retrieval hardening",
+      "title": "B1 \u2014 Chat retrieval hardening",
       "summary": "Upgraded /chat to search doc chunks (koi_memory_chunks), 2-hop relationship CTE (LIMIT 50), web source context. Enhanced bioregional system prompt with citation instructions. Latency <6s, returns 6-8 sources.",
       "status": "done",
       "priority": "P0",
@@ -1074,8 +1087,8 @@
     {
       "id": "work.c0-commitment-governance-extension",
       "kind": "work_item",
-      "title": "C0 — Extend commons governance membrane to commitment lifecycle",
-      "summary": "Wire commitment state transitions (PROPOSED → VERIFIED) through the existing steward approval flow in the commons governance membrane. Commitment review joins the existing decision audit log.",
+      "title": "C0 \u2014 Extend commons governance membrane to commitment lifecycle",
+      "summary": "Wire commitment state transitions (PROPOSED \u2192 VERIFIED) through the existing steward approval flow in the commons governance membrane. Commitment review joins the existing decision audit log.",
       "status": "planned",
       "priority": "P1",
       "horizon": "0-30d",
@@ -1089,7 +1102,7 @@
     {
       "id": "work.c0-commitment-ontology",
       "kind": "work_item",
-      "title": "C0 — Add Commitment entity types and predicates to ontology",
+      "title": "C0 \u2014 Add Commitment entity types and predicates to ontology",
       "summary": "Added Commitment, CommitmentPool, CommitmentAction entity types and 6 new predicates (pledges_commitment, aggregates_commitments, proves_commitment, redeems_via, governs_pool, disputes) to bkc-ontology.jsonld v1.1.0.",
       "status": "done",
       "priority": "P1",
@@ -1105,7 +1118,7 @@
     {
       "id": "work.c0-commitment-philosophy-doc",
       "kind": "work_item",
-      "title": "C0 — Commitment pooling foundations document",
+      "title": "C0 \u2014 Commitment pooling foundations document",
       "summary": "Written commitment-pooling-foundations.md in docs/foundations/. Covers philosophy (4 pillars), technical model (Sarafu/CLC DAO tiers, state machine, demurrage), integration seams (TBFF/owockibot/co-op.us/KOI-net/GE), governance guidance (Sangat-grade, consent, pattern language alignment), and adoption pathway.",
       "status": "done",
       "priority": "P1",
@@ -1120,7 +1133,7 @@
     {
       "id": "work.c0-commitment-pooling",
       "kind": "work_item",
-      "title": "C0: Commitment pooling — ontology, migrations, API router",
+      "title": "C0: Commitment pooling \u2014 ontology, migrations, API router",
       "summary": "Ontology v1.1.0 adds Commitment/CommitmentPool/CommitmentAction (3 types, 6 predicates). Migrations 056+057 create commitment registry with 9-state lifecycle and threshold-activated pools. 10 API endpoints across /commitments/* and /pools/*. Grounded in Grassroots Economics / Sarafu heritage.",
       "status": "done",
       "priority": "P0",
@@ -1141,7 +1154,7 @@
     {
       "id": "work.c0-commitment-registry",
       "kind": "work_item",
-      "title": "C0 — Commitment registry API (create, get, state transition, evidence link)",
+      "title": "C0 \u2014 Commitment registry API (create, get, state transition, evidence link)",
       "summary": "REST API at /commitments/ and /pools/ for full commitment lifecycle. POST /commitments/create, PATCH /{rid}/state, POST /{rid}/link-evidence. Migrations 056 (registry) + 057 (pools). Router mounted in personal_ingest_api.py.",
       "status": "done",
       "priority": "P1",
@@ -1158,7 +1171,7 @@
     {
       "id": "work.c0-evidence-commitment-bridge",
       "kind": "work_item",
-      "title": "C0 — Wire Evidence entities to proves_commitment predicate",
+      "title": "C0 \u2014 Wire Evidence entities to proves_commitment predicate",
       "summary": "Link existing Evidence entities to Commitment pledges via proves_commitment predicate. TBFF receipt write-back can now reference the commitment it fulfills. Link endpoint: POST /commitments/{rid}/link-evidence.",
       "status": "planned",
       "priority": "P1",
@@ -1173,7 +1186,7 @@
     {
       "id": "work.c1-commitment-pool-api",
       "kind": "work_item",
-      "title": "C1 — CommitmentPool full mechanics (threshold, activation, governance)",
+      "title": "C1 \u2014 CommitmentPool full mechanics (threshold, activation, governance)",
       "summary": "Complete pool lifecycle: POST /pools/{id}/pledge (with auto-activation on threshold), steward approval flow for pool creation, GET /pools/{id}/status with threshold progress. Pool-level CAT receipts and KOI-net event emission.",
       "status": "planned",
       "priority": "P1",
@@ -1188,8 +1201,8 @@
     {
       "id": "work.c1-demurrage-policy-spec",
       "kind": "work_item",
-      "title": "C1 — Design optional demurrage policy for stale unredeemed pledges (spec only)",
-      "summary": "Document demurrage mechanics for per-pool configuration (monthly decay rate, grace period, community fund routing). Spec only — no implementation until first pilot pool establishes baseline redemption rhythms.",
+      "title": "C1 \u2014 Design optional demurrage policy for stale unredeemed pledges (spec only)",
+      "summary": "Document demurrage mechanics for per-pool configuration (monthly decay rate, grace period, community fund routing). Spec only \u2014 no implementation until first pilot pool establishes baseline redemption rhythms.",
       "status": "planned",
       "priority": "P2",
       "horizon": "30-90d",
@@ -1217,8 +1230,8 @@
     {
       "id": "work.c1-ge-protocol-study",
       "kind": "work_item",
-      "title": "C1 — Grassroots Economics / Sarafu protocol compatibility analysis",
-      "summary": "Deep technical study of CIC Stack + CLC DAO specification. Write compatibility analysis: CIC Stack ↔ KOI-net event format. Identify bridge points for Phase 3 CLC DAO integration. Output: technical memo with go/no-go recommendation for C2 bridge.",
+      "title": "C1 \u2014 Grassroots Economics / Sarafu protocol compatibility analysis",
+      "summary": "Deep technical study of CIC Stack + CLC DAO specification. Write compatibility analysis: CIC Stack \u2194 KOI-net event format. Identify bridge points for Phase 3 CLC DAO integration. Output: technical memo with go/no-go recommendation for C2 bridge.",
       "status": "planned",
       "priority": "P1",
       "horizon": "30-90d",
@@ -1231,7 +1244,7 @@
     {
       "id": "work.c1-pool-governance-membrane",
       "kind": "work_item",
-      "title": "C1 — Steward approval flow for pool creation and activation",
+      "title": "C1 \u2014 Steward approval flow for pool creation and activation",
       "summary": "Pool creation and activation decisions recorded in koi_commons_decisions (migration 053 extension). Stewards approve new pools before forming state. Mirrors existing commons intake governance membrane.",
       "status": "planned",
       "priority": "P1",
@@ -1245,8 +1258,8 @@
     {
       "id": "work.c1-tbff-commitment-threshold",
       "kind": "work_item",
-      "title": "C1 — Extend TBFF threshold policy to include commitment activation gates",
-      "summary": "owockibot sees pool activation events as triggers. CommitmentPool threshold crossing → owockibot allocation proposal (≤$500 auto) or multisig escalation. Commitment pooling becomes a trigger, not just a parallel system.",
+      "title": "C1 \u2014 Extend TBFF threshold policy to include commitment activation gates",
+      "summary": "owockibot sees pool activation events as triggers. CommitmentPool threshold crossing \u2192 owockibot allocation proposal (\u2264$500 auto) or multisig escalation. Commitment pooling becomes a trigger, not just a parallel system.",
       "status": "planned",
       "priority": "P1",
       "horizon": "30-90d",
@@ -1275,7 +1288,7 @@
     {
       "id": "work.c2-commitment-koi-net-events",
       "kind": "work_item",
-      "title": "C2 — Extend KOI-net protocol to carry ECDSA-signed commitment events",
+      "title": "C2 \u2014 Extend KOI-net protocol to carry ECDSA-signed commitment events",
       "summary": "New event types: commitment.proposed, commitment.verified, commitment.pooled, commitment.redeemed. ECDSA-signed using existing envelope format. Enables cross-bioregion commitment visibility and routing.",
       "status": "planned",
       "priority": "P1",
@@ -1290,7 +1303,7 @@
     {
       "id": "work.c2-cross-node-pool-aggregation",
       "kind": "work_item",
-      "title": "C2 — Cross-bioregion commitment pooling via federated events",
+      "title": "C2 \u2014 Cross-bioregion commitment pooling via federated events",
       "summary": "Leaf-node commitment pools aggregate into meta-regional pools via KOI-net federation. Leaf pools pledge capacity upward; coordinator pool routes credits multi-hop. Requires C2-commitment-koi-net-events.",
       "status": "planned",
       "priority": "P1",
@@ -1304,7 +1317,7 @@
     {
       "id": "work.c2-hypercert-from-commitment",
       "kind": "work_item",
-      "title": "C2 — Hypercerts minted from REDEEMED commitment + linked Evidence",
+      "title": "C2 \u2014 Hypercerts minted from REDEEMED commitment + linked Evidence",
       "summary": "When a commitment is REDEEMED and its Evidence entity is created, mint a Hypercert encoding the impact claim. Links commitment pooling to the broader regenerative finance stack. Depends on Q2 Hypercert work.",
       "status": "planned",
       "priority": "P2",
@@ -1318,8 +1331,8 @@
     {
       "id": "work.c2-regenerate-cascadia-pilot",
       "kind": "work_item",
-      "title": "C2 — Pilot commitment pool with Regenerate Cascadia",
-      "summary": "First real-world commitment pool: Regenerate Cascadia members pledge watershed stewardship hours. Pool activates at threshold, TBFF evidence writes back fulfillment, Hypercert minted. Demonstration of full C0–C2 stack.",
+      "title": "C2 \u2014 Pilot commitment pool with Regenerate Cascadia",
+      "summary": "First real-world commitment pool: Regenerate Cascadia members pledge watershed stewardship hours. Pool activates at threshold, TBFF evidence writes back fulfillment, Hypercert minted. Demonstration of full C0\u2013C2 stack.",
       "status": "planned",
       "priority": "P1",
       "horizon": "180-365d",
@@ -1349,7 +1362,7 @@
       "id": "work.commons-prestage-helper",
       "kind": "work_item",
       "title": "Commons pre-stage helper (KOI-net share runbook)",
-      "summary": "Added SSH/curl command to runbook for pre-staging commons intake entity via KOI-net share (recipient_type=commons) from FR → Octo. Enables Segment 3 governance membrane demo.",
+      "summary": "Added SSH/curl command to runbook for pre-staging commons intake entity via KOI-net share (recipient_type=commons) from FR \u2192 Octo. Enables Segment 3 governance membrane demo.",
       "status": "done",
       "priority": "P1",
       "horizon": "0-30d",
@@ -1635,8 +1648,8 @@
     {
       "id": "work.web-ingest-ui",
       "kind": "work_item",
-      "title": "Web ingest UI pipeline (URL → entity → confirm → receipt)",
-      "summary": "Full steward-authenticated ingest flow at /commons/ingest. URL→gpt-4o-mini extraction→preview grouped by type→frozen-payload confirm via /web/ingest BFF→receipt with new/resolved/relationships counts. Bugs fixed post-review: ingestion_stats, double-LLM-call, BFF flatten, useWebPreview interface.",
+      "title": "Web ingest UI pipeline (URL \u2192 entity \u2192 confirm \u2192 receipt)",
+      "summary": "Full steward-authenticated ingest flow at /commons/ingest. URL\u2192gpt-4o-mini extraction\u2192preview grouped by type\u2192frozen-payload confirm via /web/ingest BFF\u2192receipt with new/resolved/relationships counts. Bugs fixed post-review: ingestion_stats, double-LLM-call, BFF flatten, useWebPreview interface.",
       "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
@@ -1661,6 +1674,102 @@
         "../../pilots/front-range-cascadia-2026/mar5-build-day-runbook.md"
       ],
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/43"
+    },
+    {
+      "id": "outcome.regional-sustainability-rubric-live",
+      "kind": "outcome",
+      "title": "Commodity Ecology rubric active in at least one bioregion",
+      "summary": "At least one BKC bioregion has the 130-category Commodity Ecology rubric operational, enabling structured producer-consumer dialogue on sustainable choices and waste-stream reuse.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "180-365d",
+      "owner": "owner.darren",
+      "tags": ["ecology", "sustainability", "supply-chain"],
+      "source_docs": [
+        "https://commodityecology.blogspot.com/",
+        "https://wiki.p2pfoundation.net/Commodity_Ecology"
+      ]
+    },
+    {
+      "id": "initiative.commodity-ecology-integration",
+      "kind": "initiative",
+      "title": "Commodity Ecology regional sustainability rubric integration",
+      "summary": "Integrate the Commodity Ecology framework (Whitaker & Pawar 2020) into BKC — 130 material/technology categories × 867 ecoregions, three regional sustainability questions, and producer-consumer dialogue infrastructure for sustainable supply chain commoning.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "90-180d",
+      "owner": "owner.darren",
+      "tags": ["ecology", "sustainability", "supply-chain", "ecoregion", "ict4sd"],
+      "source_docs": [
+        "https://commodityecology.blogspot.com/",
+        "https://wiki.p2pfoundation.net/Commodity_Ecology"
+      ]
+    },
+    {
+      "id": "work.ce-whitaker-pawar-ingest",
+      "kind": "work_item",
+      "title": "Ingest Whitaker & Pawar 2020 Commodity Ecology paper into KOI",
+      "summary": "Ingest the Greentech 2020 Commodity Ecology paper as a BKC source document, extracting entity links to People (Whitaker, Pawar), Concepts (Commodity Ecology, 130 categories, CEMVC), and Protocol references.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "90-180d",
+      "owner": "owner.darren",
+      "tags": ["ecology", "ingest"]
+    },
+    {
+      "id": "work.ce-category-taxonomy",
+      "kind": "work_item",
+      "title": "Define 130 CE material/technology categories as BKC Concept entities",
+      "summary": "Seed the Commodity Ecology 130 material/technology categories as Concept entities in the KOI knowledge graph, tagged by domain (textiles, metals, chemicals, building materials, waste, etc.) and linked to the CE Protocol entity.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "90-180d",
+      "owner": "owner.darren",
+      "tags": ["ecology", "ontology", "seeding"]
+    },
+    {
+      "id": "work.ce-ontology-extension",
+      "kind": "work_item",
+      "title": "Extend BKC ontology with Commodity Ecology entity types",
+      "summary": "Add CommodityCategory and SustainabilityAssessment entity types to bkc-ontology.jsonld. Add predicates: has_category, assesses_region, maps_to_ecoregion. Enables structured representation of CE rubric assessments within the knowledge graph.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "90-180d",
+      "owner": "owner.darren",
+      "tags": ["ecology", "ontology"]
+    },
+    {
+      "id": "work.ce-three-questions-protocol",
+      "kind": "work_item",
+      "title": "Model CE three regional sustainability questions as BKC Protocol",
+      "summary": "Create a Protocol entity encoding the three Commodity Ecology questions: (1) sufficient sustainable choices available in this category/region? (2) are we choosing well toward sustainability? (3) how can products/wastes in one category be more productively used in others? Enables structured regional assessments.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "90-180d",
+      "owner": "owner.darren",
+      "tags": ["ecology", "protocol"]
+    },
+    {
+      "id": "work.ce-ecoregion-mapping",
+      "kind": "work_item",
+      "title": "Map CE 867 ecoregion zones to BKC bioregion nodes",
+      "summary": "Cross-reference Commodity Ecology's 867 ecoregional zones with BKC's existing Bioregion entities (Salish Sea, Front Range, Cascadia). Create mapping table enabling CE assessments to be anchored to specific BKC nodes.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "90-180d",
+      "owner": "owner.darren",
+      "tags": ["ecology", "bioregion", "mapping"]
+    },
+    {
+      "id": "work.ce-mobile-app-spec",
+      "kind": "work_item",
+      "title": "Write BKC-CE mobile app integration spec (CEMVC-compatible)",
+      "summary": "Document how a CEMVC-compatible mobile interface could integrate with BKC's KOI API — producer/consumer profiles, category-tagged posts, waste/product listings, and cross-ecoregion search. Reference Whitaker & Pawar CEMVC eight-service architecture.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "90-180d",
+      "owner": "owner.darren",
+      "tags": ["ecology", "mobile", "ict4sd"]
     }
   ],
   "edges": [
@@ -2403,6 +2512,16 @@
       "from": "work.bff-live-integration",
       "to": "work.passkey-auth",
       "type": "depends_on"
-    }
+    },
+    { "from": "work.ce-whitaker-pawar-ingest", "to": "initiative.commodity-ecology-integration", "type": "delivers" },
+    { "from": "work.ce-category-taxonomy", "to": "initiative.commodity-ecology-integration", "type": "delivers" },
+    { "from": "work.ce-ontology-extension", "to": "initiative.commodity-ecology-integration", "type": "delivers" },
+    { "from": "work.ce-three-questions-protocol", "to": "initiative.commodity-ecology-integration", "type": "delivers" },
+    { "from": "work.ce-ecoregion-mapping", "to": "initiative.commodity-ecology-integration", "type": "delivers" },
+    { "from": "work.ce-mobile-app-spec", "to": "initiative.commodity-ecology-integration", "type": "delivers" },
+    { "from": "initiative.commodity-ecology-integration", "to": "outcome.regional-sustainability-rubric-live", "type": "delivers" },
+    { "from": "initiative.commodity-ecology-integration", "to": "outcome.bioregional-swarm-live", "type": "delivers" },
+    { "from": "work.ce-ontology-extension", "to": "work.ce-category-taxonomy", "type": "depends_on" },
+    { "from": "initiative.commitment-pooling-integration", "to": "initiative.commodity-ecology-integration", "type": "informs" }
   ]
 }
