@@ -1,0 +1,92 @@
+name: Roadmap Sync
+on:
+  push:
+    branches: [main]
+    paths: [docs/roadmap/semantic-roadmap.json]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate-markdown:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: python3 scripts/build_semantic_roadmap.py
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet docs/roadmap/ROADMAP.md && echo "No changes" && exit 0
+          git add docs/roadmap/ROADMAP.md
+          git commit -m "chore: regenerate ROADMAP.md from semantic-roadmap.json"
+          git push
+
+  sync-roadmap-repo:
+    needs: regenerate-markdown
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Push to roadmap repo
+        run: |
+          git clone https://x-access-token:${{ secrets.ROADMAP_DEPLOY_TOKEN }}@github.com/BioregionalKnowledgeCommons/roadmap.git /tmp/roadmap
+          cp docs/roadmap/semantic-roadmap.json /tmp/roadmap/public/roadmap-data.json
+          cd /tmp/roadmap
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet public/roadmap-data.json && echo "No changes" && exit 0
+          git add public/roadmap-data.json
+          git commit -m "sync: update roadmap-data.json from semantic-roadmap.json"
+          git push
+
+  sync-commons-web:
+    needs: regenerate-markdown
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Push to bioregional-commons-web
+        run: |
+          git clone https://x-access-token:${{ secrets.ROADMAP_DEPLOY_TOKEN }}@github.com/BioregionalKnowledgeCommons/bioregional-commons-web.git /tmp/commons-web
+          cp docs/roadmap/semantic-roadmap.json /tmp/commons-web/web/public/roadmap-data.json
+          cd /tmp/commons-web
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet web/public/roadmap-data.json && echo "No changes" && exit 0
+          git add web/public/roadmap-data.json
+          git commit -m "sync: update roadmap-data.json from semantic-roadmap.json"
+          git push
+
+  sync-github-project:
+    needs: regenerate-markdown
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - name: Sync to GitHub Project
+        env:
+          GH_TOKEN: ${{ secrets.ROADMAP_DEPLOY_TOKEN }}
+        run: |
+          python3 scripts/sync_roadmap_to_github_project.py \
+            --mode issue \
+            --apply \
+            --kinds initiative,work_item,milestone
+
+  trigger-server-sync:
+    needs: [sync-roadmap-repo, sync-commons-web]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger server sync
+        run: |
+          HTTP_CODE=$(curl -s -o /dev/null -w '%{http_code}' -X POST \
+            -H "Authorization: Bearer ${{ secrets.SYNC_WEBHOOK_SECRET }}" \
+            https://45.132.245.30.sslip.io/commons/api/roadmap/sync \
+            --max-time 10) || true
+          echo "Server responded: $HTTP_CODE"
+          if [ "$HTTP_CODE" != "202" ]; then
+            echo "::warning::Webhook returned $HTTP_CODE — server timer will catch up at 4:30am"
+            exit 1
+          fi

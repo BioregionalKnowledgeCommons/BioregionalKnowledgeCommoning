@@ -390,6 +390,52 @@
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/55"
     },
     {
+      "id": "initiative.regen-choice-matchmaking",
+      "kind": "initiative",
+      "title": "RegenCHOICE matchmaking protocol integration",
+      "summary": "Integrate Simon Grant's RegenCHOICE correspondence-based matchmaking protocol into BKC. Enables mutual compatibility matching between bioregional actors (projects, organizations, funders) based on structured enquiry specifications. Choosers define requirements via domain-specific question sets; the system identifies correspondence where both parties mutually satisfy each other's criteria.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "90-180d",
+      "owner": "owner.darren",
+      "tags": [
+        "matchmaking",
+        "interop",
+        "governance"
+      ],
+      "source_docs": [
+        "https://wiki.simongrant.org/doku.php/ch:index"
+      ]
+    },
+    {
+      "id": "work.regen-choice-ontology-mapping",
+      "kind": "work_item",
+      "title": "Map RegenCHOICE concepts to BKC ontology",
+      "summary": "Define how RegenCHOICE choosers, enquiries, and correspondence map to BKC entity types. Determine if new types are needed or if existing types (Organization, Project, Concept) can express matchmaking semantics via predicates.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "90-180d",
+      "owner": "owner.darren",
+      "tags": [
+        "matchmaking",
+        "ontology"
+      ]
+    },
+    {
+      "id": "work.regen-choice-question-set-prototype",
+      "kind": "work_item",
+      "title": "Prototype bioregional question sets for RegenCHOICE matching",
+      "summary": "Design and test domain-specific question sets for bioregional matchmaking: project-funder matching, organization-collaboration matching, practice-bioregion matching. Validate correspondence detection with real BKC entities.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "90-180d",
+      "owner": "owner.darren",
+      "tags": [
+        "matchmaking",
+        "prototype"
+      ]
+    },
+    {
       "id": "work.bff-live-integration",
       "kind": "work_item",
       "title": "BFF layer + live KOI node integration + entity browser + search",
@@ -2986,6 +3032,11 @@
     { "from": "work.r1-ledger-msganchor", "to": "milestone.first-claim-on-regen-ledger", "type": "delivers" },
     { "from": "work.r1-ledger-msgattest", "to": "milestone.first-claim-on-regen-ledger", "type": "delivers" },
 
-    { "from": "work.node-salt-spring-island", "to": "outcome.bioregional-swarm-live", "type": "delivers" }
+    { "from": "work.node-salt-spring-island", "to": "outcome.bioregional-swarm-live", "type": "delivers" },
+
+    { "from": "work.regen-choice-ontology-mapping", "to": "initiative.regen-choice-matchmaking", "type": "delivers" },
+    { "from": "work.regen-choice-question-set-prototype", "to": "initiative.regen-choice-matchmaking", "type": "delivers" },
+    { "from": "work.regen-choice-ontology-mapping", "to": "work.regen-choice-question-set-prototype", "type": "depends_on" },
+    { "from": "initiative.regen-choice-matchmaking", "to": "outcome.bioregional-swarm-live", "type": "delivers" }
   ]
 }
