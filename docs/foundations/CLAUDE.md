@@ -9,4 +9,20 @@
 |----|------|---|-------|------|
 | #10005 | 4:09 PM | ⚖️ | Personal KOI-net Federation Architecture for Document Sharing Between Collaborators | ~782 |
 | #9989 | 3:25 PM | 🔵 | Comprehensive KOI-net Federation Infrastructure Discovery | ~922 |
+
+### Mar 3, 2026
+
+| ID | Time | T | Title | Read |
+|----|------|---|-------|------|
+| #12518 | 7:28 AM | 🔵 | CommonsChange Reference Profile Concrete Serialization Format | ~939 |
+| #12516 | 7:27 AM | 🔵 | Knowledge Commoning Meta-Protocol Interoperability Requirements | ~944 |
+| #12511 | 7:22 AM | 🔵 | Bioregional AI Swarms Pattern Language for Multi-Agent Coordination | ~930 |
+| #12507 | 7:19 AM | 🔵 | BKC Foundations Documentation Architecture | ~767 |
+
+### Mar 4, 2026
+
+| ID | Time | T | Title | Read |
+|----|------|---|-------|------|
+| #13200 | 11:03 AM | 🔵 | Reviewed holonic swarm reference architecture for nested bioregional coordination | ~764 |
+| #13198 | 11:01 AM | 🔵 | Reviewed commitment pooling foundations design for BKC Capital Plane | ~753 |
 </claude-mem-context>

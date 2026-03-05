@@ -264,6 +264,7 @@ def make_body(
     *,
     dependency_refs: list[str] | None = None,
     delivers_refs: list[str] | None = None,
+    extra_sections: dict[str, list[str]] | None = None,
 ) -> str:
     lines: list[str] = []
     lines.append(managed_marker(node["id"]))
@@ -298,6 +299,23 @@ def make_body(
         for ref in delivers_refs:
             lines.append(ref)
         lines.append("")
+    # Render additional relationship sections in stable order
+    if extra_sections:
+        section_order = [
+            "Blocks", "Blocked By",
+            "Informs", "Informed By",
+            "Measures", "Measured By",
+            "Mitigates", "Mitigated By",
+            "References", "Referenced By",
+            "Delivered By",
+        ]
+        for heading in section_order:
+            refs = extra_sections.get(heading)
+            if refs:
+                lines.append(f"## {heading}")
+                for ref in refs:
+                    lines.append(ref)
+                lines.append("")
     source_docs = node.get("source_docs", [])
     if source_docs:
         lines.append("## Source Docs")
@@ -720,9 +738,10 @@ def upsert_issue(
     delivers_refs: list[str],
     desired_labels: set[str],
     milestone: RepoMilestone | None,
+    extra_sections: dict[str, list[str]] | None = None,
 ) -> IssueInfo:
     title = desired_title(node)
-    body = make_body(model, node, dependency_refs=dependency_refs, delivers_refs=delivers_refs)
+    body = make_body(model, node, dependency_refs=dependency_refs, delivers_refs=delivers_refs, extra_sections=extra_sections)
     current = existing_issue
     if current is None:
         if not apply:
@@ -882,12 +901,33 @@ def upsert_draft_item(
 
 def build_graph_indexes(
     model: dict[str, Any],
-) -> tuple[dict[str, dict[str, Any]], dict[str, list[str]], dict[str, list[str]], dict[str, list[dict[str, Any]]]]:
+) -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, list[str]]], dict[str, list[dict[str, Any]]]]:
+    """Build forward+reverse indexes for all edge types.
+
+    Returns (nodes_by_id, edge_indexes, node_to_milestone_nodes).
+    edge_indexes is keyed like "depends_on", "depended_on_by", "delivers", "delivered_by", etc.
+    """
     nodes_by_id = {node["id"]: node for node in model.get("nodes", [])}
-    depends_on_by_node: dict[str, list[str]] = defaultdict(list)
-    delivers_to_by_node: dict[str, list[str]] = defaultdict(list)
     node_to_milestone_nodes: dict[str, list[dict[str, Any]]] = defaultdict(list)
     milestone_nodes = {n_id: node for n_id, node in nodes_by_id.items() if node.get("kind") == "milestone"}
+
+    # Define edge types and their forward/reverse index names + direction.
+    # Each entry: (edge_type, forward_key, reverse_key, forward_is_from_to_to)
+    # depends_on edge semantics: "from" depends on "to", so forward = from→to, reverse = to→from
+    edge_defs = [
+        ("depends_on", "depends_on", "depended_on_by", True),
+        ("delivers", "delivers", "delivered_by", True),
+        ("informs", "informs", "informed_by", True),
+        ("measures", "measures", "measured_by", True),
+        ("mitigates", "mitigates", "mitigated_by", True),
+        ("blocks", "blocks", "blocked_by_edge", True),
+        ("references", "references", "referenced_by", True),
+    ]
+
+    indexes: dict[str, list[str]] = defaultdict(list)
+
+    def _key(name: str, node_id: str) -> str:
+        return f"{name}:{node_id}"
 
     for edge in model.get("edges", []):
         edge_type = edge.get("type")
@@ -895,18 +935,25 @@ def build_graph_indexes(
         to_id = edge.get("to")
         if not from_id or not to_id:
             continue
-        if edge_type == "depends_on":
-            depends_on_by_node[to_id].append(from_id)
-        if edge_type == "delivers":
-            delivers_to_by_node[from_id].append(to_id)
-            if to_id in milestone_nodes and from_id in nodes_by_id:
-                node_to_milestone_nodes[from_id].append(milestone_nodes[to_id])
+        for etype, fwd_key, rev_key, _ in edge_defs:
+            if edge_type == etype:
+                indexes[_key(fwd_key, from_id)].append(to_id)
+                indexes[_key(rev_key, to_id)].append(from_id)
+                break
+        if edge_type == "delivers" and to_id in milestone_nodes and from_id in nodes_by_id:
+            node_to_milestone_nodes[from_id].append(milestone_nodes[to_id])
 
-    for node_id in list(depends_on_by_node):
-        depends_on_by_node[node_id] = sorted(set(depends_on_by_node[node_id]))
-    for node_id in list(delivers_to_by_node):
-        delivers_to_by_node[node_id] = sorted(set(delivers_to_by_node[node_id]))
-    return nodes_by_id, depends_on_by_node, delivers_to_by_node, node_to_milestone_nodes
+    # Dedup and sort
+    for k in list(indexes):
+        indexes[k] = sorted(set(indexes[k]))
+
+    # Wrap into a dict-of-dicts for convenient access: edge_indexes["depends_on"][node_id] -> [target_ids]
+    edge_indexes: dict[str, dict[str, list[str]]] = defaultdict(lambda: defaultdict(list))
+    for compound_key, targets in indexes.items():
+        name, node_id = compound_key.split(":", 1)
+        edge_indexes[name][node_id] = targets
+
+    return nodes_by_id, edge_indexes, node_to_milestone_nodes
 
 
 def dependencies_text_for_project(
@@ -977,6 +1024,27 @@ def delivers_refs_for_body(
     return refs
 
 
+def generic_refs_for_body(
+    *,
+    node_id: str,
+    edge_index: dict[str, list[str]],
+    nodes_by_id: dict[str, dict[str, Any]],
+    issue_by_node: dict[str, IssueInfo],
+) -> list[str]:
+    """Build ref lines for any edge type (no checkboxes)."""
+    targets = edge_index.get(node_id, [])
+    refs: list[str] = []
+    for target_id in targets:
+        target_node = nodes_by_id.get(target_id) or {}
+        target_title = target_node.get("title", target_id)
+        issue = issue_by_node.get(target_id)
+        if issue and issue.number > 0:
+            refs.append(f"- #{issue.number} `{target_id}` — {target_title}")
+        else:
+            refs.append(f"- `{target_id}` — {target_title}")
+    return refs
+
+
 def sync(
     *,
     owner: str,
@@ -1022,7 +1090,24 @@ def sync(
     print(f"Desired nodes to sync: {len(desired_nodes)}")
     print(f"Mode: {'APPLY' if apply else 'DRY-RUN'} ({mode})")
 
-    nodes_by_id, depends_on_by_node, delivers_to_by_node, node_to_milestone_nodes = build_graph_indexes(model)
+    nodes_by_id, edge_indexes, node_to_milestone_nodes = build_graph_indexes(model)
+    depends_on_by_node = edge_indexes["depends_on"]
+    delivers_to_by_node = edge_indexes["delivers"]
+
+    # Extra edge types for issue body sections
+    extra_edge_sections = [
+        ("blocks", "Blocks"),
+        ("blocked_by_edge", "Blocked By"),
+        ("informs", "Informs"),
+        ("informed_by", "Informed By"),
+        ("measures", "Measures"),
+        ("measured_by", "Measured By"),
+        ("mitigates", "Mitigates"),
+        ("mitigated_by", "Mitigated By"),
+        ("references", "References"),
+        ("referenced_by", "Referenced By"),
+        ("delivered_by", "Delivered By"),
+    ]
     processed_project_item_ids: set[str] = set()
     issue_by_node: dict[str, IssueInfo] = {}
 
@@ -1051,6 +1136,11 @@ def sync(
             # Temporary body refs in pass 1 (node ids only); pass 2 refreshes with issue refs.
             dep_refs = [f"- [ ] `{dep}`" for dep in depends_on_by_node.get(node["id"], [])]
             deliver_refs = [f"- `{target}`" for target in delivers_to_by_node.get(node["id"], [])]
+            p1_extra: dict[str, list[str]] = {}
+            for idx_key, heading in extra_edge_sections:
+                targets = edge_indexes[idx_key].get(node["id"], [])
+                if targets:
+                    p1_extra[heading] = [f"- `{t}`" for t in targets]
             issue = upsert_issue(
                 apply=apply,
                 repo=repo,
@@ -1061,6 +1151,7 @@ def sync(
                 delivers_refs=deliver_refs,
                 desired_labels=managed_label_names(node),
                 milestone=milestone,
+                extra_sections=p1_extra or None,
             )
             issue_by_node[node["id"]] = issue
 
@@ -1084,6 +1175,16 @@ def sync(
                 nodes_by_id=nodes_by_id,
                 issue_by_node=issue_by_node,
             )
+            p2_extra: dict[str, list[str]] = {}
+            for idx_key, heading in extra_edge_sections:
+                refs = generic_refs_for_body(
+                    node_id=node["id"],
+                    edge_index=edge_indexes[idx_key],
+                    nodes_by_id=nodes_by_id,
+                    issue_by_node=issue_by_node,
+                )
+                if refs:
+                    p2_extra[heading] = refs
             refreshed_issue = upsert_issue(
                 apply=apply,
                 repo=repo,
@@ -1094,6 +1195,7 @@ def sync(
                 delivers_refs=deliver_refs,
                 desired_labels=managed_label_names(node),
                 milestone=milestone,
+                extra_sections=p2_extra or None,
             )
             issue_by_node[node["id"]] = refreshed_issue
 
