@@ -2,7 +2,7 @@
   "@context": "./semantic-roadmap.context.json",
   "roadmap_id": "bkc.roadmap.2026.part-b",
   "program": "Bioregional Knowledge Commons",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "as_of": "2026-03-04",
   "owners": [
     {
@@ -29,6 +29,11 @@
       "id": "owner.aaron",
       "name": "Aaron Gabriel Neyer",
       "role": "sensing-lead"
+    },
+    {
+      "id": "owner.samu",
+      "name": "Samu",
+      "role": "salt-spring-steward"
     }
   ],
   "nodes": [
@@ -1777,6 +1782,395 @@
       "owner": "owner.darren",
       "tags": ["ecology", "mobile", "ict4sd"],
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/122"
+    },
+    {
+      "id": "outcome.regen-bkc-shared-knowledge-layer",
+      "kind": "outcome",
+      "title": "Bidirectional Regen\u2194BKC entity exchange beyond Discourse",
+      "summary": "Full bidirectional entity federation between Regen AI and BKC knowledge graphs, enabling shared entity resolution, cross-ecosystem knowledge discovery, and unified provenance.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "90-180d",
+      "owner": "owner.darren",
+      "tags": ["regen", "federation", "knowledge-layer"]
+    },
+    {
+      "id": "initiative.regen-claims-engine-integration",
+      "kind": "initiative",
+      "title": "Bridge BKC commitments to Regen Claims Engine V1",
+      "summary": "Align BKC commitment lifecycle (PROPOSED\u2192VERIFIED\u2192ACTIVE\u2192REDEEMED) with Regen Claims Engine data model. Submit claims on Evidence creation or Commitment redemption. Anchor provenance on Regen Ledger x/data.",
+      "status": "in_progress",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": ["regen", "claims-engine", "integration"],
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md",
+        "external:RegenAI/koi-processor/api/routers/commitment_router.py"
+      ]
+    },
+    {
+      "id": "initiative.regen-federation-deepening",
+      "kind": "initiative",
+      "title": "Full bidirectional Regen\u2194BKC entity federation",
+      "summary": "Extend KOI-net federation to enable full bidirectional entity exchange between Regen AI and BKC knowledge graphs with sharing policies per entity type and KOI-net event filter rules.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "90-180d",
+      "owner": "owner.darren",
+      "tags": ["regen", "federation"],
+      "source_docs": [
+        "external:Octo/docs/koi-protocol-alignment-master.md"
+      ]
+    },
+    {
+      "id": "work.r0-claims-schema-alignment",
+      "kind": "work_item",
+      "title": "Align BKC Commitment/Evidence with Claims Engine data model v2",
+      "summary": "Map BKC Commitment and Evidence entity fields to Claims Engine data model v2 (Sam Bennetts / Austin Wade Smith canonical doc). Produce field mapping table and identify gaps.",
+      "status": "in_progress",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": ["regen", "claims-engine", "schema"],
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md"
+      ]
+    },
+    {
+      "id": "work.r0-claims-engine-api-client",
+      "kind": "work_item",
+      "title": "Thin Claims Engine client in koi-processor",
+      "summary": "Build thin API client in koi-processor to submit claims to Claims Engine on Commitment\u2192REDEEMED or Evidence creation events.",
+      "status": "in_progress",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": ["regen", "claims-engine", "api"],
+      "source_docs": [
+        "external:Octo/koi-processor/api/routers/commitment_router.py"
+      ]
+    },
+    {
+      "id": "work.r0-multi-party-verification",
+      "kind": "work_item",
+      "title": "Multi-party claim verification via commons governance membrane",
+      "summary": "Require \u2265N steward attestations for PROPOSED\u2192VERIFIED state transition. Wire through existing commons governance membrane approval flow.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": ["regen", "verification", "governance"],
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md"
+      ]
+    },
+    {
+      "id": "work.r0-schema-freeze-gate",
+      "kind": "work_item",
+      "title": "Gate: Schema v2 field mapping finalized and reviewed",
+      "summary": "Schema v2 field mapping finalized and reviewed by Sam/Austin. No R1 work starts until frozen.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": ["regen", "gate", "schema"]
+    },
+    {
+      "id": "work.r0-testnet-anchor-smoke",
+      "kind": "work_item",
+      "title": "Gate: MsgAnchor + MsgAttest smoke test on Regen testnet",
+      "summary": "MsgAnchor + MsgAttest smoke test on Regen testnet. CID round-trips correctly.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": ["regen", "gate", "testnet"],
+      "source_docs": [
+        "external:regen-ledger/x/data"
+      ]
+    },
+    {
+      "id": "work.r0-resolver-registration-smoke",
+      "kind": "work_item",
+      "title": "Gate: MsgDefineResolver + MsgRegisterResolver smoke on testnet",
+      "summary": "MsgDefineResolver + MsgRegisterResolver smoke on testnet. KOI API registered as resolver for anchored CIDs.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": ["regen", "gate", "resolver"],
+      "source_docs": [
+        "external:regen-ledger/x/data"
+      ]
+    },
+    {
+      "id": "work.r0-first-claim-from-evidence",
+      "kind": "work_item",
+      "title": "Gate: First claim submitted from existing BKC Evidence entity (testnet)",
+      "summary": "First claim submitted from an existing BKC Evidence entity on testnet. End-to-end path proven.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": ["regen", "gate", "end-to-end"]
+    },
+    {
+      "id": "work.r1-ledger-msganchor",
+      "kind": "work_item",
+      "title": "Regen Ledger MsgAnchor mainnet integration",
+      "summary": "CID timestamping for Evidence/REDEEMED commitments on Regen Ledger mainnet via x/data MsgAnchor. Depends on all R0 gates.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "tags": ["regen", "ledger", "anchoring"],
+      "source_docs": [
+        "external:regen-ledger/x/data",
+        "external:Octo/koi-processor/api/routers/commitment_router.py"
+      ]
+    },
+    {
+      "id": "work.r1-ledger-msgattest",
+      "kind": "work_item",
+      "title": "MsgAttest verifier signature flow",
+      "summary": "Stewards submit MsgAttest attestations on Regen Ledger. Tx hashes stored in entity metadata for provenance chain.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "tags": ["regen", "ledger", "attestation"],
+      "source_docs": [
+        "external:regen-ledger/x/data"
+      ]
+    },
+    {
+      "id": "work.r1-challenge-dispute",
+      "kind": "work_item",
+      "title": "Claim challenge/dispute mechanism",
+      "summary": "Configurable challenge window, DISPUTED state, steward quorum resolution. Uses existing `disputes` predicate from ontology v1.2.0.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "tags": ["regen", "governance", "dispute"],
+      "source_docs": [
+        "../foundations/commitment-pooling-foundations.md"
+      ]
+    },
+    {
+      "id": "work.r1-claims-grant-matching",
+      "kind": "work_item",
+      "title": "Claims-to-grants matching for Giveth/Gitcoin rounds",
+      "summary": "Verified+anchored claims surface matching Giveth/Gitcoin funding rounds. Bridge claims provenance to grant applications.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "tags": ["regen", "grants", "matching"],
+      "source_docs": [
+        "../bioregional-ai-swarms-positioning.md"
+      ]
+    },
+    {
+      "id": "work.r1-resolver-health-monitor",
+      "kind": "work_item",
+      "title": "Resolver health monitoring and backup endpoint config",
+      "summary": "Alerts when KOI API (registered as CID resolver) is unreachable. Backup resolver endpoint configuration for high availability.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "tags": ["regen", "operations", "monitoring"]
+    },
+    {
+      "id": "work.r2-commoning-koi-mcp-split",
+      "kind": "work_item",
+      "title": "commoning-koi-mcp split \u2014 15 shared contract tools",
+      "summary": "Split shared KOI tools into commoning-koi-mcp package with 15 contract tools usable by both BKC and Regen AI deployments.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "90-180d",
+      "owner": "owner.darren",
+      "tags": ["regen", "tooling", "mcp"],
+      "source_docs": [
+        "external:Octo/docs/koi-protocol-alignment-master.md"
+      ]
+    },
+    {
+      "id": "work.r2-regen-bkc-entity-bridge",
+      "kind": "work_item",
+      "title": "Bidirectional entity federation with sharing policies",
+      "summary": "Full bidirectional entity federation between Regen AI and BKC with sharing policies per entity type and KOI-net event filter rules.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "90-180d",
+      "owner": "owner.darren",
+      "tags": ["regen", "federation", "entity-bridge"],
+      "source_docs": [
+        "external:Octo/docs/koi-protocol-alignment-master.md"
+      ]
+    },
+    {
+      "id": "work.node-salt-spring-island",
+      "kind": "work_item",
+      "title": "Salt Spring Island KOI node deployment",
+      "summary": "First non-Darren steward node deployment. Validates onboarding playbook end-to-end with Samu as operator.",
+      "status": "in_progress",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.samu",
+      "tags": ["deployment", "onboarding"],
+      "source_docs": [
+        "external:Octo/docs/new-bioregion-quickstart.md",
+        "../foundations/bioregion-onboarding-playbook.md"
+      ]
+    },
+    {
+      "id": "work.r2-regen-compute-integration",
+      "kind": "work_item",
+      "title": "Regen Compute ecological credit retirement for BKC AI workloads",
+      "summary": "Integrate Regen Compute credit retirement for BKC AI inference workloads. Separate from Claims Engine critical path.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "90-180d",
+      "owner": "owner.darren",
+      "tags": ["regen", "compute", "credits"],
+      "source_docs": [
+        "external:RegenAI/regen-compute/CLAUDE.md"
+      ]
+    },
+    {
+      "id": "milestone.claims-engine-v1-sprint",
+      "kind": "milestone",
+      "title": "R0 sprint: schema alignment + API client smoke-tested",
+      "summary": "Claims Engine V1 sprint complete: BKC schema aligned with Claims Engine data model v2, thin API client operational.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "due_date": "2026-03-11",
+      "tags": ["regen", "claims-engine", "sprint"]
+    },
+    {
+      "id": "milestone.first-claim-on-regen-ledger",
+      "kind": "milestone",
+      "title": "First CID anchored + attested on Regen Ledger mainnet",
+      "summary": "First CID anchored via MsgAnchor and attested via MsgAttest on Regen Ledger mainnet. Depends on all R0 gates + R1 mainnet work.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "due_date": "2026-04-15",
+      "tags": ["regen", "ledger", "mainnet"]
+    },
+    {
+      "id": "decision.adopt-regen-ledger-claim-anchoring",
+      "kind": "decision",
+      "title": "Use Regen Ledger x/data as canonical notarization layer",
+      "summary": "Adopt Regen Ledger x/data module for claim notarization. Rationale: already on mainnet, REGEN gas negligible, MsgAttest gives named verifier signatures.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": ["regen", "architecture", "ledger"],
+      "source_docs": [
+        "external:regen-ledger/x/data"
+      ],
+      "completed_date": "2026-03-04"
+    },
+    {
+      "id": "risk.regen-key-custody",
+      "kind": "risk",
+      "title": "Signing key custody for MsgAnchor/MsgAttest per node",
+      "summary": "Signing keys for MsgAnchor/MsgAttest need secure management per node. Key compromise could produce false attestations.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "tags": ["regen", "security", "keys"]
+    },
+    {
+      "id": "risk.regen-gas-volatility",
+      "kind": "risk",
+      "title": "REGEN token gas cost unpredictability",
+      "summary": "REGEN token gas cost volatility could make frequent anchoring expensive. Mitigated by constraining anchoring to REDEEMED-only and gas budget cap.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "tags": ["regen", "economics", "gas"]
+    },
+    {
+      "id": "risk.regen-resolver-availability",
+      "kind": "risk",
+      "title": "KOI API must stay reachable as registered CID resolver",
+      "summary": "KOI API registered as resolver for anchored CIDs must maintain availability. Downtime means anchored CIDs become unresolvable.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "tags": ["regen", "operations", "availability"]
+    },
+    {
+      "id": "metric.claims-anchored-on-ledger",
+      "kind": "metric",
+      "title": "Claims anchored on Regen Ledger",
+      "summary": "Count of CIDs anchored on Regen Ledger via MsgAnchor per quarter.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "metadata": {
+        "target": ">=10/quarter",
+        "type": "count"
+      },
+      "tags": ["regen", "metric"]
+    },
+    {
+      "id": "metric.claim-attestation-coverage",
+      "kind": "metric",
+      "title": "Claim attestation coverage",
+      "summary": "Percentage of anchored claims with >=2 MsgAttest attestations.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "metadata": {
+        "target": ">=80%",
+        "type": "percentage"
+      },
+      "tags": ["regen", "metric"]
+    },
+    {
+      "id": "metric.claim-verification-latency",
+      "kind": "metric",
+      "title": "Claim verification latency",
+      "summary": "Time from Evidence creation to VERIFIED state.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "metadata": {
+        "target": "<=48h",
+        "type": "duration"
+      },
+      "tags": ["regen", "metric"]
+    },
+    {
+      "id": "metric.claims-with-resolvable-provenance",
+      "kind": "metric",
+      "title": "Claims with resolvable CID provenance",
+      "summary": "Percentage of anchored CIDs resolvable via registered resolver.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "90-180d",
+      "owner": "owner.darren",
+      "metadata": {
+        "target": ">=95%",
+        "type": "percentage"
+      },
+      "tags": ["regen", "metric"]
     }
   ],
   "edges": [
@@ -2529,6 +2923,69 @@
     { "from": "initiative.commodity-ecology-integration", "to": "outcome.regional-sustainability-rubric-live", "type": "delivers" },
     { "from": "initiative.commodity-ecology-integration", "to": "outcome.bioregional-swarm-live", "type": "delivers" },
     { "from": "work.ce-ontology-extension", "to": "work.ce-category-taxonomy", "type": "depends_on" },
-    { "from": "initiative.commitment-pooling-integration", "to": "initiative.commodity-ecology-integration", "type": "informs" }
+    { "from": "initiative.commitment-pooling-integration", "to": "initiative.commodity-ecology-integration", "type": "informs" },
+
+    { "from": "initiative.regen-claims-engine-integration", "to": "outcome.capital-loop-provable", "type": "delivers" },
+    { "from": "initiative.regen-claims-engine-integration", "to": "outcome.policy-governed-sharing", "type": "delivers" },
+    { "from": "initiative.regen-federation-deepening", "to": "outcome.regen-bkc-shared-knowledge-layer", "type": "delivers" },
+
+    { "from": "work.r0-claims-schema-alignment", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
+    { "from": "work.r0-claims-engine-api-client", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
+    { "from": "work.r0-multi-party-verification", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
+    { "from": "work.r0-schema-freeze-gate", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
+    { "from": "work.r0-testnet-anchor-smoke", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
+    { "from": "work.r0-resolver-registration-smoke", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
+    { "from": "work.r0-first-claim-from-evidence", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
+    { "from": "work.r1-ledger-msganchor", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
+    { "from": "work.r1-ledger-msgattest", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
+    { "from": "work.r1-challenge-dispute", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
+    { "from": "work.r1-claims-grant-matching", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
+    { "from": "work.r1-resolver-health-monitor", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
+    { "from": "work.r2-commoning-koi-mcp-split", "to": "initiative.regen-federation-deepening", "type": "delivers" },
+    { "from": "work.r2-regen-bkc-entity-bridge", "to": "initiative.regen-federation-deepening", "type": "delivers" },
+
+    { "from": "work.r0-claims-schema-alignment", "to": "work.r0-claims-engine-api-client", "type": "depends_on" },
+    { "from": "work.r0-claims-engine-api-client", "to": "work.r0-multi-party-verification", "type": "depends_on" },
+    { "from": "work.r0-multi-party-verification", "to": "work.r0-schema-freeze-gate", "type": "depends_on" },
+    { "from": "work.r0-schema-freeze-gate", "to": "work.r0-testnet-anchor-smoke", "type": "depends_on" },
+    { "from": "work.r0-testnet-anchor-smoke", "to": "work.r0-resolver-registration-smoke", "type": "depends_on" },
+    { "from": "work.r0-resolver-registration-smoke", "to": "work.r0-first-claim-from-evidence", "type": "depends_on" },
+
+    { "from": "work.r0-schema-freeze-gate", "to": "work.r1-ledger-msganchor", "type": "depends_on" },
+    { "from": "work.r0-testnet-anchor-smoke", "to": "work.r1-ledger-msganchor", "type": "depends_on" },
+    { "from": "work.r0-resolver-registration-smoke", "to": "work.r1-ledger-msganchor", "type": "depends_on" },
+    { "from": "work.r0-first-claim-from-evidence", "to": "work.r1-ledger-msganchor", "type": "depends_on" },
+    { "from": "work.r1-ledger-msganchor", "to": "work.r1-ledger-msgattest", "type": "depends_on" },
+    { "from": "work.r1-ledger-msgattest", "to": "work.r1-challenge-dispute", "type": "depends_on" },
+
+    { "from": "work.r0-claims-schema-alignment", "to": "work.c0-evidence-commitment-bridge", "type": "depends_on" },
+    { "from": "work.r1-ledger-msganchor", "to": "work.s1-data-class-matrix", "type": "depends_on" },
+    { "from": "work.r2-regen-bkc-entity-bridge", "to": "work.s1-data-class-matrix", "type": "depends_on" },
+    { "from": "work.r2-regen-bkc-entity-bridge", "to": "work.s2-security-lane", "type": "depends_on" },
+
+    { "from": "work.c0-commitment-pooling", "to": "initiative.regen-claims-engine-integration", "type": "informs" },
+    { "from": "work.tbff-receipt-to-evidence-v0", "to": "work.r1-ledger-msganchor", "type": "informs" },
+    { "from": "initiative.nou-a2a-coordination", "to": "initiative.regen-federation-deepening", "type": "informs" },
+    { "from": "work.c2-regenerate-cascadia-pilot", "to": "work.r1-ledger-msganchor", "type": "informs" },
+    { "from": "decision.adopt-regen-ledger-claim-anchoring", "to": "initiative.regen-claims-engine-integration", "type": "informs" },
+
+    { "from": "work.r2-commoning-koi-mcp-split", "to": "initiative.nou-a2a-coordination", "type": "depends_on" },
+
+    { "from": "work.s3-key-lifecycle-runbook", "to": "risk.regen-key-custody", "type": "mitigates" },
+    { "from": "decision.adopt-regen-ledger-claim-anchoring", "to": "risk.regen-gas-volatility", "type": "informs" },
+    { "from": "work.r1-ledger-msganchor", "to": "risk.regen-gas-volatility", "type": "mitigates" },
+    { "from": "work.r1-resolver-health-monitor", "to": "risk.regen-resolver-availability", "type": "mitigates" },
+
+    { "from": "metric.claims-anchored-on-ledger", "to": "outcome.capital-loop-provable", "type": "measures" },
+    { "from": "metric.claim-attestation-coverage", "to": "outcome.capital-loop-provable", "type": "measures" },
+    { "from": "metric.claim-verification-latency", "to": "outcome.capital-loop-provable", "type": "measures" },
+    { "from": "metric.claims-with-resolvable-provenance", "to": "outcome.regen-bkc-shared-knowledge-layer", "type": "measures" },
+
+    { "from": "work.r0-claims-schema-alignment", "to": "milestone.claims-engine-v1-sprint", "type": "delivers" },
+    { "from": "work.r0-claims-engine-api-client", "to": "milestone.claims-engine-v1-sprint", "type": "delivers" },
+    { "from": "work.r1-ledger-msganchor", "to": "milestone.first-claim-on-regen-ledger", "type": "delivers" },
+    { "from": "work.r1-ledger-msgattest", "to": "milestone.first-claim-on-regen-ledger", "type": "delivers" },
+
+    { "from": "work.node-salt-spring-island", "to": "outcome.bioregional-swarm-live", "type": "delivers" }
   ]
 }
