@@ -16,6 +16,7 @@ import json
 import re
 import subprocess
 import sys
+import time
 from collections import defaultdict
 from dataclasses import dataclass
 from datetime import date, timedelta
@@ -64,28 +65,35 @@ class SyncError(Exception):
     """Raised for sync failures."""
 
 
-def run_gh(args: list[str], expect_json: bool = False, input_data: str | None = None) -> Any:
+def run_gh(args: list[str], expect_json: bool = False, input_data: str | None = None, retries: int = 3) -> Any:
     cmd = ["gh", *args]
-    try:
-        result = subprocess.run(
-            cmd,
-            check=True,
-            text=True,
-            capture_output=True,
-            input=input_data,
-            timeout=120,
-        )
-    except subprocess.CalledProcessError as exc:
-        stderr = (exc.stderr or "").strip()
-        raise SyncError(f"Command failed: {' '.join(cmd)}\n{stderr}") from exc
-    except subprocess.TimeoutExpired as exc:
-        raise SyncError(f"Command timed out after 120s: {' '.join(cmd)}") from exc
-    out = result.stdout.strip()
-    if expect_json:
-        if not out:
-            return {}
-        return json.loads(out)
-    return out
+    for attempt in range(retries + 1):
+        try:
+            result = subprocess.run(
+                cmd,
+                check=True,
+                text=True,
+                capture_output=True,
+                input=input_data,
+                timeout=120,
+            )
+        except subprocess.CalledProcessError as exc:
+            stderr = (exc.stderr or "").strip()
+            is_rate_limit = "rate limit" in stderr.lower() or "secondary rate" in stderr.lower() or "abuse" in stderr.lower()
+            if is_rate_limit and attempt < retries:
+                wait = 2 ** attempt * 5  # 5s, 10s, 20s
+                print(f"  Rate limited, retrying in {wait}s (attempt {attempt + 1}/{retries})...", file=sys.stderr)
+                time.sleep(wait)
+                continue
+            raise SyncError(f"Command failed: {' '.join(cmd)}\n{stderr}") from exc
+        except subprocess.TimeoutExpired as exc:
+            raise SyncError(f"Command timed out after 120s: {' '.join(cmd)}") from exc
+        out = result.stdout.strip()
+        if expect_json:
+            if not out:
+                return {}
+            return json.loads(out)
+        return out
 
 
 def gh_api(endpoint: str, *, method: str = "GET", payload: dict[str, Any] | None = None) -> Any:
