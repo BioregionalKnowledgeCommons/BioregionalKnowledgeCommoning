@@ -196,12 +196,12 @@ If this works, it creates a strong reference pattern for bioregional agentic swa
 
 ## Supporting Infrastructure Already Running
 
-- Seed pack: `async-seed-pack-2026-03-06.md`
-- Mapping-first framing: `mapping-first-collaboration-proposal-2026-03-06.md`
-- Interview pipeline: `../../docs/foundations/interview-to-graph-mvp-v0.1.md`
-- Mapping model: `../../docs/foundations/bioregional-mapping-model-v0.1.md`
-- Mapping intake contract: `../../docs/foundations/bioregional-mapping-intake-contract-v0.1.md`
-- PACTO framework: https://github.com/regen-network/pacto-framework
+- [Seed pack](https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/blob/main/pilots/front-range-cascadia-2026/async-seed-pack-2026-03-06.md)
+- [Mapping-first framing](https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/blob/main/pilots/front-range-cascadia-2026/mapping-first-collaboration-proposal-2026-03-06.md)
+- [Interview pipeline](https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/blob/main/docs/foundations/interview-to-graph-mvp-v0.1.md)
+- [Mapping model](https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/blob/main/docs/foundations/bioregional-mapping-model-v0.1.md)
+- [Mapping intake contract](https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/blob/main/docs/foundations/bioregional-mapping-intake-contract-v0.1.md)
+- [PACTO framework](https://github.com/regen-network/pacto-framework)
 
 ## One-Line Summary
 
