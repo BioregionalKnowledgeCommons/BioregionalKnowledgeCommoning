@@ -196,7 +196,6 @@ If this works, it creates a strong reference pattern for bioregional agentic swa
 
 ## Supporting Infrastructure Already Running
 
-- Live graph and search: `https://salishsee.life/commons`
 - Seed pack: `async-seed-pack-2026-03-06.md`
 - Mapping-first framing: `mapping-first-collaboration-proposal-2026-03-06.md`
 - Interview pipeline: `../../docs/foundations/interview-to-graph-mvp-v0.1.md`

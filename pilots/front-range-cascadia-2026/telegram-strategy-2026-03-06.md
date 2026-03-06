@@ -106,7 +106,7 @@ The Commons Engine framing clarified something important for me: the graph / fed
 
 On my side, the 4-node federation is already running, the schema bridge / ontology mapping workflow is real, and the consent membrane is enforced at the database level now. So to me this reads much more as convergence than parallel proposals.
 
-If useful, I would love to build toward one concrete seam where Commons Engine handles the community workflow and approved artifacts land in the live graph at https://salishsee.life/commons. We already have a documented profile for exactly this kind of integration — GitHub as backend with adapter export to the shared graph.
+If useful, I would love to build toward one concrete seam where Commons Engine handles the community workflow and approved artifacts land in the knowledge graph via the API. We already have a documented profile for exactly this kind of integration — GitHub as backend with adapter export to the shared graph. And the commons dashboard at salishsee.life/commons is actually a fork of your bioregional knowledge commons app — so there's already a real integration surface there.
 
 ### Post 3: Reply to Gregory
 
