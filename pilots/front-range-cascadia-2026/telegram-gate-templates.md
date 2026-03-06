@@ -1,103 +1,95 @@
-# Telegram Gate Templates — Mar 3-5 Build Day
-*Pre-drafted messages for Gate A/B decision points and expanded Telegram post*
+# Telegram Drafts - Async Outreach
+*Ready-to-send messages for the bioregional-ai-swarms Telegram group*
 
----
+## Use
 
-## Gate A — Tuesday, March 3, 12:00 PM MT
+- Use `Template A` if you want to keep it short.
+- Use `Template B` if you want to leave a fuller async seed.
+- Use the direct replies if the thread turns toward implementation details.
 
-### Template A1: Summarizer Confirmed
+## Template A: Short Async Seed
 
-> Build-day update from BKC:
+> Async seed from BKC while I'm traveling:
 >
-> AG Neyer confirmed — Clawsmos Summarizer will wire to BKC `/ingest` for Mar 5.
+> I will not be there live, and I do not want to impose on Boulder or Front Range planning from the outside.
 >
-> **What this means for Thu:** We'll demo the full Summarizer pipeline live — transcript goes in one end, entities appear in the federated knowledge graph at the other. Governance membrane approves. Graph-grounded chat answers questions about what just arrived.
+> What I can offer is a working inter-bioregional knowledge commons substrate. We already have a live 4-node federation across Salish Sea, Front Range, Greater Victoria, and Cowichan Valley, so there is already a real Cascadia <-> Front Range learning mesh in place.
 >
-> **Technical next step:** Running Gate B contract checks by 6pm today. Token rotation + sample call against the frozen contract. If it passes, we're locked for demo.
+> My suggestion is to start with graph-first bioregional mapping packets rather than grand architecture. One place, one org, one practice, one problem, one indicator. Maps, tables, chat, and narrative views can all project from the same underlying knowledge graph.
 >
-> Integration contract: `summarizer-ingest-contract.md` in the BKC repo.
+> If useful, I can share the docs, code, and apps we already have so other bioregions can reuse or adapt them asynchronously.
 
-### Template A2: Summarizer Not Confirmed (Fallback)
+## Template B: Expanded Async Seed
 
-> Build-day update from BKC:
+> Async seed from BKC while I'm traveling:
 >
-> No confirmation from Clawsmos Summarizer team yet — proceeding with standalone BKC demo path for Mar 5. Integration slot stays open.
+> I will not be there live, so I want to leave behind something concrete without pretending I know Boulder from the inside. My lived stewardship context is Cascadia, especially the Salish Sea, Greater Victoria, and Cowichan Valley.
 >
-> **What we'll show Thu:** BKC's full knowledge commons pipeline — 4-node federation, governance membrane, entity resolution, and graph-grounded chat. We'll use a staged sample payload to demonstrate the Summarizer ingest flow, proving the contract works end-to-end.
+> What already exists on my side is not just a roadmap. There is already a live federated setup across:
 >
-> **Open offer:** Anyone who wants to wire a Summarizer (or any structured extraction pipeline) to BKC can use the frozen contract at `summarizer-ingest-contract.md`. Happy to pair this week.
+> - Salish Sea / Octo
+> - Front Range
+> - Greater Victoria
+> - Cowichan Valley
+>
+> So there is already the beginning of a Cascadia <-> Front Range bioregional knowledge commoning swarm.
+>
+> My current suggestion is to treat mapping as the first shared practice:
+>
+> - who is here
+> - what is happening
+> - what needs attention
+> - what practices already exist
+> - what indicators matter
+> - what should stay local or consent-gated
+>
+> My current position is also graph-first rather than GIS-first. The map is useful, but it should be a projection over a shared semantic layer, not the canonical model itself. That lets the same knowledge show up as a map, a graph, a table, or a narrative knowledge garden without fragmenting the underlying data.
+>
+> On ontology, I do not think we should rush toward one universal ontology. I think a shared bridge ontology plus local ontologies and governed mappings is the better direction. That gives us interoperability without flattening local meaning.
+>
+> Two concrete async seams that feel useful right now:
+>
+> 1. send one small mapping packet: place + org + practice + problem + indicator
+> 2. send one interview packet with consent metadata so it can be processed into structured graph knowledge
+>
+> I can share the docs and code we already have for both. That feels more useful to me right now than imposing a live build agenda on Front Range from afar.
 
----
+## Template C: Direct Reply If Someone Asks "What Can We Actually Do Together?"
 
-## Expanded Telegram Post — Three-Plane Framing
+> My current answer is: start small and make the artifacts comparable across bioregions.
+>
+> The lowest-friction options I see are:
+>
+> 1. exchange one mapping packet per bioregion
+> 2. process one interview into graph-ready structured knowledge
+> 3. compare one practice from Front Range with one practice from Cascadia and see what pattern, if any, actually emerges
+>
+> That gives us something real to learn from without requiring everyone to adopt the same whole stack up front.
 
-*Use this as the primary build-day positioning message (works for both Gate A outcomes):*
+## Template D: Direct Reply on Graph-First Mapping
 
-> **Bioregional AI Swarms — what's live, what's next, and what we need from each other**
->
-> The coalition is building across three planes:
->
-> **Knowledge Plane** (BKC) — persistent truth layer
-> - 4-node federation live: Salish Sea, Front Range, Greater Victoria, Cowichan Valley
-> - 641 entities, governance membrane (staged → approved → ingested), graph-grounded chat with 6-8 cited sources
-> - Summarizer pipeline ready: transcript → entities → federated graph
->
-> **Coordination Plane** (Clawsmos + co-op.us) — real-time agent layer
-> - Matrix rooms + agent roles (Summarizer, Orchestrator, Moderator, Representative)
-> - A2A agent cards live for cross-agent discovery
-> - co-op.us agent API + task allocation building
->
-> **Capital Plane** (owockibot + Gitcoin) — value flow layer
-> - Treasury allocation with bounded authority
-> - Hypercerts from Evidence entities
-> - co-op patronage engine
->
-> **Integration seams we're offering:**
-> 1. `/ingest` — any Summarizer can write structured entities to BKC (frozen contract, token-authed)
-> 2. `/chat` — any agent can query the knowledge graph for grounded answers
-> 3. A2A Agent Card at `/.well-known/agent-card.json` — 15-tool KOI contract for capability discovery
-> 4. KOI-net federation — any new bioregion node can join the mesh
->
-> **What we need from the coalition:**
-> - Who wires the first external Summarizer pipeline to `/ingest`?
-> - Who owns the social narrative layer (clips, posts, audience building)?
-> - When is the first recurring cross-plane sprint?
-> - What scope for GG25-29 round proposals?
->
-> Happy to pair with anyone who wants to connect action-plane outputs to evidence entities in the commons. DM or reply here.
->
-> — Darren (BKC / Salish Sea)
+> My view is that the map is not the model. The canonical layer should be a graph / ontology layer, and then geographic maps, graph views, tables, and knowledge-garden narratives are all projections over that same substrate. That is the cleanest way I know to support bioregional mapping, AI processing, and cross-bioregion comparison without ending up with disconnected schemas.
 
----
+## Template E: Direct Reply on Ontology
 
-## Gate B — Tuesday, March 3, 6:00 PM MT
+> I do not think the answer is one universal ontology. I think the right move is a shared bridge ontology plus local ontologies plus explicit mapping workflows. Local concepts should be preserved when they do not map cleanly. If the same new concept keeps recurring across places, that is when it becomes a candidate extension to the shared layer.
 
-### Template B1: Scope Lock — Summarizer Integration Confirmed
+## Template F: Direct Reply on Interviews
 
-> **Gate B: Scope lock confirmed** ✓
+> I think interviews are one of the strongest near-term seams because they surface practices, local terms, governance concepts, claims, and evidence in a structured way. The rough flow I have in mind is:
 >
-> Summarizer contract sample call passed. Token rotated and shared out-of-band with AG Neyer.
+> `recording -> transcript -> QA -> extraction -> ontology review -> governed ingest -> searchable graph`
 >
-> Locked for Mar 5:
-> - Segment 4 = Live Summarizer pipeline demo (transcript → entities → graph → chat)
-> - Contract: `summarizer-ingest-contract.md`
-> - Fallback: staged payload if live feed has issues
->
-> No new code after Gate C (Wed 6pm MT). Feature freeze.
+> We already have most of that tech in adjacent tooling. The main missing piece is a BKC-specific operator workflow with consent and review gates.
 
-### Template B2: Scope Lock — Standalone Demo Path
+## Template G: Direct Reply If Someone Wants the Offer in One Sentence
 
-> **Gate B: Scope lock confirmed** ✓
->
-> Proceeding with standalone BKC demo path. Summarizer segment uses staged sample payload.
->
-> Locked for Mar 5:
-> - Segment 4 = Staged Summarizer pipeline demo (sample payload → entities → graph → chat)
-> - Integration slot documented and open post-demo
-> - Contract published for async integration
->
-> No new code after Gate C (Wed 6pm MT). Feature freeze.
+> My offer is reusable graph-first knowledge commoning infrastructure plus a lightweight way for bioregions to exchange mapping packets, interview packets, and learnings without forcing one ontology or one platform on everyone.
 
----
+## Notes
 
-*Templates owner: Darren Zal | Created: 2026-03-02 | For use in Telegram bioregional-ai-swarms channel*
+- These messages avoid implying any confirmed Clawsmos or AG integration work.
+- Keep the focus on what is already real, what can be shared, and what can be done asynchronously.
+- If someone asks for links, send the async seed pack and the mapping/interview docs from this pilot folder.
+
+*Templates owner: Darren Zal | Updated: 2026-03-06 | Channel: bioregional-ai-swarms*

@@ -24,6 +24,14 @@ This folder contains planning, governance, and execution docs for the 2026 dual-
 - Telos doc: `../../docs/bioregional-swarm-telos.md`
 - Follow-ups template: `build-day-followups-2026-03-05.md`
 
+## Async Collaboration
+- Async seed pack: `async-seed-pack-2026-03-06.md`
+- Mapping-first collaboration proposal: `mapping-first-collaboration-proposal-2026-03-06.md`
+- Mapping model: `../../docs/foundations/bioregional-mapping-model-v0.1.md`
+- Mapping intake contract: `../../docs/foundations/bioregional-mapping-intake-contract-v0.1.md`
+- Interview-to-graph MVP: `../../docs/foundations/interview-to-graph-mvp-v0.1.md`
+- Ontology commoning ops: `../../docs/foundations/ontology-commoning-ops-v0.1.md`
+
 ## FR Watershed Data
 - Seed manifest: `fr-watershed-seed-manifest.json` (15 SNOTEL + 3 gauges + Lake Powell)
 - Manifest builder: `build-fr-watershed-manifest.py` (reproducible selection from data.json)

@@ -17,7 +17,7 @@
 Paste this into your terminal, replacing `<YOUR_TOKEN>` with your token:
 
 ```bash
-curl -X POST 'https://45.132.245.30.sslip.io/commons/api/nodes/octo-salish-sea/ingest' \
+curl -X POST 'https://salishsee.life/commons/api/nodes/octo-salish-sea/ingest' \
   -H 'Content-Type: application/json' \
   -H 'x-ingest-token: <YOUR_TOKEN>' \
   -d '{
@@ -84,7 +84,7 @@ curl -X POST 'https://45.132.245.30.sslip.io/commons/api/nodes/octo-salish-sea/i
 Search for your entity by name:
 
 ```bash
-curl -s 'https://45.132.245.30.sslip.io/commons/api/nodes/octo-salish-sea/search?q=My+Test+Organization'
+curl -s 'https://salishsee.life/commons/api/nodes/octo-salish-sea/search?q=My+Test+Organization'
 ```
 
 You should see your entity in the results with `"name": "My Test Organization"`.
