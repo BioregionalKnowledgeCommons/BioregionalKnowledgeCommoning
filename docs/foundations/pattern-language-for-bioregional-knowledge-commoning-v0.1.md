@@ -13,6 +13,14 @@ This repository uses three layers:
 
 Patterns inform protocol design. Protocols make selected patterns operational.
 
+The project also works across four artifact roles that should not be collapsed:
+- Practices are local and situated.
+- Patterns are descriptive abstractions derived from multiple practices.
+- Protocols are prescriptive coordination structures selected from patterns.
+- Playbooks are local implementations that re-instantiate protocols in context.
+
+The quality test for abstraction here is not maximum portability. It is whether an abstraction helps another place learn without stripping away the context, provenance, consent, and local judgment that made the original practice viable.
+
 ## Pattern Template
 Use this template when adding new patterns:
 - Context: Where this pattern applies.
@@ -88,6 +96,15 @@ Use this template when adding new patterns:
 - Implementation Signals: Distinct internal and federated output paths.
 - Anti-Patterns: Treating all local artifacts as globally addressable.
 
+### 8. Situated Transfer
+- Context: A pattern or protocol that worked in one bioregion may appear relevant in another.
+- Problem: Abstractions travel faster than the conditions that made them work, leading to cargo-cult adoption or extractive reuse.
+- Forces: Reuse vs situated judgment; legibility vs fidelity; trans-local learning vs sovereignty.
+- Solution: Recommend patterns and protocols only with explicit context packets: source practices/case studies, ecological and governance preconditions, rights/consent constraints, contraindications, and required local playbook adaptation. Keep descriptive pattern matches distinct from prescriptive protocol recommendations.
+- Tradeoffs: More metadata to maintain and slower recommendation loops.
+- Implementation Signals: Recommendations cite their sources, explain why similarity was computed, surface fit and misfit signals, and require local steward review before operational adoption.
+- Anti-Patterns: One-click replication, ranking by semantic similarity alone, and treating protocols as universal recipes.
+
 ## Pattern to Protocol Mapping
 | Pattern | Meta-Protocol Need | Profile/Implementation Need |
 |---|---|---|
@@ -98,6 +115,7 @@ Use this template when adding new patterns:
 | Holonic Nest | Boundary-aware publication semantics | Coordinator policies and swarm topology |
 | Governance Slot | Required policy fields | Local governance vocabulary bindings |
 | Local-First, Federate-Selective | Snapshot + event modes | Publish/export workflows |
+| Situated Transfer | Provenance, fit, and rights signals on shared artifacts | Recommendation workflows + local playbook review |
 
 ## Versioning
 - Version: `v0.1`
