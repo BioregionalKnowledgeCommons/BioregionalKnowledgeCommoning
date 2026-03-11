@@ -2,8 +2,8 @@
   "@context": "./semantic-roadmap.context.json",
   "roadmap_id": "bkc.roadmap.2026.part-b",
   "program": "Bioregional Knowledge Commons",
-  "version": "0.6.0",
-  "as_of": "2026-03-04",
+  "version": "0.8.1",
+  "as_of": "2026-03-12",
   "owners": [
     {
       "id": "owner.darren",
@@ -34,6 +34,11 @@
       "id": "owner.samu",
       "name": "Samu",
       "role": "salt-spring-steward"
+    },
+    {
+      "id": "owner.shawn",
+      "name": "Shawn Whitney Anderson",
+      "role": "p2p-systems-lead"
     }
   ],
   "nodes": [
@@ -354,8 +359,8 @@
     {
       "id": "initiative.tbff-knowledge-flow-pilot",
       "kind": "initiative",
-      "title": "Knowledge to flow funding pilot integration",
-      "summary": "Execute TBFF v0 in production scope: threshold policy, flow write-back, and evidence receipts tied to real allocations.",
+      "title": "Flow Funding Integration (Hub Cultivator + TBFF)",
+      "summary": "Two-track capital allocation integration: Bioregional Flow Funding (Hub Cultivator / Regenerate Cascadia, trust-based human steward decisions) and TBFF (MycoFi / Mycopunks, algorithmic threshold overflow). Shared infrastructure: CAT receipt chains, Evidence entities, commitment pool bridge.",
       "status": "in_progress",
       "priority": "P0",
       "horizon": "0-30d",
@@ -363,11 +368,13 @@
       "tags": [
         "finance",
         "integration",
-        "tbff"
+        "tbff",
+        "hub-cultivator",
+        "bioregional-flow-funding"
       ],
       "source_docs": [
-        "../bioregional-ai-swarms-positioning.md",
-        "../foundations/bioregional-ai-swarms-pattern-language.md"
+        "../foundations/flow-funding-foundations.md",
+        "../foundations/commitment-pooling-foundations.md"
       ],
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/12"
     },
@@ -794,13 +801,13 @@
     {
       "id": "milestone.tbff-v0-writeback-demo-2026-03-14",
       "kind": "milestone",
-      "title": "TBFF v0 write-back demo complete",
-      "summary": "Demonstrate thresholded flow decision logged to KOI Evidence entities with provenance.",
+      "title": "Flow funding write-back demo complete",
+      "summary": "Hub Cultivator decision logged as Evidence with real CAT receipt chain. Receipt chain API returns provenance. Victoria Landscape Hub entities seeded.",
       "status": "planned",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
-      "due_date": "2026-03-14",
+      "due_date": "2026-03-21",
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/33"
     },
     {
@@ -1522,7 +1529,7 @@
       "kind": "work_item",
       "title": "Define and publish data-class policy matrix",
       "summary": "Canonical classes and action matrix for read/search/chat/ingest/share.",
-      "status": "planned",
+      "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
@@ -1870,6 +1877,21 @@
       ]
     },
     {
+      "id": "initiative.personal-peer-mesh",
+      "kind": "initiative",
+      "title": "Personal peer mesh \u2014 vault sync + agent coordination over WireGuard",
+      "summary": "Extend KOI P2P infrastructure to enable personal holons: sovereign vaults syncing E2EE over WireGuard, Claude Code agents coordinating via claude-matrix messages carried on the KOI event queue. Three-peer mesh (darren/shawn/samu) validates the pattern before organizational adoption.",
+      "status": "in_progress",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "tags": ["p2p", "vault-sync", "agent-coordination", "personal-holon", "swarm"],
+      "source_docs": [
+        "external:RegenAI/koi-processor/docs/planning/KOI_NET_VAULT_SYNC_ROADMAP.md",
+        "https://github.com/LinuxIsCool/claude-matrix"
+      ]
+    },
+    {
       "id": "work.r0-claims-schema-alignment",
       "kind": "work_item",
       "title": "Align BKC Commitment/Evidence with Claims Engine data model v2",
@@ -1925,9 +1947,9 @@
     {
       "id": "work.r0-testnet-anchor-smoke",
       "kind": "work_item",
-      "title": "Gate: MsgAnchor + MsgAttest smoke test on Regen testnet",
-      "summary": "MsgAnchor + MsgAttest smoke test on Regen testnet. CID round-trips correctly.",
-      "status": "planned",
+      "title": "Gate: MsgAnchor smoke test on Regen testnet",
+      "summary": "MsgAnchor smoke test on Regen testnet. CID round-trips correctly. Proven via Steel Thread Phase A+B (TX: 84BCCDA8...).",
+      "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
@@ -1955,7 +1977,7 @@
       "kind": "work_item",
       "title": "Gate: First claim submitted from existing BKC Evidence entity (testnet)",
       "summary": "First claim submitted from an existing BKC Evidence entity on testnet. End-to-end path proven.",
-      "status": "planned",
+      "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
@@ -2217,6 +2239,139 @@
         "type": "percentage"
       },
       "tags": ["regen", "metric"]
+    },
+    {
+      "id": "work.p2p-vault-sync-shawn-onboard",
+      "kind": "work_item",
+      "title": "Onboard Shawn as third vault sync peer via invite-token flow",
+      "summary": "Execute invite-token onboarding for Shawn's CachyOS machine as third KOI-net peer. Validate WireGuard connectivity, E2EE handshake, and bidirectional file sync. First real use of invite-token bootstrap by an external peer.",
+      "status": "in_progress",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.shawn",
+      "tags": ["p2p", "onboarding", "vault-sync"]
+    },
+    {
+      "id": "work.p2p-agent-message-rid-and-routing",
+      "kind": "work_item",
+      "title": "Agent-message RID namespace + server-side inbox routing in KOI poller",
+      "summary": "Define orn:koi-net.agent-message:{uuid} RID format with _agent_message content marker. Add dispatch handler in koi_poller._process_event() (alongside existing _vault_sync and _koi_share handlers). Store/route inbound messages to per-agent inbox. Add agent-message to edge rid_types for capability negotiation. No new event type \u2014 uses NEW/UPDATE/FORGET.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "tags": ["p2p", "protocol", "agent-coordination"],
+      "source_docs": [
+        "external:RegenAI/koi-processor/api/koi_protocol.py",
+        "external:RegenAI/koi-processor/api/koi_poller.py",
+        "external:RegenAI/koi-processor/api/event_queue.py"
+      ]
+    },
+    {
+      "id": "work.p2p-koi-transport-adapter",
+      "kind": "work_item",
+      "title": "KoiTransport \u2014 claude-matrix Transport adapter calling KOI API",
+      "summary": "TypeScript class implementing claude-matrix Transport interface (10 methods) that calls KOI API endpoints for send/read/discover/heartbeat. Maps MatrixEvent envelope to KOI agent-message RID + content format. Lives in claude-matrix repo as server/src/transport/KoiTransport.ts alongside existing FileTransport.ts.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.shawn",
+      "tags": ["p2p", "claude-matrix", "transport"],
+      "source_docs": [
+        "https://github.com/LinuxIsCool/claude-matrix"
+      ]
+    },
+    {
+      "id": "work.p2p-three-peer-smoke-test",
+      "kind": "work_item",
+      "title": "Three-peer smoke test \u2014 vault sync + agent messaging across darren/shawn/samu",
+      "summary": "Validate full P2P stack across three peers: E2EE vault file sync (create/update/delete), agent message delivery (send/receive/discover), and mesh relay (A\u2192B\u2192C forwarding). Script-based, repeatable.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "tags": ["p2p", "testing", "smoke-test"]
+    },
+    {
+      "id": "work.p2p-mcp-bootstrap-hardening",
+      "kind": "work_item",
+      "title": "Harden MCP bootstrap \u2014 cross-platform fixes + first-session verification",
+      "summary": "Harden existing setup_mcp_server() in bootstrap-node.sh: fix pacman/dnf Node.js install paths, add first-session smoke test (verify MCP tools respond after koi-server start), handle npm/node version edge cases on Arch Linux. Core clone/build/register flow already works.",
+      "status": "in_progress",
+      "priority": "P2",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": ["p2p", "mcp", "onboarding", "hardening"]
+    },
+    {
+      "id": "milestone.three-peer-mesh-validated",
+      "kind": "milestone",
+      "title": "Three-peer personal mesh validated (vault sync + agent messaging)",
+      "summary": "Three personal peers (darren, shawn, samu) with E2EE vault sync and agent message delivery all passing smoke test.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "tags": ["p2p", "milestone"]
+    },
+    {
+      "id": "work.flow-funding-foundations-doc",
+      "kind": "work_item",
+      "title": "Flow funding foundations document",
+      "summary": "Written flow-funding-foundations.md in docs/foundations/. Covers two-track model (Hub Cultivator + TBFF), philosophical pillars (trust as infrastructure, subsidiarity, watershed metaphor), Landscape Hub Cultivator context, TBFF technical model, integration architecture (read/write paths + commitment pool bridge), and adoption pathway.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": ["hub-cultivator", "tbff", "bioregional-flow-funding", "victoria"],
+      "source_docs": [
+        "../foundations/flow-funding-foundations.md"
+      ],
+      "completed_date": "2026-03-12"
+    },
+    {
+      "id": "work.hub-cultivator-decision-logging",
+      "kind": "work_item",
+      "title": "Hub Cultivator decision logging via /ingest",
+      "summary": "Helper script and conventions for logging Hub Cultivator steward decisions as Evidence entities with real CAT receipt chains. Deterministic document_rid with hub-cultivator: prefix. Creates Evidence + Project/Organization entities + relationships.",
+      "status": "in_progress",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": ["hub-cultivator", "bioregional-flow-funding", "victoria"]
+    },
+    {
+      "id": "work.tbff-settlement-evidence-bridge",
+      "kind": "work_item",
+      "title": "TBFF settlement to Evidence entity endpoint",
+      "summary": "POST /claims/evidence-from-settlement endpoint transforms TBFF on-chain settlement events into Evidence entities with CAT receipt chains. Follows evidence_from_artifacts pattern. Includes settlement snapshot (balances, iterations, convergence) in metadata.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": ["tbff", "victoria"]
+    },
+    {
+      "id": "work.receipt-chain-fix",
+      "kind": "work_item",
+      "title": "Fix /ingest to create real CAT receipt rows",
+      "summary": "Replace opaque UUID in /ingest with real create_receipt() call. Synthetic batch RID, entity URIs in metadata, parent_receipt_id chaining. receipt_id is primary (SHA-256 hash), receipt_rid kept as deprecated alias, receipt_persisted flag signals DB write success. GET /receipts/{id}/chain endpoint added. Deployed Octo+FR.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": ["infrastructure"]
+    },
+    {
+      "id": "work.victoria-landscape-hub-seeding",
+      "kind": "work_item",
+      "title": "Seed Victoria Landscape Hub entities",
+      "summary": "Register Victoria Landscape Hub (Organization) and Regenerate Cascadia (Organization) entities on local/GV node with affiliated_with relationship.",
+      "status": "in_progress",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": ["hub-cultivator", "victoria"]
     }
   ],
   "edges": [
@@ -3037,6 +3192,40 @@
     { "from": "work.regen-choice-ontology-mapping", "to": "initiative.regen-choice-matchmaking", "type": "delivers" },
     { "from": "work.regen-choice-question-set-prototype", "to": "initiative.regen-choice-matchmaking", "type": "delivers" },
     { "from": "work.regen-choice-ontology-mapping", "to": "work.regen-choice-question-set-prototype", "type": "depends_on" },
-    { "from": "initiative.regen-choice-matchmaking", "to": "outcome.bioregional-swarm-live", "type": "delivers" }
+    { "from": "initiative.regen-choice-matchmaking", "to": "outcome.bioregional-swarm-live", "type": "delivers" },
+
+    { "from": "work.p2p-vault-sync-shawn-onboard", "to": "initiative.personal-peer-mesh", "type": "delivers" },
+    { "from": "work.p2p-agent-message-rid-and-routing", "to": "initiative.personal-peer-mesh", "type": "delivers" },
+    { "from": "work.p2p-koi-transport-adapter", "to": "initiative.personal-peer-mesh", "type": "delivers" },
+    { "from": "work.p2p-three-peer-smoke-test", "to": "initiative.personal-peer-mesh", "type": "delivers" },
+    { "from": "work.p2p-mcp-bootstrap-hardening", "to": "initiative.personal-peer-mesh", "type": "delivers" },
+
+    { "from": "initiative.personal-peer-mesh", "to": "outcome.bioregional-swarm-live", "type": "delivers" },
+    { "from": "initiative.personal-peer-mesh", "to": "outcome.secure-federation-ops", "type": "delivers" },
+
+    { "from": "initiative.personal-peer-mesh", "to": "initiative.nou-a2a-coordination", "type": "informs" },
+    { "from": "initiative.personal-peer-mesh", "to": "initiative.regen-federation-deepening", "type": "informs" },
+
+    { "from": "work.p2p-agent-message-rid-and-routing", "to": "work.p2p-koi-transport-adapter", "type": "depends_on" },
+    { "from": "work.p2p-vault-sync-shawn-onboard", "to": "work.p2p-three-peer-smoke-test", "type": "depends_on" },
+    { "from": "work.p2p-koi-transport-adapter", "to": "work.p2p-three-peer-smoke-test", "type": "depends_on" },
+
+    { "from": "work.node-salt-spring-island", "to": "initiative.personal-peer-mesh", "type": "informs" },
+
+    { "from": "work.p2p-three-peer-smoke-test", "to": "milestone.three-peer-mesh-validated", "type": "delivers" },
+    { "from": "work.p2p-vault-sync-shawn-onboard", "to": "milestone.three-peer-mesh-validated", "type": "delivers" },
+    { "from": "work.p2p-koi-transport-adapter", "to": "milestone.three-peer-mesh-validated", "type": "delivers" },
+
+    { "from": "work.flow-funding-foundations-doc", "to": "initiative.tbff-knowledge-flow-pilot", "type": "delivers" },
+    { "from": "work.hub-cultivator-decision-logging", "to": "initiative.tbff-knowledge-flow-pilot", "type": "delivers" },
+    { "from": "work.tbff-settlement-evidence-bridge", "to": "initiative.tbff-knowledge-flow-pilot", "type": "delivers" },
+    { "from": "work.receipt-chain-fix", "to": "initiative.tbff-knowledge-flow-pilot", "type": "delivers" },
+    { "from": "work.victoria-landscape-hub-seeding", "to": "initiative.tbff-knowledge-flow-pilot", "type": "delivers" },
+    { "from": "work.receipt-chain-fix", "to": "work.hub-cultivator-decision-logging", "type": "depends_on" },
+    { "from": "work.receipt-chain-fix", "to": "work.tbff-settlement-evidence-bridge", "type": "depends_on" },
+    { "from": "work.victoria-landscape-hub-seeding", "to": "work.hub-cultivator-decision-logging", "type": "depends_on" },
+    { "from": "work.hub-cultivator-decision-logging", "to": "milestone.tbff-v0-writeback-demo-2026-03-14", "type": "delivers" },
+    { "from": "work.receipt-chain-fix", "to": "milestone.tbff-v0-writeback-demo-2026-03-14", "type": "delivers" },
+    { "from": "work.victoria-landscape-hub-seeding", "to": "milestone.tbff-v0-writeback-demo-2026-03-14", "type": "delivers" }
   ]
 }
