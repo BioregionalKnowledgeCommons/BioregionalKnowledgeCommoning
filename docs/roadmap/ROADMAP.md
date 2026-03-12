@@ -2,7 +2,7 @@
 
 - Program: **Bioregional Knowledge Commons**
 - Roadmap ID: `bkc.roadmap.2026.part-b`
-- Version: `0.8.2`
+- Version: `0.8.3`
 - As of: `2026-03-12`
 - Generated: `2026-03-12 02:26 UTC`
 
