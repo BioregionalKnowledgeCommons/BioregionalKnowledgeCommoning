@@ -2,7 +2,7 @@
   "@context": "./semantic-roadmap.context.json",
   "roadmap_id": "bkc.roadmap.2026.part-b",
   "program": "Bioregional Knowledge Commons",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "as_of": "2026-03-12",
   "owners": [
     {
@@ -687,11 +687,12 @@
       "kind": "milestone",
       "title": "First bioregional swarm build day",
       "summary": "BKC + owocki + Todd + Aaron first joint build day \u2014 coalition work coordinated and demoed.",
-      "status": "planned",
+      "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
       "due_date": "2026-03-05",
+      "completed_date": "2026-03-05",
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/66"
     },
     {
@@ -730,11 +731,12 @@
       "kind": "milestone",
       "title": "Weekly coalition sprint cadence established",
       "summary": "First Friday recurring sprint executed with all coalition members and recap published.",
-      "status": "planned",
+      "status": "done",
       "priority": "P1",
       "horizon": "0-30d",
       "owner": "owner.darren",
       "due_date": "2026-03-07",
+      "completed_date": "2026-03-07",
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/69"
     },
     {
@@ -746,7 +748,7 @@
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
-      "due_date": "2026-03-15",
+      "due_date": "2026-03-28",
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/13"
     },
     {
@@ -770,7 +772,7 @@
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
-      "due_date": "2026-03-05",
+      "due_date": "2026-03-21",
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/32"
     },
     {
@@ -778,11 +780,12 @@
       "kind": "milestone",
       "title": "First recurring Friday sprint executed",
       "summary": "Run the first post-demo sprint and capture commitments/outcomes in a public recap.",
-      "status": "planned",
+      "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
       "due_date": "2026-03-07",
+      "completed_date": "2026-03-07",
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/31"
     },
     {
@@ -819,7 +822,7 @@
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
-      "due_date": "2026-03-21",
+      "due_date": "2026-03-28",
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/34"
     },
     {
@@ -1642,8 +1645,8 @@
       "id": "work.tbff-receipt-to-evidence-v0",
       "kind": "work_item",
       "title": "TBFF receipt to Evidence write-back v0",
-      "summary": "Map flow-funding receipts to KOI Evidence entities with stable RID links for auditable capital decisions.",
-      "status": "planned",
+      "summary": "Map flow-funding receipts to KOI Evidence entities with stable RID links for auditable capital decisions. Settlement bridge (POST /claims/evidence-from-settlement) covers the primary path. Threshold policy (POST /claims/claim-from-settlement) adds auto-advance. Broader receipt mapping deferred.",
+      "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
@@ -1657,8 +1660,8 @@
       "id": "work.tbff-threshold-policy-v0",
       "kind": "work_item",
       "title": "TBFF threshold policy v0",
-      "summary": "Define threshold bands, authority boundaries, and override procedure with Shawn for production-safe flow funding decisions.",
-      "status": "planned",
+      "summary": "Threshold bands (<$500 auto, $500-$5k semi, >$5k manual), authority boundaries, and override procedure for production-safe flow funding decisions. Endpoint POST /claims/claim-from-settlement.",
+      "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
@@ -2113,11 +2116,11 @@
       "kind": "milestone",
       "title": "R0 sprint: schema alignment + API client smoke-tested",
       "summary": "Claims Engine V1 sprint complete: BKC schema aligned with Claims Engine data model v2, thin API client operational.",
-      "status": "planned",
+      "status": "in_progress",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
-      "due_date": "2026-03-11",
+      "due_date": "2026-03-21",
       "tags": ["regen", "claims-engine", "sprint"]
     },
     {
@@ -2333,8 +2336,8 @@
       "id": "work.hub-cultivator-decision-logging",
       "kind": "work_item",
       "title": "Hub Cultivator decision logging via /ingest",
-      "summary": "Helper script and conventions for logging Hub Cultivator steward decisions as Evidence entities with real CAT receipt chains. Deterministic document_rid with hub-cultivator: prefix. Creates Evidence + Project/Organization entities + relationships.",
-      "status": "in_progress",
+      "summary": "Helper script and conventions for logging Hub Cultivator steward decisions as Evidence entities with real CAT receipt chains. Deterministic document_rid with hub-cultivator: prefix. Creates Evidence + Project/Organization entities + relationships. First real decision logged on Octo 2026-03-12.",
+      "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
@@ -2366,8 +2369,8 @@
       "id": "work.victoria-landscape-hub-seeding",
       "kind": "work_item",
       "title": "Seed Victoria Landscape Hub entities",
-      "summary": "Register Victoria Landscape Hub (Organization) and Regenerate Cascadia (Organization) entities on local/GV node with affiliated_with relationship.",
-      "status": "in_progress",
+      "summary": "Register Victoria Landscape Hub, Regenerate Cascadia, Kinship Earth, Mycopunks (Organizations), Flow Funding/Hub Cultivator/TBFF (Concepts), Cascadia (Bioregion), Greater Victoria (Location) with relationship edges. Seeded on local + Octo.",
+      "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
@@ -2658,11 +2661,6 @@
     {
       "from": "work.weekly-proof-pack",
       "to": "milestone.post-demo-proof-pack-2026-03-05",
-      "type": "delivers"
-    },
-    {
-      "from": "work.weekly-proof-pack",
-      "to": "milestone.recurring-sprint-kickoff-2026-03-07",
       "type": "delivers"
     },
     {

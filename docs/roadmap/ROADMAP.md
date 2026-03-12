@@ -2,7 +2,7 @@
 
 - Program: **Bioregional Knowledge Commons**
 - Roadmap ID: `bkc.roadmap.2026.part-b`
-- Version: `0.8.1`
+- Version: `0.8.2`
 - As of: `2026-03-12`
 - Generated: `2026-03-12`
 
@@ -10,10 +10,10 @@
 
 | Status | Count |
 |---|---|
-| `in_progress` | 18 |
-| `planned` | 92 |
+| `in_progress` | 17 |
+| `planned` | 86 |
 | `blocked` | 0 |
-| `done` | 48 |
+| `done` | 55 |
 | `deprecated` | 0 |
 
 ## Outcomes
@@ -76,13 +76,13 @@
 | `work.r0-multi-party-verification` | Multi-party claim verification via commons governance membrane | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.owocki-tranche-proposal-v1` | Owocki milestone tranche proposal v1 | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.s3-key-lifecycle-runbook` | Publish key lifecycle and incident runbook | `planned` | `P0` | `0-30d` | `owner.darren` |
-| `work.tbff-receipt-to-evidence-v0` | TBFF receipt to Evidence write-back v0 | `planned` | `P0` | `0-30d` | `owner.darren` |
-| `work.tbff-threshold-policy-v0` | TBFF threshold policy v0 | `planned` | `P0` | `0-30d` | `owner.darren` |
+| `work.tbff-receipt-to-evidence-v0` | TBFF receipt to Evidence write-back v0 | `done` | `P0` | `0-30d` | `owner.darren` |
+| `work.tbff-threshold-policy-v0` | TBFF threshold policy v0 | `done` | `P0` | `0-30d` | `owner.darren` |
 | `work.flow-funding-foundations-doc` | Flow funding foundations document | `done` | `P0` | `0-30d` | `owner.darren` |
-| `work.hub-cultivator-decision-logging` | Hub Cultivator decision logging via /ingest | `in_progress` | `P0` | `0-30d` | `owner.darren` |
+| `work.hub-cultivator-decision-logging` | Hub Cultivator decision logging via /ingest | `done` | `P0` | `0-30d` | `owner.darren` |
 | `work.tbff-settlement-evidence-bridge` | TBFF settlement to Evidence entity endpoint | `done` | `P0` | `0-30d` | `owner.darren` |
 | `work.receipt-chain-fix` | Fix /ingest to create real CAT receipt rows | `done` | `P0` | `0-30d` | `owner.darren` |
-| `work.victoria-landscape-hub-seeding` | Seed Victoria Landscape Hub entities | `in_progress` | `P0` | `0-30d` | `owner.darren` |
+| `work.victoria-landscape-hub-seeding` | Seed Victoria Landscape Hub entities | `done` | `P0` | `0-30d` | `owner.darren` |
 | `work.weekly-proof-pack` | Weekly proof pack publishing cadence | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.c0-commitment-governance-extension` | C0 — Extend commons governance membrane to commitment lifecycle | `planned` | `P1` | `0-30d` | `owner.darren` |
 | `work.c0-evidence-commitment-bridge` | C0 — Wire Evidence entities to proves_commitment predicate | `planned` | `P1` | `0-30d` | `owner.darren` |
@@ -256,14 +256,14 @@
 
 | ID | Title | Status | Priority | Horizon | Owner |
 |---|---|---|---|---|---|
-| `milestone.coalition-kickoff` | First bioregional swarm build day | `planned` | `P0` | `0-30d` | `owner.darren` |
-| `milestone.recurring-sprint-kickoff-2026-03-07` | First recurring Friday sprint executed | `planned` | `P0` | `0-30d` | `owner.darren` |
+| `milestone.coalition-kickoff` | First bioregional swarm build day | `done` | `P0` | `0-30d` | `owner.darren` |
+| `milestone.recurring-sprint-kickoff-2026-03-07` | First recurring Friday sprint executed | `done` | `P0` | `0-30d` | `owner.darren` |
 | `milestone.part-b-p0-complete` | Part B P0 controls complete | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `milestone.post-demo-proof-pack-2026-03-05` | Post-demo proof pack published | `planned` | `P0` | `0-30d` | `owner.darren` |
-| `milestone.claims-engine-v1-sprint` | R0 sprint: schema alignment + API client smoke-tested | `planned` | `P0` | `0-30d` | `owner.darren` |
+| `milestone.claims-engine-v1-sprint` | R0 sprint: schema alignment + API client smoke-tested | `in_progress` | `P0` | `0-30d` | `owner.darren` |
 | `milestone.tbff-v0-writeback-demo-2026-03-14` | Flow funding write-back demo complete | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `milestone.two-pipelines-one-allocation-2026-03-21` | Two external pipelines and one evidence-linked allocation | `planned` | `P0` | `0-30d` | `owner.darren` |
-| `milestone.friday-sprint-cadence` | Weekly coalition sprint cadence established | `planned` | `P1` | `0-30d` | `owner.darren` |
+| `milestone.friday-sprint-cadence` | Weekly coalition sprint cadence established | `done` | `P1` | `0-30d` | `owner.darren` |
 | `milestone.first-claim-on-regen-ledger` | First CID anchored + attested on Regen Ledger mainnet | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `milestone.three-peer-mesh-validated` | Three-peer personal mesh validated (vault sync + agent messaging) | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `milestone.part-b-spikes-reviewed` | UCAN and TEE spikes reviewed | `planned` | `P1` | `30-90d` | `owner.darren` |
