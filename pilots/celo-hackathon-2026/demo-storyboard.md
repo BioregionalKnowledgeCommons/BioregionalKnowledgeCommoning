@@ -47,9 +47,13 @@
 
 ---
 
-## Moment 2: Routing Suggestion + Steward Approval
+## Moment 2: Three Orthogonal Operations — Route, Pledge, Verify
 
 **Setup**: Commitment exists in PROPOSED state. Two pools seeded with different bioregions, need tags, and capacity.
+
+**Key governance principle**: These are three independent operations, not a linear pipeline. A commitment can be pledged to a pool while still PROPOSED. A commitment can be VERIFIED without being in any pool. The operations compose freely.
+
+### 2a: Route — Scorer Suggests Pool Matches
 
 **Action**: `suggest_pool_routes` (MCP) or `POST /commitments/routing-suggestions` (API) with the commitment payload.
 
@@ -92,14 +96,28 @@
 }
 ```
 
-**Steward workflow** (web UI at `/commons/commitments`):
-1. See pending PROPOSED commitments
-2. Click commitment → see routing suggestions with score breakdowns
-3. Approve → `PATCH /commitments/{rid}/state` (PROPOSED → VERIFIED)
-4. Select pool → `POST /pools/{rid}/pledge`
-5. If pool activation threshold reached → pool auto-transitions to "active"
+### 2b: Pledge — Pool Curation (Independent of Verification)
 
-**What viewer sees**: Transparent routing scores. Steward reviews and decides — the scorer suggests, humans approve. Trust through witnessed governance.
+**Action**: Steward selects a pool → `POST /pools/{rid}/pledge`
+
+Pledging is pool curation: "this commitment belongs in our pool." A commitment can be pledged while still PROPOSED — the pool steward is saying "we want this," not "we've verified it." Declining a pledge is implicit (not pledged). In hackathon MVP, this is single-pool; multi-pool pledging is a post-hackathon extension.
+
+If pool activation threshold reached → pool auto-transitions to "active."
+
+### 2c: Verify — Trust Attestation (Independent of Pledge)
+
+**Action**: Steward or peer attests → `PATCH /commitments/{rid}/state` (PROPOSED → VERIFIED)
+
+Verification is an optional trust signal: "we believe this pledger can deliver." A commitment can be VERIFIED without being in any pool (verified but uncurated), or pledged to a pool without being verified (curated but unverified). Trust emerges from witnessed follow-through, not pre-approval.
+
+### Steward workflow (web UI at `/commons/commitments`):
+1. See commitments (filterable by state, pool membership)
+2. Click commitment → detail panel with routing suggestions and score breakdowns
+3. Pledge to pool (pool curation) — independent action
+4. Verify commitment (trust attestation) — independent action
+5. Pool status cards (pledge count, threshold progress, activation state)
+
+**What viewer sees**: Three independent operations composed by stewards, not a single approval gate. The scorer suggests pools; stewards curate; peers verify. Anyone can make a promise — the question is which pools accept it.
 
 ---
 
@@ -191,12 +209,12 @@ Submit → `POST /commitments/create` via BFF → show routing suggestions inlin
 
 ### `/commons/commitments` — Review Dashboard (steward-protected)
 
-- Pending commitments list (filterable by state)
+- Commitments list (filterable by state, pool membership)
 - Click commitment → detail panel with:
   - Commitment fields
   - Routing suggestions with score breakdowns
-  - Approve / Reject buttons
-  - Pool pledge selector
+  - Pledge to Pool button (pool curation — independent of verification)
+  - Verify button (trust attestation — independent of pledge)
 - Pool status cards (pledge count, threshold progress, activation state)
 
 ---
@@ -224,11 +242,12 @@ Submit → `POST /commitments/create` via BFF → show routing suggestions inlin
 - [ ] Empty suggestion set returns `{"suggestions": []}`
 - [ ] Deterministic tie-break by `pool_rid` alphabetical
 - [ ] Web form at `/commons/commit` submits commitment via BFF
-- [ ] Review dashboard shows pending commitments with routing suggestions
-- [ ] Steward approve → VERIFIED state transition
-- [ ] Non-steward approve → 403
-- [ ] Unauthenticated approve → 401
-- [ ] Pool pledge + threshold check works
+- [ ] Review dashboard shows commitments with routing suggestions
+- [ ] Steward pledge to pool works (independent of verification)
+- [ ] Steward verify works (independent of pool pledge)
+- [ ] Non-steward pledge/verify → 403
+- [ ] Unauthenticated pledge/verify → 401
+- [ ] Pool activation threshold check works on pledge
 - [ ] MCP `draft_commitment_from_text` returns draft (not persisted)
 - [ ] MCP `suggest_pool_routes` returns locked response shape
 - [ ] Demo works fully without live Celo connection

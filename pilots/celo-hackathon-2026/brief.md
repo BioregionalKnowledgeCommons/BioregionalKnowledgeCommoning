@@ -32,9 +32,18 @@ A deterministic routing scorer matches commitments to pools based on bioregion p
 
 ### Agents That Trust
 
-Every commitment carries provenance: who pledged, who verified, who approved routing. State transitions (PROPOSED → VERIFIED → ACTIVE → EVIDENCE_LINKED → REDEEMED) are logged in an insert-only audit trail. Evidence entities link proof of fulfillment. The full chain is assembled into a proof pack — archivable, verifiable, anchored to Regen Ledger.
+Commitments are self-sovereign — anyone can make a promise. The question is which pools accept it.
 
-Steward governance gates every transition. The routing scorer suggests; humans decide.
+Three orthogonal operations govern the lifecycle:
+1. **Create** — the pledger issues a commitment (self-sovereign, no gatekeeper)
+2. **Pledge** — a pool steward curates by accepting the commitment into a pool (peer-curated, like SPROUT License peer review)
+3. **Verify** — a peer attests that the pledger can deliver (trust signal, earned through witnessed follow-through)
+
+These operations are independent: a commitment can be pledged while PROPOSED, verified without being in any pool, or both. There is no single approval gate.
+
+Every commitment carries provenance: who created, who curated, who verified. State transitions are logged in an insert-only audit trail. Evidence entities link proof of fulfillment. The full chain is assembled into a proof pack — archivable, verifiable, anchored to Regen Ledger.
+
+**Forkability as safety valve:** If a pool's curation standards diverge from community values, any steward can fork the pool — take the commitments they trust and create a new pool with different governance. This is the antidote to possessive stewardship: authority over a pool is earned by curation quality, not granted by position.
 
 ### Agents That Pay
 
@@ -87,7 +96,7 @@ BKC commitment pooling maps directly to the patterns Grassroots Economics has pr
 Three moments:
 
 1. **Agent drafts commitment** from natural language → structured object with offers, wants, limits, routing tags
-2. **Routing suggestion + steward approval** → scorer ranks pools → steward reviews → approves → pledge
+2. **Route → Pledge → Verify** → scorer suggests pools → steward curates (pledges to pool) → peer verifies (trust attestation) — three independent operations
 3. **Proof + settlement** → evidence linked → proof pack assembled → (stretch) Celo attestation
 
 Works entirely within BKC. No live Celo dependency for core flow.

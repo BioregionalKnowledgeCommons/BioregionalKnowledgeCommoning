@@ -131,6 +131,47 @@ From the Substack essays:
 
 ---
 
+## Three-Operation Governance Mapping
+
+BKC decomposes commitment governance into three orthogonal operations. Each maps to GE/CLC patterns:
+
+### CREATE → Voucher Issuance (Self-Sovereign)
+
+| BKC | GE / Sarafu | CLC DAO |
+|-----|-------------|---------|
+| `POST /commitments/create` — anyone can create a commitment in PROPOSED state | CAV issuance — community creates ERC-20 voucher representing productive capacity | Credit issuance — coherent agent issues redeemable promise |
+
+**Shared principle:** Promise issuance is self-sovereign. No gatekeeper reviews creation. In GE, a community mints its own voucher. In BKC, a pledger creates their own commitment. The right to promise is inherent, not granted.
+
+### PLEDGE → Pool Seeding / Acceptance (Peer-Curated)
+
+| BKC | GE / Sarafu | CLC DAO |
+|-----|-------------|---------|
+| `POST /pools/{rid}/pledge` — steward curates commitment into pool | `deposit(token, value)` on SwapPool — liquidity provider adds token to pool | Pool acceptance — clearing pool includes credit in routing graph |
+
+**Shared principle:** Pool inclusion is peer-curated. In GE, a pool admin controls which tokens are deposited. In BKC, a steward controls which commitments are pledged. This maps to SPROUT License §3.5 peer-curation: inclusion is earned through relevance judgment, not central approval. Declining is implicit (not pledged / not deposited).
+
+### VERIFY → Trust Attestation (Earned Through Follow-Through)
+
+| BKC | GE / Sarafu | CLC DAO |
+|-----|-------------|---------|
+| `PATCH /commitments/{rid}/state` (PROPOSED → VERIFIED) — peer attests pledger can deliver | Voucher redemption history — trust built by repeated successful swaps | sCLC staking — routing authority earned through governance participation |
+
+**Shared principle:** Trust emerges from witnessed follow-through, not pre-approval. In GE, a voucher's trustworthiness comes from redemption history, not from an approval step at issuance. In BKC, verification is an explicit attestation that the pledger can deliver — independent of pool curation.
+
+### Orthogonality
+
+The three operations are independent in BKC:
+- A commitment can be **pledged** to a pool while still PROPOSED (curated but unverified)
+- A commitment can be **verified** without being in any pool (trusted but uncurated)
+- **Forkability** is the safety valve: if a pool's curation diverges from community values, stewards fork and re-curate. Commitments exist independently of pools, so they survive governance failures. This is the antidote to possessive stewardship.
+
+In GE, this orthogonality is partially present (a voucher exists independently of any pool it's deposited in) but verification is implicit (redemption history rather than explicit attestation). CLC adds explicit governance via sCLC staking. BKC makes all three operations first-class with separate audit trails.
+
+**Current runtime:** Single-pool MVP. Multi-pool pledging and cross-pool routing are post-hackathon (C1/C2).
+
+---
+
 ## Recommended Actions
 
 1. **Hackathon:** Build BKC-native routing scorer. No GE/CLC integration needed.

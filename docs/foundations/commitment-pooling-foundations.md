@@ -200,7 +200,58 @@ The Grassroots Economics philosophy is explicit: "changing the world's economic 
 
 ---
 
-## 7. References
+## 7. Three Orthogonal Operations: Create, Pledge, Verify
+
+Commitment pooling governance rests on three independent operations that compose freely. This decomposition draws on Will Ruddick's three-layer model (individual → pool → ecosystem) and the SPROUT License's peer-curation principles.
+
+### 7.1 Create — Self-Sovereign Promise Issuance
+
+Anyone can make a promise. A Person or Organization creates a commitment with typed offers, wants, limits, and routing metadata. No gatekeeper reviews creation — the commitment enters the graph in `PROPOSED` state and is immediately visible (subject to visibility scope).
+
+**Principle:** Commitments are self-sovereign. The right to promise is not granted by a pool or a steward. This mirrors CAV issuance in the Sarafu model: a community voucher is issued by its creator, not approved into existence.
+
+**Visibility scope applies regardless of state.** A `node_private` commitment is invisible to unauthorized consumers whether it is PROPOSED, VERIFIED, ACTIVE, or REDEEMED. Visibility is orthogonal to lifecycle state.
+
+### 7.2 Pledge — Peer-Curated Pool Acceptance
+
+Pool stewards curate which commitments belong in their pool via `POST /pools/{rid}/pledge`. Pledging is a curation act: "this commitment fits our pool's purpose and bioregion." It is not approval or verification — a PROPOSED commitment can be pledged before anyone has verified it.
+
+**Principle:** The question is not "is this commitment allowed?" but "which pools accept it?" This follows the SPROUT License (§3.5) peer-curation model: inclusion is earned through relevance and steward judgment, not central approval.
+
+Declining a pledge is implicit — the commitment is simply not pledged to that pool. In hackathon MVP, the system is single-pool. Multi-pool pledging (a commitment in multiple pools simultaneously) is a post-hackathon extension.
+
+### 7.3 Verify — Trust Attestation Through Witnessed Follow-Through
+
+Verification is an independent trust signal: a steward or peer attests that the pledger can deliver. `PATCH /commitments/{rid}/state` (PROPOSED → VERIFIED) records who verified and when.
+
+**Principle:** Trust emerges from witnessed follow-through, not pre-approval. A commitment can be VERIFIED without being in any pool (verified but uncurated), or pledged to a pool without being verified (curated but unverified). Verification and curation serve different social functions — conflating them creates bottlenecks.
+
+### 7.4 Orthogonality
+
+The three operations are independent along every axis:
+
+| | Create | Pledge | Verify |
+|---|---|---|---|
+| **Actor** | Pledger (self-sovereign) | Pool steward (peer curator) | Steward or peer (trust attester) |
+| **Gate** | None | Pool governance | Community trust |
+| **Can happen without the others** | Yes | Yes (commitment can be pledged while PROPOSED) | Yes (commitment can be verified without any pool) |
+| **Reversible** | No (append-only; can WITHDRAW) | Yes (remove from pool) | No (append-only audit trail) |
+
+This decomposition prevents a single steward from becoming a gatekeeper to the entire lifecycle. Each operation has its own authority, its own social contract, and its own audit trail.
+
+### 7.5 Forkability as Safety Valve
+
+If a pool's curation standards diverge from community values, any steward can fork the pool: create a new pool and pledge the commitments they trust into it. The original commitments are unaffected (they exist independently of any pool). This is the antidote to possessive stewardship — authority over a pool is earned by curation quality, not granted by position.
+
+Forkability is only meaningful when commitments exist independently of pools. The three-operation decomposition makes this possible: because Create is self-sovereign and Pledge is a separate curation act, commitments survive pool governance failures.
+
+### 7.6 Runtime Note
+
+The current runtime is single-pool MVP. Multi-pool pledging, cross-pool routing, and federated pool forking are post-hackathon extensions (C1/C2). The governance model is designed for the multi-pool future even though the hackathon implementation is simpler.
+
+---
+
+## 8. References
 
 - Grassroots Economics: [grassrootseconomics.org](https://grassrootseconomics.org)
 - Sarafu Network documentation: [docs.grassrootseconomics.org](https://docs.grassrootseconomics.org)

@@ -13,7 +13,7 @@ Same codebase, tailored narratives.
 
 **What we're building:** Agentic commitment routing for bioregional swarms.
 
-The short version: AI agents help communities express offers, wants, and limits as structured commitments → a routing scorer matches them to stewarded pools → stewards approve → proof of fulfillment gets anchored. BKC is the knowledge layer, Celo is settlement/provenance.
+The short version: AI agents help communities express offers, wants, and limits as structured commitments → a routing scorer suggests pool matches → stewards curate (pledge to pools) → peers verify (trust attestation) → proof of fulfillment gets anchored. Three independent operations: create, pledge, verify. BKC is the knowledge layer, Celo is settlement/provenance.
 
 We already have the commitment pooling API (C0), proof packs with on-chain anchors, and the flow-funding visualization. This week we're adding the routing scorer, a web intake form, and a steward review dashboard.
 
