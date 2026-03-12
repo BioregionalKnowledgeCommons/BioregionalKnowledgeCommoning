@@ -1,0 +1,139 @@
+# BKC ↔ Grassroots Economics ↔ CLC DAO Compatibility Memo
+
+**Date:** 2026-03-12
+**Purpose:** Map BKC commitment pooling concepts to GE/Sarafu production patterns and CLC DAO design, with code references.
+
+---
+
+## Concept Mapping
+
+| BKC | GE / Sarafu | CLC DAO (design) | Notes |
+|-----|-------------|-------------------|-------|
+| **Commitment** (offers/wants/limits in metadata) | **CAV** (Community Asset Voucher) — ERC-20 token representing a community's productive capacity | **Redeemable voucher / invoice / credit** — concrete promises from coherent agents | BKC richer: typed offers/wants/limits, agent-assisted drafting, no token required |
+| **CommitmentPool** + steward governance | **SwapPool** (`erc20-pool/solidity/SwapPool.sol`) — multi-token liquidity pool with price-index exchange | **Clearing pool** + value index — multi-hop routing with netting | BKC adds steward governance membrane; GE has on-chain pool admin/owner |
+| **CommitmentAction** + Evidence | **CAV redemption/swap** — `withdraw()` event on SwapPool | **Settlement against inventory** — obligation discharge | BKC adds proof chain (Evidence entity → claims → anchor) |
+| **TBFF threshold bands** | **TokenLimiter** (`erc20-limiter/solidity/Limiter.sol`) — per-holder, per-token caps | **Pool safety limits** — credit exposure caps | Similar mechanics: BKC threshold = value-based auto/semi/manual; GE limiter = per-address cap |
+| **`governs_pool` predicate** | Pool admin/owner (contract `setFee`, `seal`) | **sCLC governance token** — staking for routing authority | Different layers: BKC = knowledge graph predicate; GE = contract owner; CLC = token-weighted |
+| **KOI-net federation** | **EVM events** (`Swap`, `Deposit`, `Collect`) + eth-indexer | **Multi-hop routing** — credit paths across pool network | Complementary: BKC federated knowledge; GE federated chain events; CLC routes across both |
+| **Visibility scope / consent** | N/A (all on-chain, public) | N/A | BKC advantage: `node_private` commitments, 34 filtered query sites |
+| **Routing scorer** | Manual matching (user selects swap pair) | **Value index + netting** — automated multi-hop clearing | BKC v0 is deterministic weighted scorer; CLC adds graph-based routing |
+
+---
+
+## GE Technical Details (from code)
+
+### SwapPool Contract (`erc20-pool/solidity/SwapPool.sol`)
+
+Core interface:
+- `deposit(token, value)` — add liquidity
+- `withdraw(outToken, inToken, value)` — execute swap (emits `Swap` event)
+- `getQuote(outToken, inToken, value)` — price lookup via external quoter
+- `setFee(uint256)` — fee in PPM (parts per million)
+- `seal(uint256 state)` — irreversible state locking (fee, feeAddress, quoter)
+
+**Mapping to BKC:** Pool creation = `POST /pools/create`. Deposit ≈ pledge (`POST /pools/{rid}/pledge`). Withdraw ≈ redemption (EVIDENCE_LINKED → REDEEMED state transition). Seal ≈ pool finalization (no BKC equivalent yet — pools stay mutable).
+
+### Limiter Contract (`erc20-limiter/solidity/Limiter.sol`)
+
+- `limitOf(token, holder) → uint256` — per-holder, per-token limit
+- `setLimit(token, value)` — holder sets own limit
+- `setLimitFor(token, holder, value)` — owner sets limit for contracts
+
+Frontend calculates available capacity: `swapLimit = max(0, limitOf - poolBalance)` (`sarafu.network/src/components/pools/utils.ts:31-96`).
+
+**Mapping to BKC:** `limitOf` → pool `remaining_capacity_usd` in metadata. Per-bioregion commitment caps achievable via pool metadata `capacity_usd`. The routing scorer uses `remaining_capacity_usd` to compute capacity fit score.
+
+### Price Index / Quoter
+
+- `priceIndex(tokenAddress) → uint256` (default `10000n` if no quoter set)
+- Exchange: `fromAmount × (priceIndex_in / priceIndex_out)`
+- `sarafu.network/src/components/pools/contract-functions.ts:52`
+
+**Mapping to BKC:** No equivalent yet. BKC commitments carry `estimated_value_usd` in metadata — flat valuation, no relative pricing. CLC's value index would add dynamic pricing. Post-hackathon consideration.
+
+### Demurrage (`erc20-demurrage-token`)
+
+Time-decay on token balances (encourages circulation). Frontend adds 0.5% buffer to swap amounts to account for decay during transaction confirmation (`sarafu.network/src/components/pools/forms/swap-form.tsx:556-654`).
+
+**Mapping to BKC:** `PoolCreateRequest.demurrage_rate_monthly` field exists (default 0, disabled). The foundations doc describes optional 2% monthly decay on unredeemed capacity. Conceptually aligned — both prevent hoarding.
+
+### Celo Infrastructure
+
+- **Network:** Celo mainnet (production), chain ID 42220
+- **RPC:** `https://r4-celo.grassecon.org` (custom GE node) + public fallback
+- **Tokens:** cUSD (`0x765DE816845861e75A25fCA122bb6898B8B1282a`), CELO native
+- **Wallet:** Valora + Web3Modal (Reown)
+- **Indexing:** `eth-tracker` + `eth-indexer` → PostgreSQL FDW (Foreign Data Wrapper)
+
+**For hackathon stretch:** Use Alfajores testnet (chain ID 44787), not mainnet. Read one `erc20-pool` contract state via viem `publicClient`. No token issuance.
+
+### Sarafu dApp Patterns
+
+- **Pool creation UI** streams deployment status via async generator: contract deploy → confirmation → DB save → success (`sarafu.network/src/components/pools/forms/create-pool-form.tsx:81-102`)
+- **Swap flow**: reset approval → approve amount → execute swap (3-step) (`swap-form.tsx`)
+- **Pool listing**: aggregates from chain_data + pool_router FDW tables, sortable by swap count, name, voucher count
+- **Federated DB**: PostgreSQL with FDW for chain data synthesis — similar to BKC's entity federation
+
+---
+
+## CLC DAO (Credit Loop Commons)
+
+**Status:** White paper in progress. No public contracts. Design from Will Ruddick's Substack + conversations.
+
+### Key Concepts
+
+| Concept | Description | BKC analog |
+|---------|-------------|------------|
+| **Multi-hop routing** | Credits route through trust graph across multiple pools | Routing scorer v0 is single-hop; multi-hop is C1 study |
+| **Value index** | Dynamic pricing based on pool liquidity + demand | `estimated_value_usd` is static; value index would be dynamic |
+| **Netting flows** | Bilateral/multilateral debt clearing | No equivalent — BKC settles via TBFF, not netting |
+| **sCLC governance** | Staked CLC tokens for routing authority | `governs_pool` predicate + steward role |
+| **Clearing pool** | Multi-party settlement venue | CommitmentPool with threshold activation |
+| **Credit routing for the long tail** | Making small community commitments routable across regions | Exactly the routing scorer's purpose |
+
+### Integration Path
+
+1. **Hackathon (now):** BKC-native routing scorer. No CLC dependency.
+2. **C1 study (post-hackathon):** Map CLC routing graph to BKC entity relationships. Identify where `broader` predicate chains could serve as trust paths for multi-hop routing.
+3. **C2 bridge (future):** CLC settlement events → BKC Evidence entities via federation. Pool state sync between BKC metadata and CLC on-chain state.
+
+### Will Ruddick's Narrative Arc
+
+From the Substack essays:
+- **"Footnotes on Intelligence"** — sensing → meaning-making → caring → committing → coordinating → learning (the demo loop we're building)
+- **"From Abstraction to Aliveness"** — concrete promises from coherent agents, not abstract group currency (why BKC commitments carry typed offers/wants/limits)
+- **"Touching the Knowledge Commons"** — shared memory of kept commitments (emotional center — proof packs as witnessed follow-through)
+- **"Honor, Integrity, and the Cost of Keeping Our Word"** — trust from witnessed follow-through, not token mechanics (steward governance gates)
+- **"The Protocol Beneath the Tools"** — AI and Celo are layers, not the foundation. Stewardship is. (BKC canonical, Celo settlement layer)
+
+---
+
+## Compatibility Assessment
+
+### High Compatibility
+- **Pool abstraction**: SwapPool and CommitmentPool serve same purpose (aggregate capacity, enable routing). Different implementations (EVM contract vs. knowledge graph entity with metadata).
+- **Limiter / threshold**: Both enforce capacity constraints. BKC value-based bands; GE per-address caps.
+- **Federated data**: Both use PostgreSQL federation. BKC via KOI-net events; GE via FDW + chain indexing.
+- **Demurrage**: Both support time-decay. BKC optional per-pool; GE per-token contract.
+
+### Medium Compatibility
+- **Price/value**: GE has dynamic price indices via quoter contracts. BKC uses static `estimated_value_usd`. Gap closable via value index integration (C1).
+- **Swap/redemption flow**: GE 3-step (approve → execute → confirm). BKC multi-state (PROPOSED → VERIFIED → ACTIVE → EVIDENCE_LINKED → REDEEMED). Different granularity, same arc.
+
+### Low Compatibility (design differences, not conflicts)
+- **Governance**: GE = contract owner + seal pattern. BKC = steward predicate + commons membrane. CLC = token-weighted. Three different layers that could compose.
+- **Identity**: GE = Ethereum address. BKC = entity URI in knowledge graph. CLC = sCLC staking address. Bridge needed for cross-system identity.
+- **Privacy**: GE fully on-chain (public). BKC has visibility scope. CLC TBD. BKC's consent model is an advantage for sensitive community commitments.
+
+### Not Compatible (by design)
+- **Token issuance**: GE issues ERC-20 vouchers. BKC does not issue tokens. CLC will issue clearing credits. BKC commitment routing works without tokens — this is a feature, not a gap.
+- **On-chain settlement**: GE settles on Celo. BKC settles via TBFF + proof packs (optionally anchored to Regen Ledger). Different settlement layers for different trust models.
+
+---
+
+## Recommended Actions
+
+1. **Hackathon:** Build BKC-native routing scorer. No GE/CLC integration needed.
+2. **Signal to Will:** Share routing scorer design. Ask about CLC white paper — routing/netting mechanics could inform v1 scorer.
+3. **Post-hackathon C1:** Study CLC routing graph. Map to BKC `broader` predicate chains. Prototype multi-hop scoring.
+4. **Post-hackathon C2:** Bridge design — CLC settlement events as BKC Evidence, pool state sync.
