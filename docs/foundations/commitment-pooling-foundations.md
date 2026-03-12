@@ -3,7 +3,7 @@
 **Layer:** Pattern Language + Capital Coordination
 **Status:** Draft v0.1 — 2026-03-03
 **Author:** Darren Zal
-**Source context:** Signal Epistemic Commoning Chat (Will Ruddick, Indy Johar, Regenerate Cascadia, Arkology Studio); Grassroots Economics Sarafu network; CLC DAO specification
+**Source context:** Grassroots Economics Sarafu network; CLC DAO specification; Will Ruddick Substack
 
 ---
 
@@ -255,9 +255,9 @@ The current runtime is single-pool MVP. Multi-pool pledging, cross-pool routing,
 
 - Grassroots Economics: [grassrootseconomics.org](https://grassrootseconomics.org)
 - Sarafu Network documentation: [docs.grassrootseconomics.org](https://docs.grassrootseconomics.org)
-- CLC DAO specification: Internal reference via Signal Epistemic Commoning Chat
+- CLC DAO: [Celo forum post](https://forum.celo.org/t/introducing-clc-dao-credit-routing-for-the-long-tail-of-real-world-commitments-on-celo/12910)
 - Indy Johar, "Sangat-grade infrastructure": Dark Matter Labs research (2025)
-- Will Ruddick, "Touching the Knowledge Commons": Signal chat, 2026
+- Will Ruddick, "Touching the Knowledge Commons": [Substack](https://grassrootseconomics.substack.com)
 - BKC ontology: `Octo/ontology/bkc-ontology.jsonld` (v1.1.0)
 - Commitment API: `Octo/koi-processor/api/routers/commitment_router.py`
 - DB migrations: `056_commitment_registry.sql`, `057_commitment_pools.sql`
