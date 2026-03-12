@@ -21,6 +21,6 @@ Two questions:
 1. Is the CLC white paper at a stage where you'd share a draft? Our routing scorer is BKC-native but designed to be CLC-compatible. Understanding the multi-hop routing and netting mechanics would help us design the right integration seams.
 2. Would you be interested in seeing a demo? The routing scorer + proof pack pattern might be a useful reference implementation for CLC — concrete commitments from coherent agents, as you put it.
 
-Our commitment pooling foundations doc is public: [link to GitHub]
+Our commitment pooling foundations doc is public: https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/blob/main/docs/foundations/commitment-pooling-foundations.md
 
 The ancient patterns (Mweria, Meitheal, Chama) are already there. We're just making them legible in a federated knowledge graph. AI and Celo are layers — stewardship is the foundation.
