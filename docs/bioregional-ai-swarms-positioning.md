@@ -136,7 +136,7 @@ BKC is building the knowledge plane as an open contribution to the bioregional s
 
 **License:** Open source. The pattern language and meta-protocol are CC-BY. The code is MIT.
 
-**GitHub:** [BioregionalKnowledgeCommons](https://github.com/BioregionalKnowledgeCommons) | **Live app:** [Salish Sea Knowledge Commons](https://45.132.245.30.sslip.io/commons) | **Knowledge site:** [Salish Sea Knowledge Garden](https://45.132.245.30.sslip.io)
+**GitHub:** [BioregionalKnowledgeCommons](https://github.com/BioregionalKnowledgeCommons) | **Live app:** [Salish Sea Knowledge Commons](https://salishsee.life/commons) | **Knowledge site:** [Salish Sea Knowledge Garden](https://salishsee.life)
 
 ---
 

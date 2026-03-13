@@ -65,12 +65,12 @@
     {
       "pool_rid": "orn:koi-net.commitment-pool:victoria-landscape-hub-restoration-pool+...",
       "pool_name": "Victoria Landscape Hub Restoration Pool",
-      "total_score": 85,
+      "total_score": 68,
       "score_breakdown": {
         "same_bioregion": 30,
-        "offer_need_overlap": 25,
-        "timeframe_overlap": 15,
-        "capacity_fit": 15,
+        "offer_need_overlap": 18,
+        "timeframe_overlap": 10,
+        "capacity_fit": 10,
         "governance_compat": 0
       },
       "hard_excludes": [],
@@ -80,12 +80,12 @@
     {
       "pool_rid": "orn:koi-net.commitment-pool:cascadia-bioregion-stewardship-pool+...",
       "pool_name": "Cascadia Bioregion Stewardship Pool",
-      "total_score": 55,
+      "total_score": 32,
       "score_breakdown": {
         "same_bioregion": 15,
-        "offer_need_overlap": 15,
-        "timeframe_overlap": 15,
-        "capacity_fit": 10,
+        "offer_need_overlap": 7,
+        "timeframe_overlap": 10,
+        "capacity_fit": 0,
         "governance_compat": 0
       },
       "hard_excludes": [],
@@ -161,9 +161,9 @@ Verification is an optional trust signal: "we believe this pledger can deliver."
 
 | Pledger | Offer | Value | Tags | Pool match |
 |---------|-------|-------|------|------------|
-| Regenerate Cascadia | 200h native plant restoration | $8K | restoration, native-plants, labor | Victoria (85), Cascadia (55) |
-| Kinship Earth | Soil monitoring equipment loan | $3K | monitoring, equipment, soil-health | Victoria (70), Cascadia (40) |
-| Mycopunks | Mycoremediation pilot — 40h | $2K | mycoremediation, restoration, fungi | Victoria (65), Cascadia (50) |
+| Regenerate Cascadia | 200h native plant restoration | $8K | restoration, native-plants, labor | Victoria (68), Cascadia (32) |
+| Kinship Earth | Soil monitoring equipment loan | $3K | monitoring, equipment, soil-health | Victoria (68), Cascadia (32) |
+| Mycopunks | Mycoremediation pilot — 40h | $2K | mycoremediation, restoration, fungi | Victoria (68), Cascadia (32) |
 
 ### Existing Entities (already seeded)
 
@@ -237,19 +237,20 @@ Submit → `POST /commitments/create` via BFF → show routing suggestions inlin
 
 ## Verification Checklist
 
-- [ ] `seed-commitment-demo.sh` creates 2 pools + 3 commitments on Octo
-- [ ] `POST /commitments/routing-suggestions` returns scored results for seeded data
+- [x] `seed-commitment-demo.sh` creates 2 pools + 3 commitments on Octo
+- [x] `POST /commitments/routing-suggestions` returns scored results for seeded data (Victoria=68, Cascadia=32)
 - [ ] Empty suggestion set returns `{"suggestions": []}`
 - [ ] Deterministic tie-break by `pool_rid` alphabetical
-- [ ] Web form at `/commons/commit` submits commitment via BFF
-- [ ] Review dashboard shows commitments with routing suggestions
-- [ ] Steward pledge to pool works (independent of verification)
-- [ ] Steward verify works (independent of pool pledge)
+- [x] Web form at `/commons/commit` submits commitment via BFF
+- [x] Review dashboard shows commitments with routing suggestions
+- [x] Steward pledge to pool works (independent of verification)
+- [x] Steward verify works (independent of pool pledge)
 - [ ] Non-steward pledge/verify → 403
-- [ ] Unauthenticated pledge/verify → 401
+- [x] Unauthenticated pledge/verify → 401
 - [ ] Pool activation threshold check works on pledge
-- [ ] MCP `draft_commitment_from_text` returns draft (not persisted)
-- [ ] MCP `suggest_pool_routes` returns locked response shape
-- [ ] Demo works fully without live Celo connection
+- [x] MCP `draft_commitment_from_text` returns draft (not persisted)
+- [x] MCP `suggest_pool_routes` returns locked response shape
+- [x] Demo works fully without live Celo connection
+- [x] Passkey sign-in → Check Routes → Pledge → Verify full flow verified (manual, 2026-03-13)
 - [ ] (Stretch) One Alfajores pool state fetch
 - [ ] (Stretch) One testnet attestation + tx_hash in proof pack

@@ -8,4 +8,13 @@
 | ID | Time | T | Title | Read |
 |----|------|---|-------|------|
 | #12513 | 7:24 AM | 🔵 | Dual-Bioregion Pilot Plan Structure and Governance Model | ~894 |
+
+### Mar 10, 2026
+
+| ID | Time | T | Title | Read |
+|----|------|---|-------|------|
+| #14974 | 5:18 PM | ⚖️ | Pilot Governance Shifted to Equal Triad with KOI-Optional Participation and Layered Protocol Model | ~1375 |
+| #14970 | 5:17 PM | 🔵 | 4-Node Federation Verified Operational with Practice-to-Pattern-to-Protocol Extraction Pipeline | ~1426 |
+| #14969 | 5:16 PM | 🔵 | Boulder Commons Packet Sprint Build Proposal with Layered Boundary Model | ~1145 |
+| #14968 | 5:15 PM | 🔵 | Dual Bioregion Pilot Plan Defines KOI-Optional Interop with Triad Governance | ~1006 |
 </claude-mem-context>

@@ -67,7 +67,9 @@ curl -X POST 'https://salishsee.life/commons/api/nodes/octo-salish-sea/ingest' \
       "confidence": 1.0
     }
   ],
-  "receipt_rid": "orn:personal-koi.receipt:<uuid>",
+  "receipt_id": "a3b2f1e4c5d6...sha256hash",
+  "receipt_rid": "a3b2f1e4c5d6...sha256hash",
+  "receipt_persisted": true,
   "stats": {
     "entities_processed": 1,
     "new_entities": 1,
@@ -231,7 +233,7 @@ See the complete contract with error codes, idempotency details, and failure mod
 ## FAQ
 
 **Is it safe to retry a failed request?**
-Yes, if you use the same `document_rid`. Idempotency is partial: entity names are deduplicated by name+type (submitting "Alice Chen" (Person) twice resolves to the same canonical URI), and `document_rid` prevents duplicate entity-link rows. However, a fresh `receipt_rid` is generated each call and the full resolution pipeline re-runs on retry. Retry on `502` (upstream unreachable). Do NOT retry on `400` or `401` (caller error).
+Yes, if you use the same `document_rid`. Idempotency is partial: entity names are deduplicated by name+type (submitting "Alice Chen" (Person) twice resolves to the same canonical URI), and `document_rid` prevents duplicate entity-link rows. A new `receipt_id` (SHA-256 hash) is generated each call and the full resolution pipeline re-runs on retry. Retry on `502` (upstream unreachable). Do NOT retry on `400` or `401` (caller error).
 
 **What happens if an entity already exists?**
 BKC runs 3-tier entity resolution: exact name match, fuzzy match (Jaro-Winkler), then semantic match (OpenAI embeddings). If your entity matches an existing one, it resolves to the canonical URI (`is_new: false`). No duplicates are created.
@@ -248,8 +250,8 @@ Yes — replace `octo-salish-sea` in the URL with the node slug:
 - `front-range` — Front Range node
 - `greater-victoria` — Greater Victoria node
 
-**What is `receipt_rid`?**
-A provenance receipt for audit. It's a fresh UUID per call (not stable across retries). Use it for logging, not for deduplication.
+**What is `receipt_id` / `receipt_rid`?**
+A real CAT (Content Addressable Transformation) provenance receipt — a SHA-256 hash persisted as a row in the database. Supports `parent_receipt_id` chaining for multi-step provenance. The receipt chain is queryable via `GET /receipts/{receipt_id}/chain`. `receipt_rid` is a deprecated alias returning the same value. Check `receipt_persisted: true` to confirm the receipt was written to the database.
 
 **How do I delete an entity I created by mistake?**
 Contact Darren. There is no self-service delete endpoint. Entities can be manually removed from the graph by a steward.

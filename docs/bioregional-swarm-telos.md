@@ -109,6 +109,32 @@ Cross-cutting concerns (touch all three planes):
   │ Salish Sea      │ │ leaf node     │ │ bioregion       │
   └─────────────────┘ └───────────────┘ └─────────────────┘
 
+  ═══════════════════════════════════════════════════════════
+
+  PERSONAL PEER MESH (WireGuard 10.100.0.0/24)
+
+  darren-personal ←──E2EE vault sync──→ shawn-personal
+       │                                     │
+       └───────── claude-matrix ─────────────┘
+              (agent coordination)
+
+  samu-personal (Salt Spring — onboarding)
+
+  Each peer: own machine │ own DB │ own vault │ own Claude Code agent
+  Transport: KOI event queue over WireGuard
+
+  All three peers are in the Salish Sea bioregion (geography nests).
+  The mesh cuts across leaf nodes laterally (coordination overlaps):
+    darren (Victoria) │ shawn (Cowichan) │ samu (Salt Spring)
+
+  ═══════════════════════════════════════════════════════════
+
+  Nested sovereignty, overlapping coordination.
+  Personal peers are locally sovereign and may participate across
+  multiple organizational and bioregional holons.
+  Consented knowledge projections federate upward through governance membranes.
+  Agent coordination runs laterally across the peer mesh.
+
   Each node: sovereign database │ own identity │ own governance │ same KOI API
   Federation: ECDSA-signed envelopes │ consent-gated sharing │ holonic nesting
 ```
@@ -118,6 +144,11 @@ Cross-cutting concerns (touch all three planes):
 > *Heavy things local:* knowledge graphs, relationships, trust, governance.
 
 Every project in the coalition independently arrived at this principle. BKC has implemented it.
+
+**Structural model — polycentric holonic mesh:**
+> *Holarchy* governs: jurisdiction, delegation, consent boundaries, part-of nesting.
+> *Mesh* coordinates: agent-to-agent, cross-org participation, knowledge sharing, lateral discovery.
+> The full system is neither a pure tree nor a flat network — geography nests while affiliations overlap.
 
 ---
 
@@ -150,6 +181,8 @@ Every project in the coalition independently arrived at this principle. BKC has 
 | Astral TEE location attestation | John Caldwell + BKC | Near-term integration |
 | ZK trilateration proofs | R&D track | Future |
 | Per-node AI reasoning (FR, GV, CV) | BKC | Phased deployment |
+| P2P E2EE vault sync | Personal peers over WireGuard | darren↔NUC validated, Shawn onboarding |
+| Agent coordination (claude-matrix) | Claude Code sessions over KOI transport | Planned — KoiTransport implementation |
 
 ---
 
@@ -171,6 +204,15 @@ BKC Evidence entities ──reference──▶ owockibot allocation decisions
 Allocation receipts ──▶ BKC Knowledge Graph (loop closes)
                                           │
 Evidence entities ──mint──▶ Hypercerts (planned, Q2)
+```
+
+### Personal ↔ Organizational (vault sync → BKC commons)
+```
+Personal vault sync ──entity extraction──▶ personal KG
+                                               │
+Personal KG entities ──/koi-net/share──▶ BKC organizational node
+                                               │
+BKC commons membrane reviews + approves ──▶ shared knowledge graph
 ```
 
 ### Cross-Agent Discovery (A2A)
@@ -238,5 +280,5 @@ The architecture is open. The governance is explicit. The claims are auditable. 
 ---
 
 *Darren Zal — Salish Sea Bioregion — zaldarren@gmail.com*
-*Bioregional Knowledge Commons — [Live app](https://45.132.245.30.sslip.io/commons) | [GitHub](https://github.com/BioregionalKnowledgeCommons)*
+*Bioregional Knowledge Commons — [Live app](https://salishsee.life/commons) | [GitHub](https://github.com/BioregionalKnowledgeCommons)*
 *License: CC-BY (pattern language), MIT (code)*

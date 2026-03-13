@@ -25,6 +25,7 @@ This folder contains planning, governance, and execution docs for the 2026 dual-
 - Follow-ups template: `build-day-followups-2026-03-05.md`
 
 ## Async Collaboration
+- Build proposal for Mar 6: `build-proposal-2026-03-06.md`
 - Async seed pack: `async-seed-pack-2026-03-06.md`
 - Mapping-first collaboration proposal: `mapping-first-collaboration-proposal-2026-03-06.md`
 - Mapping model: `../../docs/foundations/bioregional-mapping-model-v0.1.md`

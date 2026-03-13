@@ -21,11 +21,20 @@ Optional but recommended:
 - `revocation_process_ref`
 
 ## Slot Semantics
-- `consent_tier`: local governance-defined exposure class.
+- `consent_tier`: local governance-defined exposure class. Current values: `public`, `restricted`, `community_only`, `private`.
 - `steward_authority`: who can approve/revoke sharing.
 - `allowed_uses` / `restricted_uses`: machine-actionable permissions.
 - `review_or_expiry_policy`: whether access terms are permanent, periodic, or time-bound.
 - `provenance_evidence`: references to decision records, meeting records, or policy artifacts.
+
+### Technical Enforcement of consent_tier
+
+The `consent_tier` slot is not advisory — it is enforced at the database level in the KOI backend:
+
+- `public` and `restricted`: entities are registered with `visibility_scope = "public"` and `node_private = false`. They appear in public search, chat, API responses, and are eligible for federation.
+- `community_only` and `private`: entities are registered with `visibility_scope = "node_private"` and `node_private = true`. They are hidden from all public query endpoints (`/entity-search`, `/chat`, `/entities`, `/stats`, GraphRAG), excluded from federation (no `koi_rid` assigned), and not published to the Quartz site. Node operators can still query them directly in the database.
+
+This enforcement is implemented in the interview-commoning plugin and the `/register-entity` backend endpoint. See `Octo/docs/interview-commoning-mvp.md` for the full tier-to-visibility mapping.
 
 ## Governance Process Requirements
 Before publishing across boundaries, each pilot/node must define:

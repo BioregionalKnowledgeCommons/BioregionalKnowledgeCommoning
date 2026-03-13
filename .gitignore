@@ -5,3 +5,6 @@ __pycache__/
 
 # Private drafts (messages, outreach, internal notes)
 drafts/
+
+# Demo recordings (large binaries)
+*.mov
