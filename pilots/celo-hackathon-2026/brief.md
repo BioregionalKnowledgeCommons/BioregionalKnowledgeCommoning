@@ -79,7 +79,7 @@ Natural Language ──→ Agent Draft ──→ Commitment Object
 
 ## Grassroots Economics Alignment
 
-BKC commitment pooling maps directly to the patterns Grassroots Economics has proven at scale with Sarafu Network (3,149 monthly active users, 239 vouchers, 33 pools, 1,200+ acres restored):
+BKC commitment pooling maps directly to the patterns Grassroots Economics has proven at scale with Sarafu Network (approximately 3,100+ monthly active users, 239 vouchers, 33 pools per GE/Sarafu Network public reporting; "1,200+ acres restored" per Grassroots Economics impact claims — specific report reference should be confirmed before citing externally):
 
 | BKC | GE / Sarafu | What it means |
 |-----|-------------|---------------|
