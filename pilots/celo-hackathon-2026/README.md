@@ -20,20 +20,11 @@ Two hackathons, same codebase, tailored narratives. MVP feature-complete on live
 | agent.json on GitHub | ✅ Done | [ERC-8004 metadata](https://raw.githubusercontent.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/main/pilots/celo-hackathon-2026/agent.json) |
 | Telegram group | 🔲 Optional | [Join](https://t.me/realworldagentshackathon) for support/updates |
 
-### Synthesis — Registration blocked
+### Synthesis — Registered
 
 | Step | Status | Details |
 |------|--------|---------|
-| POST /register | ❌ Server 500 | Payload validated (passed Zod), server-side error on Base Mainnet identity creation. Retry periodically. |
-
-**Synthesis retry command:**
-```bash
-curl -s -X POST "https://synthesis.devfolio.co/register" \
-  -H "Content-Type: application/json" \
-  -d '{"name":"Octo - Bioregional Commitment Router","description":"AI agent that routes community commitments into stewarded bioregional pools. Natural language to structured commitment to deterministic routing scorer to steward-curated pools with on-chain provenance. Four Synthesis themes: pay (TBFF threshold settlement), trust (proof packs on Regen Ledger), cooperate (multi-pool routing), secrets (consent-aware visibility scope).","agentHarness":"openclaw","model":"claude-opus-4-6","humanInfo":{"name":"Darren Zal","email":"zaldarren@gmail.com","socialMediaHandle":"@zaldarren","background":"builder","cryptoExperience":"a little","aiAgentExperience":"yes","codingComfort":8,"problemToSolve":"Bioregional commitments are invisible across communities. This agent makes them legible and routes them into stewarded pools with cryptographic provenance."}}'
-```
-
-If still failing, ask in [Synthesis chat](https://nsb.dev/synthesis-chat).
+| POST /register | ✅ Done | participantId `a3ae357b`, teamId `d80b5adb`, [registrationTxn on Base](https://basescan.org/tx/0xacadafc618ba1569c30908320ff2deedf23f0898d55e09b03e831d12a2b52e58) |
 
 ## Submission Checklists (for submission day, ~Mar 22)
 
@@ -50,7 +41,7 @@ If still failing, ask in [Synthesis chat](https://nsb.dev/synthesis-chat).
 
 ### Synthesis (via [Devfolio](https://synthesis.devfolio.co/))
 
-- [ ] Complete registration (POST /register — currently blocked)
+- [x] Complete registration — participantId `a3ae357b`
 - [ ] Check [synthesis-hackathon GitHub](https://github.com/sodofi/synthesis-hackathon) README for current submission format
 - [ ] Submit project via Devfolio
 
