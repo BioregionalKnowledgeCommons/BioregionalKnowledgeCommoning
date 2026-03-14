@@ -1,29 +1,58 @@
 # Hackathon Hub — Celo V2 + Synthesis
 
-Two hackathons, same codebase, tailored narratives. MVP feature-complete on live Octo. Scope frozen.
+Two hackathons, same codebase, tailored narratives. MVP feature-complete on live Octo.
 
 ## Deadlines
 
 | Hackathon | Build window | Submissions close | Winners |
 |-----------|-------------|-------------------|---------|
-| Celo V2 "Build Agents for the Real World" | Mar 2–18 | **Mar 18, 9 AM GMT** | Mar 20, 3 PM GMT |
+| Celo V2 "Build Agents for the Real World" | Mar 2–22 | **Mar 22, 9 AM GMT** | Mar 24, 3 PM GMT |
 | [Synthesis](https://synthesis.md/) | Mar 13–22 | **Mar 22, 11:59 PM PST** | Mar 25 |
 
-## Submission Checklists
+## Registration Status (updated 2026-03-14)
 
-### Celo V2 (via [Karma](https://www.karmahq.xyz/community/celo?programId=1059))
+### Celo V2 — Registered
 
-- [ ] Register project on Karma
-- [ ] Verify agent with [Self AI](https://app.ai.self.xyz/)
-- [ ] Register on [agentscan](https://agentscan.info/) — get `agentId`
-- [ ] Optional: Register on [Molthunt](https://www.molthunt.com/)
-- [ ] Compose tweet: Karma link + agentId + Self AI + tag @Celo @CeloDevs @CeloPG
-- [ ] Submit tweet + project link via [Karma form](https://app.karmahq.xyz/celo/programs/1059/apply)
+| Step | Status | Details |
+|------|--------|---------|
+| Karma project | ✅ Done | [Bioregional Commitment Routing](https://www.karmahq.xyz/project/bioregional-commitment-routing) |
+| 8004scan agent | ✅ Done | [agentId 1855](https://www.8004scan.io/agents/celo/1855) on Celo mainnet |
+| agent.json on GitHub | ✅ Done | [ERC-8004 metadata](https://raw.githubusercontent.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/main/pilots/celo-hackathon-2026/agent.json) |
+| Telegram group | 🔲 Optional | [Join](https://t.me/realworldagentshackathon) for support/updates |
 
-### Synthesis (via [synthesis.md](https://synthesis.md/))
+### Synthesis — Registration blocked
 
-- [ ] Register agent at synthesis.md
-- [ ] Submit project (format TBD — check [GitHub](https://github.com/sodofi/synthesis-hackathon))
+| Step | Status | Details |
+|------|--------|---------|
+| POST /register | ❌ Server 500 | Payload validated (passed Zod), server-side error on Base Mainnet identity creation. Retry periodically. |
+
+**Synthesis retry command:**
+```bash
+curl -s -X POST "https://synthesis.devfolio.co/register" \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Octo - Bioregional Commitment Router","description":"AI agent that routes community commitments into stewarded bioregional pools. Natural language to structured commitment to deterministic routing scorer to steward-curated pools with on-chain provenance. Four Synthesis themes: pay (TBFF threshold settlement), trust (proof packs on Regen Ledger), cooperate (multi-pool routing), secrets (consent-aware visibility scope).","agentHarness":"openclaw","model":"claude-opus-4-6","humanInfo":{"name":"Darren Zal","email":"zaldarren@gmail.com","socialMediaHandle":"@zaldarren","background":"builder","cryptoExperience":"a little","aiAgentExperience":"yes","codingComfort":8,"problemToSolve":"Bioregional commitments are invisible across communities. This agent makes them legible and routes them into stewarded pools with cryptographic provenance."}}'
+```
+
+If still failing, ask in [Synthesis chat](https://nsb.dev/synthesis-chat).
+
+## Submission Checklists (for submission day, ~Mar 22)
+
+### Celo V2 (via [Karma](https://www.karmahq.xyz/community/celo/programs/1059/apply))
+
+1. [x] Register project on Karma — [Bioregional Commitment Routing](https://www.karmahq.xyz/project/bioregional-commitment-routing)
+2. [x] Register agent on [8004scan](https://www.8004scan.io/) — [agentId 1855](https://www.8004scan.io/agents/celo/1855)
+3. [ ] Register on [agentscan.info](https://agentscan.info/) — needed for tweet (distinct from 8004scan)
+4. [ ] Verify agent with [Self AI](https://app.ai.self.xyz/) — required for judging (screenshot if unavailable in region)
+5. [ ] Compose + post tweet: Karma link + agentscan agentId + 8004scan link + tag @Celo @CeloDevs @CeloPG
+6. [ ] Submit via [Karma form](https://app.karmahq.xyz/celo/programs/1059/apply): email + Karma project + tweet URL
+7. [ ] Optional: Register on [Molthunt](https://www.molthunt.com/) (supplementary)
+8. [ ] Upload demo video to Karma project page
+
+### Synthesis (via [Devfolio](https://synthesis.devfolio.co/))
+
+- [ ] Complete registration (POST /register — currently blocked)
+- [ ] Check [synthesis-hackathon GitHub](https://github.com/sodofi/synthesis-hackathon) README for current submission format
+- [ ] Submit project via Devfolio
 
 ## Live Demo URLs
 
