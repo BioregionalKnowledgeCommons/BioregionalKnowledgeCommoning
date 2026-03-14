@@ -79,7 +79,7 @@ Natural Language ──→ Agent Draft ──→ Commitment Object
 
 ## Grassroots Economics Alignment
 
-BKC commitment pooling maps directly to the patterns Grassroots Economics has proven at scale with Sarafu Network (approximately 3,100+ monthly active users, 239 vouchers, 33 pools per GE/Sarafu Network public reporting; "1,200+ acres restored" per Grassroots Economics impact claims — specific report reference should be confirmed before citing externally):
+BKC commitment pooling maps directly to the patterns Grassroots Economics has proven at scale: 26,367 users, 188 active pools, 745 vouchers, $320K swap volume (per Dune Analytics dashboard, as of Jul 2025):
 
 | BKC | GE / Sarafu | What it means |
 |-----|-------------|---------------|
@@ -89,7 +89,7 @@ BKC commitment pooling maps directly to the patterns Grassroots Economics has pr
 | TBFF threshold bands | Token limiter | Similar safety mechanics, different layers |
 | Routing scorer | (Manual matching) | New: deterministic multi-factor routing |
 
-**CLC DAO convergence**: Will Ruddick's Credit Loop Commons DAO (white paper in progress) adds multi-hop routing, value index pricing, and netting flows on Celo. Our routing scorer is BKC-native, designed to be CLC-compatible. The integration path is a post-hackathon study (C1), not hackathon scope.
+**CLC convergence**: Will Ruddick's Cosmo-Local Credit (white paper at cosmolocal.credit) adds multi-hop routing via CPP (Commitment Pooling Protocol) with four interfaces — Curation, Valuation, Limitation, Exchange. BKC provides Curation (governance membrane) and Valuation (routing scorer); CLC provides Limitation and Exchange (settlement execution). Our routing scorer implements §5.2 on-demand routing — scored pool suggestions that a CLC router would execute multi-hop. The integration path is a post-hackathon study (C1), not hackathon scope.
 
 ## Demo
 

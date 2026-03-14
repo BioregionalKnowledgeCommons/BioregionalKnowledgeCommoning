@@ -63,7 +63,9 @@ Two hackathons, same codebase, tailored narratives. MVP feature-complete on live
 
 | File | Description |
 |------|-------------|
+| [vision.md](vision.md) | North star — thesis, arc, CLC convergence thread |
 | [brief.md](brief.md) | 1-page submission brief |
+| [conversation-log.md](conversation-log.md) | Human-agent collaboration log (for Synthesis `conversationLog` field) |
 | [demo-storyboard.md](demo-storyboard.md) | Full architecture + routing scorer spec + verification checklist |
 | [demo-script-friday.md](demo-script-friday.md) | Presenter's click-by-click script for Friday demo |
 | `demo-recording-2026-03-13.mov` | Fallback recording (gitignored, local only) |

@@ -1,4 +1,4 @@
-# Demo Script — Friday Mar 13, Noon PDT
+# Demo Script — Friday Mar 13, Noon MT (11am PDT)
 
 **Audience:** Benjamin + Shawn
 **Duration:** ~3 minutes live, then discussion
@@ -133,8 +133,8 @@ Now use suggest_pool_routes with that draft
    - Benjamin: web UX polish, routing visualization (FlowCanvas adaptation), submission narrative, demo recording
    - Shawn: TBD — discuss interest areas
 2. **Hackathon deadlines:**
-   - Agent V2: Mar 22
-   - Synthesis: Mar 25
+   - Celo V2: Mar 18 (9 AM GMT)
+   - Synthesis: Mar 22 (11:59 PM PST)
 3. **What exists:** `brief.md` (submission brief), `demo-storyboard.md` (full architecture), `/commons/flow-funding` (TBFF viz)
 4. **Repos:** `BioregionalKnowledgeCommons/bioregional-commons-web`, `BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning`
 
