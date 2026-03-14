@@ -21,7 +21,7 @@ BKC was named for *knowledge* commoning, but the deeper vision — articulated a
 
 Commitment pooling fills this gap without adding financialization. It inverts conventional finance: rather than allocating scarce currency *to* communities, communities make their **capacity and obligations legible** *as* a pooled commons. Value arises from trusted redeemability, not external price signals.
 
-**The operational precedent is real.** The Sarafu Network (Grassroots Economics, Kenya) runs 3,149 monthly active users, 239 community vouchers, 33 active pools, 1,200+ acres restored, 84% positive income impact in pilot regions. This is not speculative — commitment pooling is a practiced economic technology.
+**The operational precedent is real.** The Sarafu Network (Grassroots Economics, Kenya, deployed on Celo mainnet since July 2023) has 26,367 users, 188 active commitment pools, 745 active vouchers, and $320,692 in swap volume ([Dune dashboard](https://dune.com/grassrootseconomics/sarafu-network)). Over 1,200 acres restored and 84% positive income impact in pilot regions. This is not speculative — commitment pooling is a practiced economic technology.
 
 ---
 
@@ -61,7 +61,7 @@ Each step is an observable event, storable in the knowledge graph, and raisable 
 
 **Tier 1 — Individual Level:** A Person or Organization issues a commitment pledge (analogous to a Community Asset Voucher / CAV): "I commit to X hours of Y service." Stored as a `Commitment` entity with `PROPOSED` state.
 
-**Tier 2 — Pool Federation:** Multiple commitments aggregate into a `CommitmentPool`. When a threshold of pledges are verified, the pool activates. Credits (abstracted commitment capacity) route multi-hop across pools via trust links. This is the CLC DAO model (planned Celo launch 2026), turning the "long tail of real obligations" — labor, land stewardship, knowledge curation — into routable economic signals.
+**Tier 2 — Pool Federation:** Multiple commitments aggregate into a `CommitmentPool`. When a threshold of pledges are verified, the pool activates. Credits (abstracted commitment capacity) route multi-hop across pools via trust links. This is the CLC model (deployed on Celo mainnet), turning the "long tail of real obligations" — labor, land stewardship, knowledge curation — into routable economic signals.
 
 **Tier 3 — Ecosystem Governance:** DAO or governing body sets safety rules, routing standards, and insurance. In BKC's model, this maps to the existing commons governance membrane (decision audit log, steward approval flows, policy governance).
 
