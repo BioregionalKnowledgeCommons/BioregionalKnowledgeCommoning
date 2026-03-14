@@ -8,7 +8,7 @@
 
 ## Strategic Position
 
-BKC provides **off-chain curation and routing intelligence**. CLC provides **on-chain settlement and execution**. These are complementary layers, not competing implementations.
+Bioregional Knowledge Commons (BKC) provides **off-chain curation and routing intelligence**. Cosmo-Local Credit (CLC) provides **on-chain settlement and execution**. These are complementary layers, not competing implementations.
 
 BKC's value is upstream: bioregion-aware context, consent-aware visibility, typed commitment metadata, federated knowledge graph, evidence-based provenance. CLC's value is downstream: token vaults, multi-hop swap execution, fee economics, liquidity coordination. The integration strategy is a bridge layer, not a merger.
 
@@ -162,7 +162,7 @@ Natural language → structured commitment → agent determines tokenization app
 
 Where relevant, BKC threshold bands inform Limiter configuration for on-chain pools:
 
-| BKC TBFF Band | Amount | On-Chain Limiter Config |
+| BKC Threshold-Based Flow Funding (TBFF) Band | Amount | On-Chain Limiter Config |
 |---|---|---|
 | Auto | < $500 | Limiter cap set permissively; auto-advance |
 | Semi | $500 – $5K | Moderate cap; requires steward review |
@@ -231,13 +231,13 @@ BKC adds context CLC's token-pair routing doesn't have:
 
 The CLC white paper §5.2a describes confederation as "forks help everyone" — a mesh of overlapping curations where different communities maintain different pool networks that can interoperate.
 
-BKC federation (KOI-net) as a CPP-compatible network profile:
+BKC federation as a Commitment Pooling Protocol (CPP)-compatible network profile:
 - KOI-net domain events carry commitment/pool state changes across federated nodes
 - Each bioregional node maintains its own curation decisions (which commitments, which pools)
 - Cross-bioregion routing uses federation edges, analogous to CLC's cross-pool routing
 - BKC's governance membrane (edge approval, unknown handshake deferral) maps to CLC's confederation trust model
 
-### sCLC Governance Participation
+### sCLC (staked CLC) Participation
 
 **Defer until Phase 3 evaluation.** sCLC is a time-bounded epoch access receipt — an access key for the capped fee-access budget, not a governance token or routing authority grant. BKC should only consider acquiring sCLC if:
 - BKC communities need fee-gated swap access on CLC pools
@@ -248,7 +248,7 @@ This is an access key, not a collaboration badge. Premature adoption adds cost w
 
 ---
 
-## What to Use from GE/CLC (Don't Reimplement)
+## What to Use from Grassroots Economics (GE) / CLC (Don't Reimplement)
 
 | Component | Source | Use |
 |---|---|---|
