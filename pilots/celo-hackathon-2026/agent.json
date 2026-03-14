@@ -1,0 +1,13 @@
+{
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "name": "Octo - Bioregional Commitment Router",
+  "description": "AI agent for routing community commitments into stewarded pools on a federated bioregional knowledge graph. Natural language → structured commitment → deterministic routing scorer → stewarded pools with on-chain provenance.",
+  "image": "https://github.com/BioregionalKnowledgeCommons.png",
+  "services": [
+    {
+      "name": "A2A Agent Card",
+      "endpoint": "https://45.132.245.30.sslip.io/.well-known/agent.json"
+    }
+  ],
+  "active": true
+}
