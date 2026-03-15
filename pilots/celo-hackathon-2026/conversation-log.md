@@ -136,4 +136,62 @@ The whitepaper synthesis produces more insight than fits in sprint artifacts. De
 
 ---
 
+## Day 3 — Mar 14 (Celo EAS Attestation)
+
+### EAS validation and setup
+
+**Context:** Sprint item #2 called for "one Celo proof artifact." Research confirmed EAS (Ethereum Attestation Service) is the right tool — deployed on Celo mainnet with 37K+ attestations and 143 schemas. Celo's native "Attestation Service" is phone-number verification only. Alfajores (testnet) has no EAS deployment, so we went straight to mainnet (gas is ~$0.003/tx).
+
+**Decision:** Standalone TypeScript script (`Octo/scripts/eas/attest.ts`) rather than new API endpoint. Keeps koi-processor core untouched. Uses EAS SDK v2.9.0 (ethers v6 bundled). If valuable post-hackathon, promote to endpoint later.
+
+**Validated:**
+- EAS contract at `0x72E1d8ccf5299fb36fEfD8CC4394B8ef7e98Af92` (Celo mainnet)
+- SchemaRegistry at `0x5ece93bE4BDCF293Ed61FA78698B594F2135AF34`
+- celo.easscan.org live with explorer
+- Hackathon wallet `0x6f844901459815A68Fa4e664f7C9fA632CA79FEa` has 95.89 CELO
+
+### Schema registration
+
+**Schema:** `string commitmentRid, bytes32 contentHash, string proofPackUri, string regenTxHash, string bioregion, uint64 verifiedAt`
+
+Six fields capturing the cross-chain proof: BKC claim identifier, BLAKE2b-256 content hash (same hash anchored on Regen), proof pack URI for full JSON, Regen tx hash for cross-reference, bioregion name, and Unix timestamp of verification.
+
+**Schema UID:** `0xdcf86a36ec6ec644e7727f9e1c7290b38f7f8503b051b893774cdd52573ee1e0`
+**View:** [celo.easscan.org/schema/view/0xdcf86a...](https://celo.easscan.org/schema/view/0xdcf86a36ec6ec644e7727f9e1c7290b38f7f8503b051b893774cdd52573ee1e0)
+
+### First attestation — TBFF demo claim
+
+Attested the TBFF threshold demo claim (`orn:koi-net.claim:a42c60ce7e7f1848`) — a Greater Victoria settlement that went through BKC's full verification lifecycle: self_reported → peer_reviewed → verified → ledger_anchored on Regen.
+
+**Attestation UID (canonical):** `0x4f761a97b5bd5c4070997912c15cbcc24fbdbf8d33dcb0c97d5138e55f704e14`
+**View:** [celo.easscan.org/attestation/view/0x4f761a...](https://celo.easscan.org/attestation/view/0x4f761a97b5bd5c4070997912c15cbcc24fbdbf8d33dcb0c97d5138e55f704e14)
+
+(Supersedes earlier `0x7eb29f...` which had localhost proofPackUri from SSH tunnel. Script updated with `KOI_PUBLIC_URL` to separate fetch URL from on-chain URI.)
+
+### Hash integrity verification
+
+The critical test: does the on-chain bytes32 match the original content hash? Script decodes the EAS attestation data using the SchemaEncoder, extracts the `contentHash` field, and compares. **Three-way match confirmed:**
+
+| Location | Hash |
+|----------|------|
+| BKC proof pack | `5d3788829ca78c092f144fa97208d31030f2c73f5ff5220eac4ec763a74b562d` |
+| Regen Ledger | `5d3788829ca78c092f144fa97208d31030f2c73f5ff5220eac4ec763a74b562d` |
+| Celo EAS (bytes32) | `0x5d3788829ca78c092f144fa97208d31030f2c73f5ff5220eac4ec763a74b562d` |
+
+No re-hashing, no conversion artifacts. BLAKE2b-256 hex → `0x` prefix → bytes32. Clean.
+
+### What this means for the demo
+
+BKC proof packs now have dual-chain provenance. Judges can:
+1. Click the easscan.org link to see the attestation on Celo
+2. Follow the `proofPackUri` to fetch the full proof pack JSON from the KOI API
+3. Cross-reference the `regenTxHash` against Regen Ledger
+4. Verify the content hash matches across both chains
+
+**Isolation:** Zero changes to koi-processor core. No new Python dependencies. No new API endpoints. No modifications to the claim state machine. The EAS attestation is purely additive — a standalone script that reads proof packs and writes attestations.
+
+*Day 3 deliverables: EAS schema registered ✅, first attestation created ✅, hash integrity verified ✅, demo artifact archived ✅, sprint docs updated ✅.*
+
+---
+
 *Log continues as sprint progresses...*

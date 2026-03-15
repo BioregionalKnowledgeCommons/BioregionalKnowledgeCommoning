@@ -88,7 +88,7 @@ Funders need to see capital pathways, governance, and de-risked pilots. BKC make
 The core demo path works end-to-end. This sprint is about hardening, narrative, and one high-signal on-chain artifact:
 
 1. **Harden** — smoke test every demo path step on live Octo, fix any brittleness
-2. **One Celo proof artifact** — research Celo attestation infra (EAS or Celo Attestation Service), aim for one Alfajores attestation proving a commitment was verified. Kill date: Day 3. If it doesn't land, BKC-only demo stands on its own.
+2. **One Celo proof artifact** — EAS attestation on Celo mainnet. Schema `0xdcf86a...` registered, attestation `0x4f761a...` created for TBFF demo claim. Dual-chain proof: same BLAKE2b-256 content hash on Regen Ledger and Celo EAS. Browsable at [celo.easscan.org](https://celo.easscan.org/attestation/view/0x4f761a97b5bd5c4070997912c15cbcc24fbdbf8d33dcb0c97d5138e55f704e14). See `Octo/docs/demo-artifacts/eas-attestation-demo-2026-03-14.md`.
 3. **ERC-8004 receipt framing** — proof packs already *are* receipts. Frame them explicitly for the "Agents With Receipts" track.
 4. **Lock the narrative** — demo video, brief.md refresh, submission assets for both Celo V2 and Synthesis
 5. **Bonus integrations** — Locus payment, ENS identity, routing visualization. Only if Phases 1–3 are frozen.
