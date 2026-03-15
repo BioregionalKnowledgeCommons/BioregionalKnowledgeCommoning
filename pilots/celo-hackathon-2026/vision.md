@@ -52,6 +52,37 @@ This is not a prototype. The following is live and deployed:
 
 ---
 
+## What BKC Uniquely Contributes
+
+CLC routes for economic efficiency — settlement velocity, multi-hop liquidity, netting flows. BKC adds what CLC alone cannot:
+
+- **Contextual routing intelligence** — bioregion proximity, semantic taxonomy overlap, seasonality, capacity fit. Not just "is the swap valid?" but "does this commitment belong in this landscape?" The routing scorer evaluates multiple dimensions of fit that token-pair adjacency doesn't capture.
+- **Federated governance membrane** — consent-aware, steward-curated, 34 filtered query sites enforcing visibility scope. Communities control what flows where. `node_private` commitments never surface on-chain — the consent boundary is the tokenization gate.
+- **Provenance chain** — proof packs as the attestation layer that pool stewards and funders need. Evidence of kept commitments, not just settlement receipts. Each proof pack captures who promised, who curated, who verified, what was delivered — anchored on Regen Ledger.
+- **Place-based knowledge graph** — 1,005 entities of ecological and social context informing routing decisions. Routing is grounded in what the bioregion actually needs, not just what's economically optimal.
+
+*CLC routes for economic efficiency. BKC routes for ecological and social relevance. Together they provide multi-objective routing that neither achieves alone.*
+
+---
+
+## The Concrete Pathway
+
+This isn't abstract infrastructure design. Bioregional organizations are already training landscape groups in mapping, stewardship, and flow funding. [Regenerate Cascadia's Hub Cultivator program](https://regeneratecascadia.org/hub-cultivator/) supports place-based groups through structured mapping, collaborative design, and threshold-based funding — the social practices that commitment pooling formalizes.
+
+These landscape groups are proto-portfolio pools: place-based, steward-curated, ecologically scoped. The pathway from social practice to digital infrastructure:
+
+1. **Mapping workshops** — communities map needs, offers, capacities, stewards, and candidate commitments
+2. **Digital commitments** — workshop outputs become structured commitments via `/commons/commit` templates
+3. **Routing suggestions** — the scorer matches commitments to candidate pools based on bioregional fit
+4. **Steward curation** — pool stewards pledge and verify commitments they consider mature and redeemable
+5. **Pool formation** — curated commitments activate pools with threshold-based flow funding
+6. **Proof packs** — fulfillment evidence is linked, attested, and anchored on-chain
+7. **Learning** — proof of kept commitments feeds back into the knowledge graph, informing the next cycle
+
+Funders need to see capital pathways, governance, and de-risked pilots. BKC makes that legibility infrastructure real — the connective tissue between community practice and portfolio-directed liquidity.
+
+---
+
 ## What This Sprint Adds
 
 The core demo path works end-to-end. This sprint is about hardening, narrative, and one high-signal on-chain artifact:
@@ -77,7 +108,9 @@ BKC commitment routing maps directly to Will Ruddick's Cosmo-Local Credit (CLC) 
 
 Our routing scorer implements CLC §5.2 on-demand routing: scored pool suggestions that a CLC SwapRouter would execute as multi-hop `Hop[]` paths. The mapping is direct — BKC provides the upstream intelligence (which commitments should route where, based on what governance), CLC provides the downstream execution (multi-hop settlement across pool networks).
 
-Post-hackathon convergence (C1/C2), not scope. But naming it shows where this goes: BKC as the curation and valuation layer for a cosmo-local credit network operating on Celo.
+The CLC white paper §5.2a describes confederation as a mesh of overlapping curations — independent networks running their own registries, routers, and policy layers while routing to one another through compatible standards. BKC is designed toward CPP compatibility, and can evolve into an independent but interoperable network profile within CLC's confederation architecture. The three-layer stack: BKC (knowledge and curation) → planning semantics (future, potentially ValueFlows/hREA) → CPP/CLC (settlement and execution). BKC provides upstream intelligence; CLC provides downstream execution.
+
+Post-hackathon convergence (C1/C2), not scope. But naming it shows where this goes: BKC as the curation, valuation, and routing intelligence layer for a cosmo-local credit confederation operating on Celo. CPP compatibility is a design target gated by analysis — viable `Hop[]` paths, tokenizable commitment classes, and proof that on-chain settlement adds value over staying off-chain.
 
 ---
 
@@ -103,4 +136,4 @@ A nursery in Victoria pledges seedlings. An AI agent structures the commitment w
 
 The next time someone in Cascadia needs native seedlings, the knowledge graph already knows who delivers and who vouched for them. Trust compounds. Coordination scales. The commons remembers.
 
-That's what we're building.
+That's the full cycle: workshop → commitment → routing → curation → pool → settlement → proof → learning. Each turn strengthens the next. That's what we're building.

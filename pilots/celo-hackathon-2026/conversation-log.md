@@ -92,4 +92,48 @@ VALUES ('orn:personal-koi.entity:concept-salish-sea-af98015f9f2e', 'broader', 'o
 
 ---
 
+## Day 2 — Mar 14 (CLC Synthesis + Narrative Sharpening)
+
+### CLC whitepaper deep reading
+
+**Context:** Darren spent time with the CLC whitepaper and produced detailed notes (`CLC_whitepaper_notes.md`) — raw questions, working synthesis, and design insights covering commitment lifecycle, confederation strategy, portfolio pools, routing objectives, ValueFlows integration, and community mapping expansion.
+
+**Key insights from the reading:**
+
+1. **Three-layer stack.** BKC (knowledge and curation) → planning semantics (future, ValueFlows/hREA) → CPP/CLC (settlement and execution). Not every BKC commitment becomes pooled — BKC holds the wider field; pools hold the curated subset.
+
+2. **Confederation, not dependency.** CLC §5.2a describes confederation as a mesh of overlapping curations. Cascadia doesn't need to choose between joining CLC DAO or forking — the protocol is designed for both. BKC is designed toward CPP compatibility as a target, not a present-tense claim.
+
+3. **Portfolio pools = bioregional financing.** Landscape groups are proto-portfolio pools: place-based, steward-curated, ecologically scoped. Being a liquidity provider to a portfolio pool is underwriting a living portfolio, not extractive investment.
+
+4. **Multi-objective routing is BKC's unique contribution.** CLC optimizes for settlement velocity. BKC adds bioregion proximity, taxonomy overlap, timeframe, capacity, and (future) ecological urgency, reciprocity, carrying capacity. Combined: economic efficiency *and* ecological/social relevance.
+
+5. **The concrete pathway.** Mapping workshops → digital commitments → routing → curation → pools → flow funding → proof packs → learning. Each turn strengthens the next. The Hub Cultivator program provides a near-term deployment window.
+
+### Decision: sprint docs stay sharp, roadmap gets the depth
+
+The whitepaper synthesis produces more insight than fits in sprint artifacts. Decision:
+
+- **Sprint scope:** Sharpen the narrative in `vision.md` (unique contributions, concrete pathway, confederation thread, north star cycle). Create `clc-questions-synthesis.md` as the canonical refined Q&A — shareable with the GE team.
+- **Roadmap scope (post-hackathon):** Propagate insights into `clc-integration-strategy.md` (portfolio pools, multi-objective routing, confederation pathway), `commitment-pooling-foundations.md` (pool eligibility, mapping-to-pools pathway), new decision ladder doc, semantic roadmap items. Important but not sprint-blocking.
+
+### Sprint doc updates
+
+**`vision.md` enhanced:**
+- Added "What BKC Uniquely Contributes" — contextual routing intelligence, governance membrane, provenance chain, place-based knowledge graph. Key framing: "CLC routes for economic efficiency. BKC routes for ecological and social relevance."
+- Added "The Concrete Pathway" — mapping workshops → digital commitments → routing → curation → pools → settlement → proof → learning. References Regenerate Cascadia Hub Cultivator as public evidence of the social practice.
+- Strengthened "The Cosmolocalism Thread" — named confederation model, three-layer stack, CPP compatibility as design target with explicit go/no-go gates.
+- Enhanced "North Star" — added the full cycle (workshop → commitment → routing → curation → pool → settlement → proof → learning).
+
+**`clc-questions-synthesis.md` created:**
+10-section Q&A synthesis covering BKC+CLC layering, confederation strategy, portfolio pools as bioregional financing, proof packs as attestation layer, multi-objective routing, time-aware planning, playground/onboarding pathway, composability and ValueFlows, community mapping expansion, and the TBFF→Pool→CLC decision ladder.
+
+*Day 2 deliverables: vision.md enhanced ✅, clc-questions-synthesis.md created ✅, conversation-log Day 2 ✅.*
+
+---
+
+*Day 3 focus: Celo attestation prototype + demo hardening.*
+
+---
+
 *Log continues as sprint progresses...*
