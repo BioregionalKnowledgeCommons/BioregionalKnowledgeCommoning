@@ -51,6 +51,8 @@ Two hackathons, same codebase, tailored narratives. MVP feature-complete on live
 - Create commitment: https://45.132.245.30.sslip.io/commons/commit
 - Flow funding viz: https://45.132.245.30.sslip.io/commons/flow-funding
 - Salish Sea Knowledge Garden: https://45.132.245.30.sslip.io
+- VCV on Celoscan: https://celoscan.io/address/0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573
+- TBFFSettler on Celoscan: https://celoscan.io/address/0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030
 
 ## Repos
 
@@ -70,6 +72,31 @@ Two hackathons, same codebase, tailored narratives. MVP feature-complete on live
 | [demo-script-friday.md](demo-script-friday.md) | Presenter's click-by-click script for Friday demo |
 | `demo-recording-2026-03-13.mov` | Fallback recording (gitignored, local only) |
 | [telegram-coordination-post.md](telegram-coordination-post.md) | Async share for builders group |
+| [commitment-economy-design.md](commitment-economy-design.md) | Two-layer economy design (commitment pooling + TBFF) |
+| `Octo/scripts/celo/demo-full-loop.sh` | End-to-end orchestrator: audio → commitments → verify → mint → settle → attest |
+| `Octo/scripts/celo/transcribe-and-extract.ts` | Whisper transcription + commitment extraction |
+| `Octo/scripts/celo/agent-self-commit.ts` | Agent registers own offers + needs |
+| `Octo/scripts/celo/mint-commitment-token.ts` | VCV minting for verified commitments |
+| `Octo/scripts/celo/deploy-settler.ts` | TBFFSettler deployment + settle execution |
+| `Octo/scripts/celo/deploy-token.ts` | VCV GiftableToken deployment |
+
+## Sprint Progress
+
+| Day | Date | Milestone | Key Artifacts |
+|-----|------|-----------|---------------|
+| 1-3 | Mar 14-15 | Commitment pipeline + Celo EAS | `commitment_extractor.py`, `attest.ts`, 14/14 tests |
+| 4-5 | Mar 15-16 | Deploy pipeline to Octo + dual-chain proof | Vendor pin `decb473f`, Regen TX + EAS attestation |
+| 6 | Mar 17 | VCV token + TBFFSettler on Celo mainnet | `deploy-token.ts`, `deploy-settler.ts`, `mint-commitment-token.ts` |
+| 7 | Mar 17 | Full demo loop on Octo production | `demo-full-loop.sh`, 10 candidates extracted, 23 VCV minted |
+
+## On-Chain Contracts
+
+| Contract | Address | Purpose |
+|----------|---------|---------|
+| VCV (GiftableToken) | [`0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573`](https://celoscan.io/address/0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573) | Commitment voucher token, 6 decimals |
+| TBFFSettler | [`0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030`](https://celoscan.io/address/0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030) | Needs-based redistribution, 5 nodes |
+| BKC EAS Schema | [`0xdcf86a...`](https://celo.easscan.org/schema/view/0xdcf86a36ec6ec644e7727f9e1c7290b38f7f8503b051b893774cdd52573ee1e0) | Attestation schema on Celo EAS |
+| Agent wallet | `0x6f844901459815A68Fa4e664f7C9fA632CA79FEa` | Minter + settler operator |
 
 ## Tracks + Judging
 

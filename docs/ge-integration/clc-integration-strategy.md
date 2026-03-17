@@ -1,7 +1,7 @@
 # CLC Integration Strategy
 
-**Date:** 2026-03-13
-**Status:** Draft
+**Date:** 2026-03-17
+**Status:** In Progress (hackathon deployment active)
 **Depends on:** [compatibility-memo.md](./compatibility-memo.md), [commitment-pooling-foundations.md](../foundations/commitment-pooling-foundations.md)
 
 ---
@@ -16,51 +16,68 @@ BKC's value is upstream: bioregion-aware context, consent-aware visibility, type
 
 ## Decision Gate: Compatibility-First or Deployment-First?
 
-Before Phase 1 begins, choose an approach:
+**Decision made (2026-03-17): Deployment-first.**
 
-**Compatibility-first** (recommended): Study CLC's token graph, quoter models, and registry patterns. Build the semantic-to-contract translation layer. Then selectively deploy where settlement warrants it.
+During the hackathon sprint (Mar 12-17), BKC chose deployment-first and deployed on Celo mainnet (not testnet):
 
-**Deployment-first**: Deploy a test GiftableToken + SwapPool on Alfajores, learn by doing.
+- **VCV (Victoria Commitment Voucher):** GiftableToken at [`0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573`](https://celoscan.io/address/0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573) — 6 decimals, agent wallet authorized as minter
+- **TBFFSettler:** [`0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030`](https://celoscan.io/address/0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030) — 5 nodes, TBFFMath convergence, discrete ERC-20 transfers
+- **28,600 VCV minted** across 23 commitments from mapping workshop transcripts
+- **End-to-end pipeline:** audio → AI commitment extraction → commitment creation → VCV minting on Celo production
 
-**Why compatibility-first:** BKC's value is upstream intelligence — knowing *which* commitments should route *where* and *why*. Deploying pools without understanding CLC's token graph topology produces isolated liquidity with no routing paths. The hard problem is the semantic-to-contract translation, not the contract deployment.
+The original compatibility-first recommendation underestimated the learning-by-doing benefit. Deploying GiftableToken + TBFFSettler immediately surfaced integration patterns (minting authorization, metadata write-back, dual-chain proof packs) that study alone wouldn't have revealed. The semantic-to-contract translation turned out to be tractable because BKC's routing scorer already produces the structured metadata that GiftableToken parameters need.
 
-### Go/No-Go Criteria for Phase 2
+**Next step (Day 8):** Deploy BKC SwapPool (from GE `erc20-pool`) with VCV + cUSD. Multi-hop routing across Sarafu pools remains post-hackathon (C1).
 
-All three must be met:
+### Go/No-Go Criteria for Phase 2 — All Met
 
-1. **Tokenizable commitment class identified** — at least one concrete, redeemable offer type (labor hours, goods, stewardship services) that can be meaningfully represented as a GiftableToken. Abstract knowledge curation is not tokenizable.
+1. **Tokenizable commitment class identified** — watershed restoration, mycoremediation, habitat monitoring commitments from Victoria Landscape Hub mapping workshops. 23 commitments tokenized as VCV. Abstract knowledge curation stays off-chain.
 
-2. **Viable `Hop[]` path constructed** — at least one valid multi-hop route on an existing or Alfajores test pool graph that connects a BKC commitment token to a target token (e.g., cUSD). Proves the token graph is navigable.
+2. **Viable `Hop[]` path constructed** — BKC SwapPool deployment (Day 8) will create the first pool with VCV + cUSD. Multi-hop paths across Sarafu pools (188 active) are the C1 objective.
 
-3. **On-chain settlement adds value** — at least one clear reason settlement on Celo adds value over staying fully off-chain: cross-community redemption, LP liquidity access, verifiable receipt trail, or interop with existing Sarafu pools (26K+ users, 188 active pools).
+3. **On-chain settlement adds value** — dual-chain proof packs (Regen Ledger + Celo EAS) provide verifiable provenance. VCV minting creates transferable tokens from commitments. TBFFSettler provides on-chain convergence math for flow funding redistribution.
 
 ---
 
-## Phase 1 — Assetization + Path Construction (C1, post-hackathon, ~30 days)
+## Phase 1 — Assetization + Path Construction (C1, partially done + post-hackathon)
+
+### Status Update (2026-03-17)
+
+During the hackathon, Phase 1 items were partially completed ahead of the original ~30 day timeline:
+
+| Item | Original Plan | Hackathon Reality |
+|------|---------------|-------------------|
+| Voucher/Issuer Mapping | Post-hackathon | **DONE** — VCV GiftableToken deployed, agent wallet as minter, 23 commitments → VCV |
+| Pool/Token Graph Construction | Post-hackathon | **In progress** — SwapPool deployment is Day 8 |
+| Path Construction (multi-hop `Hop[]`) | Post-hackathon | **Post-hackathon (C1)** — requires SwapPool + Sarafu pool integration |
+| Read-Only Celo Integration | Post-hackathon | **Skipped** — went straight to write (minting, settling) |
+| Event Bridge | Post-hackathon | **Partial** — dual-chain proof packs (Regen + Celo EAS) working; eth-tracker bridge still C1 |
 
 ### The Hard Problem
 
 BKC's routing scorer outputs semantic pool suggestions: scores, bioregion fit, tag overlap, timeframe alignment, capacity fit. CLC's `SwapRouter` takes `Hop[]` of `(pool, tokenIn, tokenOut)` and only quotes along known token routes.
 
-These operate at different abstraction levels. The scorer says "this commitment fits Victoria Landscape Hub (score: 68)." The SwapRouter says "give me a sequence of pool addresses and token pairs." Translation between these layers is the core engineering challenge.
+These operate at different abstraction levels. The scorer says "this commitment fits Victoria Landscape Hub (score: 68)." The SwapRouter says "give me a sequence of pool addresses and token pairs." Translation between these layers is the core engineering challenge for multi-hop routing (C1 post-hackathon).
 
 ### Translation Pipeline
 
-#### 1. Voucher/Issuer Mapping
+#### 1. Voucher/Issuer Mapping — DONE
 
-Which BKC commitments correspond to which GiftableTokens?
+**Deployed:** VCV (Victoria Commitment Voucher) GiftableToken at [`0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573`](https://celoscan.io/address/0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573) on Celo mainnet. 6 decimals. Agent wallet `0x6f844901...` authorized as minter. 28,600 VCV minted across 23 commitments.
 
-Not all will. Only commitments with concrete, redeemable offers qualify — labor hours, goods, stewardship services. Knowledge curation commitments, governance containers, and abstract pledges stay off-chain.
+Not all commitments get tokenized. Only commitments with concrete, redeemable offers qualify — labor hours, goods, stewardship services. Knowledge curation commitments, governance containers, and abstract pledges stay off-chain. The commitment extraction pipeline (audio → AI → structured commitment) determines tokenization appropriateness.
 
-Mapping logic:
-- `commitment.offer_type` + `commitment.unit` → candidate GiftableToken parameters (name, symbol, decimals)
-- `commitment.issuer_uri` → GiftableToken owner address (requires identity bridge, see below)
-- `commitment.estimated_value_usd` → initial quoter parameterization hint
+Mapping logic (validated by deployment):
+- `commitment.offer_type` + `commitment.unit` → GiftableToken parameters (VCV: "Victoria Commitment Voucher", "VCV", 6 decimals)
+- `commitment.issuer_uri` → agent wallet as minter (identity bridge deferred — agent mints on behalf of pledgers for now)
+- `commitment.estimated_value_usd` → mint amount (scaled by 10^6 for 6-decimal token)
 
 GiftableToken issuance pattern (from `clc-protocol/src/GiftableToken.sol`):
 - `mintTo(address to, uint256 amount)` — writer-authorized minting
 - `writers` mapping — multiple authorized minters per token
 - `expired` flag with `applyExpiry()` on transfer — maps to BKC commitment timeframe limits
+
+Backend integration: `PATCH /commitments/{rid}/metadata` records mint tx_hash and token_address on the commitment entity after successful on-chain mint.
 
 #### 2. Pool/Token Graph Construction
 
@@ -107,13 +124,14 @@ function quoteExactOutput(Hop[] calldata path, uint256 amountOut)
 
 The SwapRouter is stateless — it walks the Hop array, calling each pool's quoter. BKC's contribution is selecting *which* Hop sequences to quote, based on upstream knowledge the router doesn't have.
 
-#### 4. Read-Only Celo Integration
+#### 4. Celo Integration — Write-First (Read-Only Skipped)
 
-Before any write operations, establish read access:
-- Query SwapPool state via `viem` `publicClient` (`eth_call` to pool contracts)
-- Read Sarafu Dune metrics ([dune.com/grassrootseconomics/sarafu-network](https://dune.com/grassrootseconomics/sarafu-network))
-- Display CLC pool data alongside BKC pool data in commons-web
-- No token issuance, no transactions — observation only
+The original plan called for read-only Celo access before write operations. During the hackathon, BKC went directly to write operations:
+- **Deployed:** GiftableToken (VCV) and TBFFSettler contracts on Celo mainnet
+- **Minted:** 28,600 VCV across 23 commitments via `mintTo()` calls
+- **Next (Day 8):** Deploy SwapPool with VCV + cUSD, execute swaps
+- **Read-only Sarafu access:** Read existing Sarafu pools (188 active) via viem — still needed for multi-hop routing (C1)
+- Display CLC pool data alongside BKC pool data in commons-web at `/commons/pools`
 
 #### 5. Event Bridge
 
@@ -131,11 +149,13 @@ Identity bridge:
 
 ---
 
-## Phase 2 — Selective On-Chain Representation (C2, ~60 days)
+## Phase 2 — Selective On-Chain Representation (C2, partially done during hackathon)
 
 **Not** "BKC pools deploy as CLC SwapPools." The abstractions aren't 1:1. Many BKC pools are governance containers or knowledge curation spaces with no settlement function. Forcing them on-chain loses their purpose.
 
 Instead: **selected BKC commitments and pools can be represented on Celo as GiftableTokens + SwapPools where settlement adds value.**
+
+**Hackathon progress (2026-03-17):** GiftableToken deployment and agent-assisted tokenization are operational. 23 commitments tokenized from mapping workshop transcripts. SwapPool deployment is Day 8. The original ~60 day timeline was compressed into the hackathon sprint for core functionality; multi-hop routing and cross-network integration remain post-hackathon.
 
 ### What Gets Tokenized
 
@@ -159,6 +179,8 @@ Natural language → structured commitment → agent determines tokenization app
 - If no → commitment stays in BKC knowledge graph only
 
 ### CLC Limiter Integration
+
+**Hackathon deployment:** TBFFSettler at [`0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030`](https://celoscan.io/address/0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030) on Celo mainnet demonstrates the Limiter integration pattern. 5 nodes, TBFFMath convergence, discrete ERC-20 transfers. This is a BKC-native implementation of capacity-limited flow funding — complementary to CLC's Limiter contract.
 
 Where relevant, BKC threshold bands inform Limiter configuration for on-chain pools:
 

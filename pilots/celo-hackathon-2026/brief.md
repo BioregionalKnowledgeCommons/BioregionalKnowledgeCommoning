@@ -22,13 +22,15 @@ AI and Celo are layers — stewardship is the foundation.
 
 The **Bioregional Knowledge Commons (BKC)** is a federated knowledge graph connecting four bioregional nodes across the Salish Sea and Front Range. It already tracks ~1,005 entities, proves claims with on-chain anchors, and governs data flow through a consent-aware federation membrane.
 
-We extended it with **commitment routing**:
+We extended it with **commitment routing** and deployed a **commitment economy on Celo mainnet**:
 
 ### Agents That Cooperate
 
 An AI agent takes natural language — *"Regenerate Cascadia offers 200 hours of native plant restoration, valued at $8,000, April-September. Wants: soil testing equipment. Limit: max 3 concurrent sites."* — and structures it into a commitment object with typed offers, wants, limits, and routing tags.
 
 A deterministic routing scorer matches commitments to pools based on bioregion proximity, offer/need taxonomy overlap, timeframe alignment, capacity fit, and governance compatibility. No black-box ML — transparent, auditable scoring.
+
+The full pipeline runs audio-to-blockchain: a real audio recording is transcribed via Whisper, commitments are extracted by LLM, routed to pools, verified, and minted as on-chain tokens — all orchestrated by the agent.
 
 ### Agents That Trust
 
@@ -47,7 +49,9 @@ Every commitment carries provenance: who created, who curated, who verified. Sta
 
 ### Agents That Pay
 
-Threshold-Based Flow Funding (TBFF) settles verified commitments through tiered policy: auto-advance for small amounts, semi-automated for mid-range, manual review for large commitments. Settlement receipts chain back to the original commitment through the knowledge graph.
+Victoria Commitment Vouchers (VCV) are deployed on Celo mainnet as a GiftableToken (`0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573`). Verified commitments are minted as VCV tokens — 28,600 VCV minted from 23 verified commitments in the demo run. Threshold-Based Flow Funding (TBFF) settles verified commitments through a TBFFSettler contract (`0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030`) with needs-based redistribution across 5 nodes. Settlement receipts chain back to the original commitment through the knowledge graph.
+
+The agent itself participates as an economic actor — registering 4 offers (transcription, extraction, routing, attestation services) and 3 needs (audio data, community feedback, governance templates), demonstrating that infrastructure providers are first-class participants in the commitment economy.
 
 ### Agents That Keep Secrets
 
@@ -56,26 +60,32 @@ A consent-aware visibility scope system (34 query sites filtered across 15 publi
 ## Architecture
 
 ```
-Natural Language ──→ Agent Draft ──→ Commitment Object
-                                         │
-                                    Routing Scorer
-                                         │
-                              ┌──────────┴──────────┐
-                              ▼                      ▼
-                     Pool A (Victoria)      Pool B (Cascadia)
-                              │
-                      Steward Approval
-                              │
-                    Pledge + Threshold Check
-                              │
-                      ┌───────┴───────┐
-                      ▼               ▼
-               Evidence Link    Celo Attestation
-                      │          (stretch)
-                 Proof Pack
+Audio Recording ──→ Whisper Transcription ──→ LLM Extraction
+                                                    │
+                                            Commitment Objects
+                                                    │
+                                              Routing Scorer
+                                                    │
+                                       ┌────────────┴────────────┐
+                                       ▼                          ▼
+                              Pool A (Victoria)          Pool B (Cascadia)
+                                       │
+                                Steward Approval
+                                       │
+                              Pledge + Verify + Mint
+                                       │
+                        ┌──────────────┼──────────────┐
+                        ▼              ▼              ▼
+                   VCV Token     TBFFSettler     Celo EAS
+                   (Celo)       (Celo)         Attestation
+                        │              │              │
+                        └──────────────┼──────────────┘
+                                       ▼
+                                  Proof Pack
+                          (BKC + Regen Ledger + Celo)
 ```
 
-**BKC is canonical.** The knowledge graph, governance, and routing logic live in BKC. Celo provides settlement and provenance — a layer, not the product.
+**BKC is canonical.** The knowledge graph, governance, and routing logic live in BKC. Celo provides the token layer (VCV minting), redistribution layer (TBFFSettler), and attestation layer (EAS) — complementary infrastructure, not the product.
 
 ## Grassroots Economics Alignment
 
@@ -93,13 +103,13 @@ BKC commitment pooling maps directly to the patterns Grassroots Economics has pr
 
 ## Demo
 
-Three moments:
+Three acts, all running on Octo production with real on-chain transactions:
 
-1. **Agent drafts commitment** from natural language → structured object with offers, wants, limits, routing tags
-2. **Route → Pledge → Verify** → scorer suggests pools → steward curates (pledges to pool) → peer verifies (trust attestation) — three independent operations
-3. **Proof + settlement** → evidence linked → proof pack assembled → (stretch) Celo attestation
+1. **Human participation** — A real audio recording of a mapping workshop is transcribed via Whisper. The agent extracts 10 commitment candidates from conversation, routes them to the Victoria pool, verifies qualifying commitments, and mints VCV tokens on Celo mainnet for each verified commitment.
+2. **Agent self-commitment** — The agent registers itself as an economic actor: 4 offers (transcription, extraction, routing, attestation services) and 3 needs (audio data, community feedback, governance templates). Its own commitments are verified and minted as VCV, demonstrating that infrastructure providers participate in the same economy as human contributors.
+3. **TBFF settle + attest** — The TBFFSettler contract redistributes VCV across 5 nodes based on needs-weighted scoring. A Celo EAS attestation is created for the settlement, completing the dual-chain proof (BKC knowledge graph + Regen Ledger anchor + Celo attestation).
 
-Works entirely within BKC. No live Celo dependency for core flow.
+End-to-end: audio → transcription → extraction → routing → verification → minting → settlement → attestation. All on-chain, all auditable.
 
 ## Hackathon Fit
 

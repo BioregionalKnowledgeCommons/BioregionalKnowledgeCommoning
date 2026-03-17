@@ -1,6 +1,6 @@
 # BKC ↔ Grassroots Economics ↔ CLC DAO Compatibility Memo
 
-**Date:** 2026-03-12
+**Date:** 2026-03-17
 **Purpose:** Map BKC commitment pooling concepts to GE/Sarafu production patterns and CLC DAO design, with code references.
 
 ---
@@ -62,10 +62,14 @@ Time-decay on token balances (encourages circulation). Frontend adds 0.5% buffer
 - **Network:** Celo mainnet (production), chain ID 42220
 - **RPC:** `https://r4-celo.grassecon.org` (custom GE node) + public fallback
 - **Tokens:** cUSD (`0x765DE816845861e75A25fCA122bb6898B8B1282a`), CELO native
+- **BKC tokens deployed:**
+  - **VCV (Victoria Commitment Voucher):** GiftableToken at [`0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573`](https://celoscan.io/address/0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573) — 6 decimals, agent wallet authorized as minter. 28,600 VCV minted across 23 commitments.
+  - **TBFFSettler:** [`0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030`](https://celoscan.io/address/0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030) — 5 nodes, TBFFMath convergence, discrete ERC-20 transfers.
+- **BKC agent wallet:** `0x6f844901...` — holds 95.7 CELO + 28,600 VCV
 - **Wallet:** Valora + Web3Modal (Reown)
 - **Indexing:** `eth-tracker` + `eth-indexer` → PostgreSQL FDW (Foreign Data Wrapper)
 
-**For hackathon stretch:** Use Alfajores testnet (chain ID 44787), not mainnet. Read one `erc20-pool` contract state via viem `publicClient`. No token issuance.
+**Hackathon result (2026-03-17):** Deployed GiftableToken (VCV) and TBFFSettler on Celo mainnet (not testnet). End-to-end pipeline working: audio transcript → AI commitment extraction → commitment creation → VCV minting on Celo. SwapPool deployment is next (Day 8).
 
 ### Sarafu dApp Patterns
 
@@ -93,9 +97,9 @@ Time-decay on token balances (encourages circulation). Frontend adds 0.5% buffer
 
 ### Integration Path
 
-1. **Hackathon (done):** BKC-native routing scorer. No CLC dependency.
-2. **C1 (post-hackathon):** Assetization + path construction. Map BKC commitment types to GiftableTokens where tokenizable. Build token adjacency graph from on-chain pool listings. Construct `Hop[]` paths from scorer-ranked pools → SwapRouter quoting. Read-only Celo integration via `viem`.
-3. **C2 (future):** Selective on-chain representation. Tokenizable commitments surface as GiftableTokens. Settlement write-back: CLC swap events → BKC Evidence → proof pack → Regen anchor. See [clc-integration-strategy.md](./clc-integration-strategy.md) for full phased plan.
+1. **Hackathon (done):** BKC-native routing scorer + on-chain deployment. VCV GiftableToken and TBFFSettler deployed on Celo mainnet. End-to-end: audio → commitment extraction → VCV minting. 28,600 VCV minted across 23 commitments. Dual-chain proofs (Regen Ledger + Celo EAS).
+2. **C1 (post-hackathon):** Multi-hop path construction. Build token adjacency graph from on-chain pool listings (including BKC's SwapPool, deploying Day 8). Construct `Hop[]` paths from scorer-ranked pools → SwapRouter quoting. Read Sarafu pools (188 active, read-only). See [clc-integration-strategy.md](./clc-integration-strategy.md) for full phased plan.
+3. **C2 (future):** Cross-network routing. Settlement write-back: CLC swap events → BKC Evidence → proof pack → Regen anchor. Multi-hop routing across BKC + Sarafu pools via SwapRouter.
 
 ### Will Ruddick's Narrative Arc
 
@@ -125,9 +129,9 @@ From the Substack essays:
 - **Identity**: GE = Ethereum address. BKC = entity URI in knowledge graph. CLC = sCLC holder address. Bridge needed for cross-system identity.
 - **Privacy**: GE fully on-chain (public). BKC has visibility scope. CLC TBD. BKC's consent model is an advantage for sensitive community commitments.
 
-### Not Compatible (by design)
-- **Token issuance**: GE issues ERC-20 vouchers. BKC does not issue tokens. CLC will issue clearing credits. BKC commitment routing works without tokens — this is a feature, not a gap.
-- **On-chain settlement**: GE settles on Celo. BKC settles via TBFF + proof packs (optionally anchored to Regen Ledger). Different settlement layers for different trust models.
+### Design Differences (complementary, not conflicting)
+- **Token issuance**: GE issues CAV vouchers. BKC now also issues GiftableTokens on Celo (VCV for commitment vouchers) — but tokenization is selective, not universal. Knowledge curation commitments stay off-chain; concrete redeemable offers get minted. BKC's routing scorer determines tokenization appropriateness.
+- **On-chain settlement**: GE settles on Celo via SwapPool swaps. BKC settles via TBFF + proof packs anchored to both Regen Ledger and Celo EAS. TBFFSettler on Celo provides on-chain convergence math. The two settlement approaches are complementary — BKC adds provenance chain (Evidence → claims → attestations → proof packs) on top of on-chain execution.
 
 ---
 
@@ -174,7 +178,8 @@ In GE, this orthogonality is partially present (a voucher exists independently o
 
 ## Recommended Actions
 
-1. **Hackathon:** BKC-native routing scorer. Done — no GE/CLC dependency.
-2. **Signal to Will:** Share integration strategy doc. Offer BKC as upstream curation layer for CLC confederation (§5.2a).
-3. **Post-hackathon C1:** Assetization + path construction — voucher/issuer mapping, token graph construction, `Hop[]` assembly, read-only Celo integration. See [clc-integration-strategy.md](./clc-integration-strategy.md).
-4. **Post-hackathon C2:** Selective on-chain representation where settlement adds value. Settlement write-back via event bridge.
+1. **Hackathon (done):** BKC routing scorer + on-chain deployment. VCV GiftableToken ([`0x4CDb98Ff...`](https://celoscan.io/address/0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573)) and TBFFSettler ([`0x10De66A7...`](https://celoscan.io/address/0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030)) deployed on Celo mainnet. End-to-end commitment extraction → minting pipeline on production. 28,600 VCV minted across 23 commitments.
+2. **Day 8 (next):** Deploy BKC SwapPool (from GE `erc20-pool`) with VCV + cUSD, DecimalQuoter (1:1 rate). Read Sarafu pools (188 active, read-only). Display on `/commons/pools`.
+3. **Signal to Will:** Share integration strategy doc. Offer BKC as upstream curation layer for CLC confederation (§5.2a). Now with on-chain deployment evidence.
+4. **Post-hackathon C1:** Multi-hop path construction — `Hop[]` assembly across BKC + Sarafu pools via SwapRouter. Token graph construction from on-chain pool listings. See [clc-integration-strategy.md](./clc-integration-strategy.md).
+5. **Post-hackathon C2:** Cross-network routing + settlement write-back via event bridge.
