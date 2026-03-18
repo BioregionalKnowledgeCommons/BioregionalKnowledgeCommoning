@@ -69,10 +69,7 @@ Two hackathons, same codebase, tailored narratives. MVP feature-complete on live
 | [vision.md](vision.md) | North star — thesis, arc, CLC convergence thread |
 | [brief.md](brief.md) | 1-page submission brief |
 | [conversation-log.md](conversation-log.md) | Human-agent collaboration log (for Synthesis `conversationLog` field) |
-| [demo-storyboard.md](demo-storyboard.md) | Full architecture + routing scorer spec + verification checklist |
-| [demo-script-friday.md](demo-script-friday.md) | Presenter's click-by-click script for Friday demo |
 | `demo-recording-2026-03-13.mov` | Fallback recording (gitignored, local only) |
-| [telegram-coordination-post.md](telegram-coordination-post.md) | Async share for builders group |
 | [commitment-economy-design.md](commitment-economy-design.md) | Two-layer economy design (commitment pooling + TBFF) |
 | `Octo/scripts/celo/demo-full-loop.sh` | End-to-end orchestrator: audio → commitments → verify → mint → settle → attest → swap |
 | `Octo/scripts/celo/transcribe-and-extract.ts` | Whisper transcription + commitment extraction |
