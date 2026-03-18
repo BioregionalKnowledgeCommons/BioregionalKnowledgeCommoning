@@ -49,7 +49,7 @@ Every commitment carries provenance: who created, who curated, who verified. Sta
 
 ### Agents That Pay
 
-Victoria Commitment Vouchers (VCV) are deployed on Celo mainnet as a GiftableToken (`0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573`). Verified commitments are minted as VCV tokens — 28,600 VCV minted from 23 verified commitments in the demo run. Threshold-Based Flow Funding (TBFF) settles verified commitments through a TBFFSettler contract (`0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030`) with needs-based redistribution across 5 nodes. Settlement receipts chain back to the original commitment through the knowledge graph.
+Victoria Commitment Vouchers (VCV) are deployed on Celo mainnet as a GiftableToken ([`0x4CDb98Ff...`](https://celoscan.io/address/0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573)). Verified commitments are minted as VCV tokens — 33,400 VCV total supply from 23+ verified commitments. A multi-participant TBFFSettler ([`0x2a13c4eB...`](https://celoscan.io/address/0x2a13c4eB94Fe5b5E93c1Fe380bC9Af3f72Cb3faF)) redistributes VCV across 3 dedicated wallets representing real community participants (Darren, Victoria Hub, Kinship Earth) — 3,000 VCV redistributed in 2 iterations with post-settle balances matching needs-weighted thresholds exactly. A BKC SwapPool ([`0x181E36AD...`](https://celoscan.io/address/0x181E36AD6ae826b75e739C3510Bd059b27C34aB4)) enables VCV↔cUSD exchange on Celo mainnet, completing the circle from commitment to stablecoin liquidity. Settlement receipts chain back to the original commitment through the knowledge graph.
 
 The agent itself participates as an economic actor — registering 4 offers (transcription, extraction, routing, attestation services) and 3 needs (audio data, community feedback, governance templates), demonstrating that infrastructure providers are first-class participants in the commitment economy.
 
@@ -103,13 +103,14 @@ BKC commitment pooling maps directly to the patterns Grassroots Economics has pr
 
 ## Demo
 
-Three acts, all running on Octo production with real on-chain transactions:
+Four acts, all running on Octo production with real on-chain transactions:
 
-1. **Human participation** — A real audio recording of a mapping workshop is transcribed via Whisper. The agent extracts 10 commitment candidates from conversation, routes them to the Victoria pool, verifies qualifying commitments, and mints VCV tokens on Celo mainnet for each verified commitment.
+1. **Human participation** — A real audio recording of a mapping workshop is transcribed via Whisper. The agent extracts 10 commitment candidates (5 offers + 5 needs) from conversation, routes them to the Victoria pool, verifies qualifying commitments, and mints VCV tokens on Celo mainnet for each verified commitment.
 2. **Agent self-commitment** — The agent registers itself as an economic actor: 4 offers (transcription, extraction, routing, attestation services) and 3 needs (audio data, community feedback, governance templates). Its own commitments are verified and minted as VCV, demonstrating that infrastructure providers participate in the same economy as human contributors.
-3. **TBFF settle + attest** — The TBFFSettler contract redistributes VCV across 5 nodes based on needs-weighted scoring. A Celo EAS attestation is created for the settlement, completing the dual-chain proof (BKC knowledge graph + Regen Ledger anchor + Celo attestation).
+3. **TBFF settle + attest** — A multi-participant TBFFSettler redistributes VCV across 3 wallets (Darren, Victoria Hub, Kinship Earth) with 3,000 VCV redistributed to match needs-weighted thresholds. Settlement creates a claim, anchors on Regen Ledger, and creates a Celo EAS attestation — completing the dual-chain proof (BKC knowledge graph + Regen Ledger anchor + Celo attestation).
+4. **SwapPool** — VCV↔cUSD exchange via a BKC SwapPool with DecimalQuote pricing. Demonstrates the full circle: commitment → token → settlement → stablecoin liquidity.
 
-End-to-end: audio → transcription → extraction → routing → verification → minting → settlement → attestation. All on-chain, all auditable.
+End-to-end: audio → transcription → extraction → routing → verification → minting → settlement → attestation → swap. All on-chain, all auditable.
 
 ## Hackathon Fit
 

@@ -194,4 +194,121 @@ BKC proof packs now have dual-chain provenance. Judges can:
 
 ---
 
-*Log continues as sprint progresses...*
+## Days 4-5 — Mar 15-16 (Commitment Pipeline + Production Deploy)
+
+### Mapping workshop → commitment extraction pipeline
+
+**Built:** End-to-end transcript → commitment extraction → routing → claim bridge.
+
+- `POST /commitments/extract-from-transcript` — LLM batch extraction via OpenAI (few-shot prompting, confidence filtering). Extracts both offers and needs with `declaration_type`, `fiat_only`, `need_category`, `monthly_amount_usd` fields.
+- `POST /commitments/{rid}/create-claim` — bridges VERIFIED commitments to claims for EAS attestation, linking `source_commitment_rid` in claim metadata.
+- Interview plugin updated: calls backend for extraction during `session_finalize`, creates `CommitmentPacket` review packets with consent-aware `share_policy`.
+- Demo transcript: 4-participant mapping workshop (Sarah, Randy, Alex, Jordan) — the same transcript used for the voice memo recording.
+- Test: `test_mapping_workshop_pipeline.sh` 14/14 local.
+
+### Deploy to Octo production
+
+**Deployed:** Vendor pin `698b5042`→`decb473f` (80+ commits, migrations 064-072). Interview plugin updated with CommitmentPacket support. Victoria pool `bioregion_uri` fixed → scorer +30 for Salish Sea.
+
+**Verified:** Pipeline 14/14 on Octo. Commitment-derived dual-chain proof: Regen TX `7FC4F78F...`, EAS attestation [`0xf6597a...`](https://celo.easscan.org/attestation/view/0xf6597a662d2d94aeab6b2ebe747df0ef7dd60df6cd91eba540cf60fa73666298).
+
+*Days 4-5 deliverables: extraction pipeline ✅, production deploy ✅, dual-chain proof ✅.*
+
+---
+
+## Day 6 — Mar 17 (VCV Token + TBFFSettler on Celo Mainnet)
+
+### Commitment economy design
+
+**Created:** `commitment-economy-design.md` — two-layer economy design (commitment pooling + TBFF threshold funding). Synthesizes how VCV tokens, settlement contracts, and the knowledge graph interact.
+
+### On-chain deployment
+
+**Deployed to Celo mainnet:**
+- Victoria Commitment Voucher (VCV) GiftableToken: [`0x4CDb98Ff...`](https://celoscan.io/address/0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573) — 6 decimals, agent wallet authorized as minter via `addWriter`.
+- TBFFSettler: [`0x10De66A7...`](https://celoscan.io/address/0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030) — 5 placeholder nodes, TBFFMath convergence, discrete ERC-20 transfers.
+- First commitment-derived VCV mint: 100 VCV for watershed restoration commitment ([TX `0xbe1f12...`](https://celoscan.io/tx/0xbe1f12d5df7834072876b1cca524f476338344efd67319dc562f9f54f5fc43f0)).
+
+**Backend:** `PATCH /commitments/{rid}/metadata` (merge metadata, records mint tx_hash/token_address). `pool_rids` field added to `EvidenceFromSettlementRequest`.
+
+*Day 6 deliverables: VCV token ✅, TBFFSettler ✅, first commitment-derived mint ✅, design synthesis ✅.*
+
+---
+
+## Day 7 — Mar 17 (Full Demo Loop on Octo Production)
+
+### demo-full-loop.sh orchestrator
+
+Built `demo-full-loop.sh` running 3 acts end-to-end on Octo production:
+
+**Act 1: Human participation** — Real audio recording (203s voice memo) transcribed via Whisper in 9.6s. GPT-4o-mini extracts 10 commitment candidates (5 offers + 5 needs). All auto-created on Octo → verified → VCV minted.
+
+**Act 2: Agent self-commitment** — Octo registers 4 offers + 3 needs (fiat threshold $200/month). Agent becomes a participant in the economy it facilitates.
+
+**Act 3: TBFF settle + claim** — Settlement → claim-from-settlement → anchor → EAS attestation.
+
+**Key milestone:** 28,600 VCV total supply across 23 minted commitments. Needs-based extraction adds `declaration_type` (offer vs need), `fiat_only` flag, `need_category`, and `monthly_amount_usd` to the commitment model.
+
+*Day 7 deliverables: demo-full-loop.sh ✅, 23 commitments minted ✅, agent self-commitment ✅.*
+
+---
+
+## Day 8 — Mar 18 (Settlement Pipeline Fix + SwapPool)
+
+### Settlement→claim→anchor→attest fix
+
+**Problem:** Act 3 was using two separate API calls (create-evidence + create-claim) with wrong payload structure. The claim-from-settlement endpoint exists as a single atomic call.
+
+**Fix:** Rewrote Act 3 to use single `POST /claims/claim-from-settlement` with pre/post network state capture. Added reconcile loop for anchor timeouts.
+
+**Verified:** Full chain on Octo: settle TX → claim (verified, auto_advanced) → Regen anchor (TX `741FC68D...`) → EAS attestation ([`0xf51ea8...`](https://celo.easscan.org/attestation/view/0xf51ea8118bb0b79e6340ca7ed250d9316ccf948684556cd09bc7d809a55f0a10)).
+
+### BKC SwapPool on Celo
+
+**Deployed:** SwapPool ([`0x181E36AD...`](https://celoscan.io/address/0x181E36AD6ae826b75e739C3510Bd059b27C34aB4)) + DecimalQuote ([`0x9B13C54E...`](https://celoscan.io/address/0x9B13C54E426D08aceee054eE92aef7362fE0514F)) from Grassroots Economics `erc20-pool` contracts. 5,000 VCV deposited. `getQuote.staticCall`: 100 VCV = 100 cUSD (1:1 with decimal adjustment).
+
+**New scripts:** `deploy-swap-pool.ts`, `execute-swap.ts`. Act 4 added to demo loop.
+
+*Day 8 deliverables: settlement pipeline fix ✅, SwapPool ✅, Act 4 ✅.*
+
+---
+
+## Day 9 — Mar 18 (Multi-Participant Settler + cUSD Swap)
+
+### The problem with the original settler
+
+The Day 6 TBFFSettler had 5 placeholder nodes at `0x0001`–`0x0005` (from Foundry deploy with unset env vars). These addresses can't sign `approve()`, so `settle()` can't `transferFrom()` — redistribution was always 0. This was the single biggest gap in the demo: settlement looked like it worked but no tokens actually moved.
+
+### Multi-participant settler
+
+**Solution:** Deploy a new settler with 3 dedicated wallets, each funded with exact VCV amounts to create a known surplus/deficit scenario.
+
+| # | Participant | Minted VCV | Threshold | Surplus/Deficit |
+|---|-------------|------------|-----------|-----------------|
+| 0 | Darren (Human) | 4,000 | 1,000 | +3,000 surplus |
+| 1 | Victoria Hub (Org) | 500 | 2,000 | −1,500 deficit |
+| 2 | Kinship Earth (Org) | 300 | 1,800 | −1,500 deficit |
+
+**Deployed:** [`0x2a13c4eB...`](https://celoscan.io/address/0x2a13c4eB94Fe5b5E93c1Fe380bC9Af3f72Cb3faF). Settlement executed: **3,000 VCV redistributed**, converged in 2 iterations. Post-settle balances match thresholds exactly: Darren 4000→1000, Victoria Hub 500→2000, Kinship Earth 300→1800.
+
+**Why this matters:** This is the first time the TBFF settlement produces *meaningful redistribution* — tokens actually move between wallets based on needs-weighted thresholds. The surplus from one participant fills the deficits of two others.
+
+### cUSD acquisition + real swap
+
+**Problem:** The SwapPool had 5,000 VCV but 0 cUSD. No swap possible without cUSD liquidity.
+
+**Solution:** Built `acquire-cusd.ts` with three swap backends (Mento V2, Ubeswap V2, Uniswap V3). Mento's Broker contract was inaccessible (ABI mismatch), but Ubeswap V2 worked — 55 CELO → ~4.2 cUSD.
+
+**Discovery: GE SwapPool MEV vulnerability.** After depositing 4 cUSD, a bot at `0x8B6B008A...` drained the full amount within 16 blocks — three transfers (3.8 + 0.1 + 0.1 cUSD) with zero VCV deposited in return. The pool appears to have a withdrawal path that bypasses the deposit requirement.
+
+**Discovery: GiftableToken safe approve.** The GE GiftableToken contract requires resetting allowance to 0 before setting a new non-zero value (the approve-race-condition protection pattern). All swap scripts now handle this.
+
+**Workaround:** With a smaller cUSD balance (below MEV profitability threshold), the swap executed successfully: 0.01 VCV → 0.01 cUSD on-chain with Swap event emitted ([TX `0x2bc737...`](https://celoscan.io/tx/0x2bc7372e5f0a44dd73705ade2e5260c60d4ccf871bba29b67253b4340b4f7e0d)).
+
+**Demo loop:** Act 3 now uses `deploy-multi-settler.ts` (when `MULTI_SETTLER_ADDRESS` is set). Act 4 deposits cUSD, gets quote, and executes real swap.
+
+*Day 9 deliverables: multi-settler with real redistribution ✅, cUSD acquired ✅, real VCV↔cUSD swap ✅, MEV vulnerability documented ✅, demo loop updated ✅.*
+
+---
+
+*Day 10 focus: Routing visualization + polish for submission.*

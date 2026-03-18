@@ -41,11 +41,11 @@ The loop closes when proof of fulfillment feeds back into the knowledge graph as
 
 This is not a prototype. The following is live and deployed:
 
-- **1,005 entities** in a federated knowledge graph spanning 4 bioregional nodes (Salish Sea coordinator, Greater Victoria, Cowichan Valley, Front Range)
+- **~2,722 entities** in a federated knowledge graph spanning 4 bioregional nodes (Salish Sea coordinator, Greater Victoria, Cowichan Valley, Front Range)
 - **Commitment routing**: natural language → structured commitment → deterministic multi-factor scoring → pool suggestions with transparent score breakdowns
 - **Three orthogonal governance operations**: Create (self-sovereign), Pledge (peer-curated pool acceptance), Verify (trust attestation) — independent, composable, forkable
 - **Proof packs on Regen Ledger**: evidence chain + attestations + content hash + IRI + tx_hash, assembled into archivable JSON artifacts
-- **TBFF settlement**: threshold-based flow funding with auto/semi/manual bands, receipt chain linking settlement back to original commitment
+- **TBFF settlement**: threshold-based flow funding with 3-participant TBFFSettler on Celo mainnet — 3,000 VCV redistributed across dedicated wallets matching needs-weighted thresholds. SwapPool for VCV↔cUSD exchange. Receipt chain linking settlement back to original commitment
 - **Consent membrane**: federation-wide edge approval, visibility scope filtering, 15/15 consent leakage tests passing
 - **Passkey auth**: one-tap WebAuthn sign-in, steward authorization per node
 - **Flow funding visualization**: live at `/commons/flow-funding` — interactive @xyflow/react graph with threshold bands and project funding progress (Demo mode; Live mode pending BFF route fix)
