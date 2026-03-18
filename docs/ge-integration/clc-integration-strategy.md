@@ -276,7 +276,7 @@ This is an access key, not a collaboration badge. Premature adoption adds cost w
 |---|---|---|
 | `SwapPool.sol` | `clc-protocol/src/SwapPool.sol` | Vault + swap engine (deployed `0xCF879ADd...` on Celo mainnet) |
 | `SwapRouter.sol` | `clc-protocol/src/SwapRouter.sol` | Multi-hop quoter (deployed `0x204653A8...`) |
-| `GiftableToken.sol` | `clc-protocol/src/GiftableToken.sol` | ERC-20 voucher issuance |
+| `GiftableToken.sol` | `clc-protocol/src/GiftableToken.sol` | ERC-20 voucher issuance — **BKC deployed VCV** ([`0x4CDb98Ff...`](https://celoscan.io/address/0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573)) on Celo mainnet |
 | `Limiter.sol` | `clc-protocol/src/Limiter.sol` | Per-token credit caps |
 | `eth-tracker` + `eth-indexer` | `cosmo-local-credit/eth-tracker`, `cosmo-local-credit/eth-indexer` | Chain event indexing to PostgreSQL |
 | `sarafu.network` | `grassroots-economics/sarafu.network` | Reference UI patterns (pool creation, swap flow) |
