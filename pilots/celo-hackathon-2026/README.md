@@ -52,7 +52,8 @@ Two hackathons, same codebase, tailored narratives. MVP feature-complete on live
 - Flow funding viz: https://45.132.245.30.sslip.io/commons/flow-funding
 - Salish Sea Knowledge Garden: https://45.132.245.30.sslip.io
 - VCV on Celoscan: https://celoscan.io/address/0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573
-- TBFFSettler on Celoscan: https://celoscan.io/address/0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030
+- Multi-Settler on Celoscan: https://celoscan.io/address/0x2a13c4eB94Fe5b5E93c1Fe380bC9Af3f72Cb3faF
+- SwapPool on Celoscan: https://celoscan.io/address/0x181E36AD6ae826b75e739C3510Bd059b27C34aB4
 
 ## Repos
 
@@ -73,12 +74,17 @@ Two hackathons, same codebase, tailored narratives. MVP feature-complete on live
 | `demo-recording-2026-03-13.mov` | Fallback recording (gitignored, local only) |
 | [telegram-coordination-post.md](telegram-coordination-post.md) | Async share for builders group |
 | [commitment-economy-design.md](commitment-economy-design.md) | Two-layer economy design (commitment pooling + TBFF) |
-| `Octo/scripts/celo/demo-full-loop.sh` | End-to-end orchestrator: audio → commitments → verify → mint → settle → attest |
+| `Octo/scripts/celo/demo-full-loop.sh` | End-to-end orchestrator: audio → commitments → verify → mint → settle → attest → swap |
 | `Octo/scripts/celo/transcribe-and-extract.ts` | Whisper transcription + commitment extraction |
 | `Octo/scripts/celo/agent-self-commit.ts` | Agent registers own offers + needs |
 | `Octo/scripts/celo/mint-commitment-token.ts` | VCV minting for verified commitments |
-| `Octo/scripts/celo/deploy-settler.ts` | TBFFSettler deployment + settle execution |
 | `Octo/scripts/celo/deploy-token.ts` | VCV GiftableToken deployment |
+| `Octo/scripts/celo/deploy-settler.ts` | Original single-node TBFFSettler (Day 6) |
+| `Octo/scripts/celo/deploy-demo-settler.ts` | Demo settler with KOI-derived thresholds (Day 7) |
+| `Octo/scripts/celo/deploy-multi-settler.ts` | **Multi-participant settler** — 3 wallets, real redistribution (Day 9) |
+| `Octo/scripts/celo/deploy-swap-pool.ts` | BKC SwapPool + DecimalQuote deployment, VCV/cUSD deposits |
+| `Octo/scripts/celo/execute-swap.ts` | VCV↔cUSD swap execution via SwapPool |
+| `Octo/scripts/celo/acquire-cusd.ts` | CELO→cUSD conversion via Mento/Ubeswap/Uniswap |
 
 ## Sprint Progress
 
@@ -88,13 +94,18 @@ Two hackathons, same codebase, tailored narratives. MVP feature-complete on live
 | 4-5 | Mar 15-16 | Deploy pipeline to Octo + dual-chain proof | Vendor pin `decb473f`, Regen TX + EAS attestation |
 | 6 | Mar 17 | VCV token + TBFFSettler on Celo mainnet | `deploy-token.ts`, `deploy-settler.ts`, `mint-commitment-token.ts` |
 | 7 | Mar 17 | Full demo loop on Octo production | `demo-full-loop.sh`, 10 candidates extracted, 23 VCV minted |
+| 8 | Mar 18 | Settlement→claim→anchor→attest pipeline fix + SwapPool | `deploy-swap-pool.ts`, `execute-swap.ts`, 5,000 VCV deposited |
+| 9 | Mar 18 | Multi-participant settler + real VCV↔cUSD swap | `deploy-multi-settler.ts`, `acquire-cusd.ts`, 3,000 VCV redistributed |
 
 ## On-Chain Contracts
 
 | Contract | Address | Purpose |
 |----------|---------|---------|
 | VCV (GiftableToken) | [`0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573`](https://celoscan.io/address/0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573) | Commitment voucher token, 6 decimals |
-| TBFFSettler | [`0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030`](https://celoscan.io/address/0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030) | Needs-based redistribution, 5 nodes |
+| TBFFSettler (demo) | [`0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030`](https://celoscan.io/address/0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030) | Original single-node settler (Day 6) |
+| TBFFSettler (multi) | [`0x2a13c4eB94Fe5b5E93c1Fe380bC9Af3f72Cb3faF`](https://celoscan.io/address/0x2a13c4eB94Fe5b5E93c1Fe380bC9Af3f72Cb3faF) | **3-participant settler** — Darren, Victoria Hub, Kinship Earth (Day 9) |
+| BKC SwapPool | [`0x181E36AD6ae826b75e739C3510Bd059b27C34aB4`](https://celoscan.io/address/0x181E36AD6ae826b75e739C3510Bd059b27C34aB4) | VCV↔cUSD exchange, DecimalQuote 1:1 |
+| DecimalQuote | [`0x9B13C54E426D08aceee054eE92aef7362fE0514F`](https://celoscan.io/address/0x9B13C54E426D08aceee054eE92aef7362fE0514F) | Price quoter for SwapPool |
 | BKC EAS Schema | [`0xdcf86a...`](https://celo.easscan.org/schema/view/0xdcf86a36ec6ec644e7727f9e1c7290b38f7f8503b051b893774cdd52573ee1e0) | Attestation schema on Celo EAS |
 | Agent wallet | `0x6f844901459815A68Fa4e664f7C9fA632CA79FEa` | Minter + settler operator |
 
