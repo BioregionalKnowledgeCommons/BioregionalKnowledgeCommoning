@@ -665,7 +665,7 @@ KOI implements the lower layers of Ted Nelson's Xanadu architecture — persiste
 
 ### How does this relate to Regen Network?
 
-KOI was originally developed to organize knowledge for Regen Network's ecological credit ecosystem. The protocol is now being generalized for any federated knowledge commons. The Regen Network deployment serves as a reference implementation and the largest current sensor network.
+KOI was designed by [Block Science](https://block.science/) as a general-purpose protocol for federated knowledge networks. Our team adopted it for the Regen Network ecosystem, where it powers knowledge management for ecological credit data, organizational coordination, and bioregional commoning. The Regen Network deployment is the most mature implementation and the largest current sensor network.
 
 ### What is Regen AI?
 
