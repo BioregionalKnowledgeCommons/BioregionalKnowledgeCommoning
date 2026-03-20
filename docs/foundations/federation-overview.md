@@ -164,6 +164,19 @@ Curated knowledge note
 
 This is what makes federated knowledge different from a search engine or a wiki. When an agent answers "what watershed restoration practices exist across the network?", the answer includes not just the practices, but *who observed them, where the observation was recorded, and how it was curated*. The trust surface is the provenance chain itself.
 
+#### CAT receipts
+
+Our implementation tracks provenance using **CAT (Content Addressable Transformation) receipts**. Every transformation step in the pipeline — fetching a URL, extracting entities with an LLM, resolving entities against the knowledge graph, registering a sensor — generates a receipt. Each receipt is a SHA-256 hash of its transformation type, input RID, output RID, and timestamp. Receipts chain together via parent IDs, forming a cryptographic audit trail from original source to final knowledge object.
+
+```
+web_fetch (URL → raw content)
+  → llm_extraction (raw content → entities + relationships)
+    → entity_resolution (extracted entities → canonical graph nodes)
+      → sensor_registration (content → monitored URL)
+```
+
+This means any entity, claim, or relationship in the graph can answer: *where did this come from, what processed it, and when?* CAT receipts make the provenance chain in the previous diagram machine-verifiable, not just conceptual.
+
 ---
 
 ## How Federation Works
