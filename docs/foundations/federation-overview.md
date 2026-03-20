@@ -16,9 +16,11 @@
 8. [Authentication & Access Control](#authentication--access-control)
 9. [MCP: Agent-Readable Knowledge](#mcp-agent-readable-knowledge)
 10. [Personal Nodes](#personal-nodes)
-11. [Current Network Status](#current-network-status)
-12. [Getting Started](#getting-started)
-13. [FAQ](#faq)
+11. [From Personal to Federated](#from-personal-to-federated)
+12. [Current Network Status](#current-network-status)
+13. [Getting Started](#getting-started)
+14. [FAQ](#faq)
+15. [Related Repositories](#related-repositories)
 
 ---
 
@@ -26,7 +28,7 @@
 
 **KOI** (Knowledge Organization Infrastructure) is an open-source protocol for creating federated networks of knowledge. Think of it as HTTP for knowledge sharing — but instead of making demands (GET, POST, DELETE), KOI sends *signals* that each node can independently decide how to act on.
 
-KOI was designed by [Block Science](https://block.science/) and is being actively developed for bioregional knowledge commoning, ecological data management, and organizational knowledge sharing.
+KOI was designed by [Block Science](https://block.science/) and is being actively developed for bioregional knowledge commoning, ecological data management, civic infrastructure, trans-local networks, and organizational knowledge sharing.
 
 **Key properties:**
 - **Open source** — Anyone can run a node. Anyone can build a sensor.
@@ -48,8 +50,9 @@ A **node** is any computer running the KOI protocol. It has:
 - Its own **sensors** (connectors that read from data sources)
 
 Nodes can be:
-- **Organizational nodes** — representing a project, community, or institution
+- **Organizational nodes** — representing a project, community, network, or institution
 - **Bioregional nodes** — representing a geographic/ecological region
+- **Thematic nodes** — representing a community of practice or domain (e.g., civic governance, regenerative finance)
 - **Personal nodes** — representing an individual's knowledge environment
 - **Coordinator nodes** — aggregating across multiple leaf nodes
 
@@ -220,7 +223,7 @@ The current network uses a **holonic structure** — leaf nodes connect to coord
    [Front Range]   [Cascadia Coordinator]     ← peer / future meta-coordinator
 ```
 
-But this is a design choice, not a protocol requirement. You could also run a flat peer-to-peer network, or a hub-and-spoke model — whatever fits your governance structure.
+But this is a design choice, not a protocol requirement. You could also run a flat peer-to-peer network, a hub-and-spoke model, or lateral federation between peer organizations — whatever fits your governance structure.
 
 ---
 
@@ -450,13 +453,54 @@ Personal nodes integrate with your existing tools through Claude Code skills:
 2. **Process notes** → Entity extraction → Backend deduplication → Wikilink insertion → Backlink propagation
 3. **Cross-document discovery** → Find related documents across your vault based on shared entity references
 
-This means your personal knowledge management workflow naturally feeds the federated commons — you document a practice in your vault, your agent contributes it to the bioregional commons, similar practices surface across bioregions, and patterns emerge.
+This means your personal knowledge management workflow naturally feeds the federated commons — you document a practice in your vault, your agent contributes it to the commons, similar practices surface across the network, and patterns emerge.
+
+---
+
+## From Personal to Federated
+
+KOI scales from one person's laptop to a global federated network. The architecture has four layers, each building on the last — but **each layer is optional and independent**. You can run just a personal node forever. You can share peer-to-peer without a commons. You can join a commons without federating. The protocol doesn't force progression — it enables it.
+
+### The Four Layers
+
+**1. Personal** — Your vault + local KOI backend. Meeting notes, entity resolution, semantic search. This works standalone — no network needed. You get value from day one.
+
+**2. Peer-to-peer** — Connect with a collaborator. Shared directories sync over WireGuard with end-to-end encryption (X25519 + ChaCha20-Poly1305). Edge agreements scope what's exchanged. Sync happens within ~60 seconds.
+
+**3. Commons** — A shared organizational knowledge base. Personal nodes contribute knowledge (staged for review), and a commons admin approves or rejects. This is the governance membrane: not everything that's shared gets integrated.
+
+**4. Federation** — Multiple commons nodes connect. This can be **holonic** (leaf → coordinator → meta-coordinator, as in bioregional networks) or **lateral** (peer organizations sharing across domains — a civic governance project, a regenerative finance network, and a land stewardship initiative all federating their knowledge). The topology follows the governance structure, not a fixed hierarchy.
+
+### How the layers connect
+
+```
+[Personal vault]  [Personal vault]  [Personal vault]
+      ↕  P2P sync (E2EE)  ↕              |
+[Personal node]   [Personal node]   [Personal node]
+      ↘  share_document   ↙               ↓
+    [Commons node A]              [Commons node B]
+    (e.g., bioregional)       (e.g., thematic network)
+            ↕  FUN events  ↕
+         [Federation layer]
+```
+
+### Two examples
+
+**Bioregional:** A practitioner in Greater Victoria documents a salmon monitoring practice in their vault. Their agent extracts entities and links them. They share the practice note to the Salish Sea commons. A coordinator node surfaces it alongside similar practices from Cowichan Valley and the Front Range.
+
+**Trans-local:** A civic governance organization maintains a knowledge garden about participatory design patterns. A regenerative finance network tracks impact methodologies across multiple countries. Both run their own KOI commons nodes. When they federate, a researcher can query: "what participatory governance patterns have been applied to ecological credit systems?" — and get a grounded answer with provenance, drawing from knowledge that spans organizational and geographic boundaries.
+
+### KOI as civic utility
+
+KOI is designed as a **generalizable civic utility**. It works for bioregional networks, thematic communities of practice, distributed teams, trans-local alliances, and global organizations. The protocol doesn't assume geographic co-location — it assumes that groups with sovereign knowledge stores want to selectively connect them.
+
+The bioregional deployment is the reference implementation and the most mature use case. But the same infrastructure is being evaluated by organizations working in civic governance, distributed team coordination, and trans-local knowledge commoning. The question isn't "how does your bioregion use this?" — it's "what knowledge does your community steward, and who do you want to share it with?"
 
 ---
 
 ## Current Network Status
 
-### Live Nodes
+### Bioregional Nodes
 
 | Node | Location | Role | Entities |
 |------|----------|------|----------|
@@ -464,6 +508,14 @@ This means your personal knowledge management workflow naturally feeds the feder
 | **Greater Victoria** | Hetzner (EU) | Leaf node | ~30 |
 | **Front Range** | Co-located with Octo | Peer node | ~50 |
 | **Cowichan Valley** | OVHcloud | Leaf node | ~1 |
+
+### Personal Nodes
+
+Team members run personal KOI nodes daily on their machines — integrated with Obsidian, Claude Code, and MCP. Used for meeting processing, entity resolution, task management, and semantic search across personal knowledge. Personal nodes serve as the daily driver for KOI development, stress-testing entity resolution and knowledge workflows in production.
+
+### P2P Connections
+
+Personal nodes are connected over end-to-end encrypted channels (WireGuard mesh, X25519 + ChaCha20-Poly1305) with shared directories syncing in real-time. This demonstrates the peer layer working independently of the bioregional federation — team members share working documents, meeting notes, and project context without routing through a commons node.
 
 ### Active Sensors
 
@@ -475,6 +527,13 @@ Sensors currently running across the network include connectors for:
 - Email (Gmail)
 - Chat platforms (Telegram, Signal)
 
+### Emerging Use Cases
+
+The same infrastructure is being evaluated by organizations working in:
+- **Civic governance** — Distributed governance networks exploring federated knowledge sharing across member organizations
+- **Trans-local knowledge commoning** — Organizations that span geographies and want sovereign knowledge stores with selective federation
+- **Distributed team coordination** — Teams that need shared context without centralizing in a single platform
+
 ### What's Working
 
 - ✅ Node-to-node federation with signed event envelopes
@@ -484,11 +543,13 @@ Sensors currently running across the network include connectors for:
 - ✅ Schema-based data exchange
 - ✅ Vault sync with end-to-end encryption
 - ✅ Personal node → commons sharing workflow
+- ✅ Personal node P2P sync over encrypted mesh
+- ✅ Daily production use for meeting processing and entity linking
 - ✅ Periodic digests and Telegram alerts
 
 ### What's In Progress
 
-- 🔄 Scaling beyond the initial network (currently 4 nodes)
+- 🔄 Scaling beyond the initial network (currently 4 bioregional nodes + active personal nodes)
 - 🔄 Onboarding tooling for non-technical organizations
 - 🔄 Commons intake governance workflows
 - 🔄 Network visualization dashboard
@@ -583,6 +644,43 @@ KOI implements the lower layers of Ted Nelson's Xanadu architecture — persiste
 ### How does this relate to Regen Network?
 
 KOI was originally developed to organize knowledge for Regen Network's ecological credit ecosystem. The protocol is now being generalized for any federated knowledge commons. The Regen Network deployment serves as a reference implementation and the largest current sensor network.
+
+### What is Regen AI?
+
+Regen AI is the team building and operating KOI infrastructure for the Regen Network ecosystem. The team uses KOI daily for meeting processing, entity resolution, client knowledge management, and ecological credit data organization. The Regen AI deployment serves as the primary reference implementation — stress-testing KOI's personal, P2P, and federation capabilities in production. If you want to see what daily use of KOI looks like, Regen AI is the working example.
+
+### Is KOI only for bioregional networks?
+
+**No.** KOI was developed in a bioregional context but is designed as a generalizable protocol for federated knowledge. It works for any group that needs sovereign knowledge management with selective sharing — distributed teams, thematic communities of practice (e.g., civic governance, regenerative finance), trans-local alliances, research networks, and organizations that span multiple geographies. The bioregional deployment is the reference implementation, not the only use case.
+
+---
+
+## Related Repositories
+
+### Protocol & Research
+
+- [BlockScience/koi](https://github.com/BlockScience/koi) — KOI protocol specification (Block Science)
+- [koi-research](https://github.com/DarrenZal/koi-research) — Protocol research and analysis
+
+### Node Infrastructure
+
+- [Octo](https://github.com/BioregionalKnowledgeCommons/Octo) — Reference KOI node implementation (coordinator node for the Salish Sea bioregion)
+- [koi-processor](https://github.com/gaiaaiagent/koi-processor) — KOI backend processor (entity resolution, federation, semantic search)
+- [koi-sensors](https://github.com/gaiaaiagent/koi-sensors) — Sensor nodes for ingesting data from GitHub, Discourse, websites, Notion, chat platforms
+
+### MCP Servers (Agent Integration)
+
+- [regen-koi-mcp](https://github.com/gaiaaiagent/regen-koi-mcp) — Organizational KOI MCP server (makes a node's knowledge queryable by AI agents)
+- [personal-koi-mcp](https://github.com/DarrenZal/personal-koi-mcp) — Personal KOI MCP server (connects individual knowledge environments to Claude Code)
+
+### Applications
+
+- [bioregional-commons-web](https://github.com/BioregionalKnowledgeCommons/bioregional-commons-web) — Network visualization dashboard and commons browser
+- [flow-funding](https://github.com/BioregionalKnowledgeCommons/flow-funding) — Threshold-based flow funding for commons stewardship
+
+### Documentation
+
+- [BioregionalKnowledgeCommoning](https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning) — Foundations docs, pattern language, operations runbooks
 
 ---
 
