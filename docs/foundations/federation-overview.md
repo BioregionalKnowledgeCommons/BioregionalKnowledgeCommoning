@@ -10,7 +10,7 @@
 2. [Core Concepts](#core-concepts)
 3. [KOI and the Hypertext Tradition](#koi-and-the-hypertext-tradition)
 4. [How Federation Works](#how-federation-works)
-5. [What You Need to Join](#what-you-need-to-join)
+5. [What You Need to Run KOI](#what-you-need-to-run-koi)
 6. [Data Channels](#data-channels)
 7. [Interfaces & Applications](#interfaces--applications)
 8. [Authentication & Access Control](#authentication--access-control)
@@ -227,7 +227,9 @@ But this is a design choice, not a protocol requirement. You could also run a fl
 
 ---
 
-## What You Need to Join
+## What You Need to Run KOI
+
+Whether you're starting a new network for your organization or connecting to an existing one, the requirements are the same.
 
 ### You Don't Need To:
 
@@ -241,7 +243,7 @@ But this is a design choice, not a protocol requirement. You could also run a fl
 1. **A data source** — Your existing knowledge garden (public or private)
 2. **A KOI node** — A server running the KOI processor (can be shared hosting)
 3. **A sensor** — A connector that reads your data source and feeds it to KOI
-4. **An edge agreement** — Mutual consent with at least one other node
+4. **An edge agreement** — Mutual consent with at least one other node (if federating)
 
 ### Sensor Nodes
 
@@ -261,7 +263,7 @@ Sensors are easy to build — you can point Claude Code at the KOI protocol spec
 
 | Path | Time | What You Get |
 |------|------|--------------|
-| **Quick start** (scripted) | ~30 min | Running node, connected to network |
+| **Quick start** (scripted) | ~30 min | Running node, ready to federate |
 | **Manual setup** | ~2 hours | Full control over configuration |
 | **Personal node** (laptop) | ~15 min | MCP-connected personal knowledge environment |
 
@@ -570,8 +572,8 @@ The wizard handles:
 2. All migrations (70+)
 3. ECDSA keypair generation and node identity
 4. Workspace files (IDENTITY.md, SOUL.md)
-5. Seed bioregion entity
-6. Optional connection to the Salish Sea federation
+5. Seed entity for your node
+6. Optional connection to an existing federation (or start your own)
 
 ### Option B: Personal Node (15 minutes)
 
@@ -589,7 +591,7 @@ For full control over configuration:
 1. **Provision** a VPS (2 vCPU, 4GB RAM, 40GB disk)
 2. **Clone** the Octo repository
 3. **Configure** your node identity, database, and sensors
-4. **Establish edges** with existing nodes (mutual approval)
+4. **Establish edges** with other nodes (mutual approval)
 5. **Deploy** sensors for your data sources
 
 ### Federation Readiness Checklist
