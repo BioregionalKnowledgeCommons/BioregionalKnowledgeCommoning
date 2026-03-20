@@ -7,20 +7,21 @@
 ## Table of Contents
 
 1. [What is KOI?](#what-is-koi)
-2. [Core Concepts](#core-concepts)
-3. [KOI and the Hypertext Tradition](#koi-and-the-hypertext-tradition)
-4. [How Federation Works](#how-federation-works)
-5. [What You Need to Run KOI](#what-you-need-to-run-koi)
-6. [Data Channels](#data-channels)
-7. [Interfaces & Applications](#interfaces--applications)
-8. [Authentication & Access Control](#authentication--access-control)
-9. [MCP: Agent-Readable Knowledge](#mcp-agent-readable-knowledge)
-10. [Personal Nodes](#personal-nodes)
-11. [From Personal to Federated](#from-personal-to-federated)
-12. [Current Network Status](#current-network-status)
-13. [Getting Started](#getting-started)
-14. [FAQ](#faq)
-15. [Related Repositories](#related-repositories)
+2. [KOI in the Stack](#koi-in-the-stack)
+3. [Core Concepts](#core-concepts)
+4. [KOI and the Hypertext Tradition](#koi-and-the-hypertext-tradition)
+5. [How Federation Works](#how-federation-works)
+6. [What You Need to Run KOI](#what-you-need-to-run-koi)
+7. [Data Channels](#data-channels)
+8. [Interfaces & Applications](#interfaces--applications)
+9. [Authentication & Access Control](#authentication--access-control)
+10. [MCP: Agent-Readable Knowledge](#mcp-agent-readable-knowledge)
+11. [Personal Nodes](#personal-nodes)
+12. [From Personal to Federated](#from-personal-to-federated)
+13. [Current Network Status](#current-network-status)
+14. [Getting Started](#getting-started)
+15. [FAQ](#faq)
+16. [Related Repositories](#related-repositories)
 
 ---
 
@@ -36,6 +37,41 @@ KOI was designed by [Block Science](https://block.science/) and is being activel
 - **Non-extractive** — Signals, not commands. No node can tell another what to do.
 - **Format-agnostic** — Connects markdown files, Notion databases, wikis, websites, GitHub repos — whatever you already use.
 - **No restructuring required** — Sensor nodes read your existing data in its current format.
+
+---
+
+## KOI in the Stack
+
+KOI is a protocol — the communication layer. Deploying a federated knowledge commons involves a broader stack, and evaluating whether this approach works for your organization means understanding all the layers, not just the protocol.
+
+```
+┌─────────────────────────────────────────────┐
+│  Governance & Community                     │
+│  Onboarding, member review, conflict        │
+│  resolution, permissioning, stewardship     │
+├─────────────────────────────────────────────┤
+│  Workflow & Training                        │
+│  Claude Code skills, meeting processing,    │
+│  knowledge garden practices, team training  │
+├─────────────────────────────────────────────┤
+│  Agent Integration (MCP)                    │
+│  AI agents query and contribute knowledge   │
+│  via Model Context Protocol servers         │
+├─────────────────────────────────────────────┤
+│  Application Layer                          │
+│  Entity resolution, semantic search,        │
+│  entity types, CAT receipt provenance,      │
+│  vault management, task tracking            │
+├─────────────────────────────────────────────┤
+│  KOI Protocol                               │
+│  RIDs, FUN events, edges, signed            │
+│  envelopes, handler pipeline                │
+└─────────────────────────────────────────────┘
+```
+
+**This document primarily covers the protocol and application layers.** The governance, workflow, and training layers are equally important for any real deployment — they determine whether the technology actually works for people. Those layers are documented elsewhere and should be co-designed with the community that will use them.
+
+The key insight: KOI gives you the plumbing for federated knowledge. What you build on top — the entity model, the governance, the workflows, the onboarding experience, the revenue model — is where the real product design happens. The protocol is intentionally minimal so that these choices belong to the communities using it, not to the protocol designers.
 
 ---
 
