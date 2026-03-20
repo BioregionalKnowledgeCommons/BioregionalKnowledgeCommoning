@@ -119,19 +119,6 @@ The KOI protocol is content-agnostic — it transports knowledge objects identif
 
 These types are implementation choices — a different KOI deployment could define entirely different entity types suited to its domain. Each entity has a **vault note** (markdown with YAML frontmatter) and a **backend record** (PostgreSQL with embeddings for semantic search).
 
-### Entity Resolution
-
-When data flows between nodes, entities need to be matched. Our implementation uses **multi-tier entity resolution**:
-
-1. **Exact match** — Normalized name lookup (instant)
-2. **Alias match** — Checks registered alternate names
-3. **Contextual match** — Uses relationship context (e.g., "Sean" → "Shawn Anderson" when mentioned alongside a known organization)
-4. **Fuzzy match** — Jaro-Winkler string similarity with type-specific thresholds
-5. **Semantic match** — OpenAI embeddings + pgvector cosine similarity
-6. **New entity** — Create if no match found
-
-Entity resolution is not part of the KOI protocol itself — the protocol handles identity at the RID level (each knowledge object has a globally unique identifier). Resolution is an application-layer concern: how you reconcile entities across heterogeneous sources. Different deployments could use simpler or more sophisticated matching strategies.
-
 ---
 
 ## KOI and the Hypertext Tradition
@@ -149,7 +136,7 @@ Nelson's Xanadu introduced several ideas that remain radical:
 - **Bidirectional awareness** — If Document A references Document B, B knows about it
 - **Content-addressed knowledge** — You can point to something without possessing or copying it
 
-KOI implements all four of these properties. RIDs are persistent identifiers. The entity graph is a reference graph. Backlinks (`mentionedIn`) provide bidirectional awareness. And the entire architecture is built on the principle that knowledge objects stay in their original systems — KOI references them, it doesn't duplicate them.
+The KOI protocol directly implements the first two: RIDs are persistent identifiers, and the entity graph with FUN events forms a reference graph. Our implementation adds the third — backlinks (`mentionedIn` in vault frontmatter) provide bidirectional awareness, so when Document A references Entity B, B's note records that relationship. The fourth — content-addressed knowledge — is architectural: KOI references knowledge objects in their original systems rather than duplicating them.
 
 ### Where KOI stops (by design)
 
@@ -304,12 +291,14 @@ Whether you're starting a new network for your organization or connecting to an 
 Block Science describes "sensor nodes" as nodes that take inputs from outside organizational boundaries. In our implementation, sensors are lightweight connectors that read data from a source and feed it into your KOI node. We have sensors for:
 
 - **Markdown vaults** (Obsidian, plain files)
-- **GitHub repositories** (code, docs, issues)
-- **Websites** (any public URL)
-- **Notion databases**
-- **Discourse forums**
+- **Code repositories** (GitHub, GitLab)
+- **Websites** (any public URL, with change detection)
+- **Forums & wikis** (Discourse, MediaWiki)
+- **Knowledge tools** (Notion databases)
+- **Social & chat** (Telegram, Discord, Signal, Twitter/X)
+- **Media** (Podcast RSS, YouTube)
 - **Email** (Gmail via OAuth)
-- **Chat platforms** (Telegram, Signal, Slack)
+- **Blockchain** (Regen Ledger)
 
 Sensors are easy to build — you can point Claude Code at the KOI protocol spec and your data source, and it will generate a sensor for you. They're typically 100-300 lines of Python.
 
@@ -384,9 +373,9 @@ Real-time notifications for:
 - Entity resolution conflicts
 - System errors
 
-### 4. Agent-Readable Search (MCP)
+### 4. Agent Integration (MCP)
 
-The most powerful interface — see the [MCP section](#mcp-agent-readable-knowledge) below.
+The most powerful interface — not just search, but entity resolution, knowledge sharing, claims management, code graph traversal, and more. See the [MCP section](#mcp-agent-readable-knowledge) below.
 
 ---
 
@@ -417,9 +406,8 @@ For private or commons-level data, KOI supports:
 | **Public** | Anyone | Published research, project descriptions |
 | **Commons** | Authenticated members | Shared methodologies, cross-org data |
 | **Private** | Organization only | Internal notes, draft proposals |
-| **Secret** | Individual only | Personal reflections, credentials |
 
-These tiers are configurable per node and per edge. You can share Practice entities publicly while keeping internal Meeting notes private.
+These tiers are configurable per node and per edge. You can share Practice entities publicly while keeping internal Meeting notes private. Individual nodes can add further granularity (e.g., personal-only tiers) as needed.
 
 ---
 
@@ -575,13 +563,16 @@ Personal nodes are connected over end-to-end encrypted channels (WireGuard mesh,
 
 ### Active Sensors
 
-Sensors currently running across the network include connectors for:
-- GitHub repositories (Regen Network repos)
-- Discourse forums
-- Websites
-- Obsidian vaults
-- Email (Gmail)
-- Chat platforms (Telegram, Signal)
+Sensors currently built and running across the network:
+- **Code repositories** — GitHub, GitLab (commits, issues, PRs, docs)
+- **Forums & wikis** — Discourse, MediaWiki
+- **Websites** — Playwright-based monitoring with change detection
+- **Social & chat** — Telegram, Discord, Signal, Twitter/X
+- **Knowledge tools** — Notion databases, Obsidian vaults
+- **Media** — Podcast RSS feeds (with transcription), YouTube (with transcript extraction)
+- **Email** — Gmail via OAuth
+- **Blockchain** — Regen Ledger (ecocredits, governance proposals)
+- **AI sessions** — Claude Code session indexing
 
 ### Emerging Use Cases
 
@@ -709,7 +700,7 @@ Regen AI is the team building and operating KOI infrastructure for the Regen Net
 
 ### Is KOI only for bioregional networks?
 
-**No.** KOI was developed in a bioregional context but is designed as a generalizable protocol for federated knowledge. It works for any group that needs sovereign knowledge management with selective sharing — distributed teams, thematic communities of practice (e.g., civic governance, regenerative finance), trans-local alliances, research networks, and organizations that span multiple geographies. The bioregional deployment is the reference implementation, not the only use case.
+**No.** KOI was designed by Block Science as a general-purpose protocol for federated knowledge networks. Our team first adopted it for organizational knowledge management (Regen AI / Regen Network), and more recently for bioregional knowledge commoning. It works for any group that needs sovereign knowledge management with selective sharing — distributed teams, thematic communities of practice (e.g., civic governance, regenerative finance), trans-local alliances, research networks, and organizations that span multiple geographies.
 
 ---
 
