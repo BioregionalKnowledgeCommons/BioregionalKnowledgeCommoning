@@ -41,15 +41,18 @@ KOI was designed by [Block Science](https://block.science/) and is being activel
 
 ## Core Concepts
 
+> **Protocol vs. implementation:** The KOI protocol (designed by Block Science) defines the communication primitives — RIDs, FUN events, edges, signed envelopes, and the handler pipeline. Everything else in this section describes our implementation choices built on top of those primitives. The protocol is intentionally minimal and content-agnostic, which is what makes it adaptable to different use cases.
+
 ### Nodes
 
-A **node** is any computer running the KOI protocol. It has:
+A **node** is any computer running the KOI protocol. At the protocol level, nodes are either **full** (runs an HTTP server, receives webhooks) or **partial** (lightweight client, polls peers). Each node has its own **identity** (ECDSA keypair for cryptographic signing).
+
+In our implementation, a node also has:
 - Its own **database** (PostgreSQL with pgvector for semantic search)
 - Its own **vault** (a directory of markdown files, Obsidian-compatible)
-- Its own **identity** (ECDSA keypair for cryptographic signing)
 - Its own **sensors** (connectors that read from data sources)
 
-Nodes can be:
+We use nodes in several roles — these are deployment patterns, not protocol-defined types:
 - **Organizational nodes** — representing a project, community, network, or institution
 - **Bioregional nodes** — representing a geographic/ecological region
 - **Thematic nodes** — representing a community of practice or domain (e.g., civic governance, regenerative finance)
@@ -64,7 +67,7 @@ Format: `orn:koi-net.node:{name}+{hash_suffix}`
 
 ### Entities
 
-KOI organizes knowledge into **typed entities** with structured metadata:
+The KOI protocol is content-agnostic — it transports knowledge objects identified by RIDs without prescribing what those objects represent. Our implementation organizes knowledge into **typed entities** with structured metadata:
 
 | Entity Type | Examples |
 |-------------|----------|
@@ -73,16 +76,16 @@ KOI organizes knowledge into **typed entities** with structured metadata:
 | Project | Initiatives, programs, research efforts |
 | Location | Cities, watersheds, territories |
 | Concept | Technical terms, frameworks, methodologies |
-| Practice | Bioregional activities (e.g., "herring monitoring") |
-| Pattern | Cross-bioregional generalizations from practices |
+| Practice | Community activities (e.g., "herring monitoring") |
+| Pattern | Cross-network generalizations from practices |
 | Claim | Impact assertions with evidence chains |
 | Evidence | Data, observations, supporting materials |
 
-Each entity has a **vault note** (markdown with YAML frontmatter) and a **backend record** (PostgreSQL with embeddings for semantic search).
+These types are implementation choices — a different KOI deployment could define entirely different entity types suited to its domain. Each entity has a **vault note** (markdown with YAML frontmatter) and a **backend record** (PostgreSQL with embeddings for semantic search).
 
 ### Entity Resolution
 
-When data flows between nodes, entities need to be matched. KOI uses **multi-tier entity resolution**:
+When data flows between nodes, entities need to be matched. Our implementation uses **multi-tier entity resolution**:
 
 1. **Exact match** — Normalized name lookup (instant)
 2. **Alias match** — Checks registered alternate names
@@ -91,11 +94,13 @@ When data flows between nodes, entities need to be matched. KOI uses **multi-tie
 5. **Semantic match** — OpenAI embeddings + pgvector cosine similarity
 6. **New entity** — Create if no match found
 
-This means you don't need to use the same names or identifiers as other nodes. The resolution engine handles the mapping.
+Entity resolution is not part of the KOI protocol itself — the protocol handles identity at the RID level (each knowledge object has a globally unique identifier). Resolution is an application-layer concern: how you reconcile entities across heterogeneous sources. Different deployments could use simpler or more sophisticated matching strategies.
 
 ---
 
 ## KOI and the Hypertext Tradition
+
+> **Note:** This section is our interpretive framing, drawing connections between KOI's protocol primitives and the broader hypertext tradition. Block Science has not formally positioned KOI relative to Xanadu.
 
 KOI's architecture shares deep structural roots with Ted Nelson's Xanadu project (1960s onward) — the original vision for a global hypertext system built on persistent addresses, bidirectional links, and content referenced across documents without duplication. Understanding this lineage clarifies both what KOI does and what it deliberately leaves to other layers.
 
@@ -127,7 +132,7 @@ The result: KOI works as a **distributed card catalogue for knowledge objects**.
 
 ### Three knowledge object classes
 
-KOI organizes knowledge into three complementary classes that create a natural curation flow:
+Our implementation organizes knowledge into three complementary classes that create a natural curation flow. The KOI protocol itself is agnostic about how knowledge is categorized — these classes are a design pattern we've found effective for maintaining a navigable commons:
 
 1. **Source Artifacts** — Comprehensive snapshots of external content (meeting transcripts, web pages, research papers). These form the evidence infrastructure. They are machine-managed, searchable, but not browsed directly.
 
@@ -189,7 +194,7 @@ Nodes connect via **edges** — explicit, mutual agreements about what data to s
 
 Edges define:
 - **Direction** — Who provides data, who consumes it
-- **Entity type filter** — Which types of knowledge to exchange (e.g., only Practices and Patterns)
+- **RID type filter** — Which types of knowledge objects to exchange (e.g., in our deployment, only Practices and Patterns)
 - **Polling interval** — How often to check for updates (typically 60 seconds)
 
 ### Poll + Confirm Loop
@@ -213,7 +218,7 @@ This design means:
 
 ### Network Topology
 
-The current network uses a **holonic structure** — leaf nodes connect to coordinators, which can connect to meta-coordinators:
+The KOI protocol is topology-agnostic — it supports anything from flat peer-to-peer to hub-and-spoke. Our current deployment uses a **holonic structure** — leaf nodes connect to coordinators, which can connect to meta-coordinators:
 
 ```
 [Greater Victoria]   [Cowichan Valley]        ← leaf nodes
@@ -247,7 +252,7 @@ Whether you're starting a new network for your organization or connecting to an 
 
 ### Sensor Nodes
 
-Sensors are lightweight connectors that read data from a source and feed it into your KOI node. We have sensors for:
+Block Science describes "sensor nodes" as nodes that take inputs from outside organizational boundaries. In our implementation, sensors are lightweight connectors that read data from a source and feed it into your KOI node. We have sensors for:
 
 - **Markdown vaults** (Obsidian, plain files)
 - **GitHub repositories** (code, docs, issues)
@@ -271,7 +276,7 @@ Sensors are easy to build — you can point Claude Code at the KOI protocol spec
 
 ## Data Channels
 
-KOI supports two complementary channels for data exchange:
+Our implementation supports two complementary channels for data exchange, both built on the KOI protocol's event and state communication primitives:
 
 ### Channel 1: Schema-Based Data
 
@@ -620,12 +625,14 @@ For private data, edges require mutual consent and authentication.
 
 ### What's the difference between KOI and just scraping?
 
-KOI adds:
+The KOI protocol adds:
 - **Signed envelopes** — You know who sent each signal and can verify authenticity
 - **Consent-based edges** — Both parties explicitly agree to share
+- **Sovereignty** — Signals, not commands. You decide what to do with incoming data.
+
+Our implementation adds on top of the protocol:
 - **Entity resolution** — Automatic deduplication and linking across sources
 - **Semantic search** — Not just keyword matching, but meaning-aware queries
-- **Sovereignty** — Signals, not commands. You decide what to do with incoming data.
 
 ### How is this different from a centralized database?
 
