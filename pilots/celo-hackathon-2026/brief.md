@@ -20,9 +20,11 @@ AI and Celo are layers — stewardship is the foundation.
 
 ## What We Built
 
-The **Bioregional Knowledge Commons (BKC)** is a federated knowledge graph connecting four bioregional nodes across the Salish Sea and Front Range. It already tracks ~1,005 entities, proves claims with on-chain anchors, and governs data flow through a consent-aware federation membrane.
+The **Bioregional Knowledge Commons (BKC)** is a federated knowledge graph — 2,759 entities, 23 active types, 39 semantic predicates — connecting four bioregional nodes across the Salish Sea and Front Range. It proves claims with dual-chain anchors (Regen Ledger + Celo EAS) and governs data flow through a consent-aware federation membrane (34 query sites filtered, `node_private` visibility scope).
 
-We extended it with **commitment routing** and deployed a **commitment economy on Celo mainnet**:
+This serves the **Victoria Landscape Group** — part of Regenerate Cascadia's Hub Cultivator program, 9 landscape groups across 3 eco-regions, entering their bioregional mapping and flow funding phase. The mapping workshops that this phase describes are the exact input to our commitment extraction pipeline.
+
+We extended BKC with **commitment routing** and deployed a **commitment economy on Celo mainnet**:
 
 ### Agents That Cooperate
 
@@ -99,7 +101,9 @@ BKC commitment pooling maps directly to the patterns Grassroots Economics has pr
 | TBFF threshold bands | Token limiter | Similar safety mechanics, different layers |
 | Routing scorer | (Manual matching) | New: deterministic multi-factor routing |
 
-**CLC convergence**: Will Ruddick's Cosmo-Local Credit (white paper at cosmolocal.credit) adds multi-hop routing via CPP (Commitment Pooling Protocol) with four interfaces — Curation, Valuation, Limitation, Exchange. BKC provides Curation (governance membrane) and Valuation (routing scorer); CLC provides Limitation and Exchange (settlement execution). Our routing scorer implements §5.2 on-demand routing — scored pool suggestions that a CLC router would execute multi-hop. The integration path is a post-hackathon study (C1), not hackathon scope.
+**CLC convergence**: BKC maps onto all 4 CLC Commitment Pooling Protocol interfaces with BKC-native analogues — Curation (governance membrane), Valuation (routing scorer), Limitation (TBFF threshold bands), Exchange (settlement execution). Full CLC protocol compatibility (Hop[] multi-hop routing, token graph construction, confederation) is post-hackathon — but the GiftableToken and SwapPool contracts deployed here ARE Grassroots Economics contracts, and the architectural alignment is real and directional.
+
+**Routing visualization**: Interactive force-directed graph at `/commons/routing` shows how commitments route to pools — node detail panels with full metadata and Celoscan links, edge panels showing 5-factor score breakdowns. Both pools activated (Victoria Landscape Hub + Cascadia Bioregion Stewardship). The `broader` edge from Salish Sea to Cascadia enables cross-bioregion routing at +15 umbrella match.
 
 ## Demo
 
@@ -129,6 +133,7 @@ Same codebase, tailored narratives.
 ## Links
 
 - [Salish Sea Knowledge Garden](https://45.132.245.30.sslip.io) (live BKC node)
+- [Commitment Routing Visualization](https://45.132.245.30.sslip.io/commons/routing) (live)
+- [Flow Funding Visualization](https://45.132.245.30.sslip.io/commons/flow-funding) (live)
 - [BKC GitHub](https://github.com/BioregionalKnowledgeCommons)
 - [Commitment Pooling Foundations](https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/blob/main/docs/foundations/commitment-pooling-foundations.md)
-- [Flow Funding Visualization](https://45.132.245.30.sslip.io/commons/flow-funding) (live)

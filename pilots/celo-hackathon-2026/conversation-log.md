@@ -311,4 +311,89 @@ The Day 6 TBFFSettler had 5 placeholder nodes at `0x0001`–`0x0005` (from Found
 
 ---
 
-*Day 10 focus: Routing visualization + polish for submission.*
+---
+
+## Day 10 — Mar 19 (Routing Visualization + Pool Activation)
+
+### The learning layer
+
+**Context:** The full pipeline works — extract, route, mint, settle, attest, swap. But routing suggestions were invisible to users. You could create a commitment and get a score, but the *shape* of routing — how commitments relate to pools, how scores distribute, what the bioregion topology looks like — was hidden behind API responses.
+
+**Built:** Interactive force-directed routing graph at `/commons/routing` using `react-force-graph-2d` (same library as Sarafu's viz.sarafu.network). Pools rendered as circles with threshold arcs and glow rings. Commitments as rounded rectangles with state accent stripes. Scored edges connect them, weighted by the 5-factor routing score. Click any node for a detail panel: full commitment metadata, routing tags, connected edges, and Celoscan links for on-chain data. Click any edge for the score breakdown — bioregion proximity, tag overlap, timeframe alignment, capacity fit, governance compatibility — each factor's contribution visible as a stacked bar.
+
+**BFF aggregation:** `GET /api/routing/overview` aggregates commitments, pools, pool statuses, and routing suggestions server-side with bounded concurrency (max 5 parallel KOI API calls) and 30-second cache. One fetch gives the frontend everything it needs.
+
+**Pool activation:** Both pools — Victoria Landscape Hub Restoration Pool and Cascadia Bioregion Stewardship Pool — transitioned from `forming` to `active` (threshold_met: true). The activation trigger: verified pledge added pushes total pledged capacity past the pool's activation threshold.
+
+**The broader edge:** Deployed a `broader` relationship: Salish Sea → Cascadia. The routing scorer now gives +15 for umbrella bioregion match — a commitment made in the Salish Sea can route to a Cascadia-wide pool. This is the cosmo-local thesis at the edge level: local knowledge, broader coordination.
+
+**Why this matters for the loop:** The routing visualization closes Will Ruddick's sensing→learning cycle. Proof of kept commitments feeds back into the knowledge graph. The graph informs the next round of routing suggestions. The visualization makes this legible — stewards can see which pools attract which commitments, which bioregion relationships carry the most routing traffic, where capacity gaps exist.
+
+*Day 10 deliverables: routing visualization ✅, BFF endpoint ✅, both pools activated ✅, broader edge ✅, 9 new frontend files ✅.*
+
+---
+
+## Day 11 — Mar 21 (Convergence)
+
+### The knowledge graph becomes visible
+
+Ten days of building, and a pattern finally surfaced: the knowledge graph was always the substrate, but it was never named as such in the submission narrative.
+
+Everything we built operates *on* the graph:
+- **Commitment extraction** writes entities to the graph (Commitment type, 10+ metadata fields)
+- **Routing scorer** reads the graph (bioregion entities, `broader` predicates, pool capacity)
+- **TBFF settlement** writes back (Evidence entities, CAT receipt chains)
+- **Proof packs** assemble graph state (claim + evidence + attestations → archivable JSON)
+- **Federation** replicates graph state (KOI-net events, ECDSA-signed envelopes)
+- **Consent membrane** governs graph visibility (34 query sites filtered, `node_private` scope)
+
+2,759 entities. 23 active types. 39 semantic predicates. 4 federated nodes. This isn't a database backing a web app. It's a federated knowledge graph — each node holds its bioregion's knowledge (Greater Victoria knows about Bowker Creek; Front Range knows about Boulder Creek), protocols are shared, settlement is on Celo mainnet.
+
+Making this visible changed the submission narrative. The differentiator isn't "AI agent + blockchain." It's "federated knowledge graph powering contextual routing that token-pair adjacency alone can't provide."
+
+### CLC convergence crystallizes
+
+Prize strategy research forced a design synthesis. Mapping our architecture against the CLC (Cosmo-Local Credit) Commitment Pooling Protocol revealed that BKC maps onto all 4 CPP interfaces with BKC-native analogues:
+
+| CLC Interface | BKC Analogue | Status |
+|---------------|-------------|--------|
+| **Curation** | Governance membrane — steward pledge/verify, edge approval, visibility scope | Live |
+| **Valuation** | Routing scorer — 5-factor deterministic, transparent, auditable | Live |
+| **Limitation** | TBFF threshold bands + pool capacity limits | Live |
+| **Exchange** | Settlement execution — TBFF auto-advance, receipt chains | Live |
+
+The GiftableToken and SwapPool contracts deployed for this hackathon ARE Grassroots Economics contracts — the same codebase running the Sarafu Network (26K users, 188 pools, $320K+ swap volume). Full CLC protocol compatibility (Hop[] multi-hop routing, token graph construction, confederation) is post-hackathon — but the architectural alignment is real and directional.
+
+### ERC-8004 metadata fix
+
+The on-chain ERC-8004 metadata for agentId 1855 had `registrations: []` — an empty array that made the PL "Agents With Receipts" submission weaker. Updated via `setAgentURI` ([TX `0x2b8f35...`](https://celoscan.io/tx/0x2b8f35697f233eb9ff1e3d3cf84347baeff4a5498102ac877f9320cbedd6379c)) — registrations now populated with the 3 deployed Celo contracts (VCV Token, TBFFSettler, SwapPool). The A2A endpoint at `/.well-known/agent.json` returns 200 OK with 15 tools; any 8004scan 404 report is a stale crawler artifact (TLS handshake and response verified with curl at submission time).
+
+Created `agent_log.json` — a Protocol Labs submission artifact keyed to ERC-8004 identity (not an ERC-8004-defined schema). Four acts with tool invocations, timestamps, transaction hashes, state transitions, and safety guardrail documentation.
+
+### Grounding in real community
+
+The submission packaging forced another question: who is this for?
+
+The answer was already there. The Victoria Landscape Group — part of Regenerate Cascadia's Hub Cultivator program — is entering Phase 2: bioregional mapping and flow funding. 9 landscape groups across 3 eco-regions (Salish Sea, Columbia River, Willamette Valley). 35 stewards. $80K flowing to place-based regenerative work. The mapping workshops that Phase 2 describes are the exact input to our commitment extraction pipeline.
+
+This isn't infrastructure looking for users. The users — landscape groups with 50+ partner organizations, watershed stewards, First Nations partnerships — were already there. The technology stack caught up.
+
+*Day 11 deliverables: submission-pack.md ✅, agent_log.json ✅, ERC-8004 metadata updated ✅, entity count audited (2,759) ✅, stale references fixed ✅.*
+
+---
+
+## Day 12 — Mar 22 (Ship)
+
+### Demo, tweet, submit
+
+Record demo video following story-centric shot list. A landscape group in the Salish Sea maps what their community can offer. An AI agent extracts commitments. A routing scorer suggests pools. Stewards mint VCV on Celo. TBFF redistributes. Proof anchors on two chains. The graph remembers.
+
+Register on agentscan.info. Post tweet. Submit Synthesis via Devfolio (Open Track + Celo + Protocol Labs x2 + Octant x3). Submit Celo V2 via Karma.
+
+### The arc
+
+Ten days ago this was a knowledge graph with a commitment pipeline prototype. Now it's a working system: federated knowledge graph → AI extraction → deterministic routing → on-chain settlement → dual-chain proof → learning loop. Deployed on Celo mainnet with real transactions, real contracts, real attestations. Serving a real program with real landscape groups entering their mapping phase.
+
+The pathway forward: LHC Phase 2 mapping workshops → commitment extraction → routing → pool formation → flow funding → proof packs → learning cycle. The technology is ready. The communities are ready. The commons remembers.
+
+*Day 12 deliverables: demo video ✅, tweet ✅, both hackathons submitted ✅.*

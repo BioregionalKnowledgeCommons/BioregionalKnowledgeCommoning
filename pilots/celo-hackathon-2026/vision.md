@@ -26,7 +26,7 @@ Each step maps to what we've built:
 
 | Loop stage | BKC implementation |
 |------------|-------------------|
-| **Sensing** | Federated knowledge graph — 1,005 entities across 4 nodes, MediaWiki import, interview commoning |
+| **Sensing** | Federated knowledge graph — 2,759 entities across 4 nodes, MediaWiki import, interview commoning |
 | **Meaning-making** | Ontology-grounded entity resolution, discourse graph (supports/opposes/informs) |
 | **Caring** | Community-governed visibility scope — 34 query sites filtered, consent membrane |
 | **Committing** | Commitment creation with typed offers/wants/limits, self-sovereign promise issuance |
@@ -59,7 +59,7 @@ CLC routes for economic efficiency — settlement velocity, multi-hop liquidity,
 - **Contextual routing intelligence** — bioregion proximity, semantic taxonomy overlap, seasonality, capacity fit. Not just "is the swap valid?" but "does this commitment belong in this landscape?" The routing scorer evaluates multiple dimensions of fit that token-pair adjacency doesn't capture.
 - **Federated governance membrane** — consent-aware, steward-curated, 34 filtered query sites enforcing visibility scope. Communities control what flows where. `node_private` commitments never surface on-chain — the consent boundary is the tokenization gate.
 - **Provenance chain** — proof packs as the attestation layer that pool stewards and funders need. Evidence of kept commitments, not just settlement receipts. Each proof pack captures who promised, who curated, who verified, what was delivered — anchored on Regen Ledger.
-- **Place-based knowledge graph** — 1,005 entities of ecological and social context informing routing decisions. Routing is grounded in what the bioregion actually needs, not just what's economically optimal.
+- **Place-based knowledge graph** — 2,759 entities of ecological and social context informing routing decisions. Routing is grounded in what the bioregion actually needs, not just what's economically optimal.
 
 *CLC routes for economic efficiency. BKC routes for ecological and social relevance. Together they provide multi-objective routing that neither achieves alone.*
 

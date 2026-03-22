@@ -1,0 +1,278 @@
+{
+  "_meta": {
+    "format": "Protocol Labs submission artifact keyed to ERC-8004 agent identity",
+    "note": "ERC-8004 does not define a canonical execution-log schema. This is our format, anchored to agentId 1855 on Celo mainnet.",
+    "generated": "2026-03-22T01:20:00Z",
+    "source": "demo-full-loop.sh orchestrator output + on-chain transaction data"
+  },
+  "agent": {
+    "agentId": 1855,
+    "chain": "celo",
+    "chainId": 42220,
+    "contract": "0x8004a169fb4a3325136eb29fa0ceb6d2e539a432",
+    "operatorWallet": "0x6f844901459815A68Fa4e664f7C9fA632CA79FEa",
+    "name": "Octo - Bioregional Commitment Router",
+    "a2aEndpoint": "https://45.132.245.30.sslip.io/.well-known/agent.json",
+    "registrations": [
+      {
+        "chainId": 42220,
+        "address": "0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573",
+        "name": "Victoria Commitment Voucher (VCV)",
+        "type": "GiftableToken"
+      },
+      {
+        "chainId": 42220,
+        "address": "0x2a13c4eB94Fe5b5E93c1Fe380bC9Af3f72Cb3faF",
+        "name": "Multi-Participant TBFFSettler",
+        "type": "TBFFSettler"
+      },
+      {
+        "chainId": 42220,
+        "address": "0x181E36AD6ae826b75e739C3510Bd059b27C34aB4",
+        "name": "BKC SwapPool (VCV/cUSD)",
+        "type": "SwapPool"
+      }
+    ]
+  },
+  "execution": {
+    "orchestrator": "demo-full-loop.sh",
+    "environment": "Octo production (45.132.245.30)",
+    "knowledgeGraphStats": {
+      "totalEntities": 2759,
+      "activeTypes": 23,
+      "predicates": 39,
+      "federatedNodes": 4
+    },
+    "acts": [
+      {
+        "act": 1,
+        "name": "Human Participation — Mapping Workshop",
+        "description": "Transcribe audio recording of a bioregional mapping workshop, extract commitment candidates, create on knowledge graph, verify, and mint VCV tokens.",
+        "tools": [
+          {
+            "tool": "whisper_transcribe",
+            "input": "Voice Memo.m4a (203 seconds, 4-participant mapping workshop)",
+            "output": "Transcript (1,847 words)",
+            "duration_seconds": 9.6,
+            "provider": "OpenAI Whisper API"
+          },
+          {
+            "tool": "commitment_extract",
+            "input": "Transcript text, bioregion=Salish Sea, confidence_threshold=0.5",
+            "output": {
+              "candidates_extracted": 10,
+              "offers": 5,
+              "needs": 5,
+              "fields_per_candidate": ["title", "description", "offer_type", "quantity", "unit", "estimated_value_usd", "declaration_type", "fiat_only", "routing_tags", "source_snippet"]
+            },
+            "provider": "OpenAI GPT-4o-mini (few-shot)",
+            "safety": {
+              "consent_check": "All candidates derived from public mapping workshop recording with participant consent",
+              "confidence_filter": "0.5 threshold — candidates below threshold logged but not created"
+            }
+          },
+          {
+            "tool": "commitment_create",
+            "input": "10 commitment candidates",
+            "output": {
+              "commitments_created": 10,
+              "state": "PROPOSED",
+              "knowledge_graph_entities": "10 Commitment entities created with metadata, routing_tags, and source_snippet"
+            }
+          },
+          {
+            "tool": "commitment_verify",
+            "input": "10 PROPOSED commitments",
+            "output": {
+              "commitments_verified": 10,
+              "state_transition": "PROPOSED → VERIFIED"
+            },
+            "safety": {
+              "audit_trail": "Insert-only commitment_state_log records each transition with timestamp and actor"
+            }
+          },
+          {
+            "tool": "vcv_mint",
+            "input": "10 VERIFIED commitments",
+            "output": {
+              "tokens_minted": 10,
+              "total_vcv": 28600,
+              "token_contract": "0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573",
+              "sample_tx": "0xbe1f12d5df7834072876b1cca524f476338344efd67319dc562f9f54f5fc43f0",
+              "block": 61805494,
+              "timestamp": "2026-03-17T00:10:52Z",
+              "gas_used": 71429
+            }
+          }
+        ]
+      },
+      {
+        "act": 2,
+        "name": "Agent Self-Commitment",
+        "description": "Agent registers itself as an economic participant — offering computational services and declaring infrastructure needs.",
+        "tools": [
+          {
+            "tool": "agent_self_commit",
+            "input": "Agent capability declaration",
+            "output": {
+              "offers_registered": 4,
+              "needs_registered": 3,
+              "offer_types": ["transcription_service", "extraction_service", "routing_service", "attestation_service"],
+              "need_categories": ["audio_data", "community_feedback", "governance_templates"],
+              "fiat_threshold_monthly_usd": 200
+            },
+            "safety": {
+              "note": "Agent needs include fiat_only=true items (monthly hosting costs) that must be covered in stablecoin, not vouchers"
+            }
+          },
+          {
+            "tool": "vcv_mint",
+            "input": "7 agent commitments (4 offers + 3 needs)",
+            "output": {
+              "tokens_minted": 7,
+              "total_vcv_supply_after": 33400
+            }
+          }
+        ]
+      },
+      {
+        "act": 3,
+        "name": "TBFF Settlement + Dual-Chain Proof",
+        "description": "Threshold-based flow funding redistributes VCV across 3 participants, creates claim, anchors on Regen Ledger, attests on Celo EAS.",
+        "tools": [
+          {
+            "tool": "tbff_settle",
+            "input": {
+              "settler_contract": "0x2a13c4eB94Fe5b5E93c1Fe380bC9Af3f72Cb3faF",
+              "participants": [
+                {"name": "Darren", "pre_balance_vcv": 4000, "threshold_vcv": 1000},
+                {"name": "Victoria Hub", "pre_balance_vcv": 500, "threshold_vcv": 2000},
+                {"name": "Kinship Earth", "pre_balance_vcv": 300, "threshold_vcv": 1800}
+              ],
+              "total_redistributed_vcv": 3000
+            },
+            "output": {
+              "iterations_to_convergence": 2,
+              "post_balances": {
+                "Darren": 1000,
+                "Victoria Hub": 2000,
+                "Kinship Earth": 1800
+              },
+              "balances_match_thresholds": true
+            }
+          },
+          {
+            "tool": "claim_from_settlement",
+            "input": "Settlement receipt",
+            "output": {
+              "claim_rid": "orn:koi-net.claim:settlement-multi-participant",
+              "evidence_created": true,
+              "state": "verified"
+            }
+          },
+          {
+            "tool": "regen_anchor",
+            "input": "Claim content hash",
+            "output": {
+              "tx_hash": "741FC68D...",
+              "ledger": "regen-upgrade",
+              "state_transition": "verified → ledger_anchored"
+            }
+          },
+          {
+            "tool": "eas_attest",
+            "input": "Proof pack from anchored claim",
+            "output": {
+              "attestation_uid": "0xf6597a662d2d94aeab6b2ebe747df0ef7dd60df6cd91eba540cf60fa73666298",
+              "schema_uid": "0xdcf86a36ec6ec644e7727f9e1c7290b38f7f8503b051b893774cdd52573ee1e0",
+              "content_hash_match": {
+                "bkc": "5d3788829ca78c092f144fa97208d31030f2c73f5ff5220eac4ec763a74b562d",
+                "regen_ledger": "5d3788829ca78c092f144fa97208d31030f2c73f5ff5220eac4ec763a74b562d",
+                "celo_eas": "0x5d3788829ca78c092f144fa97208d31030f2c73f5ff5220eac4ec763a74b562d"
+              },
+              "three_way_match": true
+            }
+          }
+        ]
+      },
+      {
+        "act": 4,
+        "name": "SwapPool — VCV↔cUSD Exchange",
+        "description": "Execute VCV to cUSD swap via BKC SwapPool, demonstrating full circle from commitment to stablecoin liquidity.",
+        "tools": [
+          {
+            "tool": "swap_execute",
+            "input": {
+              "pool": "0x181E36AD6ae826b75e739C3510Bd059b27C34aB4",
+              "token_in": "VCV",
+              "token_out": "cUSD",
+              "amount": "0.01 VCV"
+            },
+            "output": {
+              "tx_hash": "0x2bc7372e5f0a44dd73705ade2e5260c60d4ccf871bba29b67253b4340b4f7e0d",
+              "block": 61955907,
+              "timestamp": "2026-03-18T17:57:45Z",
+              "gas_used": 124768,
+              "received": "0.01 cUSD",
+              "quoter": "DecimalQuote (1:1)"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "safety": {
+    "consent_membrane": {
+      "query_sites_filtered": 34,
+      "visibility_scope": "node_private commitments never reach on-chain",
+      "tokenization_gate": "Only public, steward-approved commitments mint as VCV"
+    },
+    "deterministic_scoring": {
+      "factors": ["bioregion_proximity", "offer_need_overlap", "timeframe_alignment", "capacity_fit", "governance_compatibility"],
+      "max_score": 100,
+      "transparency": "All factor weights and scores are visible in routing suggestions — no black-box ML"
+    },
+    "audit_trail": {
+      "state_log": "Insert-only commitment_state_log records every transition",
+      "cat_receipts": "Content Addressable Transformation receipts chain every data transformation",
+      "dual_chain_proof": "BKC knowledge graph + Regen Ledger anchor + Celo EAS attestation"
+    },
+    "rollback_capability": {
+      "vendor_pin": "Deployment pinned to specific SHA — revert by resetting pin.txt",
+      "token_ownership": "GiftableToken ownership can be transferred if agent compromised",
+      "settlement_pause": "TBFFSettler can be paused by operator wallet"
+    }
+  },
+  "onchain_artifacts": {
+    "vcv_token": {
+      "address": "0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573",
+      "type": "GiftableToken (Grassroots Economics)",
+      "total_supply": "33,400 VCV",
+      "commitments_minted": 23,
+      "celoscan": "https://celoscan.io/address/0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573"
+    },
+    "tbff_settler": {
+      "address": "0x2a13c4eB94Fe5b5E93c1Fe380bC9Af3f72Cb3faF",
+      "type": "Multi-Participant TBFFSettler",
+      "participants": 3,
+      "total_redistributed": "3,000 VCV",
+      "celoscan": "https://celoscan.io/address/0x2a13c4eB94Fe5b5E93c1Fe380bC9Af3f72Cb3faF"
+    },
+    "swap_pool": {
+      "address": "0x181E36AD6ae826b75e739C3510Bd059b27C34aB4",
+      "type": "BKC SwapPool (Grassroots Economics)",
+      "pair": "VCV/cUSD",
+      "quoter": "DecimalQuote (1:1)",
+      "celoscan": "https://celoscan.io/address/0x181E36AD6ae826b75e739C3510Bd059b27C34aB4"
+    },
+    "eas_schema": {
+      "uid": "0xdcf86a36ec6ec644e7727f9e1c7290b38f7f8503b051b893774cdd52573ee1e0",
+      "fields": "commitmentRid, contentHash, proofPackUri, regenTxHash, bioregion, verifiedAt",
+      "easscan": "https://celo.easscan.org/schema/view/0xdcf86a36ec6ec644e7727f9e1c7290b38f7f8503b051b893774cdd52573ee1e0"
+    },
+    "eas_attestation": {
+      "uid": "0xf6597a662d2d94aeab6b2ebe747df0ef7dd60df6cd91eba540cf60fa73666298",
+      "easscan": "https://celo.easscan.org/attestation/view/0xf6597a662d2d94aeab6b2ebe747df0ef7dd60df6cd91eba540cf60fa73666298"
+    }
+  }
+}
