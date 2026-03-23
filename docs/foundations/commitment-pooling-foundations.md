@@ -180,11 +180,11 @@ Commitment pooling instantiates existing BKC patterns:
 
 ### 5.4 Adoption Pathway (30/60/90 days post-C0)
 
-**30 days (C0 — done):** Commitment entity types in ontology. Registry API live. Stewards can create pledges and verify them via governance membrane.
+**C0 (done, Mar 2026):** Commitment entity types in ontology (v1.2.0). Registry API live. Stewards can create, pledge, and verify via governance membrane. Hackathon sprint (Days 6-10) deployed full commitment economy on Celo mainnet: 23+ commitments created and verified, 33,400 VCV total supply minted as GiftableTokens, multi-participant TBFFSettler with real redistribution, SwapPool (VCV↔cUSD), dual-chain proofs (Regen Ledger + Celo EAS attestations). Two pilot pools created and activated: Victoria Landscape Hub Restoration Pool and Cascadia Bioregion Stewardship Pool (both transitioned forming → active). Routing visualization live at `/commons/routing`.
 
-**60 days (C1):** Pool mechanics live. Threshold activation. TBFF threshold policy extended to include commitment activation gates. First pilot pool created (target: Regenerate Cascadia or co-op.us).
+**C1 (in progress):** Multi-hop path construction via CLC `Hop[]` routing. Cross-pool settlement. Token adjacency graph from on-chain pool listings. TBFF threshold policy extended to include commitment activation gates. GE protocol compatibility analysis complete (see [compatibility-memo.md](../ge-integration/compatibility-memo.md)).
 
-**90 days (C2):** Cross-node pool aggregation via KOI-net. Hypercerts minted from REDEEMED commitments. GE protocol compatibility analysis complete.
+**C2 (future):** Cross-node pool aggregation via KOI-net. Hypercerts minted from REDEEMED commitments. Cross-network routing across BKC + Sarafu pools via SwapRouter.
 
 ---
 
@@ -247,7 +247,7 @@ Forkability is only meaningful when commitments exist independently of pools. Th
 
 ### 7.6 Runtime Note
 
-The current runtime is single-pool MVP. Multi-pool pledging, cross-pool routing, and federated pool forking are post-hackathon extensions (C1/C2). The governance model is designed for the multi-pool future even though the hackathon implementation is simpler.
+The current runtime has two pools created and activated (Victoria Landscape Hub + Cascadia Bioregion Stewardship). Per-swap settlement is single-pool; multi-hop cross-pool routing via `Hop[]` paths is C1. Multi-pool pledging and federated pool forking are C1/C2. The governance model is designed for the multi-pool future. See [commitment-economy-vision.md](./commitment-economy-vision.md) for the broader vision including composability (§5), demurrage as seasonal tool (§3), and dependency quality (§9.9).
 
 ---
 

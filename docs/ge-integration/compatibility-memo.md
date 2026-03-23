@@ -1,6 +1,6 @@
 # BKC ↔ Grassroots Economics ↔ CLC DAO Compatibility Memo
 
-**Date:** 2026-03-17
+**Date:** 2026-03-22 (updated from 2026-03-17 to reflect hackathon Days 8-10 results)
 **Purpose:** Map BKC commitment pooling concepts to GE/Sarafu production patterns and CLC DAO design, with code references.
 
 ---
@@ -63,13 +63,15 @@ Time-decay on token balances (encourages circulation). Frontend adds 0.5% buffer
 - **RPC:** `https://r4-celo.grassecon.org` (custom GE node) + public fallback
 - **Tokens:** cUSD (`0x765DE816845861e75A25fCA122bb6898B8B1282a`), CELO native
 - **BKC tokens deployed:**
-  - **VCV (Victoria Commitment Voucher):** GiftableToken at [`0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573`](https://celoscan.io/address/0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573) — 6 decimals, agent wallet authorized as minter. 28,600 VCV minted across 23 commitments.
-  - **TBFFSettler:** [`0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030`](https://celoscan.io/address/0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030) — 5 nodes, TBFFMath convergence, discrete ERC-20 transfers.
-- **BKC agent wallet:** `0x6f844901...` — holds 95.7 CELO + 28,600 VCV
+  - **VCV (Victoria Commitment Voucher):** GiftableToken at [`0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573`](https://celoscan.io/address/0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573) — 6 decimals, agent wallet authorized as minter. 33,400 VCV total supply across 23+ verified commitments.
+  - **TBFFSettler (single):** [`0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030`](https://celoscan.io/address/0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030) — 5 nodes, TBFFMath convergence, discrete ERC-20 transfers.
+  - **TBFFSettler (multi-participant):** [`0x2a13c4eB94Fe5b5E93c1Fe380bC9Af3f72Cb3faF`](https://celoscan.io/address/0x2a13c4eB94Fe5b5E93c1Fe380bC9Af3f72Cb3faF) — 3 dedicated participant wallets (Darren, Victoria Hub, Kinship Earth). 3,000 VCV redistributed in 2 iterations. Post-settle balances match needs-weighted thresholds.
+  - **BKC SwapPool:** [`0x181E36AD6ae826b75e739C3510Bd059b27C34aB4`](https://celoscan.io/address/0x181E36AD6ae826b75e739C3510Bd059b27C34aB4) — GE `erc20-pool` SwapPool with VCV + cUSD. DecimalQuote (1:1 rate). 5,000 VCV deposited. Real VCV↔cUSD swap executed on-chain.
+- **BKC agent wallet:** `0x6f844901...`
 - **Wallet:** Valora + Web3Modal (Reown)
 - **Indexing:** `eth-tracker` + `eth-indexer` → PostgreSQL FDW (Foreign Data Wrapper)
 
-**Hackathon result (2026-03-17):** Deployed GiftableToken (VCV) and TBFFSettler on Celo mainnet (not testnet). End-to-end pipeline working: audio transcript → AI commitment extraction → commitment creation → VCV minting on Celo. SwapPool deployment is next (Day 8).
+**Hackathon result (2026-03-22):** Full commitment economy on Celo mainnet. End-to-end pipeline: audio transcript → Whisper transcription → GPT-4o-mini extraction → commitment creation → verification → VCV minting → multi-participant TBFF settlement → SwapPool exchange → dual-chain proof (Regen Ledger + Celo EAS attestation). 33,400 VCV total supply across 23+ verified commitments. cUSD acquired via Ubeswap V2. Real VCV↔cUSD swap executed on-chain. Two pools activated (Victoria Landscape Hub + Cascadia Bioregion Stewardship, both transitioned forming → active). Routing visualization live at `/commons/routing` (react-force-graph-2d, force-directed graph with scored edges and detail panels). **Production learning:** GE SwapPool MEV vulnerability discovered — bot `0x8B6B...` drained deposited cUSD within 16 blocks. GiftableToken safe-approve pattern needed (reset-to-0 before new approval).
 
 ### Sarafu dApp Patterns
 
@@ -97,8 +99,8 @@ Time-decay on token balances (encourages circulation). Frontend adds 0.5% buffer
 
 ### Integration Path
 
-1. **Hackathon (done):** BKC-native routing scorer + on-chain deployment. VCV GiftableToken and TBFFSettler deployed on Celo mainnet. End-to-end: audio → commitment extraction → VCV minting. 28,600 VCV minted across 23 commitments. Dual-chain proofs (Regen Ledger + Celo EAS).
-2. **C1 (post-hackathon):** Multi-hop path construction. Build token adjacency graph from on-chain pool listings (including BKC's SwapPool, deploying Day 8). Construct `Hop[]` paths from scorer-ranked pools → SwapRouter quoting. Read Sarafu pools (188 active, read-only). See [clc-integration-strategy.md](./clc-integration-strategy.md) for full phased plan.
+1. **Hackathon (complete, Mar 22):** BKC-native routing scorer + on-chain deployment. VCV GiftableToken, TBFFSettler (single + multi-participant), SwapPool + DecimalQuote deployed on Celo mainnet. Full pipeline: audio → extraction → commitment → routing → minting → settlement → swap → dual-chain proof. 33,400 VCV total supply across 23+ verified commitments. Two pools activated (forming → active). Routing visualization live at `/commons/routing`. cUSD acquired via Ubeswap V2. Real VCV↔cUSD swap on-chain.
+2. **C1 (post-hackathon):** Multi-hop path construction. Build token adjacency graph from on-chain pool listings (including BKC's SwapPool, now deployed). Construct `Hop[]` paths from scorer-ranked pools → SwapRouter quoting. Read Sarafu pools (188 active, read-only). See [clc-integration-strategy.md](./clc-integration-strategy.md) for full phased plan.
 3. **C2 (future):** Cross-network routing. Settlement write-back: CLC swap events → BKC Evidence → proof pack → Regen anchor. Multi-hop routing across BKC + Sarafu pools via SwapRouter.
 
 ### Will Ruddick's Narrative Arc
@@ -172,14 +174,12 @@ The three operations are independent in BKC:
 
 In GE, this orthogonality is partially present (a voucher exists independently of any pool it's deposited in) but verification is implicit (redemption history rather than explicit attestation). CLC adds fee-gated routing access via sCLC receipts. BKC makes all three operations first-class with separate audit trails.
 
-**Current runtime:** Single-pool MVP. Multi-pool pledging and cross-pool routing are post-hackathon (C1/C2).
+**Current runtime:** Two pools created and activated (Victoria Landscape Hub + Cascadia Bioregion Stewardship, both forming → active). Per-swap settlement is single-pool; multi-hop cross-pool routing via `Hop[]` paths is C1.
 
 ---
 
 ## Recommended Actions
 
-1. **Hackathon (done):** BKC routing scorer + on-chain deployment. VCV GiftableToken ([`0x4CDb98Ff...`](https://celoscan.io/address/0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573)) and TBFFSettler ([`0x10De66A7...`](https://celoscan.io/address/0x10De66A7f4e20d696Fb0d815c99068D4fA1f9030)) deployed on Celo mainnet. End-to-end commitment extraction → minting pipeline on production. 28,600 VCV minted across 23 commitments.
-2. **Day 8 (next):** Deploy BKC SwapPool (from GE `erc20-pool`) with VCV + cUSD, DecimalQuoter (1:1 rate). Read Sarafu pools (188 active, read-only). Display on `/commons/pools`.
-3. **Signal to Will:** Share integration strategy doc. Offer BKC as upstream curation layer for CLC confederation (§5.2a). Now with on-chain deployment evidence.
-4. **Post-hackathon C1:** Multi-hop path construction — `Hop[]` assembly across BKC + Sarafu pools via SwapRouter. Token graph construction from on-chain pool listings. See [clc-integration-strategy.md](./clc-integration-strategy.md).
-5. **Post-hackathon C2:** Cross-network routing + settlement write-back via event bridge.
+1. **Hackathon sprint (complete, Mar 22):** Full commitment economy deployed on Celo mainnet. VCV GiftableToken, TBFFSettler (single + multi-participant), BKC SwapPool + DecimalQuote, dual-chain proofs. 33,400 VCV total supply. Two pools activated. Routing visualization live. See [commitment-economy-vision.md](../foundations/commitment-economy-vision.md) for the design synthesis.
+2. **Post-hackathon C1:** Multi-hop path construction — `Hop[]` assembly across BKC + Sarafu pools via SwapRouter. Token graph construction from on-chain pool listings. See [clc-integration-strategy.md](./clc-integration-strategy.md).
+3. **Post-hackathon C2:** Cross-network routing + settlement write-back via event bridge.

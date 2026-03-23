@@ -1,7 +1,7 @@
 # CLC Integration Strategy
 
-**Date:** 2026-03-17
-**Status:** In Progress (hackathon deployment active)
+**Date:** 2026-03-22 (updated from 2026-03-17)
+**Status:** Hackathon sprint complete (submitted Mar 22). CLC C1 integration still in progress.
 **Depends on:** [compatibility-memo.md](./compatibility-memo.md), [commitment-pooling-foundations.md](../foundations/commitment-pooling-foundations.md)
 
 ---
@@ -41,17 +41,20 @@ The original compatibility-first recommendation underestimated the learning-by-d
 
 ## Phase 1 — Assetization + Path Construction (C1, partially done + post-hackathon)
 
-### Status Update (2026-03-17)
+### Status Update (2026-03-22)
 
-During the hackathon, Phase 1 items were partially completed ahead of the original ~30 day timeline:
+During the hackathon sprint (Days 6-10), Phase 1 items were substantially completed:
 
-| Item | Original Plan | Hackathon Reality |
-|------|---------------|-------------------|
-| Voucher/Issuer Mapping | Post-hackathon | **DONE** — VCV GiftableToken deployed, agent wallet as minter, 23 commitments → VCV |
-| Pool/Token Graph Construction | Post-hackathon | **In progress** — SwapPool deployment is Day 8 |
-| Path Construction (multi-hop `Hop[]`) | Post-hackathon | **Post-hackathon (C1)** — requires SwapPool + Sarafu pool integration |
-| Read-Only Celo Integration | Post-hackathon | **Skipped** — went straight to write (minting, settling) |
+| Item | Original Plan | Hackathon Result |
+|------|---------------|-----------------|
+| Voucher/Issuer Mapping | Post-hackathon | **DONE** — VCV GiftableToken deployed, 33,400 VCV total supply across 23+ verified commitments |
+| Pool/Token Graph Construction | Post-hackathon | **DONE** — BKC SwapPool (`0x181E36AD...`) + DecimalQuote deployed. 5,000 VCV deposited. Real VCV↔cUSD swap on-chain. cUSD acquired via Ubeswap V2. |
+| Path Construction (multi-hop `Hop[]`) | Post-hackathon | **Still C1** — requires SwapRouter integration + Sarafu pool adjacency graph |
+| Read-Only Celo Integration | Post-hackathon | **Skipped** — went straight to write (minting, settling, swapping) |
 | Event Bridge | Post-hackathon | **Partial** — dual-chain proof packs (Regen + Celo EAS) working; eth-tracker bridge still C1 |
+| Multi-Participant Settlement | Not planned | **DONE** — TBFFSettler (`0x2a13c4eB...`) with 3 dedicated wallets, 3,000 VCV redistributed in 2 iterations |
+| Routing Visualization | Not planned | **DONE** — `/commons/routing` with react-force-graph-2d, scored edges, detail panels, Celoscan links |
+| Pool Activation | Not planned | **DONE** — Victoria Landscape Hub + Cascadia Bioregion Stewardship (forming → active) |
 
 ### The Hard Problem
 
@@ -63,7 +66,7 @@ These operate at different abstraction levels. The scorer says "this commitment 
 
 #### 1. Voucher/Issuer Mapping — DONE
 
-**Deployed:** VCV (Victoria Commitment Voucher) GiftableToken at [`0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573`](https://celoscan.io/address/0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573) on Celo mainnet. 6 decimals. Agent wallet `0x6f844901...` authorized as minter. 28,600 VCV minted across 23 commitments.
+**Deployed:** VCV (Victoria Commitment Voucher) GiftableToken at [`0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573`](https://celoscan.io/address/0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573) on Celo mainnet. 6 decimals. Agent wallet `0x6f844901...` authorized as minter. 33,400 VCV total supply across 23+ verified commitments.
 
 Not all commitments get tokenized. Only commitments with concrete, redeemable offers qualify — labor hours, goods, stewardship services. Knowledge curation commitments, governance containers, and abstract pledges stay off-chain. The commitment extraction pipeline (audio → AI → structured commitment) determines tokenization appropriateness.
 
