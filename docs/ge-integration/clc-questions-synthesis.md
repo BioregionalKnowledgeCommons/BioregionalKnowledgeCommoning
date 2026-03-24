@@ -27,7 +27,7 @@ Formalized Q&A from CLC whitepaper analysis. Each section: question, BKC's worki
 | Layer | System | Role |
 |-------|--------|------|
 | **Knowledge and curation** | BKC | Place-based memory, steward identity, proof, governance membrane, routing intelligence |
-| **Planning semantics** | Future (ValueFlows/hREA) | Intents, plans, recipes, dependencies, process logic |
+| **Planning semantics** | Future (ValueFlows/hREA) + [Intent Publication](./intent-publication.md) | Intents, plans, recipes, dependencies, process logic. The intent publication proposal partially fills this layer with typed WANT/OFFER/CONDITIONAL intents and agent-mediated matching — bridging the gap between BKC curation and CLC settlement without requiring full VF/hREA. |
 | **Settlement and execution** | CPP/CLC | Pooled redeemable commitments, liquidity, routing, multi-hop settlement |
 
 Not every BKC commitment becomes pooled. BKC holds the wider field — intents, offers, needs, proofs, social context, ecological knowledge. Commitment pools hold the curated subset that pool stewards consider mature, redeemable, and bounded enough for settlement.
@@ -131,7 +131,7 @@ The key insight: CLC routes by token-pair adjacency across pool graphs. BKC rout
 
 **Open questions:**
 - How should routing objectives be weighted? Fixed weights, steward-configured, or community-governed?
-- Can CLC's batch netting / rebalancing layer incorporate BKC routing preferences?
+- Can CLC's batch netting / rebalancing layer incorporate BKC routing preferences? **Partially answered:** The [intent publication proposal](./intent-publication.md) describes how user intents become "virtual edges" in the clearing graph, allowing batch netting to optimize for user needs (not just pool inventory). This is the mechanism by which BKC routing preferences enter the netting layer.
 - How do missing factors (urgency, reciprocity, carrying capacity) get modeled — ontology extension, scoring plugin, or community input?
 
 ---
@@ -221,9 +221,10 @@ This is also relevant to the Coasys/Holochain work in the broader ecosystem — 
 
 **Working answer:** Current mapping workshops focus on needs and available resources. For commitment pooling, they should expand to capture:
 
-- **Offers** — what can this person/organization concretely provide?
+- **Offers** — what can this person/organization concretely provide? → maps to OFFER intents in the [intent publication proposal](./intent-publication.md)
 - **Capacities** — at what scale, frequency, and quality?
-- **Intents** — what might someone commit to if conditions are right?
+- **Intents** — what might someone commit to if conditions are right? → maps to CONDITIONAL intents (threshold activation)
+- **Needs / Gaps** — what is missing in this landscape? → maps to WANT intents
 - **Dependencies** — what prerequisites must be met?
 - **Stewarding entities** — who is accountable for curation and governance?
 - **Candidate pools** — what natural clusters of commitments emerge?
@@ -275,5 +276,7 @@ Key decision criteria at each transition:
 - [CLC Integration Strategy](./clc-integration-strategy.md) — Three-phase technical roadmap
 - [Compatibility Memo](./compatibility-memo.md) — BKC ↔ GE ↔ CLC concept mapping
 - [Commitment Pooling Foundations](../foundations/commitment-pooling-foundations.md) — Lifecycle, governance, and protocol design
+- [Intent Publication & Agent-Mediated Routing](./intent-publication.md) — Async intent layer proposal
+- [Will Ruddick, "A Physics of Intention"](https://willruddick.substack.com/p/a-physics-of-intention) — Commitments as measurable system primitives
 - [Regenerate Cascadia Hub Cultivator](https://regeneratecascadia.org/hub-cultivator/) — Landscape group training program
 - [Sarafu Dune Dashboard](https://dune.com/grassrootseconomics/sarafu-network) — Live network metrics

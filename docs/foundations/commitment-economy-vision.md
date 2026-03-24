@@ -132,6 +132,8 @@ The sharper claim is not that needs are missing, but that they are **not yet com
 
 Making needs compositional means wiring them through this full cycle — not adding a new layer, but connecting what's already there.
 
+The [intent publication proposal](../ge-integration/intent-publication.md) provides a concrete mechanism for this wiring. Declared needs become typed WANT intents that persist in the network — not just data fields on a commitment, but standing signals that agents monitor, that pool stewards can aggregate into demand dashboards, and that the clearing algorithm can incorporate as virtual edges. Offers become OFFER intents visible to the matchmaking layer. Conditional commitments ("I'll provide B if 3 others also commit") become CONDITIONAL intents with threshold activation. This is how the data fields already in the commitment model become compositional across routing, clearing, and activation — and how mapping workshop outputs (the gaps, offers, and relationships surfaced through community practice) become legible to the coordination infrastructure. See also Will Ruddick's [A Physics of Intention](https://willruddick.substack.com/p/a-physics-of-intention), which frames declared commitments as measurable system primitives — intention density, trust as mass, promises as circulation.
+
 Will Ruddick:
 > "A care network is only as stable as the food, water, and repair capacity beneath it. If a watershed fails, care hours get consumed by hauling and coping. If soil is depleted, households face higher volatility, even if coordination is perfect."
 
@@ -162,13 +164,14 @@ Ruddick extends this with Steiner's threefold governance model — Cultural stew
 
 Commitments can do more than exchange — they can chain into production sequences. "I'll deliver processed timber if someone commits raw logs and milling time." This requires conditional commitments, dependency tracking, and process recipes.
 
-BKC has a basic dependency graph (`depends_on` predicate, migration 067) but doesn't yet model intents, plans, recipes, or process logic. ValueFlows/hREA provides the mature formal model for this layer — Intents/Commitments as the resource map, ProcessSpecifications as production recipes, Processes with linked input/output Commitments as conditional production.
+BKC has a basic dependency graph (`depends_on` predicate, migration 067) but doesn't yet model intents, plans, recipes, or process logic. The [intent publication proposal](../ge-integration/intent-publication.md) partially fills this gap with typed WANT/OFFER/CONDITIONAL intents and agent-mediated matching — providing the coordination layer between BKC curation and CLC settlement without requiring full VF/hREA. For richer production sequencing (recipes, processes, staged dependencies), ValueFlows/hREA provides the mature formal model — Intents/Commitments as the resource map, ProcessSpecifications as production recipes, Processes with linked input/output Commitments as conditional production.
 
 This sits in the planning semantics layer between BKC and CLC (documented in [clc-questions-synthesis.md §8](../ge-integration/clc-questions-synthesis.md)):
 
 ```
 BKC (knowledge + curation)
-  → ValueFlows/hREA (intents → plans → recipes → processes)
+  → Intent Publication (WANT/OFFER/CONDITIONAL + agent matching)
+  → ValueFlows/hREA (plans → recipes → processes) [future]
     → CPP/CLC (pooled settlement + routing)
 ```
 

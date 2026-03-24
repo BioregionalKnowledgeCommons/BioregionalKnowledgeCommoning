@@ -87,6 +87,8 @@ CLC's netting yield formalizes the circularity dimension: `(gross routed value �
 
 The commitment data model includes `declaration_type` (offer or need), `fiat_only`, `need_category`, and `monthly_amount_usd` — enabling extraction of both offers and needs from mapping workshop conversations. However, these fields are not yet wired through the full system: pool governance doesn't track aggregate needs gaps, the routing scorer doesn't boost commitments that fill unmet needs, and the evidence loop doesn't yet learn from need fulfillment. Making needs compositional across pooling, routing, activation, and evidence is the next design step. See [commitment-economy-vision.md §4](./commitment-economy-vision.md#4-making-needs-compositional).
 
+The [intent publication proposal](../ge-integration/intent-publication.md) offers a concrete mechanism: declared needs become typed WANT intents, offers become OFFER intents, and conditional commitments become CONDITIONAL intents with threshold activation. These persist in the network, generate demand signals for pool stewards, and can participate in batch netting as virtual edges in the clearing graph — wiring needs through pooling, routing, and clearing without requiring a separate planning layer.
+
 ## Protection and Repair
 
 Commitment pooling requires safety mechanisms — limits, insurance, disputes, forkability, consent boundaries, and bounded autonomy for capital decisions. These are detailed in [commitment-pooling-foundations.md §5](./commitment-pooling-foundations.md#5-governance-guidance) (consent and rights, dispute resolution) and [commitment-economy-vision.md §8](./commitment-economy-vision.md#8-protection-and-repair) (CLC loss waterfall, graduated response, forkability as safety valve).

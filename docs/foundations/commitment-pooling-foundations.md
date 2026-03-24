@@ -258,6 +258,8 @@ The current runtime has two pools created and activated (Victoria Landscape Hub 
 - CLC DAO: [Celo forum post](https://forum.celo.org/t/introducing-clc-dao-credit-routing-for-the-long-tail-of-real-world-commitments-on-celo/12910)
 - Indy Johar, "Sangat-grade infrastructure": Dark Matter Labs research (2025)
 - Will Ruddick, "Touching the Knowledge Commons": [Substack](https://grassrootseconomics.substack.com)
+- Will Ruddick, "A Physics of Intention": [Substack](https://willruddick.substack.com/p/a-physics-of-intention)
+- [Intent Publication & Agent-Mediated Routing](../ge-integration/intent-publication.md) — Async intent layer proposal (WANT/OFFER/CONDITIONAL intents, agent roles, mapping workshop integration)
 - BKC ontology: `Octo/ontology/bkc-ontology.jsonld` (v1.1.0)
 - Commitment API: `Octo/koi-processor/api/routers/commitment_router.py`
 - DB migrations: `056_commitment_registry.sql`, `057_commitment_pools.sql`

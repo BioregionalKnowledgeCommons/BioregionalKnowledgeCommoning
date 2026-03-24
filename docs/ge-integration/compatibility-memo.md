@@ -92,7 +92,7 @@ Time-decay on token balances (encourages circulation). Frontend adds 0.5% buffer
 |---------|-------------|------------|
 | **Multi-hop routing** | `SwapRouter.quoteExactInput(Hop[])` walks pool graph for multi-hop quotes | Routing scorer v0 is single-hop; C1 maps scorer output to `Hop[]` paths |
 | **Value index** | `IQuoter` implementations (DecimalQuoter, RelativeQuoter, OracleQuoter) | `estimated_value_usd` is static; quoter integration is C1 |
-| **Netting flows** | Bilateral/multilateral debt clearing via cycle enumeration | No equivalent — BKC settles via TBFF, not netting |
+| **Netting flows** | Bilateral/multilateral debt clearing via cycle enumeration | BKC settles via TBFF, not netting — but the [intent publication proposal](./intent-publication.md) describes how BKC user intents (WANT/OFFER) become virtual edges in the clearing graph, enabling BKC needs to participate in CLC batch netting runs |
 | **sCLC access receipt** | Time-bounded epoch access key for capped fee-access budget | `governs_pool` predicate + steward role |
 | **SwapPool** | Multi-token vault with token registry, limiter, quoter, fee policy | CommitmentPool with threshold activation |
 | **Credit routing for the long tail** | Making small community commitments routable across regions | Exactly the routing scorer's purpose |
@@ -106,6 +106,7 @@ Time-decay on token balances (encourages circulation). Frontend adds 0.5% buffer
 ### Will Ruddick's Narrative Arc
 
 From the Substack essays:
+- **"A Physics of Intention"** — declared commitments as measurable system primitives: intention density (commitments made / fulfilled over time), trust as mass, promises circulating like water. Directly informs the [intent publication proposal](./intent-publication.md) — intents as expressions of care with observable fulfillment history, not trade orders.
 - **"Footnotes on Intelligence"** — sensing → meaning-making → caring → committing → coordinating → learning (the demo loop we're building)
 - **"From Abstraction to Aliveness"** — concrete promises from coherent agents, not abstract group currency (why BKC commitments carry typed offers/wants/limits)
 - **"Touching the Knowledge Commons"** — shared memory of kept commitments (emotional center — proof packs as witnessed follow-through)

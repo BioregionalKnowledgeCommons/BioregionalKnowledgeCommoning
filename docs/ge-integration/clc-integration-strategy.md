@@ -245,6 +245,17 @@ BKC adds context CLC's token-pair routing doesn't have:
 - **Capacity fit** — commitment size matches pool remaining capacity
 - **Governance compatibility** — steward approval likelihood based on pool governance membrane
 
+### Intent Publication (Proposed Extension)
+
+The workflow above is synchronous — the user initiates, the agent finds a path *now*, or fails. The [Intent Publication & Agent-Mediated Routing](./intent-publication.md) proposal extends this to **asynchronous, persistent intents**:
+
+- Users and communities publish standing offers, needs, and conditional commitments (not just swap orders).
+- Agents hold state about unfulfilled desires and execute when conditions change.
+- User intents become virtual edges in the clearing graph, so unmet needs can be resolved as a side-effect of batch netting runs.
+- Mapping workshop outputs (gaps, offers, relationships) feed directly into the intent layer.
+
+This bridges the gap between CLC's synchronous routing (which returns `no_path_found` and forgets) and the richer coordination mapping workshops produce. See the intent publication doc for the full proposal, intent format, agent roles, and relationship to DeFi intent-centric architectures.
+
 ### Consent-Aware Layer
 
 - `node_private` commitments route through BKC only — never surface on-chain
@@ -320,3 +331,4 @@ BKC provides upstream inputs to CPP interfaces. It does not replace or duplicate
 - [Sarafu Dune Dashboard](https://dune.com/grassrootseconomics/sarafu-network) — live network metrics
 - CLC contracts: `clc-protocol/src/` — SwapPool, SwapRouter, GiftableToken, Limiter (all AGPL-3.0)
 - GE indexing: `grassroots-economics/eth-tracker` + `eth-indexer`
+- [Intent Publication & Agent-Mediated Routing](./intent-publication.md) — Async intent layer proposal (WANT/OFFER/CONDITIONAL intents, agent roles, mapping workshop integration)

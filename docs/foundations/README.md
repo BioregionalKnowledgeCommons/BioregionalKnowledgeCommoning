@@ -18,6 +18,8 @@ Cross-pilot frameworks that can be reused across bioregional knowledge commoning
 - [Commitment pooling foundations](./commitment-pooling-foundations.md): philosophical foundations, technical model (Sarafu/CLC DAO tiers, state machine), three orthogonal operations (create/pledge/verify), governance guidance. Ontology types: `Commitment`, `CommitmentPool`, `CommitmentAction`.
 - [Flow funding foundations](./flow-funding-foundations.md): two-track capital allocation — Bioregional Flow Funding (Hub Cultivator / Regenerate Cascadia, trust-based) and TBFF (MycoFi / Mycopunks, algorithmic threshold overflow). Integration architecture: both tracks write Evidence entities with CAT receipt chains to the knowledge graph.
 
+For how these foundations interface with the GE/CLC on-chain ecosystem — integration strategy, compatibility mapping, intent publication — see [ge-integration/](../ge-integration/).
+
 ## Operations & Security
 - [Federation overview](./federation-overview.md): comprehensive overview of KOI-net federation architecture, membrane governance, and multi-node operations.
 - [Data classification matrix v0.1](./data-classification-matrix-v0.1.md): 34 query sites across 15 public endpoints, consent leakage testing, visibility scope enforcement.
