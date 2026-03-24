@@ -402,7 +402,7 @@
       "id": "initiative.regen-choice-matchmaking",
       "kind": "initiative",
       "title": "RegenCHOICE matchmaking protocol integration",
-      "summary": "Integrate Simon Grant's RegenCHOICE correspondence-based matchmaking protocol into BKC. Enables mutual compatibility matching between bioregional actors (projects, organizations, funders) based on structured enquiry specifications. Choosers define requirements via domain-specific question sets; the system identifies correspondence where both parties mutually satisfy each other's criteria.",
+      "summary": "Integrate Simon Grant's RegenCHOICE correspondence-based matchmaking protocol into BKC. Enables mutual compatibility matching between bioregional actors based on structured enquiry specifications. Key design contributions: bilateral reveal (parties only see each other on mutual fit), commons-governed question library (landscape groups curate domain questions), unanswered-question feedback (iffit mechanism improves matchability iteratively), progressive disclosure (criteria then details then contact). Connects to intent publication proposal — criteria questions enrich WANT/OFFER intent matching beyond token types.",
       "status": "planned",
       "priority": "P2",
       "horizon": "90-180d",
@@ -410,10 +410,18 @@
       "tags": [
         "matchmaking",
         "interop",
-        "governance"
+        "governance",
+        "intents"
       ],
       "source_docs": [
-        "https://wiki.simongrant.org/doku.php/ch:index"
+        "https://wiki.simongrant.org/doku.php/ch:index",
+        "https://wiki.simongrant.org/doku.php/ch:how_it_works",
+        "https://wiki.simongrant.org/doku.php/ch:processing",
+        "https://wiki.simongrant.org/doku.php/ch:question_system",
+        "https://wiki.simongrant.org/doku.php/ch:finding_contacts",
+        "https://wiki.simongrant.org/doku.php/ch:network_notes",
+        "https://wiki.simongrant.org/doku.php/ch:regenchoice_usps",
+        "docs/ge-integration/intent-publication.md"
       ]
     },
     {

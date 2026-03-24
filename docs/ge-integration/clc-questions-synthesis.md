@@ -233,12 +233,23 @@ This is also relevant to the Coasys/Holochain work in the broader ecosystem — 
 
 This bridges bioregional commoning practice and commitment pooling infrastructure. The mapping workshop becomes the intake funnel for the entire pipeline: mapping → commitments → routing → curation → pools → settlement → proof → learning.
 
-**Integration point:** `/commons/commit` templates should match workshop mapping categories. Entity types from mapping (Person, Organization, Project, Commitment, CommitmentPool) already exist in the BKC ontology.
+### Structuring workshop capture: commons-governed question sets
+
+[RegenCHOICE](https://wiki.simongrant.org/doku.php/ch:index) (Simon Grant) offers a useful framework: communities of practice maintain structured **question sets** for their domain, and these questions are the basis for matchmaking ([Question system](https://wiki.simongrant.org/doku.php/ch:question_system)). Applied to mapping workshops: each landscape group curates the questions relevant to their bioregion — a Victoria group might ask about watershed-specific monitoring skills, tidal zone experience, and seasonal availability, while a Skagit group asks about salmon habitat restoration and floodplain management.
+
+These question sets serve double duty:
+- **Workshop facilitation**: Structured questions guide participants to articulate offers and needs in matchable terms, reducing the gap between expressed intent and structured commitment.
+- **Intent matching**: Answers feed into the [intent publication](./intent-publication.md) criteria system (§3), enabling bilateral matching — a WANT intent for "ecological monitoring" matches not just on asset type but on specific criteria (method, season, watershed, experience level).
+
+The question library is a commons — maintained by landscape groups, not centrally authored. This maps to RegenCHOICE's model where "member organisations promoting organic agriculture could together decide what are the most significant questions to ask" ([Question system](https://wiki.simongrant.org/doku.php/ch:question_system)). The library self-limits to domains where specialist stewards exist.
+
+**Integration point:** `/commons/commit` templates should match workshop mapping categories. Entity types from mapping (Person, Organization, Project, Commitment, CommitmentPool) already exist in the BKC ontology. Question sets could be stored as entity collections in the knowledge graph, curated per landscape group.
 
 **Open questions:**
 - What facilitation guides or templates help workshop participants think in terms of commitments and pools?
-- How do workshop facilitators handle the gap between expressed intent and actual commitment?
+- How do workshop facilitators handle the gap between expressed intent and actual commitment? (RegenCHOICE's "iffit" feedback — surfacing which unanswered questions would improve matchability — is one mechanism.)
 - Should mapping outputs go directly into BKC, or through a review/curation step?
+- How do question sets evolve across mapping seasons? Who governs additions and removals?
 
 ---
 

@@ -74,6 +74,11 @@ Intent {
   }
   condition:      expression (for CONDITIONAL type)
   visibility:     PUBLIC | GROUP | PRIVATE
+  criteria:       {                              (optional, for richer matching)
+    question_set:   question_set_id              (ref to commons-governed question library)
+    answers:        { question_id: answer }       (issuer's self-description)
+    requirements:   { question_id: requirement }  (what the issuer wants in a match)
+  }
   metadata:       {
     source:         "mapping_workshop" | "app" | "agent" | ...
     description:    human-readable description
@@ -163,9 +168,12 @@ The `landscape_group` constraint in the intent format allows communities to cont
 Publishing "I want B" reveals information about the user's position and needs. Mitigations:
 
 - **Visibility controls**: Intents can be PUBLIC, GROUP, or PRIVATE.
+- **Bilateral reveal**: When intents carry criteria (§3), a stronger privacy mode is possible — parties only see each other when both satisfy the other's requirements. This follows [RegenCHOICE](https://wiki.simongrant.org/doku.php/ch:how_it_works)'s correspondence model: "you only get to see other people when you are interested in them *and* they in you." Sensitive criteria answers are never exposed to non-matching parties.
+- **Progressive disclosure**: Even after a bilateral match, information is revealed in stages — criteria fit first, then details, then contact — with either party able to withdraw at any stage. See RegenCHOICE [Finding contacts](https://wiki.simongrant.org/doku.php/ch:finding_contacts).
 - **Aggregation**: Demand signals can be published in aggregate ("N users want B") without revealing individual positions.
 - **Agent-to-agent negotiation**: Matchmaker agents can discover bilateral matches without publishing intents to a public registry — using private set intersection or similar techniques.
 - **Expiry**: Intents have bounded lifetimes and are garbage-collected.
+- **Unanswered-question feedback**: When a match fails due to missing criteria answers, the system can surface *which* unanswered questions would improve matchability — without revealing who asked. This "iffit" mechanism (from RegenCHOICE [Processing](https://wiki.simongrant.org/doku.php/ch:processing)) helps users improve their intents iteratively without exposing the intent graph.
 
 ---
 
@@ -196,7 +204,19 @@ This framework treats intents not as trade orders but as **expressions of care w
 
 Ruddick's work does not reference the DeFi intent discourse (Anoma, ERC-7683, etc.), and that discourse does not reference commitment pooling. The convergence is organic — both traditions independently arrived at the insight that **coordination improves when desires are declared, persisted, and matched by agents**. But they optimize for different things: DeFi intents optimize execution efficiency; Ruddick's intention physics optimizes relational density and care circulation.
 
-### 8.2 DeFi Intent-Centric Architecture
+### 8.2 RegenCHOICE (Simon Grant)
+
+[RegenCHOICE](https://wiki.simongrant.org/doku.php/ch:index) is a bilateral matchmaking protocol conceived in 1993 by Simon Grant, designed to connect people based on mutual criteria satisfaction. It comes from a different tradition than either DeFi intents or commitment pooling — matchmaking, HR, and community connecting — but contributes three ideas directly applicable to this proposal:
+
+**Bilateral correspondence.** Parties only see each other when both satisfy the other's requirements ([How it works](https://wiki.simongrant.org/doku.php/ch:how_it_works), [USPs](https://wiki.simongrant.org/doku.php/ch:regenchoice_usps)). This is a stronger privacy guarantee than one-sided discovery — you can't learn about someone's needs unless you also match theirs. Applied here: WANT and OFFER intents with criteria could use bilateral reveal as an optional privacy mode (§6).
+
+**Commons-governed question library.** Communities of practice maintain structured question sets for their domain ([Question system](https://wiki.simongrant.org/doku.php/ch:question_system)). A network of organic agriculture organizations curates questions about knowledge and skills; a watershed group curates questions about ecological monitoring capacity. Applied here: landscape groups maintain criteria question sets that enrich WANT/OFFER matching beyond token types — "Do you have eDNA sampling experience?", "Are you available spring/summer?", "Can you work within the Salish Sea watershed?"
+
+**Unanswered-question feedback (iffit).** When a match fails due to missing answers, the system surfaces which questions would improve matchability — without revealing who asked ([Processing](https://wiki.simongrant.org/doku.php/ch:processing)). Applied here: when a WANT intent goes unfulfilled, the system can tell the issuer "answering these 3 questions would connect you to potential matches" — improving intent quality iteratively.
+
+RegenCHOICE also proposes a [federated network architecture](https://wiki.simongrant.org/doku.php/ch:network_notes) with hierarchical levels (belonging → community of practice → server → global), governed by sociocracy. This maps to BKC's KOI-net topology (leaf → coordinator → federation) and CLC's confederation model.
+
+### 8.3 DeFi Intent-Centric Architecture
 
 "Intent-centric architecture" has become a significant design pattern in crypto, driven by UX complexity, MEV extraction, and liquidity fragmentation. The core idea is shared with this proposal: **users declare desired end states, not execution steps**. But the application context differs.
 
@@ -212,20 +232,20 @@ Anoma's solver/gossip/settlement separation maps well to our User Agent / Matchm
 
 **[CoW Protocol](https://cow.fi)** uses batch auction-based intent matching with **coincidence-of-wants** matching where peer-to-peer trades bypass AMMs entirely. This is the closest DeFi analogue to our intent-level netting concept (§4.3).
 
-### 8.3 Convergence and Divergence
+### 8.4 Convergence and Divergence
 
-| | DeFi Intents (Anoma, ERC-7683, CoW) | Ruddick / CPP | This Proposal |
-|---|---|---|---|
-| **Core question** | How do we execute trades efficiently? | How do we make commitments circulatable? | How do we make community needs and offers legible to routing? |
-| **What is an intent?** | A signed order specifying desired end state | A declared commitment backed by time, energy, or resources | SWAP, WANT, OFFER, or CONDITIONAL — typed and structured |
-| **Agents** | Competitive profit-maximizing solvers | Routers/clearing agents serving pool constraints | Matchmakers, demand signal aggregators, community-serving agents |
-| **Matching** | Global permissionless solver market | Multilateral cycle-finding across pools | Federated, with community-sovereign visibility (PUBLIC / GROUP / PRIVATE) |
-| **What gets optimized** | Price, MEV protection, cross-chain execution | Settlement velocity, intention density | Coordination legibility — unmet needs shape network topology |
-| **Sources** | Wallet interactions, trading interfaces | Pool steward configuration | Mapping workshops, community assemblies, everyday economic life |
-| **Collective action** | Not addressed | Pool-level opt-in | Conditional intents with threshold activation |
-| **Fulfillment feedback** | Transaction settlement | Kept commitments build trust mass | Evidence of fulfillment feeds back into governance and mapping cycles |
+| | DeFi Intents | Ruddick / CPP | RegenCHOICE | This Proposal |
+|---|---|---|---|---|
+| **Core question** | How do we execute trades efficiently? | How do we make commitments circulatable? | How do we find compatible people? | How do we make community needs and offers legible to routing? |
+| **What is an intent?** | A signed order specifying desired end state | A declared commitment backed by time, energy, or resources | An enquiry: criteria answers + requirements | SWAP, WANT, OFFER, or CONDITIONAL — typed, with optional criteria |
+| **Agents** | Competitive profit-maximizing solvers | Routers/clearing agents serving pool constraints | Processing servers checking bilateral fit | Matchmakers, demand signal aggregators, community-serving agents |
+| **Matching** | Global permissionless solver market | Multilateral cycle-finding across pools | Bilateral correspondence — mutual satisfaction only | Federated, with bilateral reveal and community-sovereign visibility |
+| **What gets optimized** | Price, MEV protection, cross-chain execution | Settlement velocity, intention density | Compatibility quality, minimal question burden | Coordination legibility — unmet needs shape network topology |
+| **Privacy model** | Public mempool (intents visible to all solvers) | On-chain (inherently public) | Bilateral reveal + staged disclosure | PUBLIC / GROUP / PRIVATE + bilateral reveal mode |
+| **Sources** | Wallet interactions, trading interfaces | Pool steward configuration | Structured question responses | Mapping workshops, community assemblies, everyday economic life |
+| **Feedback** | Transaction settlement | Kept commitments build trust mass | Unanswered-question prompts (iffit) | Evidence of fulfillment + iffit feedback |
 
-Architectural patterns from the DeFi intent world — gossip-based discovery, solver competition, standardized formats, escrow-based settlement — are directly applicable and should inform implementation. But the design center is Ruddick's: **intents as expressions of care and capacity**, not trade orders. The routing system serves relational density, not price optimization.
+Four traditions, one structural insight: coordination improves when desires are declared, persisted, and matched by agents. DeFi intents contribute architectural patterns (gossip, solvers, standardized formats). Ruddick contributes the design center (intents as expressions of care, not trade orders). RegenCHOICE contributes the matching discipline (bilateral correspondence, criteria commons, progressive disclosure). This proposal synthesizes all three for community economies.
 
 ---
 
