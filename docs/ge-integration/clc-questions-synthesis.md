@@ -251,6 +251,8 @@ The question library is a commons — maintained by landscape groups, not centra
 - Should mapping outputs go directly into BKC, or through a review/curation step?
 - How do question sets evolve across mapping seasons? Who governs additions and removals?
 
+**Pilot validation:** The [MVIS Pilot Spec](../../pilots/front-range-cascadia-2026/mvis-pilot-spec.md) for Regenerate Cascadia (May–July 2026) tests the workshop feedback loop: intents captured from mapping workshop outputs are entered into a structured registry, matched weekly by a coordinator-vetted algorithm, and the resulting Match Report opens the next workshop session. This provides the first empirical data on whether structured intent capture from workshops produces actionable matches and how the vocabulary stabilizes across sessions.
+
 ---
 
 ## 10. Decision Ladder: TBFF to Pool to CLC

@@ -14,6 +14,8 @@ BKC provides **off-chain curation and routing intelligence**. GE/CLC provides **
 
 4. **[Intent Publication & Agent-Mediated Routing](./intent-publication.md)** — Proposal (draft). Generalizes the CPP whitepaper's pool-level "rebalance intents" to users and communities. Typed intents (SWAP, WANT, OFFER, CONDITIONAL), agent roles, mapping workshop integration, privacy model. Relates to DeFi intent-centric architectures (Anoma, ERC-7683, CoW) and Will Ruddick's "Physics of Intention" — convergent design from different starting points.
 
+5. **[MVIS Pilot Spec](../../pilots/front-range-cascadia-2026/mvis-pilot-spec.md)** — Operational contract for the Cascadia pilot (May–July 2026). Scoped intent types (OFFER, WANT, SWAP), hybrid intake workflow, coordinator-vetted matching, state model, controlled vocabulary, success criteria.
+
 ## Relationship to Foundations
 
 The [foundations/](../foundations/) docs describe BKC's own architecture — commitment pooling, flow funding, pattern language, federation, ontology. This directory describes how that architecture *interfaces with* the GE/CLC ecosystem. Cross-references flow both ways:

@@ -265,6 +265,8 @@ Four traditions, one structural insight: coordination improves when desires are 
 
 - [ ] Review with Will Ruddick and CLC protocol team
 - [ ] Prototype intent format as part of the CLC simulation (extend NOAM with virtual edges)
-- [ ] Design mapping workshop → intent pipeline for Regenerate Cascadia pilot (May–July 2026)
+- [x] Design mapping workshop → intent pipeline for Regenerate Cascadia pilot (May–July 2026) — see [MVIS Pilot Spec](../../pilots/front-range-cascadia-2026/mvis-pilot-spec.md)
 - [ ] Evaluate privacy-preserving matchmaking approaches
 - [ ] Draft MCC extension for intent publication (Chapter 8.1.1 addendum)
+
+**Pilot Implementation:** See [MVIS Pilot Spec](../../pilots/front-range-cascadia-2026/mvis-pilot-spec.md) for the operational contract for the Cascadia pilot (May–July 2026), including scoped intent types, coordinator workflow, and hybrid intake design.

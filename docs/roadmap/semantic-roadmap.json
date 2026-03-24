@@ -402,7 +402,7 @@
       "id": "initiative.regen-choice-matchmaking",
       "kind": "initiative",
       "title": "RegenCHOICE matchmaking protocol integration",
-      "summary": "Integrate Simon Grant's RegenCHOICE correspondence-based matchmaking protocol into BKC. Enables mutual compatibility matching between bioregional actors based on structured enquiry specifications. Key design contributions: bilateral reveal (parties only see each other on mutual fit), commons-governed question library (landscape groups curate domain questions), unanswered-question feedback (iffit mechanism improves matchability iteratively), progressive disclosure (criteria then details then contact). Connects to intent publication proposal — criteria questions enrich WANT/OFFER intent matching beyond token types.",
+      "summary": "Integrate Simon Grant's RegenCHOICE correspondence-based matchmaking protocol into BKC. Enables mutual compatibility matching between bioregional actors based on structured enquiry specifications. Key design contributions: bilateral reveal (parties only see each other on mutual fit), commons-governed question library (landscape groups curate domain questions), unanswered-question feedback (iffit mechanism improves matchability iteratively), progressive disclosure (criteria then details then contact). MVIS coordinator matching provides the operational base for RegenCHOICE criteria integration — the intent registry and match proposal workflow are the substrate onto which question-set-based matching layers.",
       "status": "planned",
       "priority": "P2",
       "horizon": "90-180d",
@@ -442,7 +442,7 @@
       "id": "work.regen-choice-question-set-prototype",
       "kind": "work_item",
       "title": "Prototype bioregional question sets for RegenCHOICE matching",
-      "summary": "Design and test domain-specific question sets for bioregional matchmaking: project-funder matching, organization-collaboration matching, practice-bioregion matching. Validate correspondence detection with real BKC entities.",
+      "summary": "Design and test domain-specific question sets for bioregional matchmaking: project-funder matching, organization-collaboration matching, practice-bioregion matching. Controlled asset vocabulary from MVIS pilot feeds into question set design — asset categories become the first layer of matching criteria. Validate correspondence detection with real BKC entities.",
       "status": "planned",
       "priority": "P2",
       "horizon": "90-180d",
@@ -1423,6 +1423,43 @@
         "../../pilots/front-range-cascadia-2026/dual-bioregion-pilot-plan-v2.md"
       ],
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/108"
+    },
+    {
+      "id": "work.mvis-intent-registry",
+      "kind": "work_item",
+      "title": "Build intent registry on personal-koi backend",
+      "summary": "PostgreSQL tables (intent_registry, intent_match_proposals, intent_asset_vocabulary, landscape_group_config) + FastAPI router with CRUD, matching, coordinator digest. Intents as first-class KOI graph entities. Hybrid intake via transcript extraction + manual scribe, both creating draft intents for human review.",
+      "status": "in_progress",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": ["intents", "cascadia", "pilot"],
+      "source_docs": [
+        "../../pilots/front-range-cascadia-2026/mvis-pilot-spec.md",
+        "../ge-integration/intent-publication.md"
+      ]
+    },
+    {
+      "id": "work.mvis-coordinator-matching",
+      "kind": "work_item",
+      "title": "Coordinator matching + digest for Cascadia pilot",
+      "summary": "Match proposal workflow (candidate to introduced to accepted/declined), weekly coordinator digest per landscape group, privacy-safe API (contact info only in digest). Match report format for workshop feedback loop.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "tags": ["intents", "cascadia", "matchmaking"]
+    },
+    {
+      "id": "work.mvis-asset-vocabulary",
+      "kind": "work_item",
+      "title": "Curate controlled asset vocabulary from mapping workshops",
+      "summary": "Seed intent_asset_vocabulary table from first Cascadia mapping workshop outputs. Define categories (equipment, food, labor, monitoring, transport). Validate with landscape coordinators.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "tags": ["intents", "cascadia", "vocabulary"]
     },
     {
       "id": "work.chat-fanout-scoring",
@@ -3140,6 +3177,31 @@
       "from": "work.c2-regenerate-cascadia-pilot",
       "to": "initiative.commitment-pooling-integration",
       "type": "delivers"
+    },
+    {
+      "from": "work.mvis-intent-registry",
+      "to": "outcome.commitment-pools-provable",
+      "type": "delivers"
+    },
+    {
+      "from": "work.mvis-coordinator-matching",
+      "to": "outcome.commitment-pools-provable",
+      "type": "delivers"
+    },
+    {
+      "from": "work.mvis-asset-vocabulary",
+      "to": "outcome.commitment-pools-provable",
+      "type": "delivers"
+    },
+    {
+      "from": "work.mvis-intent-registry",
+      "to": "work.mvis-coordinator-matching",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.mvis-coordinator-matching",
+      "to": "initiative.regen-choice-matchmaking",
+      "type": "informs"
     },
     {
       "from": "initiative.commitment-pooling-integration",
