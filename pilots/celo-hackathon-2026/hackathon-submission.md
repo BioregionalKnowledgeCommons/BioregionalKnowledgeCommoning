@@ -1,7 +1,7 @@
 # Hackathon Submission Tracker
 
 **Current time zone:** MDT (UTC-6) — Salt Lake City
-**Last updated:** Mar 21, 2026 4:45 PM MDT
+**Last updated:** Mar 22, 2026 1:30 AM MDT
 
 ---
 
@@ -106,7 +106,7 @@ Built on @Celo with VCV tokens, TBFF settlement, EAS attestations.
 | **PG Data Collection** | $1,000 | Octant | BKC collects bioregional knowledge as public good |
 | **PG Data Analysis** | $1,000 | Octant | Routing scorer analyzes commitment-pool fit |
 | **Mechanism Design for PG Evaluation** | $1,000 | Octant | TBFF is a mechanism for evaluating public goods commitments |
-| **Filecoin Agentic Storage (1st)** | $1,000 | Filecoin Foundation | Content-addressed proof packs on IPFS/Filecoin (needs build) |
+| ~~Filecoin Agentic Storage~~ | ~~$1,000~~ | ~~Filecoin Foundation~~ | ~~DROPPED — requires FOC mainnet deployment, not built~~ |
 | ~~Best OpenServ Build Story~~ | ~~$250~~ | ~~OpenServ~~ | ~~DROPPED — requires building with OpenServ, which we don't use~~ |
 
 **Note:** Both Protocol Labs tracks are shared with PL_Genesis (through March 31, $150K+ pool) — work continues after Synthesis deadline.
@@ -132,17 +132,19 @@ Built on @Celo with VCV tokens, TBFF settlement, EAS attestations.
 
 ## LIVE DEMO URLS (for submissions)
 
-- **Routing visualization:** https://45.132.245.30.sslip.io/commons/routing
-- **Commitments dashboard:** https://45.132.245.30.sslip.io/commons/commitments
-- **Create commitment:** https://45.132.245.30.sslip.io/commons/commit
-- **Pools:** https://45.132.245.30.sslip.io/commons/pools
-- **Flow funding:** https://45.132.245.30.sslip.io/commons/flow-funding
-- **Knowledge Garden:** https://45.132.245.30.sslip.io
-- **VCV token:** https://celoscan.io/address/0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573
+- **Knowledge Garden (main site + chat widget):** https://salishsee.life
+- **Ask Octo (chat):** https://salishsee.life/commons/chat
+- **Extract commitments from transcript:** https://salishsee.life/commons/commit
+- **Routing visualization:** https://salishsee.life/commons/routing
+- **Commitments dashboard:** https://salishsee.life/commons/commitments
+- **Pools:** https://salishsee.life/commons/pools
+- **Flow funding:** https://salishsee.life/commons/flow-funding
+- **VCV token:** https://celoscan.io/token/0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573
 - **Multi-Settler:** https://celoscan.io/address/0x2a13c4eB94Fe5b5E93c1Fe380bC9Af3f72Cb3faF
 - **SwapPool:** https://celoscan.io/address/0x181E36AD6ae826b75e739C3510Bd059b27C34aB4
 - **EAS Attestation:** https://celo.easscan.org/attestation/view/0xf6597a662d2d94aeab6b2ebe747df0ef7dd60df6cd91eba540cf60fa73666298
 - **8004scan Agent:** https://www.8004scan.io/agents/celo/1855
+- **A2A Agent Card:** https://salishsee.life/.well-known/agent.json
 
 ---
 
@@ -158,7 +160,7 @@ Built on @Celo with VCV tokens, TBFF settlement, EAS attestations.
 | agent_log.json | [agent_log.json](agent_log.json) | PL submission artifact keyed to ERC-8004 identity |
 | Submission pack | [submission-pack.md](submission-pack.md) | Ready (blurbs, tweet, shot list) |
 | Demo orchestrator | `Octo/scripts/celo/demo-full-loop.sh` | Ready (4 acts) |
-| Demo video | N/A | NOT CREATED |
+| Demo video | `~/Desktop/BKC-Demo-16x9.mp4` | Ready (108s, 16:9, captions burned in) |
 
 ---
 

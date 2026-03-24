@@ -2,16 +2,16 @@
 
 - Program: **Bioregional Knowledge Commons**
 - Roadmap ID: `bkc.roadmap.2026.part-b`
-- Version: `0.8.3`
-- As of: `2026-03-12`
-- Generated: `2026-03-12 04:14 UTC`
+- Version: `0.9.0`
+- As of: `2026-03-22`
+- Generated: `2026-03-23 01:08 UTC`
 
 ## Status Summary
 
 | Status | Count |
 |---|---|
 | `in_progress` | 17 |
-| `planned` | 86 |
+| `planned` | 96 |
 | `blocked` | 0 |
 | `done` | 55 |
 | `deprecated` | 0 |
@@ -63,7 +63,12 @@
 | `work.node-salt-spring-island` | Salt Spring Island KOI node deployment | `in_progress` | `P1` | `30-90d` | `owner.samu` |
 | `work.p2p-mcp-bootstrap-hardening` | Harden MCP bootstrap — cross-platform fixes + first-session verification | `in_progress` | `P2` | `0-30d` | `owner.darren` |
 | `work.s2-security-lane` | Add security lane to operational checkpoints | `planned` | `P0` | `0-30d` | `owner.darren` |
-| `work.b5-eval-gates` | Define B5 chat evaluation gates | `planned` | `P0` | `0-30d` | `owner.darren` |
+| `work.b5-eval-gates` | B5 — Automated evaluation pipeline (DeepEval + RAGAS) | `planned` | `P0` | `0-30d` | `owner.darren` |
+| `work.b6-hybrid-bm25-rrf` | B6 — Hybrid BM25 + dense retrieval with RRF | `planned` | `P0` | `0-30d` | `owner.darren` |
+| `work.b7-cross-encoder-reranking` | B7 — Cross-encoder reranking (FlashRank) | `planned` | `P0` | `0-30d` | `owner.darren` |
+| `work.b8-contextual-retrieval` | B8 — Contextual retrieval | `planned` | `P0` | `0-30d` | `owner.darren` |
+| `work.b8a-entity-enrichment` | B8a — Entity description enrichment | `planned` | `P0` | `0-30d` | `owner.darren` |
+| `work.b8b-multi-query-expansion` | B8b — Multi-query expansion | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.external-pipeline-1-live` | External ingest pipeline #1 live | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.external-pipeline-2-live` | External ingest pipeline #2 live | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.r0-resolver-registration-smoke` | Gate: MsgDefineResolver + MsgRegisterResolver smoke on testnet | `planned` | `P0` | `0-30d` | `owner.darren` |
@@ -77,6 +82,10 @@
 | `work.c0-commitment-governance-extension` | C0 — Extend commons governance membrane to commitment lifecycle | `planned` | `P1` | `0-30d` | `owner.darren` |
 | `work.c0-evidence-commitment-bridge` | C0 — Wire Evidence entities to proves_commitment predicate | `planned` | `P1` | `0-30d` | `owner.darren` |
 | `work.p2p-agent-message-rid-and-routing` | Agent-message RID namespace + server-side inbox routing in KOI poller | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `work.b10-multi-tool-orchestration` | B10 — Multi-tool retrieval orchestration | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `work.b11-raptor-tree` | B11 — RAPTOR hierarchical summarization | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `work.b2-graphrag-v1` | B2 — HippoRAG 2 PPR graph retrieval | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `work.b9-agentic-sql-cypher` | B9 — Agentic retrieval: schema-aware SQL + Text-to-Cypher | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.c1-commitment-pool-api` | C1 — CommitmentPool full mechanics (threshold, activation, governance) | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.c1-tbff-commitment-threshold` | C1 — Extend TBFF threshold policy to include commitment activation gates | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.c1-ge-protocol-study` | C1 — Grassroots Economics / Sarafu protocol compatibility analysis | `planned` | `P1` | `30-90d` | `owner.darren` |
@@ -87,16 +96,17 @@
 | `work.b3-federated-chat-policy` | Implement federated chat policy boundaries | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.p2p-koi-transport-adapter` | KoiTransport — claude-matrix Transport adapter calling KOI API | `planned` | `P1` | `30-90d` | `owner.shawn` |
 | `work.r1-ledger-msgattest` | MsgAttest verifier signature flow | `planned` | `P1` | `30-90d` | `owner.darren` |
-| `work.b2-graphrag-v1` | Prototype GraphRAG v1 | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.r1-ledger-msganchor` | Regen Ledger MsgAnchor mainnet integration | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.r1-resolver-health-monitor` | Resolver health monitoring and backup endpoint config | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.s5-tee-spike` | TEE confidential RAG spike | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.p2p-three-peer-smoke-test` | Three-peer smoke test — vault sync + agent messaging across darren/shawn/samu | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.s4-ucan-bridge-spike` | UCAN bridge spike | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `work.b12-federated-retrieval` | B12 — QueryPlan IR + federated retrieval | `planned` | `P1` | `90-180d` | `owner.darren` |
 | `work.c2-cross-node-pool-aggregation` | C2 — Cross-bioregion commitment pooling via federated events | `planned` | `P1` | `180-365d` | `owner.darren` |
 | `work.c2-commitment-koi-net-events` | C2 — Extend KOI-net protocol to carry ECDSA-signed commitment events | `planned` | `P1` | `180-365d` | `owner.darren` |
 | `work.c2-regenerate-cascadia-pilot` | C2 — Pilot commitment pool with Regenerate Cascadia | `planned` | `P1` | `180-365d` | `owner.darren` |
 | `work.c1-demurrage-policy-spec` | C1 — Design optional demurrage policy for stale unredeemed pledges (spec only) | `planned` | `P2` | `30-90d` | `owner.darren` |
+| `work.b13-ad4m-coasys-bridge` | B13 — AD4M/Coasys federation substrate integration | `planned` | `P2` | `90-180d` | `owner.darren` |
 | `work.r2-regen-bkc-entity-bridge` | Bidirectional entity federation with sharing policies | `planned` | `P2` | `90-180d` | `owner.darren` |
 | `work.c2-commitment-federation` | C2: Federated commitment pooling across bioregions | `planned` | `P2` | `90-180d` | `owner.darren` |
 | `work.ce-category-taxonomy` | Define 130 CE material/technology categories as BKC Concept entities | `planned` | `P2` | `90-180d` | `owner.darren` |
@@ -155,98 +165,108 @@
 
 1. `work.a2a-agent-card` — A2A agent card deployment (done)
 2. `work.b1-chat-retrieval-hardening` — B1 — Chat retrieval hardening (done)
-3. `work.b5-eval-gates` — Define B5 chat evaluation gates (planned)
-4. `work.c0-commitment-philosophy-doc` — C0 — Commitment pooling foundations document (done)
-5. `work.c1-demurrage-policy-spec` — C1 — Design optional demurrage policy for stale unredeemed pledges (spec only) (planned)
-6. `work.c1-ge-protocol-study` — C1 — Grassroots Economics / Sarafu protocol compatibility analysis (planned)
-7. `work.c1-pool-governance-membrane` — C1 — Steward approval flow for pool creation and activation (planned)
-8. `work.c1-tbff-commitment-threshold` — C1 — Extend TBFF threshold policy to include commitment activation gates (planned)
-9. `work.c2-commitment-federation` — C2: Federated commitment pooling across bioregions (planned)
-10. `work.c2-cross-node-pool-aggregation` — C2 — Cross-bioregion commitment pooling via federated events (planned)
-11. `work.c2-hypercert-from-commitment` — C2 — Hypercerts minted from REDEEMED commitment + linked Evidence (planned)
-12. `work.c2-regenerate-cascadia-pilot` — C2 — Pilot commitment pool with Regenerate Cascadia (planned)
-13. `work.ce-ecoregion-mapping` — Map CE 867 ecoregion zones to BKC bioregion nodes (planned)
-14. `work.ce-mobile-app-spec` — Write BKC-CE mobile app integration spec (CEMVC-compatible) (planned)
-15. `work.ce-ontology-extension` — Extend BKC ontology with Commodity Ecology entity types (planned)
-16. `work.ce-three-questions-protocol` — Model CE three regional sustainability questions as BKC Protocol (planned)
-17. `work.ce-whitaker-pawar-ingest` — Ingest Whitaker & Pawar 2020 Commodity Ecology paper into KOI (planned)
-18. `work.chat-fanout-scoring` — Chat fanout scoring and all-node responses (done)
-19. `work.commons-prestage-helper` — Commons pre-stage helper (KOI-net share runbook) (done)
-20. `work.demo-smoke-test-suite` — demo-smoke.sh — automated 6-check preflight for all 4 nodes (done)
-21. `work.entity-seeding-swarm-actors` — Swarm actor entity seeding (done)
-22. `work.flow-funding-foundations-doc` — Flow funding foundations document (done)
-23. `work.four-node-parity` — All 4 nodes at same codebase version, smoke tested (done)
-24. `work.governance-pilot-workspace` — Dual-bioregion pilot workspace + V2 triad governance model (done)
-25. `work.koi-protocol-alignment` — P5–P9 KOI-net protocol alignment + ECDSA key encryption (done)
-26. `work.llm-openai-migration` — LLM backend migrated from Gemini to OpenAI (gpt-4o-mini) (done)
-27. `work.native-land-watersheds` — Native Land Digital API + GRDC watershed data integration (done)
-28. `work.node-salt-spring-island` — Salt Spring Island KOI node deployment (in_progress)
-29. `work.nou-agent-auth-wave-a` — Agent bearer-token auth live (Wave A shipped) (done)
-30. `work.octo-initial-setup` — Octo agent initial setup + holonic federation architecture (done)
-31. `work.p2p-agent-message-rid-and-routing` — Agent-message RID namespace + server-side inbox routing in KOI poller (planned)
-32. `work.p2p-mcp-bootstrap-hardening` — Harden MCP bootstrap — cross-platform fixes + first-session verification (in_progress)
-33. `work.p2p-vault-sync-shawn-onboard` — Onboard Shawn as third vault sync peer via invite-token flow (in_progress)
-34. `work.quality-gates-cat-receipts` — Quality gates (4-stage pipeline) + CAT receipts (migration 055) (done)
-35. `work.r0-claims-schema-alignment` — Align BKC Commitment/Evidence with Claims Engine data model v2 (in_progress)
-36. `work.r1-claims-grant-matching` — Claims-to-grants matching for Giveth/Gitcoin rounds (planned)
-37. `work.r1-resolver-health-monitor` — Resolver health monitoring and backup endpoint config (planned)
-38. `work.r2-commoning-koi-mcp-split` — commoning-koi-mcp split — 15 shared contract tools (planned)
-39. `work.r2-regen-bkc-entity-bridge` — Bidirectional entity federation with sharing policies (planned)
-40. `work.r2-regen-compute-integration` — Regen Compute ecological credit retirement for BKC AI workloads (planned)
-41. `work.receipt-chain-fix` — Fix /ingest to create real CAT receipt rows (done)
-42. `work.regen-choice-ontology-mapping` — Map RegenCHOICE concepts to BKC ontology (planned)
-43. `work.s3-key-lifecycle-runbook` — Publish key lifecycle and incident runbook (planned)
-44. `work.s6-evidence-grading` — Introduce evidence grading in architecture decisions (planned)
-45. `work.seed-build-day-entities-script` — Build-day entity seeding operator script (done)
-46. `work.semantic-roadmap-model` — Semantic roadmap model + generator + CI validation (done)
-47. `work.swarm-map-infographic` — Three-plane swarm map infographic (done)
-48. `work.telegram-gate-metric-alignment` — Gate messaging metric alignment (done)
-49. `work.victoria-landscape-hub-seeding` — Seed Victoria Landscape Hub entities (done)
-50. `work.watershed-realtime-dashboard` — Real-time basin dashboard: reservoirs, snow, stream gauges (done)
-51. `work.web-ingest-ui` — Web ingest UI pipeline (URL → entity → confirm → receipt) (done)
-52. `work.web-visualizer-phase1` — 3D globe visualizer + NASA imagery + ecoregion overlays (done)
-53. `work.weekly-proof-pack` — Weekly proof pack publishing cadence (planned)
-54. `work.b2-graphrag-v1` — Prototype GraphRAG v1 (planned)
-55. `work.s4-ucan-bridge-spike` — UCAN bridge spike (planned)
-56. `work.s5-tee-spike` — TEE confidential RAG spike (planned)
-57. `work.c0-commitment-governance-extension` — C0 — Extend commons governance membrane to commitment lifecycle (planned)
-58. `work.tbff-threshold-policy-v0` — TBFF threshold policy v0 (done)
-59. `work.c1-entity-mirror-graphrag` — C1: Commitment entity registry mirror + GraphRAG (planned)
-60. `work.c2-commitment-koi-net-events` — C2 — Extend KOI-net protocol to carry ECDSA-signed commitment events (planned)
-61. `work.ce-category-taxonomy` — Define 130 CE material/technology categories as BKC Concept entities (planned)
-62. `work.koi-federation-wiring` — KOI-net federation infrastructure (poller, event emission, peer sync) (done)
-63. `work.p2p-koi-transport-adapter` — KoiTransport — claude-matrix Transport adapter calling KOI API (planned)
-64. `work.r0-claims-engine-api-client` — Thin Claims Engine client in koi-processor (in_progress)
-65. `work.c0-evidence-commitment-bridge` — C0 — Wire Evidence entities to proves_commitment predicate (planned)
-66. `work.tbff-settlement-evidence-bridge` — TBFF settlement to Evidence entity endpoint (done)
-67. `work.regen-choice-question-set-prototype` — Prototype bioregional question sets for RegenCHOICE matching (planned)
-68. `work.hub-cultivator-decision-logging` — Hub Cultivator decision logging via /ingest (done)
-69. `work.bff-live-integration` — BFF layer + live KOI node integration + entity browser + search (done)
-70. `work.owocki-tranche-proposal-v1` — Owocki milestone tranche proposal v1 (planned)
-71. `work.b4-tbff-flow-integration` — Implement TBFF flow write-back loop (in_progress)
-72. `work.c1-commitment-pool-api` — C1 — CommitmentPool full mechanics (threshold, activation, governance) (planned)
-73. `work.gv-node-deployment` — Greater Victoria leaf node deployed to remote server (poly) (done)
-74. `work.fr-node-deployment` — Front Range KOI node deployed (localhost:8355) (done)
-75. `work.p2p-three-peer-smoke-test` — Three-peer smoke test — vault sync + agent messaging across darren/shawn/samu (planned)
-76. `work.r0-multi-party-verification` — Multi-party claim verification via commons governance membrane (planned)
-77. `work.passkey-auth` — WebAuthn passkey auth + steward authorization per node (done)
-78. `work.tbff-receipt-to-evidence-v0` — TBFF receipt to Evidence write-back v0 (done)
-79. `work.external-pipeline-1-live` — External ingest pipeline #1 live (planned)
-80. `work.c0-commitment-registry` — C0 — Commitment registry API (create, get, state transition, evidence link) (done)
-81. `work.r0-schema-freeze-gate` — Gate: Schema v2 field mapping finalized and reviewed (planned)
-82. `work.c0-commitment-pooling` — C0: Commitment pooling — ontology, migrations, API router (done)
-83. `work.external-pipeline-2-live` — External ingest pipeline #2 live (planned)
-84. `work.octo-branch-consolidation` — Merge Octo feature branch into canonical main + consolidate overlays into vendor (planned)
-85. `work.c0-commitment-ontology` — C0 — Add Commitment entity types and predicates to ontology (done)
-86. `work.r0-testnet-anchor-smoke` — Gate: MsgAnchor smoke test on Regen testnet (done)
-87. `work.r0-resolver-registration-smoke` — Gate: MsgDefineResolver + MsgRegisterResolver smoke on testnet (planned)
-88. `work.r0-first-claim-from-evidence` — Gate: First claim submitted from existing BKC Evidence entity (testnet) (done)
-89. `work.r1-ledger-msganchor` — Regen Ledger MsgAnchor mainnet integration (planned)
-90. `work.r1-ledger-msgattest` — MsgAttest verifier signature flow (planned)
-91. `work.s1-data-class-matrix` — Define and publish data-class policy matrix (done)
-92. `work.r1-challenge-dispute` — Claim challenge/dispute mechanism (planned)
-93. `work.s2-security-lane` — Add security lane to operational checkpoints (planned)
-94. `work.b3-federated-chat-policy` — Implement federated chat policy boundaries (planned)
+3. `work.b11-raptor-tree` — B11 — RAPTOR hierarchical summarization (planned)
+4. `work.b13-ad4m-coasys-bridge` — B13 — AD4M/Coasys federation substrate integration (planned)
+5. `work.b2-graphrag-v1` — B2 — HippoRAG 2 PPR graph retrieval (planned)
+6. `work.b7-cross-encoder-reranking` — B7 — Cross-encoder reranking (FlashRank) (planned)
+7. `work.b8a-entity-enrichment` — B8a — Entity description enrichment (planned)
+8. `work.b8b-multi-query-expansion` — B8b — Multi-query expansion (planned)
+9. `work.c0-commitment-philosophy-doc` — C0 — Commitment pooling foundations document (done)
+10. `work.c1-demurrage-policy-spec` — C1 — Design optional demurrage policy for stale unredeemed pledges (spec only) (planned)
+11. `work.c1-ge-protocol-study` — C1 — Grassroots Economics / Sarafu protocol compatibility analysis (planned)
+12. `work.c1-pool-governance-membrane` — C1 — Steward approval flow for pool creation and activation (planned)
+13. `work.c1-tbff-commitment-threshold` — C1 — Extend TBFF threshold policy to include commitment activation gates (planned)
+14. `work.c2-commitment-federation` — C2: Federated commitment pooling across bioregions (planned)
+15. `work.c2-cross-node-pool-aggregation` — C2 — Cross-bioregion commitment pooling via federated events (planned)
+16. `work.c2-hypercert-from-commitment` — C2 — Hypercerts minted from REDEEMED commitment + linked Evidence (planned)
+17. `work.c2-regenerate-cascadia-pilot` — C2 — Pilot commitment pool with Regenerate Cascadia (planned)
+18. `work.ce-ecoregion-mapping` — Map CE 867 ecoregion zones to BKC bioregion nodes (planned)
+19. `work.ce-mobile-app-spec` — Write BKC-CE mobile app integration spec (CEMVC-compatible) (planned)
+20. `work.ce-ontology-extension` — Extend BKC ontology with Commodity Ecology entity types (planned)
+21. `work.ce-three-questions-protocol` — Model CE three regional sustainability questions as BKC Protocol (planned)
+22. `work.ce-whitaker-pawar-ingest` — Ingest Whitaker & Pawar 2020 Commodity Ecology paper into KOI (planned)
+23. `work.chat-fanout-scoring` — Chat fanout scoring and all-node responses (done)
+24. `work.commons-prestage-helper` — Commons pre-stage helper (KOI-net share runbook) (done)
+25. `work.demo-smoke-test-suite` — demo-smoke.sh — automated 6-check preflight for all 4 nodes (done)
+26. `work.entity-seeding-swarm-actors` — Swarm actor entity seeding (done)
+27. `work.flow-funding-foundations-doc` — Flow funding foundations document (done)
+28. `work.four-node-parity` — All 4 nodes at same codebase version, smoke tested (done)
+29. `work.governance-pilot-workspace` — Dual-bioregion pilot workspace + V2 triad governance model (done)
+30. `work.koi-protocol-alignment` — P5–P9 KOI-net protocol alignment + ECDSA key encryption (done)
+31. `work.llm-openai-migration` — LLM backend migrated from Gemini to OpenAI (gpt-4o-mini) (done)
+32. `work.native-land-watersheds` — Native Land Digital API + GRDC watershed data integration (done)
+33. `work.node-salt-spring-island` — Salt Spring Island KOI node deployment (in_progress)
+34. `work.nou-agent-auth-wave-a` — Agent bearer-token auth live (Wave A shipped) (done)
+35. `work.octo-initial-setup` — Octo agent initial setup + holonic federation architecture (done)
+36. `work.p2p-agent-message-rid-and-routing` — Agent-message RID namespace + server-side inbox routing in KOI poller (planned)
+37. `work.p2p-mcp-bootstrap-hardening` — Harden MCP bootstrap — cross-platform fixes + first-session verification (in_progress)
+38. `work.p2p-vault-sync-shawn-onboard` — Onboard Shawn as third vault sync peer via invite-token flow (in_progress)
+39. `work.quality-gates-cat-receipts` — Quality gates (4-stage pipeline) + CAT receipts (migration 055) (done)
+40. `work.r0-claims-schema-alignment` — Align BKC Commitment/Evidence with Claims Engine data model v2 (in_progress)
+41. `work.r1-claims-grant-matching` — Claims-to-grants matching for Giveth/Gitcoin rounds (planned)
+42. `work.r1-resolver-health-monitor` — Resolver health monitoring and backup endpoint config (planned)
+43. `work.r2-commoning-koi-mcp-split` — commoning-koi-mcp split — 15 shared contract tools (planned)
+44. `work.r2-regen-bkc-entity-bridge` — Bidirectional entity federation with sharing policies (planned)
+45. `work.r2-regen-compute-integration` — Regen Compute ecological credit retirement for BKC AI workloads (planned)
+46. `work.receipt-chain-fix` — Fix /ingest to create real CAT receipt rows (done)
+47. `work.regen-choice-ontology-mapping` — Map RegenCHOICE concepts to BKC ontology (planned)
+48. `work.s3-key-lifecycle-runbook` — Publish key lifecycle and incident runbook (planned)
+49. `work.s6-evidence-grading` — Introduce evidence grading in architecture decisions (planned)
+50. `work.seed-build-day-entities-script` — Build-day entity seeding operator script (done)
+51. `work.semantic-roadmap-model` — Semantic roadmap model + generator + CI validation (done)
+52. `work.swarm-map-infographic` — Three-plane swarm map infographic (done)
+53. `work.telegram-gate-metric-alignment` — Gate messaging metric alignment (done)
+54. `work.victoria-landscape-hub-seeding` — Seed Victoria Landscape Hub entities (done)
+55. `work.watershed-realtime-dashboard` — Real-time basin dashboard: reservoirs, snow, stream gauges (done)
+56. `work.web-ingest-ui` — Web ingest UI pipeline (URL → entity → confirm → receipt) (done)
+57. `work.web-visualizer-phase1` — 3D globe visualizer + NASA imagery + ecoregion overlays (done)
+58. `work.weekly-proof-pack` — Weekly proof pack publishing cadence (planned)
+59. `work.b8-contextual-retrieval` — B8 — Contextual retrieval (planned)
+60. `work.b12-federated-retrieval` — B12 — QueryPlan IR + federated retrieval (planned)
+61. `work.c0-commitment-governance-extension` — C0 — Extend commons governance membrane to commitment lifecycle (planned)
+62. `work.tbff-threshold-policy-v0` — TBFF threshold policy v0 (done)
+63. `work.c1-entity-mirror-graphrag` — C1: Commitment entity registry mirror + GraphRAG (planned)
+64. `work.c2-commitment-koi-net-events` — C2 — Extend KOI-net protocol to carry ECDSA-signed commitment events (planned)
+65. `work.ce-category-taxonomy` — Define 130 CE material/technology categories as BKC Concept entities (planned)
+66. `work.koi-federation-wiring` — KOI-net federation infrastructure (poller, event emission, peer sync) (done)
+67. `work.p2p-koi-transport-adapter` — KoiTransport — claude-matrix Transport adapter calling KOI API (planned)
+68. `work.r0-claims-engine-api-client` — Thin Claims Engine client in koi-processor (in_progress)
+69. `work.c0-evidence-commitment-bridge` — C0 — Wire Evidence entities to proves_commitment predicate (planned)
+70. `work.tbff-settlement-evidence-bridge` — TBFF settlement to Evidence entity endpoint (done)
+71. `work.regen-choice-question-set-prototype` — Prototype bioregional question sets for RegenCHOICE matching (planned)
+72. `work.hub-cultivator-decision-logging` — Hub Cultivator decision logging via /ingest (done)
+73. `work.bff-live-integration` — BFF layer + live KOI node integration + entity browser + search (done)
+74. `work.owocki-tranche-proposal-v1` — Owocki milestone tranche proposal v1 (planned)
+75. `work.b10-multi-tool-orchestration` — B10 — Multi-tool retrieval orchestration (planned)
+76. `work.b4-tbff-flow-integration` — Implement TBFF flow write-back loop (in_progress)
+77. `work.c1-commitment-pool-api` — C1 — CommitmentPool full mechanics (threshold, activation, governance) (planned)
+78. `work.gv-node-deployment` — Greater Victoria leaf node deployed to remote server (poly) (done)
+79. `work.fr-node-deployment` — Front Range KOI node deployed (localhost:8355) (done)
+80. `work.p2p-three-peer-smoke-test` — Three-peer smoke test — vault sync + agent messaging across darren/shawn/samu (planned)
+81. `work.r0-multi-party-verification` — Multi-party claim verification via commons governance membrane (planned)
+82. `work.passkey-auth` — WebAuthn passkey auth + steward authorization per node (done)
+83. `work.b9-agentic-sql-cypher` — B9 — Agentic retrieval: schema-aware SQL + Text-to-Cypher (planned)
+84. `work.tbff-receipt-to-evidence-v0` — TBFF receipt to Evidence write-back v0 (done)
+85. `work.external-pipeline-1-live` — External ingest pipeline #1 live (planned)
+86. `work.c0-commitment-registry` — C0 — Commitment registry API (create, get, state transition, evidence link) (done)
+87. `work.r0-schema-freeze-gate` — Gate: Schema v2 field mapping finalized and reviewed (planned)
+88. `work.b6-hybrid-bm25-rrf` — B6 — Hybrid BM25 + dense retrieval with RRF (planned)
+89. `work.c0-commitment-pooling` — C0: Commitment pooling — ontology, migrations, API router (done)
+90. `work.external-pipeline-2-live` — External ingest pipeline #2 live (planned)
+91. `work.octo-branch-consolidation` — Merge Octo feature branch into canonical main + consolidate overlays into vendor (planned)
+92. `work.c0-commitment-ontology` — C0 — Add Commitment entity types and predicates to ontology (done)
+93. `work.r0-testnet-anchor-smoke` — Gate: MsgAnchor smoke test on Regen testnet (done)
+94. `work.b5-eval-gates` — B5 — Automated evaluation pipeline (DeepEval + RAGAS) (planned)
+95. `work.r0-resolver-registration-smoke` — Gate: MsgDefineResolver + MsgRegisterResolver smoke on testnet (planned)
+96. `work.s4-ucan-bridge-spike` — UCAN bridge spike (planned)
+97. `work.s5-tee-spike` — TEE confidential RAG spike (planned)
+98. `work.r0-first-claim-from-evidence` — Gate: First claim submitted from existing BKC Evidence entity (testnet) (done)
+99. `work.r1-ledger-msganchor` — Regen Ledger MsgAnchor mainnet integration (planned)
+100. `work.r1-ledger-msgattest` — MsgAttest verifier signature flow (planned)
+101. `work.s1-data-class-matrix` — Define and publish data-class policy matrix (done)
+102. `work.r1-challenge-dispute` — Claim challenge/dispute mechanism (planned)
+103. `work.s2-security-lane` — Add security lane to operational checkpoints (planned)
+104. `work.b3-federated-chat-policy` — Implement federated chat policy boundaries (planned)
 
 ## Risks and Mitigations
 

@@ -49,6 +49,7 @@ Two hackathons, same codebase, tailored narratives. MVP feature-complete on live
 
 - Commitments dashboard: https://45.132.245.30.sslip.io/commons/commitments
 - Create commitment: https://45.132.245.30.sslip.io/commons/commit
+- Commitment routing: https://45.132.245.30.sslip.io/commons/routing
 - Flow funding viz: https://45.132.245.30.sslip.io/commons/flow-funding
 - Salish Sea Knowledge Garden: https://45.132.245.30.sslip.io
 - VCV on Celoscan: https://celoscan.io/address/0x4CDb98Ff88af070b1794752932DbAD9Edf7a1573
@@ -93,6 +94,7 @@ Two hackathons, same codebase, tailored narratives. MVP feature-complete on live
 | 7 | Mar 17 | Full demo loop on Octo production | `demo-full-loop.sh`, 10 candidates extracted, 23 VCV minted |
 | 8 | Mar 18 | Settlement→claim→anchor→attest pipeline fix + SwapPool | `deploy-swap-pool.ts`, `execute-swap.ts`, 5,000 VCV deposited |
 | 9 | Mar 18 | Multi-participant settler + real VCV↔cUSD swap | `deploy-multi-settler.ts`, `acquire-cusd.ts`, 3,000 VCV redistributed |
+| 10 | Mar 19 | Routing visualization + pool activation | `/commons/routing` (react-force-graph-2d), `broader` edge Salish Sea→Cascadia, both pools active |
 
 ## On-Chain Contracts
 

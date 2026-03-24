@@ -2,8 +2,8 @@
   "@context": "./semantic-roadmap.context.json",
   "roadmap_id": "bkc.roadmap.2026.part-b",
   "program": "Bioregional Knowledge Commons",
-  "version": "0.8.3",
-  "as_of": "2026-03-12",
+  "version": "0.9.0",
+  "as_of": "2026-03-22",
   "owners": [
     {
       "id": "owner.darren",
@@ -100,7 +100,7 @@
       "id": "outcome.eval-driven-kg-chat",
       "kind": "outcome",
       "title": "KG chat roadmap decisions are evaluation-driven",
-      "summary": "GraphRAG and federation-chat changes are gated by measurable quality/cost criteria.",
+      "summary": "RAG pipeline changes gated by automated DeepEval + RAGAS evaluation. 20-week phased roadmap from synthesis of 3 independent model research reports. Target: 50-70% retrieval quality improvement.",
       "status": "planned",
       "priority": "P1",
       "horizon": "30-90d",
@@ -110,7 +110,8 @@
         "evaluation"
       ],
       "source_docs": [
-        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+        "external:BioregionKnwoledgeCommons/CLAUDE.md",
+        "docs/research/rag-techniques-synthesis.md"
       ],
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/76"
     },
@@ -174,7 +175,7 @@
     {
       "id": "initiative.build-day-sprint-mar5",
       "kind": "initiative",
-      "title": "Mar 5 Build Day sprint \u2014 interop and demo readiness",
+      "title": "Mar 5 Build Day sprint — interop and demo readiness",
       "summary": "Completed pre-demo sprint: B1 retrieval hardening, A2A agent card, swarm entity seeding, chat scoring, commons pre-stage helper. All items done as of 2026-03-01.",
       "status": "done",
       "priority": "P0",
@@ -195,7 +196,7 @@
     {
       "id": "initiative.commitment-pooling-integration",
       "kind": "initiative",
-      "title": "Commitment pooling integration \u2014 C0/C1/C2 track",
+      "title": "Commitment pooling integration — C0/C1/C2 track",
       "summary": "Extend BKC's Capital Plane with commitment pooling as a first-class economic primitive. C0: ontology + registry API. C1: pool mechanics + TBFF threshold gates. C2: KOI-net federation + GE/Sarafu bridge.",
       "status": "planned",
       "priority": "P1",
@@ -216,7 +217,7 @@
     {
       "id": "initiative.nou-a2a-coordination",
       "kind": "initiative",
-      "title": "A2A agent coordination protocol (co-op.us Waves A\u2013E)",
+      "title": "A2A agent coordination protocol (co-op.us Waves A–E)",
       "summary": "Agent-to-agent coordination protocol from nou-techne enabling autonomous agent interop across the coalition.",
       "status": "in_progress",
       "priority": "P1",
@@ -269,7 +270,7 @@
     {
       "id": "initiative.owocki-sensing-layer",
       "kind": "initiative",
-      "title": "Ecological sensing agents \u2014 Colorado River Basin",
+      "title": "Ecological sensing agents — Colorado River Basin",
       "summary": "AI sensing agents monitoring Colorado River Basin ecology, feeding bioregional knowledge commons and capital allocation.",
       "status": "planned",
       "priority": "P1",
@@ -324,7 +325,7 @@
       "id": "initiative.part-b-kg-chat",
       "kind": "initiative",
       "title": "Part B knowledge-graph chat roadmap",
-      "summary": "B1 retrieval hardening, B2 GraphRAG v1, B3 federated chat policy, B4 TBFF flow integration, B5 eval gates.",
+      "summary": "B1 retrieval hardening (done), B5 eval pipeline, B6-B7 retrieval foundation (BM25+RRF, reranking), B8-B8a indexing upgrades (contextual retrieval, entity enrichment), B9-B10 agentic retrieval, B2 graph intelligence (HippoRAG 2), B11 RAPTOR, B12-B13 federated retrieval + AD4M/Coasys.",
       "status": "in_progress",
       "priority": "P0",
       "horizon": "0-30d",
@@ -334,7 +335,8 @@
         "roadmap"
       ],
       "source_docs": [
-        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+        "external:BioregionKnwoledgeCommons/CLAUDE.md",
+        "docs/research/rag-techniques-synthesis.md"
       ],
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/10"
     },
@@ -461,7 +463,7 @@
     {
       "id": "work.demo-smoke-test-suite",
       "kind": "work_item",
-      "title": "demo-smoke.sh \u2014 automated 6-check preflight for all 4 nodes",
+      "title": "demo-smoke.sh — automated 6-check preflight for all 4 nodes",
       "summary": "Created automated smoke test script checking health, entity count, search, chat, ingest, and federation across all nodes.",
       "status": "done",
       "priority": "P1",
@@ -557,7 +559,7 @@
     {
       "id": "work.koi-protocol-alignment",
       "kind": "work_item",
-      "title": "P5\u2013P9 KOI-net protocol alignment + ECDSA key encryption",
+      "title": "P5–P9 KOI-net protocol alignment + ECDSA key encryption",
       "summary": "Aligned KOI processor with protocol phases P5 through P9 including ECDSA key management and encrypted event envelopes.",
       "status": "done",
       "priority": "P0",
@@ -686,7 +688,7 @@
       "id": "milestone.coalition-kickoff",
       "kind": "milestone",
       "title": "First bioregional swarm build day",
-      "summary": "BKC + owocki + Todd + Aaron first joint build day \u2014 coalition work coordinated and demoed.",
+      "summary": "BKC + owocki + Todd + Aaron first joint build day — coalition work coordinated and demoed.",
       "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
@@ -1076,7 +1078,7 @@
     {
       "id": "work.b1-chat-retrieval-hardening",
       "kind": "work_item",
-      "title": "B1 \u2014 Chat retrieval hardening",
+      "title": "B1 — Chat retrieval hardening",
       "summary": "Upgraded /chat to search doc chunks (koi_memory_chunks), 2-hop relationship CTE (LIMIT 50), web source context. Enhanced bioregional system prompt with citation instructions. Latency <6s, returns 6-8 sources.",
       "status": "done",
       "priority": "P0",
@@ -1091,16 +1093,21 @@
     {
       "id": "work.b2-graphrag-v1",
       "kind": "work_item",
-      "title": "Prototype GraphRAG v1",
-      "summary": "Evaluate graph-guided retrieval and comparison against current hybrid retrieval stack.",
+      "title": "B2 — HippoRAG 2 PPR graph retrieval",
+      "summary": "Implement Personalized PageRank over existing AGE graph. Add passage nodes linking chunks to entities. Replaces original GraphRAG v1 plan per RAG synthesis consensus — HippoRAG 2 improves multi-hop without degrading simple QA (MuSiQue F1 44.8→51.9).",
       "status": "planned",
       "priority": "P1",
       "horizon": "30-90d",
       "owner": "owner.darren",
       "source_docs": [
-        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+        "external:BioregionKnwoledgeCommons/CLAUDE.md",
+        "docs/research/rag-techniques-synthesis.md"
       ],
-      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/22"
+      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/22",
+      "tags": [
+        "rag-synthesis",
+        "chat"
+      ]
     },
     {
       "id": "work.b3-federated-chat-policy",
@@ -1134,22 +1141,27 @@
     {
       "id": "work.b5-eval-gates",
       "kind": "work_item",
-      "title": "Define B5 chat evaluation gates",
-      "summary": "Set measurable gates for quality, latency, and cost before promoting chat architecture changes.",
+      "title": "B5 — Automated evaluation pipeline (DeepEval + RAGAS)",
+      "summary": "Replace manual 10-question QA with automated regression testing. DeepEval (pytest-style, 7+ RAG metrics) + RAGAS (synthetic test generation). Generate 100-200 Q&A pairs, set thresholds (faithfulness ≥0.7, context relevancy ≥0.6). Gate for all subsequent retrieval changes. Cost: ~$0.10-0.50 per 100-sample run. Research synthesis complete — unblocked and ready for implementation.",
       "status": "planned",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
       "source_docs": [
-        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+        "external:BioregionKnwoledgeCommons/CLAUDE.md",
+        "docs/research/rag-techniques-synthesis.md"
       ],
-      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/16"
+      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/16",
+      "tags": [
+        "rag-synthesis",
+        "chat"
+      ]
     },
     {
       "id": "work.c0-commitment-governance-extension",
       "kind": "work_item",
-      "title": "C0 \u2014 Extend commons governance membrane to commitment lifecycle",
-      "summary": "Wire commitment state transitions (PROPOSED \u2192 VERIFIED) through the existing steward approval flow in the commons governance membrane. Commitment review joins the existing decision audit log.",
+      "title": "C0 — Extend commons governance membrane to commitment lifecycle",
+      "summary": "Wire commitment state transitions (PROPOSED → VERIFIED) through the existing steward approval flow in the commons governance membrane. Commitment review joins the existing decision audit log.",
       "status": "planned",
       "priority": "P1",
       "horizon": "0-30d",
@@ -1163,7 +1175,7 @@
     {
       "id": "work.c0-commitment-ontology",
       "kind": "work_item",
-      "title": "C0 \u2014 Add Commitment entity types and predicates to ontology",
+      "title": "C0 — Add Commitment entity types and predicates to ontology",
       "summary": "Added Commitment, CommitmentPool, CommitmentAction entity types and 6 new predicates (pledges_commitment, aggregates_commitments, proves_commitment, redeems_via, governs_pool, disputes) to bkc-ontology.jsonld v1.1.0.",
       "status": "done",
       "priority": "P1",
@@ -1179,7 +1191,7 @@
     {
       "id": "work.c0-commitment-philosophy-doc",
       "kind": "work_item",
-      "title": "C0 \u2014 Commitment pooling foundations document",
+      "title": "C0 — Commitment pooling foundations document",
       "summary": "Written commitment-pooling-foundations.md in docs/foundations/. Covers philosophy (4 pillars), technical model (Sarafu/CLC DAO tiers, state machine, demurrage), integration seams (TBFF/owockibot/co-op.us/KOI-net/GE), governance guidance (Sangat-grade, consent, pattern language alignment), and adoption pathway.",
       "status": "done",
       "priority": "P1",
@@ -1194,7 +1206,7 @@
     {
       "id": "work.c0-commitment-pooling",
       "kind": "work_item",
-      "title": "C0: Commitment pooling \u2014 ontology, migrations, API router",
+      "title": "C0: Commitment pooling — ontology, migrations, API router",
       "summary": "Ontology v1.1.0 adds Commitment/CommitmentPool/CommitmentAction (3 types, 6 predicates). Migrations 056+057 create commitment registry with 9-state lifecycle and threshold-activated pools. 10 API endpoints across /commitments/* and /pools/*. Grounded in Grassroots Economics / Sarafu heritage.",
       "status": "done",
       "priority": "P0",
@@ -1215,7 +1227,7 @@
     {
       "id": "work.c0-commitment-registry",
       "kind": "work_item",
-      "title": "C0 \u2014 Commitment registry API (create, get, state transition, evidence link)",
+      "title": "C0 — Commitment registry API (create, get, state transition, evidence link)",
       "summary": "REST API at /commitments/ and /pools/ for full commitment lifecycle. POST /commitments/create, PATCH /{rid}/state, POST /{rid}/link-evidence. Migrations 056 (registry) + 057 (pools). Router mounted in personal_ingest_api.py.",
       "status": "done",
       "priority": "P1",
@@ -1232,7 +1244,7 @@
     {
       "id": "work.c0-evidence-commitment-bridge",
       "kind": "work_item",
-      "title": "C0 \u2014 Wire Evidence entities to proves_commitment predicate",
+      "title": "C0 — Wire Evidence entities to proves_commitment predicate",
       "summary": "Link existing Evidence entities to Commitment pledges via proves_commitment predicate. TBFF receipt write-back can now reference the commitment it fulfills. Link endpoint: POST /commitments/{rid}/link-evidence.",
       "status": "planned",
       "priority": "P1",
@@ -1247,7 +1259,7 @@
     {
       "id": "work.c1-commitment-pool-api",
       "kind": "work_item",
-      "title": "C1 \u2014 CommitmentPool full mechanics (threshold, activation, governance)",
+      "title": "C1 — CommitmentPool full mechanics (threshold, activation, governance)",
       "summary": "Complete pool lifecycle: POST /pools/{id}/pledge (with auto-activation on threshold), steward approval flow for pool creation, GET /pools/{id}/status with threshold progress. Pool-level CAT receipts and KOI-net event emission.",
       "status": "planned",
       "priority": "P1",
@@ -1262,8 +1274,8 @@
     {
       "id": "work.c1-demurrage-policy-spec",
       "kind": "work_item",
-      "title": "C1 \u2014 Design optional demurrage policy for stale unredeemed pledges (spec only)",
-      "summary": "Document demurrage mechanics for per-pool configuration (monthly decay rate, grace period, community fund routing). Spec only \u2014 no implementation until first pilot pool establishes baseline redemption rhythms.",
+      "title": "C1 — Design optional demurrage policy for stale unredeemed pledges (spec only)",
+      "summary": "Document demurrage mechanics for per-pool configuration (monthly decay rate, grace period, community fund routing). Spec only — no implementation until first pilot pool establishes baseline redemption rhythms.",
       "status": "planned",
       "priority": "P2",
       "horizon": "30-90d",
@@ -1291,8 +1303,8 @@
     {
       "id": "work.c1-ge-protocol-study",
       "kind": "work_item",
-      "title": "C1 \u2014 Grassroots Economics / Sarafu protocol compatibility analysis",
-      "summary": "Deep technical study of CIC Stack + CLC DAO specification. Write compatibility analysis: CIC Stack \u2194 KOI-net event format. Identify bridge points for Phase 3 CLC DAO integration. Output: technical memo with go/no-go recommendation for C2 bridge.",
+      "title": "C1 — Grassroots Economics / Sarafu protocol compatibility analysis",
+      "summary": "Deep technical study of CIC Stack + CLC DAO specification. Write compatibility analysis: CIC Stack ↔ KOI-net event format. Identify bridge points for Phase 3 CLC DAO integration. Output: technical memo with go/no-go recommendation for C2 bridge.",
       "status": "planned",
       "priority": "P1",
       "horizon": "30-90d",
@@ -1305,7 +1317,7 @@
     {
       "id": "work.c1-pool-governance-membrane",
       "kind": "work_item",
-      "title": "C1 \u2014 Steward approval flow for pool creation and activation",
+      "title": "C1 — Steward approval flow for pool creation and activation",
       "summary": "Pool creation and activation decisions recorded in koi_commons_decisions (migration 053 extension). Stewards approve new pools before forming state. Mirrors existing commons intake governance membrane.",
       "status": "planned",
       "priority": "P1",
@@ -1319,8 +1331,8 @@
     {
       "id": "work.c1-tbff-commitment-threshold",
       "kind": "work_item",
-      "title": "C1 \u2014 Extend TBFF threshold policy to include commitment activation gates",
-      "summary": "owockibot sees pool activation events as triggers. CommitmentPool threshold crossing \u2192 owockibot allocation proposal (\u2264$500 auto) or multisig escalation. Commitment pooling becomes a trigger, not just a parallel system.",
+      "title": "C1 — Extend TBFF threshold policy to include commitment activation gates",
+      "summary": "owockibot sees pool activation events as triggers. CommitmentPool threshold crossing → owockibot allocation proposal (≤$500 auto) or multisig escalation. Commitment pooling becomes a trigger, not just a parallel system.",
       "status": "planned",
       "priority": "P1",
       "horizon": "30-90d",
@@ -1349,7 +1361,7 @@
     {
       "id": "work.c2-commitment-koi-net-events",
       "kind": "work_item",
-      "title": "C2 \u2014 Extend KOI-net protocol to carry ECDSA-signed commitment events",
+      "title": "C2 — Extend KOI-net protocol to carry ECDSA-signed commitment events",
       "summary": "New event types: commitment.proposed, commitment.verified, commitment.pooled, commitment.redeemed. ECDSA-signed using existing envelope format. Enables cross-bioregion commitment visibility and routing.",
       "status": "planned",
       "priority": "P1",
@@ -1364,7 +1376,7 @@
     {
       "id": "work.c2-cross-node-pool-aggregation",
       "kind": "work_item",
-      "title": "C2 \u2014 Cross-bioregion commitment pooling via federated events",
+      "title": "C2 — Cross-bioregion commitment pooling via federated events",
       "summary": "Leaf-node commitment pools aggregate into meta-regional pools via KOI-net federation. Leaf pools pledge capacity upward; coordinator pool routes credits multi-hop. Requires C2-commitment-koi-net-events.",
       "status": "planned",
       "priority": "P1",
@@ -1378,7 +1390,7 @@
     {
       "id": "work.c2-hypercert-from-commitment",
       "kind": "work_item",
-      "title": "C2 \u2014 Hypercerts minted from REDEEMED commitment + linked Evidence",
+      "title": "C2 — Hypercerts minted from REDEEMED commitment + linked Evidence",
       "summary": "When a commitment is REDEEMED and its Evidence entity is created, mint a Hypercert encoding the impact claim. Links commitment pooling to the broader regenerative finance stack. Depends on Q2 Hypercert work.",
       "status": "planned",
       "priority": "P2",
@@ -1392,8 +1404,8 @@
     {
       "id": "work.c2-regenerate-cascadia-pilot",
       "kind": "work_item",
-      "title": "C2 \u2014 Pilot commitment pool with Regenerate Cascadia",
-      "summary": "First real-world commitment pool: Regenerate Cascadia members pledge watershed stewardship hours. Pool activates at threshold, TBFF evidence writes back fulfillment, Hypercert minted. Demonstration of full C0\u2013C2 stack.",
+      "title": "C2 — Pilot commitment pool with Regenerate Cascadia",
+      "summary": "First real-world commitment pool: Regenerate Cascadia members pledge watershed stewardship hours. Pool activates at threshold, TBFF evidence writes back fulfillment, Hypercert minted. Demonstration of full C0–C2 stack.",
       "status": "planned",
       "priority": "P1",
       "horizon": "180-365d",
@@ -1423,7 +1435,7 @@
       "id": "work.commons-prestage-helper",
       "kind": "work_item",
       "title": "Commons pre-stage helper (KOI-net share runbook)",
-      "summary": "Added SSH/curl command to runbook for pre-staging commons intake entity via KOI-net share (recipient_type=commons) from FR \u2192 Octo. Enables Segment 3 governance membrane demo.",
+      "summary": "Added SSH/curl command to runbook for pre-staging commons intake entity via KOI-net share (recipient_type=commons) from FR → Octo. Enables Segment 3 governance membrane demo.",
       "status": "done",
       "priority": "P1",
       "horizon": "0-30d",
@@ -1709,8 +1721,8 @@
     {
       "id": "work.web-ingest-ui",
       "kind": "work_item",
-      "title": "Web ingest UI pipeline (URL \u2192 entity \u2192 confirm \u2192 receipt)",
-      "summary": "Full steward-authenticated ingest flow at /commons/ingest. URL\u2192gpt-4o-mini extraction\u2192preview grouped by type\u2192frozen-payload confirm via /web/ingest BFF\u2192receipt with new/resolved/relationships counts. Bugs fixed post-review: ingestion_stats, double-LLM-call, BFF flatten, useWebPreview interface.",
+      "title": "Web ingest UI pipeline (URL → entity → confirm → receipt)",
+      "summary": "Full steward-authenticated ingest flow at /commons/ingest. URL→gpt-4o-mini extraction→preview grouped by type→frozen-payload confirm via /web/ingest BFF→receipt with new/resolved/relationships counts. Bugs fixed post-review: ingestion_stats, double-LLM-call, BFF flatten, useWebPreview interface.",
       "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
@@ -1745,7 +1757,11 @@
       "priority": "P2",
       "horizon": "180-365d",
       "owner": "owner.darren",
-      "tags": ["ecology", "sustainability", "supply-chain"],
+      "tags": [
+        "ecology",
+        "sustainability",
+        "supply-chain"
+      ],
       "source_docs": [
         "https://commodityecology.blogspot.com/",
         "https://wiki.p2pfoundation.net/Commodity_Ecology"
@@ -1760,7 +1776,13 @@
       "priority": "P2",
       "horizon": "90-180d",
       "owner": "owner.darren",
-      "tags": ["ecology", "sustainability", "supply-chain", "ecoregion", "ict4sd"],
+      "tags": [
+        "ecology",
+        "sustainability",
+        "supply-chain",
+        "ecoregion",
+        "ict4sd"
+      ],
       "source_docs": [
         "https://commodityecology.blogspot.com/",
         "https://wiki.p2pfoundation.net/Commodity_Ecology"
@@ -1776,7 +1798,10 @@
       "priority": "P2",
       "horizon": "90-180d",
       "owner": "owner.darren",
-      "tags": ["ecology", "ingest"],
+      "tags": [
+        "ecology",
+        "ingest"
+      ],
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/119"
     },
     {
@@ -1788,7 +1813,11 @@
       "priority": "P2",
       "horizon": "90-180d",
       "owner": "owner.darren",
-      "tags": ["ecology", "ontology", "seeding"],
+      "tags": [
+        "ecology",
+        "ontology",
+        "seeding"
+      ],
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/117"
     },
     {
@@ -1800,7 +1829,10 @@
       "priority": "P2",
       "horizon": "90-180d",
       "owner": "owner.darren",
-      "tags": ["ecology", "ontology"],
+      "tags": [
+        "ecology",
+        "ontology"
+      ],
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/118"
     },
     {
@@ -1812,7 +1844,10 @@
       "priority": "P2",
       "horizon": "90-180d",
       "owner": "owner.darren",
-      "tags": ["ecology", "protocol"],
+      "tags": [
+        "ecology",
+        "protocol"
+      ],
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/121"
     },
     {
@@ -1824,7 +1859,11 @@
       "priority": "P2",
       "horizon": "90-180d",
       "owner": "owner.darren",
-      "tags": ["ecology", "bioregion", "mapping"],
+      "tags": [
+        "ecology",
+        "bioregion",
+        "mapping"
+      ],
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/120"
     },
     {
@@ -1836,30 +1875,42 @@
       "priority": "P2",
       "horizon": "90-180d",
       "owner": "owner.darren",
-      "tags": ["ecology", "mobile", "ict4sd"],
+      "tags": [
+        "ecology",
+        "mobile",
+        "ict4sd"
+      ],
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/122"
     },
     {
       "id": "outcome.regen-bkc-shared-knowledge-layer",
       "kind": "outcome",
-      "title": "Bidirectional Regen\u2194BKC entity exchange beyond Discourse",
+      "title": "Bidirectional Regen↔BKC entity exchange beyond Discourse",
       "summary": "Full bidirectional entity federation between Regen AI and BKC knowledge graphs, enabling shared entity resolution, cross-ecosystem knowledge discovery, and unified provenance.",
       "status": "planned",
       "priority": "P2",
       "horizon": "90-180d",
       "owner": "owner.darren",
-      "tags": ["regen", "federation", "knowledge-layer"]
+      "tags": [
+        "regen",
+        "federation",
+        "knowledge-layer"
+      ]
     },
     {
       "id": "initiative.regen-claims-engine-integration",
       "kind": "initiative",
       "title": "Bridge BKC commitments to Regen Claims Engine V1",
-      "summary": "Align BKC commitment lifecycle (PROPOSED\u2192VERIFIED\u2192ACTIVE\u2192REDEEMED) with Regen Claims Engine data model. Submit claims on Evidence creation or Commitment redemption. Anchor provenance on Regen Ledger x/data.",
+      "summary": "Align BKC commitment lifecycle (PROPOSED→VERIFIED→ACTIVE→REDEEMED) with Regen Claims Engine data model. Submit claims on Evidence creation or Commitment redemption. Anchor provenance on Regen Ledger x/data.",
       "status": "in_progress",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
-      "tags": ["regen", "claims-engine", "integration"],
+      "tags": [
+        "regen",
+        "claims-engine",
+        "integration"
+      ],
       "source_docs": [
         "../foundations/commitment-pooling-foundations.md",
         "external:RegenAI/koi-processor/api/routers/commitment_router.py"
@@ -1868,13 +1919,16 @@
     {
       "id": "initiative.regen-federation-deepening",
       "kind": "initiative",
-      "title": "Full bidirectional Regen\u2194BKC entity federation",
+      "title": "Full bidirectional Regen↔BKC entity federation",
       "summary": "Extend KOI-net federation to enable full bidirectional entity exchange between Regen AI and BKC knowledge graphs with sharing policies per entity type and KOI-net event filter rules.",
       "status": "planned",
       "priority": "P2",
       "horizon": "90-180d",
       "owner": "owner.darren",
-      "tags": ["regen", "federation"],
+      "tags": [
+        "regen",
+        "federation"
+      ],
       "source_docs": [
         "external:Octo/docs/koi-protocol-alignment-master.md"
       ]
@@ -1882,13 +1936,19 @@
     {
       "id": "initiative.personal-peer-mesh",
       "kind": "initiative",
-      "title": "Personal peer mesh \u2014 vault sync + agent coordination over WireGuard",
+      "title": "Personal peer mesh — vault sync + agent coordination over WireGuard",
       "summary": "Extend KOI P2P infrastructure to enable personal holons: sovereign vaults syncing E2EE over WireGuard, Claude Code agents coordinating via claude-matrix messages carried on the KOI event queue. Three-peer mesh (darren/shawn/samu) validates the pattern before organizational adoption.",
       "status": "in_progress",
       "priority": "P1",
       "horizon": "30-90d",
       "owner": "owner.darren",
-      "tags": ["p2p", "vault-sync", "agent-coordination", "personal-holon", "swarm"],
+      "tags": [
+        "p2p",
+        "vault-sync",
+        "agent-coordination",
+        "personal-holon",
+        "swarm"
+      ],
       "source_docs": [
         "external:RegenAI/koi-processor/docs/planning/KOI_NET_VAULT_SYNC_ROADMAP.md",
         "https://github.com/LinuxIsCool/claude-matrix"
@@ -1903,7 +1963,11 @@
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
-      "tags": ["regen", "claims-engine", "schema"],
+      "tags": [
+        "regen",
+        "claims-engine",
+        "schema"
+      ],
       "source_docs": [
         "../foundations/commitment-pooling-foundations.md"
       ]
@@ -1912,12 +1976,16 @@
       "id": "work.r0-claims-engine-api-client",
       "kind": "work_item",
       "title": "Thin Claims Engine client in koi-processor",
-      "summary": "Build thin API client in koi-processor to submit claims to Claims Engine on Commitment\u2192REDEEMED or Evidence creation events.",
+      "summary": "Build thin API client in koi-processor to submit claims to Claims Engine on Commitment→REDEEMED or Evidence creation events.",
       "status": "in_progress",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
-      "tags": ["regen", "claims-engine", "api"],
+      "tags": [
+        "regen",
+        "claims-engine",
+        "api"
+      ],
       "source_docs": [
         "external:Octo/koi-processor/api/routers/commitment_router.py"
       ]
@@ -1926,12 +1994,16 @@
       "id": "work.r0-multi-party-verification",
       "kind": "work_item",
       "title": "Multi-party claim verification via commons governance membrane",
-      "summary": "Require \u2265N steward attestations for PROPOSED\u2192VERIFIED state transition. Wire through existing commons governance membrane approval flow.",
+      "summary": "Require ≥N steward attestations for PROPOSED→VERIFIED state transition. Wire through existing commons governance membrane approval flow.",
       "status": "planned",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
-      "tags": ["regen", "verification", "governance"],
+      "tags": [
+        "regen",
+        "verification",
+        "governance"
+      ],
       "source_docs": [
         "../foundations/commitment-pooling-foundations.md"
       ]
@@ -1945,7 +2017,11 @@
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
-      "tags": ["regen", "gate", "schema"]
+      "tags": [
+        "regen",
+        "gate",
+        "schema"
+      ]
     },
     {
       "id": "work.r0-testnet-anchor-smoke",
@@ -1956,7 +2032,11 @@
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
-      "tags": ["regen", "gate", "testnet"],
+      "tags": [
+        "regen",
+        "gate",
+        "testnet"
+      ],
       "source_docs": [
         "external:regen-ledger/x/data"
       ]
@@ -1970,7 +2050,11 @@
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
-      "tags": ["regen", "gate", "resolver"],
+      "tags": [
+        "regen",
+        "gate",
+        "resolver"
+      ],
       "source_docs": [
         "external:regen-ledger/x/data"
       ]
@@ -1984,7 +2068,11 @@
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
-      "tags": ["regen", "gate", "end-to-end"]
+      "tags": [
+        "regen",
+        "gate",
+        "end-to-end"
+      ]
     },
     {
       "id": "work.r1-ledger-msganchor",
@@ -1995,7 +2083,11 @@
       "priority": "P1",
       "horizon": "30-90d",
       "owner": "owner.darren",
-      "tags": ["regen", "ledger", "anchoring"],
+      "tags": [
+        "regen",
+        "ledger",
+        "anchoring"
+      ],
       "source_docs": [
         "external:regen-ledger/x/data",
         "external:Octo/koi-processor/api/routers/commitment_router.py"
@@ -2010,7 +2102,11 @@
       "priority": "P1",
       "horizon": "30-90d",
       "owner": "owner.darren",
-      "tags": ["regen", "ledger", "attestation"],
+      "tags": [
+        "regen",
+        "ledger",
+        "attestation"
+      ],
       "source_docs": [
         "external:regen-ledger/x/data"
       ]
@@ -2024,7 +2120,11 @@
       "priority": "P1",
       "horizon": "30-90d",
       "owner": "owner.darren",
-      "tags": ["regen", "governance", "dispute"],
+      "tags": [
+        "regen",
+        "governance",
+        "dispute"
+      ],
       "source_docs": [
         "../foundations/commitment-pooling-foundations.md"
       ]
@@ -2038,7 +2138,11 @@
       "priority": "P1",
       "horizon": "30-90d",
       "owner": "owner.darren",
-      "tags": ["regen", "grants", "matching"],
+      "tags": [
+        "regen",
+        "grants",
+        "matching"
+      ],
       "source_docs": [
         "../bioregional-ai-swarms-positioning.md"
       ]
@@ -2052,18 +2156,26 @@
       "priority": "P1",
       "horizon": "30-90d",
       "owner": "owner.darren",
-      "tags": ["regen", "operations", "monitoring"]
+      "tags": [
+        "regen",
+        "operations",
+        "monitoring"
+      ]
     },
     {
       "id": "work.r2-commoning-koi-mcp-split",
       "kind": "work_item",
-      "title": "commoning-koi-mcp split \u2014 15 shared contract tools",
+      "title": "commoning-koi-mcp split — 15 shared contract tools",
       "summary": "Split shared KOI tools into commoning-koi-mcp package with 15 contract tools usable by both BKC and Regen AI deployments.",
       "status": "planned",
       "priority": "P2",
       "horizon": "90-180d",
       "owner": "owner.darren",
-      "tags": ["regen", "tooling", "mcp"],
+      "tags": [
+        "regen",
+        "tooling",
+        "mcp"
+      ],
       "source_docs": [
         "external:Octo/docs/koi-protocol-alignment-master.md"
       ]
@@ -2077,7 +2189,11 @@
       "priority": "P2",
       "horizon": "90-180d",
       "owner": "owner.darren",
-      "tags": ["regen", "federation", "entity-bridge"],
+      "tags": [
+        "regen",
+        "federation",
+        "entity-bridge"
+      ],
       "source_docs": [
         "external:Octo/docs/koi-protocol-alignment-master.md"
       ]
@@ -2091,7 +2207,10 @@
       "priority": "P1",
       "horizon": "30-90d",
       "owner": "owner.samu",
-      "tags": ["deployment", "onboarding"],
+      "tags": [
+        "deployment",
+        "onboarding"
+      ],
       "source_docs": [
         "external:Octo/docs/new-bioregion-quickstart.md",
         "../foundations/bioregion-onboarding-playbook.md"
@@ -2106,7 +2225,11 @@
       "priority": "P2",
       "horizon": "90-180d",
       "owner": "owner.darren",
-      "tags": ["regen", "compute", "credits"],
+      "tags": [
+        "regen",
+        "compute",
+        "credits"
+      ],
       "source_docs": [
         "external:RegenAI/regen-compute/CLAUDE.md"
       ]
@@ -2121,7 +2244,11 @@
       "horizon": "0-30d",
       "owner": "owner.darren",
       "due_date": "2026-03-21",
-      "tags": ["regen", "claims-engine", "sprint"]
+      "tags": [
+        "regen",
+        "claims-engine",
+        "sprint"
+      ]
     },
     {
       "id": "milestone.first-claim-on-regen-ledger",
@@ -2133,7 +2260,11 @@
       "horizon": "30-90d",
       "owner": "owner.darren",
       "due_date": "2026-04-15",
-      "tags": ["regen", "ledger", "mainnet"]
+      "tags": [
+        "regen",
+        "ledger",
+        "mainnet"
+      ]
     },
     {
       "id": "decision.adopt-regen-ledger-claim-anchoring",
@@ -2144,7 +2275,11 @@
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
-      "tags": ["regen", "architecture", "ledger"],
+      "tags": [
+        "regen",
+        "architecture",
+        "ledger"
+      ],
       "source_docs": [
         "external:regen-ledger/x/data"
       ],
@@ -2159,7 +2294,11 @@
       "priority": "P1",
       "horizon": "30-90d",
       "owner": "owner.darren",
-      "tags": ["regen", "security", "keys"]
+      "tags": [
+        "regen",
+        "security",
+        "keys"
+      ]
     },
     {
       "id": "risk.regen-gas-volatility",
@@ -2170,7 +2309,11 @@
       "priority": "P2",
       "horizon": "30-90d",
       "owner": "owner.darren",
-      "tags": ["regen", "economics", "gas"]
+      "tags": [
+        "regen",
+        "economics",
+        "gas"
+      ]
     },
     {
       "id": "risk.regen-resolver-availability",
@@ -2181,7 +2324,11 @@
       "priority": "P1",
       "horizon": "30-90d",
       "owner": "owner.darren",
-      "tags": ["regen", "operations", "availability"]
+      "tags": [
+        "regen",
+        "operations",
+        "availability"
+      ]
     },
     {
       "id": "metric.claims-anchored-on-ledger",
@@ -2196,7 +2343,10 @@
         "target": ">=10/quarter",
         "type": "count"
       },
-      "tags": ["regen", "metric"]
+      "tags": [
+        "regen",
+        "metric"
+      ]
     },
     {
       "id": "metric.claim-attestation-coverage",
@@ -2211,7 +2361,10 @@
         "target": ">=80%",
         "type": "percentage"
       },
-      "tags": ["regen", "metric"]
+      "tags": [
+        "regen",
+        "metric"
+      ]
     },
     {
       "id": "metric.claim-verification-latency",
@@ -2226,7 +2379,10 @@
         "target": "<=48h",
         "type": "duration"
       },
-      "tags": ["regen", "metric"]
+      "tags": [
+        "regen",
+        "metric"
+      ]
     },
     {
       "id": "metric.claims-with-resolvable-provenance",
@@ -2241,7 +2397,10 @@
         "target": ">=95%",
         "type": "percentage"
       },
-      "tags": ["regen", "metric"]
+      "tags": [
+        "regen",
+        "metric"
+      ]
     },
     {
       "id": "work.p2p-vault-sync-shawn-onboard",
@@ -2252,18 +2411,26 @@
       "priority": "P1",
       "horizon": "0-30d",
       "owner": "owner.shawn",
-      "tags": ["p2p", "onboarding", "vault-sync"]
+      "tags": [
+        "p2p",
+        "onboarding",
+        "vault-sync"
+      ]
     },
     {
       "id": "work.p2p-agent-message-rid-and-routing",
       "kind": "work_item",
       "title": "Agent-message RID namespace + server-side inbox routing in KOI poller",
-      "summary": "Define orn:koi-net.agent-message:{uuid} RID format with _agent_message content marker. Add dispatch handler in koi_poller._process_event() (alongside existing _vault_sync and _koi_share handlers). Store/route inbound messages to per-agent inbox. Add agent-message to edge rid_types for capability negotiation. No new event type \u2014 uses NEW/UPDATE/FORGET.",
+      "summary": "Define orn:koi-net.agent-message:{uuid} RID format with _agent_message content marker. Add dispatch handler in koi_poller._process_event() (alongside existing _vault_sync and _koi_share handlers). Store/route inbound messages to per-agent inbox. Add agent-message to edge rid_types for capability negotiation. No new event type — uses NEW/UPDATE/FORGET.",
       "status": "planned",
       "priority": "P1",
       "horizon": "30-90d",
       "owner": "owner.darren",
-      "tags": ["p2p", "protocol", "agent-coordination"],
+      "tags": [
+        "p2p",
+        "protocol",
+        "agent-coordination"
+      ],
       "source_docs": [
         "external:RegenAI/koi-processor/api/koi_protocol.py",
         "external:RegenAI/koi-processor/api/koi_poller.py",
@@ -2273,13 +2440,17 @@
     {
       "id": "work.p2p-koi-transport-adapter",
       "kind": "work_item",
-      "title": "KoiTransport \u2014 claude-matrix Transport adapter calling KOI API",
+      "title": "KoiTransport — claude-matrix Transport adapter calling KOI API",
       "summary": "TypeScript class implementing claude-matrix Transport interface (10 methods) that calls KOI API endpoints for send/read/discover/heartbeat. Maps MatrixEvent envelope to KOI agent-message RID + content format. Lives in claude-matrix repo as server/src/transport/KoiTransport.ts alongside existing FileTransport.ts.",
       "status": "planned",
       "priority": "P1",
       "horizon": "30-90d",
       "owner": "owner.shawn",
-      "tags": ["p2p", "claude-matrix", "transport"],
+      "tags": [
+        "p2p",
+        "claude-matrix",
+        "transport"
+      ],
       "source_docs": [
         "https://github.com/LinuxIsCool/claude-matrix"
       ]
@@ -2287,24 +2458,33 @@
     {
       "id": "work.p2p-three-peer-smoke-test",
       "kind": "work_item",
-      "title": "Three-peer smoke test \u2014 vault sync + agent messaging across darren/shawn/samu",
-      "summary": "Validate full P2P stack across three peers: E2EE vault file sync (create/update/delete), agent message delivery (send/receive/discover), and mesh relay (A\u2192B\u2192C forwarding). Script-based, repeatable.",
+      "title": "Three-peer smoke test — vault sync + agent messaging across darren/shawn/samu",
+      "summary": "Validate full P2P stack across three peers: E2EE vault file sync (create/update/delete), agent message delivery (send/receive/discover), and mesh relay (A→B→C forwarding). Script-based, repeatable.",
       "status": "planned",
       "priority": "P1",
       "horizon": "30-90d",
       "owner": "owner.darren",
-      "tags": ["p2p", "testing", "smoke-test"]
+      "tags": [
+        "p2p",
+        "testing",
+        "smoke-test"
+      ]
     },
     {
       "id": "work.p2p-mcp-bootstrap-hardening",
       "kind": "work_item",
-      "title": "Harden MCP bootstrap \u2014 cross-platform fixes + first-session verification",
+      "title": "Harden MCP bootstrap — cross-platform fixes + first-session verification",
       "summary": "Harden existing setup_mcp_server() in bootstrap-node.sh: fix pacman/dnf Node.js install paths, add first-session smoke test (verify MCP tools respond after koi-server start), handle npm/node version edge cases on Arch Linux. Core clone/build/register flow already works.",
       "status": "in_progress",
       "priority": "P2",
       "horizon": "0-30d",
       "owner": "owner.darren",
-      "tags": ["p2p", "mcp", "onboarding", "hardening"]
+      "tags": [
+        "p2p",
+        "mcp",
+        "onboarding",
+        "hardening"
+      ]
     },
     {
       "id": "milestone.three-peer-mesh-validated",
@@ -2315,7 +2495,10 @@
       "priority": "P1",
       "horizon": "30-90d",
       "owner": "owner.darren",
-      "tags": ["p2p", "milestone"]
+      "tags": [
+        "p2p",
+        "milestone"
+      ]
     },
     {
       "id": "work.flow-funding-foundations-doc",
@@ -2326,7 +2509,12 @@
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
-      "tags": ["hub-cultivator", "tbff", "bioregional-flow-funding", "victoria"],
+      "tags": [
+        "hub-cultivator",
+        "tbff",
+        "bioregional-flow-funding",
+        "victoria"
+      ],
       "source_docs": [
         "../foundations/flow-funding-foundations.md"
       ],
@@ -2341,7 +2529,11 @@
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
-      "tags": ["hub-cultivator", "bioregional-flow-funding", "victoria"]
+      "tags": [
+        "hub-cultivator",
+        "bioregional-flow-funding",
+        "victoria"
+      ]
     },
     {
       "id": "work.tbff-settlement-evidence-bridge",
@@ -2352,7 +2544,10 @@
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
-      "tags": ["tbff", "victoria"]
+      "tags": [
+        "tbff",
+        "victoria"
+      ]
     },
     {
       "id": "work.receipt-chain-fix",
@@ -2363,7 +2558,9 @@
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
-      "tags": ["infrastructure"]
+      "tags": [
+        "infrastructure"
+      ]
     },
     {
       "id": "work.victoria-landscape-hub-seeding",
@@ -2374,7 +2571,185 @@
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
-      "tags": ["hub-cultivator", "victoria"]
+      "tags": [
+        "hub-cultivator",
+        "victoria"
+      ]
+    },
+    {
+      "id": "work.b6-hybrid-bm25-rrf",
+      "kind": "work_item",
+      "title": "B6 — Hybrid BM25 + dense retrieval with RRF",
+      "summary": "Add real BM25 via PostgreSQL tsvector + GIN index. Combine with pgvector cosine via Reciprocal Rank Fusion (k=60). Upgrade path: ParadeDB pg_search for true BM25 with IDF. Effort: 0.5-2 days. Impact: 15-30% recall improvement.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "rag-synthesis",
+        "chat"
+      ],
+      "source_docs": [
+        "docs/research/rag-techniques-synthesis.md"
+      ]
+    },
+    {
+      "id": "work.b7-cross-encoder-reranking",
+      "kind": "work_item",
+      "title": "B7 — Cross-encoder reranking (FlashRank)",
+      "summary": "Add FlashRank CPU reranking after hybrid retrieval (top 50 → top 8). MiniLM-L-12, ~200ms on CPU, no PyTorch. Upgrade path: gte-reranker-modernbert-base or Cohere API with GPU. Effort: 0.5-1 day. Impact: 10-25% precision improvement.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "rag-synthesis",
+        "chat"
+      ],
+      "source_docs": [
+        "docs/research/rag-techniques-synthesis.md"
+      ]
+    },
+    {
+      "id": "work.b8-contextual-retrieval",
+      "kind": "work_item",
+      "title": "B8 — Contextual retrieval",
+      "summary": "Batch-process chunks through GPT-4o-mini to generate context snippets explaining each chunk’s position in its source document (Anthropic pattern). Prepend to chunk text, re-embed, update BM25 index. 49-67% fewer retrieval failures. One-time cost ~$1.28 for 4,500 chunks.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "rag-synthesis",
+        "chat"
+      ],
+      "source_docs": [
+        "docs/research/rag-techniques-synthesis.md"
+      ]
+    },
+    {
+      "id": "work.b8a-entity-enrichment",
+      "kind": "work_item",
+      "title": "B8a — Entity description enrichment",
+      "summary": "Batch-generate descriptions for all 2,769 entities (92% are name-only embeddings). Basic level: 2-3 sentence description (~$0.50-1.00). Rich level: name + description + source excerpts + related entities (~$1-3). Re-embed after enrichment. Directly improves every retrieval path.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "rag-synthesis",
+        "chat"
+      ],
+      "source_docs": [
+        "docs/research/rag-techniques-synthesis.md"
+      ]
+    },
+    {
+      "id": "work.b8b-multi-query-expansion",
+      "kind": "work_item",
+      "title": "B8b — Multi-query expansion",
+      "summary": "Generate 2-3 query reformulations per user question, retrieve for each, fuse with RRF. Distinct from query decomposition — same question, different phrasings for recall.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "tags": [
+        "rag-synthesis",
+        "chat"
+      ],
+      "source_docs": [
+        "docs/research/rag-techniques-synthesis.md"
+      ]
+    },
+    {
+      "id": "work.b9-agentic-sql-cypher",
+      "kind": "work_item",
+      "title": "B9 — Agentic retrieval: schema-aware SQL + Text-to-Cypher",
+      "summary": "Replace 4 hardcoded SQL templates with LLM-driven query generation. Stage A: Vanna AI for schema-aware SQL (DDL + 20 examples + retry). Stage B: LangChain AGE integration for Text-to-Cypher. Fallback to existing templates. Expected first-attempt accuracy: 70-85%, 85-95% with retry.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "tags": [
+        "rag-synthesis",
+        "chat",
+        "agentic"
+      ],
+      "source_docs": [
+        "docs/research/rag-techniques-synthesis.md"
+      ]
+    },
+    {
+      "id": "work.b10-multi-tool-orchestration",
+      "kind": "work_item",
+      "title": "B10 — Multi-tool retrieval orchestration",
+      "summary": "LangGraph/PydanticAI orchestrator with tool nodes: semantic search, BM25, graph traversal, dynamic SQL, chunk search. Sufficiency evaluation + re-retrieve. Query decomposition for multi-hop. Integrates all retrieval paths into unified agentic pipeline.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "tags": [
+        "rag-synthesis",
+        "chat",
+        "agentic"
+      ],
+      "source_docs": [
+        "docs/research/rag-techniques-synthesis.md"
+      ]
+    },
+    {
+      "id": "work.b11-raptor-tree",
+      "kind": "work_item",
+      "title": "B11 — RAPTOR hierarchical summarization",
+      "summary": "Build tree over chunks: cluster → summarize → re-embed (2-3 levels). Add ~600-1,000 summary nodes to pgvector table. Best for thematic queries. One-time cost ~$0.50-2.00. Zero additional query-time latency.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "tags": [
+        "rag-synthesis",
+        "chat"
+      ],
+      "source_docs": [
+        "docs/research/rag-techniques-synthesis.md"
+      ]
+    },
+    {
+      "id": "work.b12-federated-retrieval",
+      "kind": "work_item",
+      "title": "B12 — QueryPlan IR + federated retrieval",
+      "summary": "Extend existing KOI-net federation to retrieval layer. QueryPlan IR (typed JSON AST) as internal representation. Evidence packets with cross-node provenance chains. MCP retrieval tool contracts.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "90-180d",
+      "owner": "owner.darren",
+      "tags": [
+        "rag-synthesis",
+        "chat",
+        "federation"
+      ],
+      "source_docs": [
+        "docs/research/rag-techniques-synthesis.md"
+      ]
+    },
+    {
+      "id": "work.b13-ad4m-coasys-bridge",
+      "kind": "work_item",
+      "title": "B13 — AD4M/Coasys federation substrate integration",
+      "summary": "Explore AD4M as optional semantic overlay for federation. Prolog-based Social DNA enables governance queries that SQL/Cypher cannot express. Interop: KOI MCP + AD4M MCP tools as targets in QueryPlan IR. KOI remains protocol layer; AD4M/Coasys provides agent-centric social coordination. Values-aligned with BKC commons governance.",
+      "status": "planned",
+      "priority": "P2",
+      "horizon": "90-180d",
+      "owner": "owner.darren",
+      "tags": [
+        "rag-synthesis",
+        "federation",
+        "ad4m",
+        "coasys"
+      ],
+      "source_docs": [
+        "docs/research/rag-techniques-synthesis.md"
+      ]
     }
   ],
   "edges": [
@@ -2516,11 +2891,6 @@
     {
       "from": "work.s1-data-class-matrix",
       "to": "work.b3-federated-chat-policy",
-      "type": "depends_on"
-    },
-    {
-      "from": "work.b5-eval-gates",
-      "to": "work.b2-graphrag-v1",
       "type": "depends_on"
     },
     {
@@ -3113,117 +3483,595 @@
       "to": "work.passkey-auth",
       "type": "depends_on"
     },
-    { "from": "work.ce-whitaker-pawar-ingest", "to": "initiative.commodity-ecology-integration", "type": "delivers" },
-    { "from": "work.ce-category-taxonomy", "to": "initiative.commodity-ecology-integration", "type": "delivers" },
-    { "from": "work.ce-ontology-extension", "to": "initiative.commodity-ecology-integration", "type": "delivers" },
-    { "from": "work.ce-three-questions-protocol", "to": "initiative.commodity-ecology-integration", "type": "delivers" },
-    { "from": "work.ce-ecoregion-mapping", "to": "initiative.commodity-ecology-integration", "type": "delivers" },
-    { "from": "work.ce-mobile-app-spec", "to": "initiative.commodity-ecology-integration", "type": "delivers" },
-    { "from": "initiative.commodity-ecology-integration", "to": "outcome.regional-sustainability-rubric-live", "type": "delivers" },
-    { "from": "initiative.commodity-ecology-integration", "to": "outcome.bioregional-swarm-live", "type": "delivers" },
-    { "from": "work.ce-ontology-extension", "to": "work.ce-category-taxonomy", "type": "depends_on" },
-    { "from": "initiative.commitment-pooling-integration", "to": "initiative.commodity-ecology-integration", "type": "informs" },
-
-    { "from": "initiative.regen-claims-engine-integration", "to": "outcome.capital-loop-provable", "type": "delivers" },
-    { "from": "initiative.regen-claims-engine-integration", "to": "outcome.policy-governed-sharing", "type": "delivers" },
-    { "from": "initiative.regen-federation-deepening", "to": "outcome.regen-bkc-shared-knowledge-layer", "type": "delivers" },
-
-    { "from": "work.r0-claims-schema-alignment", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
-    { "from": "work.r0-claims-engine-api-client", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
-    { "from": "work.r0-multi-party-verification", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
-    { "from": "work.r0-schema-freeze-gate", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
-    { "from": "work.r0-testnet-anchor-smoke", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
-    { "from": "work.r0-resolver-registration-smoke", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
-    { "from": "work.r0-first-claim-from-evidence", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
-    { "from": "work.r1-ledger-msganchor", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
-    { "from": "work.r1-ledger-msgattest", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
-    { "from": "work.r1-challenge-dispute", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
-    { "from": "work.r1-claims-grant-matching", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
-    { "from": "work.r1-resolver-health-monitor", "to": "initiative.regen-claims-engine-integration", "type": "delivers" },
-    { "from": "work.r2-commoning-koi-mcp-split", "to": "initiative.regen-federation-deepening", "type": "delivers" },
-    { "from": "work.r2-regen-bkc-entity-bridge", "to": "initiative.regen-federation-deepening", "type": "delivers" },
-
-    { "from": "work.r0-claims-schema-alignment", "to": "work.r0-claims-engine-api-client", "type": "depends_on" },
-    { "from": "work.r0-claims-engine-api-client", "to": "work.r0-multi-party-verification", "type": "depends_on" },
-    { "from": "work.r0-multi-party-verification", "to": "work.r0-schema-freeze-gate", "type": "depends_on" },
-    { "from": "work.r0-schema-freeze-gate", "to": "work.r0-testnet-anchor-smoke", "type": "depends_on" },
-    { "from": "work.r0-testnet-anchor-smoke", "to": "work.r0-resolver-registration-smoke", "type": "depends_on" },
-    { "from": "work.r0-resolver-registration-smoke", "to": "work.r0-first-claim-from-evidence", "type": "depends_on" },
-
-    { "from": "work.r0-schema-freeze-gate", "to": "work.r1-ledger-msganchor", "type": "depends_on" },
-    { "from": "work.r0-testnet-anchor-smoke", "to": "work.r1-ledger-msganchor", "type": "depends_on" },
-    { "from": "work.r0-resolver-registration-smoke", "to": "work.r1-ledger-msganchor", "type": "depends_on" },
-    { "from": "work.r0-first-claim-from-evidence", "to": "work.r1-ledger-msganchor", "type": "depends_on" },
-    { "from": "work.r1-ledger-msganchor", "to": "work.r1-ledger-msgattest", "type": "depends_on" },
-    { "from": "work.r1-ledger-msgattest", "to": "work.r1-challenge-dispute", "type": "depends_on" },
-
-    { "from": "work.r0-claims-schema-alignment", "to": "work.c0-evidence-commitment-bridge", "type": "depends_on" },
-    { "from": "work.r1-ledger-msganchor", "to": "work.s1-data-class-matrix", "type": "depends_on" },
-    { "from": "work.r2-regen-bkc-entity-bridge", "to": "work.s1-data-class-matrix", "type": "depends_on" },
-    { "from": "work.r2-regen-bkc-entity-bridge", "to": "work.s2-security-lane", "type": "depends_on" },
-
-    { "from": "work.c0-commitment-pooling", "to": "initiative.regen-claims-engine-integration", "type": "informs" },
-    { "from": "work.tbff-receipt-to-evidence-v0", "to": "work.r1-ledger-msganchor", "type": "informs" },
-    { "from": "initiative.nou-a2a-coordination", "to": "initiative.regen-federation-deepening", "type": "informs" },
-    { "from": "work.c2-regenerate-cascadia-pilot", "to": "work.r1-ledger-msganchor", "type": "informs" },
-    { "from": "decision.adopt-regen-ledger-claim-anchoring", "to": "initiative.regen-claims-engine-integration", "type": "informs" },
-
-    { "from": "work.r2-commoning-koi-mcp-split", "to": "initiative.nou-a2a-coordination", "type": "depends_on" },
-
-    { "from": "work.s3-key-lifecycle-runbook", "to": "risk.regen-key-custody", "type": "mitigates" },
-    { "from": "decision.adopt-regen-ledger-claim-anchoring", "to": "risk.regen-gas-volatility", "type": "informs" },
-    { "from": "work.r1-ledger-msganchor", "to": "risk.regen-gas-volatility", "type": "mitigates" },
-    { "from": "work.r1-resolver-health-monitor", "to": "risk.regen-resolver-availability", "type": "mitigates" },
-
-    { "from": "metric.claims-anchored-on-ledger", "to": "outcome.capital-loop-provable", "type": "measures" },
-    { "from": "metric.claim-attestation-coverage", "to": "outcome.capital-loop-provable", "type": "measures" },
-    { "from": "metric.claim-verification-latency", "to": "outcome.capital-loop-provable", "type": "measures" },
-    { "from": "metric.claims-with-resolvable-provenance", "to": "outcome.regen-bkc-shared-knowledge-layer", "type": "measures" },
-
-    { "from": "work.r0-claims-schema-alignment", "to": "milestone.claims-engine-v1-sprint", "type": "delivers" },
-    { "from": "work.r0-claims-engine-api-client", "to": "milestone.claims-engine-v1-sprint", "type": "delivers" },
-    { "from": "work.r1-ledger-msganchor", "to": "milestone.first-claim-on-regen-ledger", "type": "delivers" },
-    { "from": "work.r1-ledger-msgattest", "to": "milestone.first-claim-on-regen-ledger", "type": "delivers" },
-
-    { "from": "work.node-salt-spring-island", "to": "outcome.bioregional-swarm-live", "type": "delivers" },
-
-    { "from": "work.regen-choice-ontology-mapping", "to": "initiative.regen-choice-matchmaking", "type": "delivers" },
-    { "from": "work.regen-choice-question-set-prototype", "to": "initiative.regen-choice-matchmaking", "type": "delivers" },
-    { "from": "work.regen-choice-ontology-mapping", "to": "work.regen-choice-question-set-prototype", "type": "depends_on" },
-    { "from": "initiative.regen-choice-matchmaking", "to": "outcome.bioregional-swarm-live", "type": "delivers" },
-
-    { "from": "work.p2p-vault-sync-shawn-onboard", "to": "initiative.personal-peer-mesh", "type": "delivers" },
-    { "from": "work.p2p-agent-message-rid-and-routing", "to": "initiative.personal-peer-mesh", "type": "delivers" },
-    { "from": "work.p2p-koi-transport-adapter", "to": "initiative.personal-peer-mesh", "type": "delivers" },
-    { "from": "work.p2p-three-peer-smoke-test", "to": "initiative.personal-peer-mesh", "type": "delivers" },
-    { "from": "work.p2p-mcp-bootstrap-hardening", "to": "initiative.personal-peer-mesh", "type": "delivers" },
-
-    { "from": "initiative.personal-peer-mesh", "to": "outcome.bioregional-swarm-live", "type": "delivers" },
-    { "from": "initiative.personal-peer-mesh", "to": "outcome.secure-federation-ops", "type": "delivers" },
-
-    { "from": "initiative.personal-peer-mesh", "to": "initiative.nou-a2a-coordination", "type": "informs" },
-    { "from": "initiative.personal-peer-mesh", "to": "initiative.regen-federation-deepening", "type": "informs" },
-
-    { "from": "work.p2p-agent-message-rid-and-routing", "to": "work.p2p-koi-transport-adapter", "type": "depends_on" },
-    { "from": "work.p2p-vault-sync-shawn-onboard", "to": "work.p2p-three-peer-smoke-test", "type": "depends_on" },
-    { "from": "work.p2p-koi-transport-adapter", "to": "work.p2p-three-peer-smoke-test", "type": "depends_on" },
-
-    { "from": "work.node-salt-spring-island", "to": "initiative.personal-peer-mesh", "type": "informs" },
-
-    { "from": "work.p2p-three-peer-smoke-test", "to": "milestone.three-peer-mesh-validated", "type": "delivers" },
-    { "from": "work.p2p-vault-sync-shawn-onboard", "to": "milestone.three-peer-mesh-validated", "type": "delivers" },
-    { "from": "work.p2p-koi-transport-adapter", "to": "milestone.three-peer-mesh-validated", "type": "delivers" },
-
-    { "from": "work.flow-funding-foundations-doc", "to": "initiative.tbff-knowledge-flow-pilot", "type": "delivers" },
-    { "from": "work.hub-cultivator-decision-logging", "to": "initiative.tbff-knowledge-flow-pilot", "type": "delivers" },
-    { "from": "work.tbff-settlement-evidence-bridge", "to": "initiative.tbff-knowledge-flow-pilot", "type": "delivers" },
-    { "from": "work.receipt-chain-fix", "to": "initiative.tbff-knowledge-flow-pilot", "type": "delivers" },
-    { "from": "work.victoria-landscape-hub-seeding", "to": "initiative.tbff-knowledge-flow-pilot", "type": "delivers" },
-    { "from": "work.receipt-chain-fix", "to": "work.hub-cultivator-decision-logging", "type": "depends_on" },
-    { "from": "work.receipt-chain-fix", "to": "work.tbff-settlement-evidence-bridge", "type": "depends_on" },
-    { "from": "work.victoria-landscape-hub-seeding", "to": "work.hub-cultivator-decision-logging", "type": "depends_on" },
-    { "from": "work.hub-cultivator-decision-logging", "to": "milestone.tbff-v0-writeback-demo-2026-03-14", "type": "delivers" },
-    { "from": "work.receipt-chain-fix", "to": "milestone.tbff-v0-writeback-demo-2026-03-14", "type": "delivers" },
-    { "from": "work.victoria-landscape-hub-seeding", "to": "milestone.tbff-v0-writeback-demo-2026-03-14", "type": "delivers" }
+    {
+      "from": "work.ce-whitaker-pawar-ingest",
+      "to": "initiative.commodity-ecology-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.ce-category-taxonomy",
+      "to": "initiative.commodity-ecology-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.ce-ontology-extension",
+      "to": "initiative.commodity-ecology-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.ce-three-questions-protocol",
+      "to": "initiative.commodity-ecology-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.ce-ecoregion-mapping",
+      "to": "initiative.commodity-ecology-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.ce-mobile-app-spec",
+      "to": "initiative.commodity-ecology-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.commodity-ecology-integration",
+      "to": "outcome.regional-sustainability-rubric-live",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.commodity-ecology-integration",
+      "to": "outcome.bioregional-swarm-live",
+      "type": "delivers"
+    },
+    {
+      "from": "work.ce-ontology-extension",
+      "to": "work.ce-category-taxonomy",
+      "type": "depends_on"
+    },
+    {
+      "from": "initiative.commitment-pooling-integration",
+      "to": "initiative.commodity-ecology-integration",
+      "type": "informs"
+    },
+    {
+      "from": "initiative.regen-claims-engine-integration",
+      "to": "outcome.capital-loop-provable",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.regen-claims-engine-integration",
+      "to": "outcome.policy-governed-sharing",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.regen-federation-deepening",
+      "to": "outcome.regen-bkc-shared-knowledge-layer",
+      "type": "delivers"
+    },
+    {
+      "from": "work.r0-claims-schema-alignment",
+      "to": "initiative.regen-claims-engine-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.r0-claims-engine-api-client",
+      "to": "initiative.regen-claims-engine-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.r0-multi-party-verification",
+      "to": "initiative.regen-claims-engine-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.r0-schema-freeze-gate",
+      "to": "initiative.regen-claims-engine-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.r0-testnet-anchor-smoke",
+      "to": "initiative.regen-claims-engine-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.r0-resolver-registration-smoke",
+      "to": "initiative.regen-claims-engine-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.r0-first-claim-from-evidence",
+      "to": "initiative.regen-claims-engine-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.r1-ledger-msganchor",
+      "to": "initiative.regen-claims-engine-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.r1-ledger-msgattest",
+      "to": "initiative.regen-claims-engine-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.r1-challenge-dispute",
+      "to": "initiative.regen-claims-engine-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.r1-claims-grant-matching",
+      "to": "initiative.regen-claims-engine-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.r1-resolver-health-monitor",
+      "to": "initiative.regen-claims-engine-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.r2-commoning-koi-mcp-split",
+      "to": "initiative.regen-federation-deepening",
+      "type": "delivers"
+    },
+    {
+      "from": "work.r2-regen-bkc-entity-bridge",
+      "to": "initiative.regen-federation-deepening",
+      "type": "delivers"
+    },
+    {
+      "from": "work.r0-claims-schema-alignment",
+      "to": "work.r0-claims-engine-api-client",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.r0-claims-engine-api-client",
+      "to": "work.r0-multi-party-verification",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.r0-multi-party-verification",
+      "to": "work.r0-schema-freeze-gate",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.r0-schema-freeze-gate",
+      "to": "work.r0-testnet-anchor-smoke",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.r0-testnet-anchor-smoke",
+      "to": "work.r0-resolver-registration-smoke",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.r0-resolver-registration-smoke",
+      "to": "work.r0-first-claim-from-evidence",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.r0-schema-freeze-gate",
+      "to": "work.r1-ledger-msganchor",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.r0-testnet-anchor-smoke",
+      "to": "work.r1-ledger-msganchor",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.r0-resolver-registration-smoke",
+      "to": "work.r1-ledger-msganchor",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.r0-first-claim-from-evidence",
+      "to": "work.r1-ledger-msganchor",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.r1-ledger-msganchor",
+      "to": "work.r1-ledger-msgattest",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.r1-ledger-msgattest",
+      "to": "work.r1-challenge-dispute",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.r0-claims-schema-alignment",
+      "to": "work.c0-evidence-commitment-bridge",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.r1-ledger-msganchor",
+      "to": "work.s1-data-class-matrix",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.r2-regen-bkc-entity-bridge",
+      "to": "work.s1-data-class-matrix",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.r2-regen-bkc-entity-bridge",
+      "to": "work.s2-security-lane",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.c0-commitment-pooling",
+      "to": "initiative.regen-claims-engine-integration",
+      "type": "informs"
+    },
+    {
+      "from": "work.tbff-receipt-to-evidence-v0",
+      "to": "work.r1-ledger-msganchor",
+      "type": "informs"
+    },
+    {
+      "from": "initiative.nou-a2a-coordination",
+      "to": "initiative.regen-federation-deepening",
+      "type": "informs"
+    },
+    {
+      "from": "work.c2-regenerate-cascadia-pilot",
+      "to": "work.r1-ledger-msganchor",
+      "type": "informs"
+    },
+    {
+      "from": "decision.adopt-regen-ledger-claim-anchoring",
+      "to": "initiative.regen-claims-engine-integration",
+      "type": "informs"
+    },
+    {
+      "from": "work.r2-commoning-koi-mcp-split",
+      "to": "initiative.nou-a2a-coordination",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.s3-key-lifecycle-runbook",
+      "to": "risk.regen-key-custody",
+      "type": "mitigates"
+    },
+    {
+      "from": "decision.adopt-regen-ledger-claim-anchoring",
+      "to": "risk.regen-gas-volatility",
+      "type": "informs"
+    },
+    {
+      "from": "work.r1-ledger-msganchor",
+      "to": "risk.regen-gas-volatility",
+      "type": "mitigates"
+    },
+    {
+      "from": "work.r1-resolver-health-monitor",
+      "to": "risk.regen-resolver-availability",
+      "type": "mitigates"
+    },
+    {
+      "from": "metric.claims-anchored-on-ledger",
+      "to": "outcome.capital-loop-provable",
+      "type": "measures"
+    },
+    {
+      "from": "metric.claim-attestation-coverage",
+      "to": "outcome.capital-loop-provable",
+      "type": "measures"
+    },
+    {
+      "from": "metric.claim-verification-latency",
+      "to": "outcome.capital-loop-provable",
+      "type": "measures"
+    },
+    {
+      "from": "metric.claims-with-resolvable-provenance",
+      "to": "outcome.regen-bkc-shared-knowledge-layer",
+      "type": "measures"
+    },
+    {
+      "from": "work.r0-claims-schema-alignment",
+      "to": "milestone.claims-engine-v1-sprint",
+      "type": "delivers"
+    },
+    {
+      "from": "work.r0-claims-engine-api-client",
+      "to": "milestone.claims-engine-v1-sprint",
+      "type": "delivers"
+    },
+    {
+      "from": "work.r1-ledger-msganchor",
+      "to": "milestone.first-claim-on-regen-ledger",
+      "type": "delivers"
+    },
+    {
+      "from": "work.r1-ledger-msgattest",
+      "to": "milestone.first-claim-on-regen-ledger",
+      "type": "delivers"
+    },
+    {
+      "from": "work.node-salt-spring-island",
+      "to": "outcome.bioregional-swarm-live",
+      "type": "delivers"
+    },
+    {
+      "from": "work.regen-choice-ontology-mapping",
+      "to": "initiative.regen-choice-matchmaking",
+      "type": "delivers"
+    },
+    {
+      "from": "work.regen-choice-question-set-prototype",
+      "to": "initiative.regen-choice-matchmaking",
+      "type": "delivers"
+    },
+    {
+      "from": "work.regen-choice-ontology-mapping",
+      "to": "work.regen-choice-question-set-prototype",
+      "type": "depends_on"
+    },
+    {
+      "from": "initiative.regen-choice-matchmaking",
+      "to": "outcome.bioregional-swarm-live",
+      "type": "delivers"
+    },
+    {
+      "from": "work.p2p-vault-sync-shawn-onboard",
+      "to": "initiative.personal-peer-mesh",
+      "type": "delivers"
+    },
+    {
+      "from": "work.p2p-agent-message-rid-and-routing",
+      "to": "initiative.personal-peer-mesh",
+      "type": "delivers"
+    },
+    {
+      "from": "work.p2p-koi-transport-adapter",
+      "to": "initiative.personal-peer-mesh",
+      "type": "delivers"
+    },
+    {
+      "from": "work.p2p-three-peer-smoke-test",
+      "to": "initiative.personal-peer-mesh",
+      "type": "delivers"
+    },
+    {
+      "from": "work.p2p-mcp-bootstrap-hardening",
+      "to": "initiative.personal-peer-mesh",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.personal-peer-mesh",
+      "to": "outcome.bioregional-swarm-live",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.personal-peer-mesh",
+      "to": "outcome.secure-federation-ops",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.personal-peer-mesh",
+      "to": "initiative.nou-a2a-coordination",
+      "type": "informs"
+    },
+    {
+      "from": "initiative.personal-peer-mesh",
+      "to": "initiative.regen-federation-deepening",
+      "type": "informs"
+    },
+    {
+      "from": "work.p2p-agent-message-rid-and-routing",
+      "to": "work.p2p-koi-transport-adapter",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.p2p-vault-sync-shawn-onboard",
+      "to": "work.p2p-three-peer-smoke-test",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.p2p-koi-transport-adapter",
+      "to": "work.p2p-three-peer-smoke-test",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.node-salt-spring-island",
+      "to": "initiative.personal-peer-mesh",
+      "type": "informs"
+    },
+    {
+      "from": "work.p2p-three-peer-smoke-test",
+      "to": "milestone.three-peer-mesh-validated",
+      "type": "delivers"
+    },
+    {
+      "from": "work.p2p-vault-sync-shawn-onboard",
+      "to": "milestone.three-peer-mesh-validated",
+      "type": "delivers"
+    },
+    {
+      "from": "work.p2p-koi-transport-adapter",
+      "to": "milestone.three-peer-mesh-validated",
+      "type": "delivers"
+    },
+    {
+      "from": "work.flow-funding-foundations-doc",
+      "to": "initiative.tbff-knowledge-flow-pilot",
+      "type": "delivers"
+    },
+    {
+      "from": "work.hub-cultivator-decision-logging",
+      "to": "initiative.tbff-knowledge-flow-pilot",
+      "type": "delivers"
+    },
+    {
+      "from": "work.tbff-settlement-evidence-bridge",
+      "to": "initiative.tbff-knowledge-flow-pilot",
+      "type": "delivers"
+    },
+    {
+      "from": "work.receipt-chain-fix",
+      "to": "initiative.tbff-knowledge-flow-pilot",
+      "type": "delivers"
+    },
+    {
+      "from": "work.victoria-landscape-hub-seeding",
+      "to": "initiative.tbff-knowledge-flow-pilot",
+      "type": "delivers"
+    },
+    {
+      "from": "work.receipt-chain-fix",
+      "to": "work.hub-cultivator-decision-logging",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.receipt-chain-fix",
+      "to": "work.tbff-settlement-evidence-bridge",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.victoria-landscape-hub-seeding",
+      "to": "work.hub-cultivator-decision-logging",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.hub-cultivator-decision-logging",
+      "to": "milestone.tbff-v0-writeback-demo-2026-03-14",
+      "type": "delivers"
+    },
+    {
+      "from": "work.receipt-chain-fix",
+      "to": "milestone.tbff-v0-writeback-demo-2026-03-14",
+      "type": "delivers"
+    },
+    {
+      "from": "work.victoria-landscape-hub-seeding",
+      "to": "milestone.tbff-v0-writeback-demo-2026-03-14",
+      "type": "delivers"
+    },
+    {
+      "from": "work.b1-chat-retrieval-hardening",
+      "to": "initiative.part-b-kg-chat",
+      "type": "delivers"
+    },
+    {
+      "from": "work.b6-hybrid-bm25-rrf",
+      "to": "initiative.part-b-kg-chat",
+      "type": "delivers"
+    },
+    {
+      "from": "work.b7-cross-encoder-reranking",
+      "to": "initiative.part-b-kg-chat",
+      "type": "delivers"
+    },
+    {
+      "from": "work.b8-contextual-retrieval",
+      "to": "initiative.part-b-kg-chat",
+      "type": "delivers"
+    },
+    {
+      "from": "work.b8a-entity-enrichment",
+      "to": "initiative.part-b-kg-chat",
+      "type": "delivers"
+    },
+    {
+      "from": "work.b8b-multi-query-expansion",
+      "to": "initiative.part-b-kg-chat",
+      "type": "delivers"
+    },
+    {
+      "from": "work.b9-agentic-sql-cypher",
+      "to": "initiative.part-b-kg-chat",
+      "type": "delivers"
+    },
+    {
+      "from": "work.b10-multi-tool-orchestration",
+      "to": "initiative.part-b-kg-chat",
+      "type": "delivers"
+    },
+    {
+      "from": "work.b11-raptor-tree",
+      "to": "initiative.part-b-kg-chat",
+      "type": "delivers"
+    },
+    {
+      "from": "work.b12-federated-retrieval",
+      "to": "initiative.part-b-kg-chat",
+      "type": "delivers"
+    },
+    {
+      "from": "work.b13-ad4m-coasys-bridge",
+      "to": "initiative.regen-federation-deepening",
+      "type": "delivers"
+    },
+    {
+      "from": "work.b6-hybrid-bm25-rrf",
+      "to": "work.b5-eval-gates",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b7-cross-encoder-reranking",
+      "to": "work.b6-hybrid-bm25-rrf",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b8-contextual-retrieval",
+      "to": "work.b5-eval-gates",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b8a-entity-enrichment",
+      "to": "work.b5-eval-gates",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b8b-multi-query-expansion",
+      "to": "work.b6-hybrid-bm25-rrf",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b9-agentic-sql-cypher",
+      "to": "work.b6-hybrid-bm25-rrf",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b10-multi-tool-orchestration",
+      "to": "work.b9-agentic-sql-cypher",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b2-graphrag-v1",
+      "to": "work.b10-multi-tool-orchestration",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b11-raptor-tree",
+      "to": "work.b8-contextual-retrieval",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b12-federated-retrieval",
+      "to": "work.b10-multi-tool-orchestration",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b12-federated-retrieval",
+      "to": "work.b3-federated-chat-policy",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b13-ad4m-coasys-bridge",
+      "to": "work.b12-federated-retrieval",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b12-federated-retrieval",
+      "to": "outcome.regen-bkc-shared-knowledge-layer",
+      "type": "informs"
+    },
+    {
+      "from": "work.b13-ad4m-coasys-bridge",
+      "to": "outcome.bioregional-swarm-live",
+      "type": "informs"
+    }
   ]
 }
