@@ -11,6 +11,9 @@ This folder contains planning, governance, and execution docs for the 2026 dual-
 - Open questions: `open-questions.md`
 - Review checklist: `review-checklist-benjamin.md`
 - Decision log: `decision-log.md`
+- **MVIS Pilot Spec**: `mvis-pilot-spec.md` — Operational contract for the intent registry pilot
+- **MVIS Operator Runbook**: `mvis-operator-runbook.md` — Step-by-step operating cycle
+- **After-Action Template**: `after-action-template.md` — Post-session capture form
 
 ## Partner Onboarding
 - **Quickstart guide**: `partner-quickstart.md` — ingest your first entity in <15 min
@@ -49,3 +52,4 @@ This pilot validates the layered model:
 
 ## Operations Reference
 - KOI federation runbook: `../../docs/foundations/koi-federation-operations-runbook.md`
+- MVIS operator runbook: `mvis-operator-runbook.md`

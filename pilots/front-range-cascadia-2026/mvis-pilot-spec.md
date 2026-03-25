@@ -1,6 +1,6 @@
 # MVIS Pilot Spec — Regenerate Cascadia Intent Registry
 
-## Status: Draft (2026-03-24)
+## Status: Pilot-Ready (2026-03-24)
 
 This is the operational contract for the Minimum Viable Intent System (MVIS) pilot in the Regenerate Cascadia bioregion, May–July 2026. It scopes what the pilot builds and defers, defines coordinator workflows, and specifies the technical infrastructure.
 
@@ -314,6 +314,30 @@ Centralized in `landscape_group_config` table — governance parameters and coor
 | Asset vocabulary stabilized | < 10% churn in `intent_asset_vocabulary` after first 2 workshops |
 | Match report used in at least 1 follow-up workshop | Coordinator confirms report presented at workshop opening |
 | Draft → active review workflow tested | At least 1 transcript extraction → draft → human review → active cycle completed |
+
+---
+
+## 12. Deployed Baseline
+
+Frozen for first live cohort. No schema, endpoint, or response model changes until after-action review.
+
+| Component | Value |
+|-----------|-------|
+| Backend repo | `gaiaaiagent/koi-processor` `origin/regen-prod` |
+| Backend SHA | `b39d115ed55c41203d0a851b53ee9de25c9b7d73` |
+| Docs repo | `BioregionalKnowledgeCommoning` `origin/main` |
+| Docs SHA | `215c3a1e29a76dfda74354e9a1069bcb57b477b6` |
+| Migrations applied | 074 (intent_registry), 075 (intent_match_proposals), 076 (intent_discovery_cache) |
+| Seeded groups | 10 Cascadia landscape groups (duwamish_river_valley through whidbey_island) |
+| Seeded vocabulary | restoration_labor, soil_monitoring, mycoremediation, volunteer_coordination |
+| Access model | Local-only (`localhost:8351`) + WireGuard to NUC |
+| NUC deployment | Git checkout on `regen-prod`, proper venv, migrations applied |
+| Deferred backlog | 6 issues in KOI task registry (`mvis-followup-*`) |
+
+### Operational Documents
+
+- [Operator Runbook](mvis-operator-runbook.md) — Step-by-step operating cycle
+- [After-Action Template](after-action-template.md) — Post-session capture form
 
 ---
 
