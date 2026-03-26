@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bioregionalknowledgecommons.org/schema/doc-graph.schema.json",
+  "title": "Doc Graph",
+  "description": "Generated documentation dependency graph for BKC canonical docs.",
+  "type": "object",
+  "required": ["generated_at", "nodes", "edges"],
+  "additionalProperties": false,
+  "properties": {
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "nodes": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/doc_node"
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/doc_edge"
+      }
+    },
+    "unclassified": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Docs without frontmatter (informational)."
+    },
+    "roadmap_links": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "description": "Map of doc file paths to roadmap node IDs via source_docs."
+    },
+    "unvalidated_refs": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "External references that could not be validated locally."
+    }
+  },
+  "$defs": {
+    "doc_node": {
+      "type": "object",
+      "required": ["doc_kind", "status", "file_path", "depends_on"],
+      "additionalProperties": false,
+      "properties": {
+        "doc_kind": {
+          "type": "string",
+          "enum": ["vision", "foundation", "architecture", "spec", "operations", "research", "positioning"]
+        },
+        "status": {
+          "type": "string",
+          "enum": ["draft", "active", "superseded", "archived"]
+        },
+        "file_path": {
+          "type": "string"
+        },
+        "depends_on": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "primary_for": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "doc_edge": {
+      "type": "object",
+      "required": ["from", "to", "type"],
+      "additionalProperties": false,
+      "properties": {
+        "from": { "type": "string" },
+        "to": { "type": "string" },
+        "type": {
+          "type": "string",
+          "enum": ["depends_on"]
+        }
+      }
+    }
+  }
+}

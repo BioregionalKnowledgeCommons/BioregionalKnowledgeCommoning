@@ -1,3 +1,13 @@
+---
+doc_id: bkc.commitment-pooling
+doc_kind: spec
+status: active
+depends_on:
+  - bkc.commitment-economy-design
+primary_for:
+  - commitment-pooling
+---
+
 # Commitment Pooling Foundations
 
 **Layer:** Pattern Language + Capital Coordination

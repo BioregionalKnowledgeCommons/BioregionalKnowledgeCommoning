@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-"""Validate and render the semantic roadmap.
+"""Validate and render the semantic roadmap, with optional doc DAG support.
 
 This script treats docs/roadmap/semantic-roadmap.json as the canonical source.
 It performs integrity checks and generates docs/roadmap/ROADMAP.md.
+
+With --docs, it also validates canonical doc frontmatter and generates
+docs/_meta/doc-graph.json.
 """
 
 from __future__ import annotations
@@ -17,10 +20,14 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
+META_ROOT = ROOT.parent  # meta-repo root (BioregionKnwoledgeCommons/)
 ROADMAP_DIR = ROOT / "docs" / "roadmap"
 MODEL_PATH = ROADMAP_DIR / "semantic-roadmap.json"
 SCHEMA_PATH = ROADMAP_DIR / "semantic-roadmap.schema.json"
 OUTPUT_PATH = ROADMAP_DIR / "ROADMAP.md"
+DOCS_DIR = ROOT / "docs"
+META_DIR = DOCS_DIR / "_meta"
+DOC_GRAPH_PATH = META_DIR / "doc-graph.json"
 
 PRIORITY_ORDER = {"P0": 0, "P1": 1, "P2": 2, "P3": 3}
 STATUS_ORDER = {"in_progress": 0, "planned": 1, "blocked": 2, "done": 3, "deprecated": 4}
@@ -253,7 +260,304 @@ def render_markdown(model: Model) -> str:
     return "\n".join(lines) + "\n"
 
 
-def run(check_only: bool) -> None:
+# ---------------------------------------------------------------------------
+# Doc DAG support (requires --docs flag; yaml is lazy-imported)
+# ---------------------------------------------------------------------------
+
+VALID_DOC_KINDS = frozenset(
+    ["vision", "foundation", "architecture", "spec", "operations", "research", "positioning"]
+)
+
+# external: namespaces resolvable against the meta-repo root
+LOCAL_EXTERNAL_NAMESPACES = frozenset(["BioregionKnwoledgeCommons", "Octo"])
+
+
+def _load_yaml() -> Any:
+    """Lazy-import PyYAML; fail with a clear message if missing."""
+    try:
+        import yaml  # type: ignore
+    except ImportError:
+        raise SystemExit(
+            "ERROR: PyYAML is required for --docs. Install with: pip install pyyaml"
+        )
+    return yaml
+
+
+def parse_frontmatter(path: Path) -> dict[str, Any] | None:
+    """Extract YAML frontmatter from a markdown file, or return None."""
+    yaml = _load_yaml()
+    text = path.read_text(encoding="utf-8")
+    if not text.startswith("---"):
+        return None
+    end = text.find("\n---", 3)
+    if end == -1:
+        return None
+    block = text[3:end].strip()
+    try:
+        data = yaml.safe_load(block)
+    except Exception:
+        return None
+    if not isinstance(data, dict) or "doc_id" not in data:
+        return None
+    data["_file_path"] = str(path.relative_to(ROOT))
+    return data
+
+
+@dataclass
+class DocNode:
+    doc_id: str
+    doc_kind: str
+    status: str
+    depends_on: list[str]
+    file_path: str
+    primary_for: list[str]
+
+
+def scan_docs() -> dict[str, DocNode]:
+    """Scan all markdown files under docs/ for frontmatter with doc_id."""
+    nodes: dict[str, DocNode] = {}
+    for md_path in sorted(DOCS_DIR.rglob("*.md")):
+        if md_path.name.startswith(".") or "_meta" in md_path.parts:
+            continue
+        fm = parse_frontmatter(md_path)
+        if fm is None:
+            continue
+        doc_id = fm["doc_id"]
+        nodes[doc_id] = DocNode(
+            doc_id=doc_id,
+            doc_kind=fm.get("doc_kind", ""),
+            status=fm.get("status", "draft"),
+            depends_on=fm.get("depends_on", []),
+            file_path=fm["_file_path"],
+            primary_for=fm.get("primary_for", []),
+        )
+    return nodes
+
+
+def validate_doc_dag(nodes: dict[str, DocNode]) -> list[str]:
+    """Validate the doc DAG. Returns a list of error messages."""
+    errors: list[str] = []
+
+    # Check doc_kind values
+    for doc_id, node in nodes.items():
+        if node.doc_kind not in VALID_DOC_KINDS:
+            errors.append(
+                f"Doc {doc_id}: invalid doc_kind '{node.doc_kind}' "
+                f"(must be one of {sorted(VALID_DOC_KINDS)})"
+            )
+
+    # Check depends_on targets exist
+    for doc_id, node in nodes.items():
+        for dep in node.depends_on:
+            if dep not in nodes:
+                errors.append(f"Doc {doc_id}: depends_on target '{dep}' not found")
+
+    # Cycle detection (DFS)
+    graph: dict[str, list[str]] = defaultdict(list)
+    for doc_id, node in nodes.items():
+        for dep in node.depends_on:
+            graph[doc_id].append(dep)
+
+    visiting: set[str] = set()
+    visited: set[str] = set()
+
+    def dfs(nid: str) -> None:
+        if nid in visited:
+            return
+        if nid in visiting:
+            errors.append(f"Cycle detected in doc depends_on graph at: {nid}")
+            return
+        visiting.add(nid)
+        for nxt in graph.get(nid, []):
+            dfs(nxt)
+        visiting.discard(nid)
+        visited.add(nid)
+
+    for nid in nodes:
+        dfs(nid)
+
+    return errors
+
+
+def resolve_source_doc(ref: str) -> tuple[str, str | None]:
+    """Resolve a roadmap source_doc reference.
+
+    Returns (status, resolved_path_or_None).
+    status is one of: 'resolved', 'unvalidated', 'missing', 'url'.
+    """
+    if ref.startswith("http://") or ref.startswith("https://"):
+        return ("url", None)
+
+    if ref.startswith("external:"):
+        rest = ref[len("external:"):]
+        namespace = rest.split("/")[0] if "/" in rest else rest
+        if namespace in LOCAL_EXTERNAL_NAMESPACES:
+            candidate = META_ROOT / rest
+            if candidate.exists():
+                return ("resolved", str(candidate))
+            return ("missing", str(candidate))
+        return ("unvalidated", None)
+
+    # Relative path — resolve against roadmap dir
+    candidate = (ROADMAP_DIR / ref).resolve()
+    if candidate.exists():
+        return ("resolved", str(candidate))
+    # Also try from docs/ root
+    candidate2 = (DOCS_DIR / ref).resolve()
+    if candidate2.exists():
+        return ("resolved", str(candidate2))
+    return ("missing", str(candidate))
+
+
+def build_roadmap_links(model: Model) -> dict[str, list[str]]:
+    """Map doc file paths to roadmap node ids via source_docs."""
+    links: dict[str, list[str]] = defaultdict(list)
+    for node in model.nodes_by_id.values():
+        for ref in node.get("source_docs", []):
+            status, resolved = resolve_source_doc(ref)
+            if status == "resolved" and resolved:
+                try:
+                    rel = str(Path(resolved).relative_to(ROOT))
+                except ValueError:
+                    rel = resolved
+                links[rel].append(node["id"])
+    return dict(links)
+
+
+def cross_validate_source_docs(
+    model: Model, doc_nodes: dict[str, DocNode]
+) -> list[str]:
+    """Warn if roadmap source_docs point to archived docs."""
+    warnings: list[str] = []
+    doc_by_path = {n.file_path: n for n in doc_nodes.values()}
+    for node in model.nodes_by_id.values():
+        for ref in node.get("source_docs", []):
+            status, resolved = resolve_source_doc(ref)
+            if status == "resolved" and resolved:
+                try:
+                    rel = str(Path(resolved).relative_to(ROOT))
+                except ValueError:
+                    continue
+                if rel in doc_by_path and doc_by_path[rel].status == "archived":
+                    warnings.append(
+                        f"Roadmap node {node['id']}: source_doc '{ref}' "
+                        f"points to archived doc {doc_by_path[rel].doc_id}"
+                    )
+    return warnings
+
+
+def count_unclassified_docs() -> list[str]:
+    """List docs without frontmatter (informational, not errors)."""
+    unclassified: list[str] = []
+    for md_path in sorted(DOCS_DIR.rglob("*.md")):
+        if md_path.name.startswith(".") or "_meta" in md_path.parts:
+            continue
+        if md_path.name in ("CLAUDE.md", "README.md"):
+            continue
+        fm = parse_frontmatter(md_path)
+        if fm is None:
+            unclassified.append(str(md_path.relative_to(ROOT)))
+    return unclassified
+
+
+def generate_doc_graph(
+    doc_nodes: dict[str, DocNode],
+    roadmap_links: dict[str, list[str]],
+    unclassified: list[str],
+    model: Model,
+) -> dict[str, Any]:
+    """Generate the doc-graph.json content."""
+    nodes_out: dict[str, Any] = {}
+    edges_out: list[dict[str, str]] = []
+
+    for doc_id, node in sorted(doc_nodes.items()):
+        nodes_out[doc_id] = {
+            "doc_kind": node.doc_kind,
+            "status": node.status,
+            "file_path": node.file_path,
+            "depends_on": node.depends_on,
+            "primary_for": node.primary_for,
+        }
+        for dep in node.depends_on:
+            edges_out.append({"from": doc_id, "to": dep, "type": "depends_on"})
+
+    # Collect unvalidated external refs
+    unvalidated: list[str] = []
+    for node in model.nodes_by_id.values():
+        for ref in node.get("source_docs", []):
+            status, _ = resolve_source_doc(ref)
+            if status == "unvalidated":
+                if ref not in unvalidated:
+                    unvalidated.append(ref)
+
+    return {
+        "generated_at": datetime.now(tz=UTC).isoformat(),
+        "nodes": nodes_out,
+        "edges": edges_out,
+        "unclassified": unclassified,
+        "roadmap_links": roadmap_links,
+        "unvalidated_refs": sorted(unvalidated),
+    }
+
+
+def run_docs(check_only: bool, json_output: bool, model: Model) -> bool:
+    """Run doc DAG validation and optionally generate doc-graph.json.
+
+    Returns True if validation passed.
+    """
+    doc_nodes = scan_docs()
+
+    if not doc_nodes:
+        msg = "No docs with frontmatter found under docs/"
+        if json_output:
+            print(json.dumps({"status": "warning", "message": msg}))
+        else:
+            print(f"WARNING: {msg}")
+        return True
+
+    errors = validate_doc_dag(doc_nodes)
+    warnings = cross_validate_source_docs(model, doc_nodes)
+    unclassified = count_unclassified_docs()
+    roadmap_links = build_roadmap_links(model)
+
+    if json_output:
+        result: dict[str, Any] = {
+            "status": "error" if errors else "ok",
+            "doc_count": len(doc_nodes),
+            "errors": errors,
+            "warnings": warnings,
+            "unclassified_count": len(unclassified),
+        }
+        if not check_only:
+            graph = generate_doc_graph(doc_nodes, roadmap_links, unclassified, model)
+            result["doc_graph"] = graph
+        print(json.dumps(result, indent=2))
+    else:
+        print(f"Doc DAG: {len(doc_nodes)} canonical docs found")
+        if errors:
+            for e in errors:
+                print(f"  ERROR: {e}")
+        else:
+            print("  All checks passed")
+        if warnings:
+            for w in warnings:
+                print(f"  WARNING: {w}")
+        print(f"  {len(unclassified)} docs without frontmatter (unclassified)")
+
+    if not check_only and not errors:
+        graph = generate_doc_graph(doc_nodes, roadmap_links, unclassified, model)
+        META_DIR.mkdir(parents=True, exist_ok=True)
+        DOC_GRAPH_PATH.write_text(
+            json.dumps(graph, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+        if not json_output:
+            print(f"  Generated {DOC_GRAPH_PATH.relative_to(ROOT)}")
+
+    return len(errors) == 0
+
+
+def run(check_only: bool, docs: bool = False, json_output: bool = False) -> None:
     schema = load_json(SCHEMA_PATH)
     data = load_json(MODEL_PATH)
     validate_with_jsonschema(schema, data)
@@ -261,19 +565,39 @@ def run(check_only: bool) -> None:
     detect_cycles_depends_on(model)
 
     markdown = render_markdown(model)
-    if check_only:
-        return
-    OUTPUT_PATH.write_text(markdown, encoding="utf-8")
+    if not check_only:
+        OUTPUT_PATH.write_text(markdown, encoding="utf-8")
+
+    if docs:
+        ok = run_docs(check_only=check_only, json_output=json_output, model=model)
+        if not ok:
+            raise ValidationError("Doc DAG validation failed (see errors above)")
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Build semantic roadmap markdown from canonical JSON model.")
-    parser.add_argument("--check", action="store_true", help="Validate only; do not write ROADMAP.md.")
+    parser = argparse.ArgumentParser(
+        description="Build semantic roadmap markdown from canonical JSON model."
+    )
+    parser.add_argument(
+        "--check", action="store_true",
+        help="Validate only; do not write ROADMAP.md or doc-graph.json.",
+    )
+    parser.add_argument(
+        "--docs", action="store_true",
+        help="Also validate/generate the doc DAG (requires PyYAML).",
+    )
+    parser.add_argument(
+        "--json", action="store_true",
+        help="Machine-readable JSON output (for skill consumption).",
+    )
     args = parser.parse_args()
     try:
-        run(check_only=args.check)
+        run(check_only=args.check, docs=args.docs, json_output=args.json)
     except ValidationError as exc:
-        print(f"ERROR: {exc}")
+        if args.json:
+            print(json.dumps({"status": "error", "message": str(exc)}))
+        else:
+            print(f"ERROR: {exc}")
         return 1
     return 0
 

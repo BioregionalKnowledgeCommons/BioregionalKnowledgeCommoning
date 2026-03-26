@@ -1,0 +1,289 @@
+{
+  "generated_at": "2026-03-26T06:32:47.695372+00:00",
+  "nodes": {
+    "bkc.commitment-economy-design": {
+      "doc_kind": "spec",
+      "status": "active",
+      "file_path": "docs/foundations/commitment-economy-design.md",
+      "depends_on": [
+        "bkc.commitment-economy-vision"
+      ],
+      "primary_for": [
+        "commitment-economy-design",
+        "pooling-mechanisms"
+      ]
+    },
+    "bkc.commitment-economy-vision": {
+      "doc_kind": "architecture",
+      "status": "active",
+      "file_path": "docs/foundations/commitment-economy-vision.md",
+      "depends_on": [
+        "bkc.project-vision"
+      ],
+      "primary_for": [
+        "commitment-economy",
+        "capital-plane"
+      ]
+    },
+    "bkc.commitment-pooling": {
+      "doc_kind": "spec",
+      "status": "active",
+      "file_path": "docs/foundations/commitment-pooling-foundations.md",
+      "depends_on": [
+        "bkc.commitment-economy-design"
+      ],
+      "primary_for": [
+        "commitment-pooling"
+      ]
+    },
+    "bkc.federated-memory-arch": {
+      "doc_kind": "architecture",
+      "status": "draft",
+      "file_path": "docs/foundations/federated-memory-architecture.md",
+      "depends_on": [
+        "bkc.project-vision"
+      ],
+      "primary_for": [
+        "federated-memory",
+        "retrieval-architecture",
+        "agentic-retrieval"
+      ]
+    },
+    "bkc.federation-overview": {
+      "doc_kind": "foundation",
+      "status": "active",
+      "file_path": "docs/foundations/federation-overview.md",
+      "depends_on": [
+        "bkc.project-vision"
+      ],
+      "primary_for": [
+        "federation-protocol",
+        "koi-net"
+      ]
+    },
+    "bkc.meta-protocol": {
+      "doc_kind": "foundation",
+      "status": "active",
+      "file_path": "docs/foundations/knowledge-commoning-meta-protocol-v0.1.md",
+      "depends_on": [
+        "bkc.project-vision"
+      ],
+      "primary_for": [
+        "interoperability",
+        "meta-protocol"
+      ]
+    },
+    "bkc.project-vision": {
+      "doc_kind": "vision",
+      "status": "active",
+      "file_path": "docs/project-vision.md",
+      "depends_on": [],
+      "primary_for": [
+        "project-vision",
+        "design-principles"
+      ]
+    },
+    "bkc.rag-synthesis": {
+      "doc_kind": "spec",
+      "status": "active",
+      "file_path": "docs/research/rag-techniques-synthesis.md",
+      "depends_on": [
+        "bkc.federated-memory-arch"
+      ],
+      "primary_for": [
+        "rag-retrieval",
+        "eval-pipeline"
+      ]
+    }
+  },
+  "edges": [
+    {
+      "from": "bkc.commitment-economy-design",
+      "to": "bkc.commitment-economy-vision",
+      "type": "depends_on"
+    },
+    {
+      "from": "bkc.commitment-economy-vision",
+      "to": "bkc.project-vision",
+      "type": "depends_on"
+    },
+    {
+      "from": "bkc.commitment-pooling",
+      "to": "bkc.commitment-economy-design",
+      "type": "depends_on"
+    },
+    {
+      "from": "bkc.federated-memory-arch",
+      "to": "bkc.project-vision",
+      "type": "depends_on"
+    },
+    {
+      "from": "bkc.federation-overview",
+      "to": "bkc.project-vision",
+      "type": "depends_on"
+    },
+    {
+      "from": "bkc.meta-protocol",
+      "to": "bkc.project-vision",
+      "type": "depends_on"
+    },
+    {
+      "from": "bkc.rag-synthesis",
+      "to": "bkc.federated-memory-arch",
+      "type": "depends_on"
+    }
+  ],
+  "unclassified": [
+    "docs/bioregional-ai-swarms-positioning.md",
+    "docs/bioregional-swarm-telos.md",
+    "docs/briefs/ftc-capital-plane-brief-2026-03-13.md",
+    "docs/demo-artifacts/gv-cv-federation-proof-2026-03-12.md",
+    "docs/demo-artifacts/tbff-threshold-demo-2026-03-12.md",
+    "docs/foundations/bioregion-onboarding-playbook.md",
+    "docs/foundations/bioregional-ai-swarms-pattern-language.md",
+    "docs/foundations/bioregional-mapping-intake-contract-v0.1.md",
+    "docs/foundations/bioregional-mapping-model-v0.1.md",
+    "docs/foundations/commonschange-reference-profile-v0.1.md",
+    "docs/foundations/data-classification-matrix-v0.1.md",
+    "docs/foundations/flow-funding-foundations.md",
+    "docs/foundations/holonic-swarm-reference-architecture.md",
+    "docs/foundations/interview-to-graph-mvp-v0.1.md",
+    "docs/foundations/koi-federation-operations-runbook.md",
+    "docs/foundations/node-participation-profiles.md",
+    "docs/foundations/ontology-commoning-framework.md",
+    "docs/foundations/ontology-commoning-ops-v0.1.md",
+    "docs/foundations/pattern-language-for-bioregional-knowledge-commoning-v0.1.md",
+    "docs/foundations/rights-licensing-consent-policy-slots.md",
+    "docs/foundations/transcription-and-processing-pipeline.md",
+    "docs/ge-integration/clc-integration-strategy.md",
+    "docs/ge-integration/clc-questions-synthesis.md",
+    "docs/ge-integration/compatibility-memo.md",
+    "docs/ge-integration/intent-publication.md",
+    "docs/ops/mediawiki-v1.5-qa-2026-03-22.md",
+    "docs/research/RAG architecture decisions for Octo's next evolution(Claude).md",
+    "docs/research/State-of-the-Art RAG Techniques for Knowledge Graph Retrieval (gemini).md",
+    "docs/research/Updating Octo’s RAG Decision Document for Relaxed Constraints and Federation(ChatGPT).md",
+    "docs/research/pacto-bkc-convergence-v0.1.md",
+    "docs/research/pacto-issue-6-comment-draft.md",
+    "docs/research/rag-techniques-research-prompt.md",
+    "docs/roadmap/ROADMAP.md"
+  ],
+  "roadmap_links": {
+    "docs/bioregional-ai-swarms-positioning.md": [
+      "outcome.capital-loop-provable",
+      "initiative.commitment-pooling-integration",
+      "work.b4-tbff-flow-integration",
+      "work.c1-tbff-commitment-threshold",
+      "work.owocki-tranche-proposal-v1",
+      "work.tbff-threshold-policy-v0",
+      "work.r1-claims-grant-matching"
+    ],
+    "docs/foundations/bioregional-ai-swarms-pattern-language.md": [
+      "outcome.capital-loop-provable",
+      "work.b4-tbff-flow-integration",
+      "work.c0-evidence-commitment-bridge",
+      "work.tbff-receipt-to-evidence-v0"
+    ],
+    "docs/foundations/commitment-pooling-foundations.md": [
+      "outcome.commitment-pools-provable",
+      "initiative.commitment-pooling-integration",
+      "initiative.tbff-knowledge-flow-pilot",
+      "decision.commitment-pooling-native-first",
+      "work.c0-commitment-governance-extension",
+      "work.c0-commitment-ontology",
+      "work.c0-commitment-philosophy-doc",
+      "work.c1-commitment-pool-api",
+      "work.c1-demurrage-policy-spec",
+      "work.c1-ge-protocol-study",
+      "work.c1-pool-governance-membrane",
+      "work.c1-tbff-commitment-threshold",
+      "work.c2-commitment-koi-net-events",
+      "work.c2-cross-node-pool-aggregation",
+      "work.c2-hypercert-from-commitment",
+      "work.c2-regenerate-cascadia-pilot",
+      "initiative.regen-claims-engine-integration",
+      "work.r0-claims-schema-alignment",
+      "work.r0-multi-party-verification",
+      "work.r1-challenge-dispute"
+    ],
+    "docs/foundations/rights-licensing-consent-policy-slots.md": [
+      "outcome.policy-governed-sharing",
+      "work.s1-data-class-matrix"
+    ],
+    "docs/foundations/knowledge-commoning-meta-protocol-v0.1.md": [
+      "outcome.policy-governed-sharing"
+    ],
+    "/Users/darrenzal/projects/BioregionKnwoledgeCommons/Octo/docs/koi-protocol-alignment-master.md": [
+      "outcome.secure-federation-ops",
+      "work.c2-commitment-koi-net-events",
+      "initiative.regen-federation-deepening",
+      "work.r2-commoning-koi-mcp-split",
+      "work.r2-regen-bkc-entity-bridge"
+    ],
+    "pilots/front-range-cascadia-2026/mar5-build-day-runbook.md": [
+      "initiative.build-day-sprint-mar5",
+      "work.commons-prestage-helper",
+      "work.external-pipeline-1-live",
+      "work.external-pipeline-2-live",
+      "work.telegram-gate-metric-alignment",
+      "work.weekly-proof-pack"
+    ],
+    "docs/foundations/flow-funding-foundations.md": [
+      "initiative.tbff-knowledge-flow-pilot",
+      "work.flow-funding-foundations-doc"
+    ],
+    "/Users/darrenzal/projects/BioregionKnwoledgeCommons/Octo/ontology/bkc-ontology.jsonld": [
+      "work.c0-commitment-ontology",
+      "work.c0-commitment-pooling"
+    ],
+    "pilots/front-range-cascadia-2026/dual-bioregion-pilot-plan-v2.md": [
+      "work.c2-regenerate-cascadia-pilot"
+    ],
+    "pilots/front-range-cascadia-2026/mvis-pilot-spec.md": [
+      "work.mvis-intent-registry"
+    ],
+    "docs/ge-integration/intent-publication.md": [
+      "work.mvis-intent-registry"
+    ],
+    "pilots/front-range-cascadia-2026/partner-quickstart.md": [
+      "work.external-pipeline-1-live",
+      "work.external-pipeline-2-live"
+    ],
+    "/Users/darrenzal/projects/BioregionKnwoledgeCommons/Octo/CLAUDE.md": [
+      "work.octo-branch-consolidation"
+    ],
+    "pilots/front-range-cascadia-2026/telegram-gate-templates.md": [
+      "work.owocki-tranche-proposal-v1",
+      "work.telegram-gate-metric-alignment"
+    ],
+    "pilots/front-range-cascadia-2026/decision-log.md": [
+      "work.s6-evidence-grading",
+      "work.tbff-receipt-to-evidence-v0",
+      "work.tbff-threshold-policy-v0"
+    ],
+    "pilots/front-range-cascadia-2026/seed-build-day-entities.sh": [
+      "work.seed-build-day-entities-script"
+    ],
+    "/Users/darrenzal/projects/BioregionKnwoledgeCommons/Octo/docs/new-bioregion-quickstart.md": [
+      "work.node-salt-spring-island"
+    ],
+    "docs/foundations/bioregion-onboarding-playbook.md": [
+      "work.node-salt-spring-island"
+    ]
+  },
+  "unvalidated_refs": [
+    "external:BioregionalKnowledgeCommoning/docs/foundations/commitment-pooling-integration.md",
+    "external:RegenAI/koi-processor/api/event_queue.py",
+    "external:RegenAI/koi-processor/api/koi_poller.py",
+    "external:RegenAI/koi-processor/api/koi_protocol.py",
+    "external:RegenAI/koi-processor/api/routers/commitment_router.py",
+    "external:RegenAI/koi-processor/docs/planning/KOI_NET_VAULT_SYNC_ROADMAP.md",
+    "external:RegenAI/regen-compute/CLAUDE.md",
+    "external:bioregional-commons-web/README.md",
+    "external:bioregional-commons-web/web/public/swarm-map.html",
+    "external:bioregional-commons-web/web/src/app/api/chat/route.ts",
+    "external:bioregional-commons-web/web/src/components/ingest/IngestPanel.tsx",
+    "external:claude-plans/soft-stargazing-crab.md",
+    "external:regen-ledger/x/data"
+  ]
+}

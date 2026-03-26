@@ -1,3 +1,14 @@
+---
+doc_id: bkc.commitment-economy-vision
+doc_kind: architecture
+status: active
+depends_on:
+  - bkc.project-vision
+primary_for:
+  - commitment-economy
+  - capital-plane
+---
+
 # Commitment Economy Vision
 
 **Layer:** Pattern Language + Capital Coordination + Philosophy

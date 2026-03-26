@@ -45,8 +45,20 @@ This folder defines the roadmap-of-record in two forms:
 From `BioregionalKnowledgeCommoning/`:
 
 ```bash
+# Validate roadmap only
 python3 scripts/build_semantic_roadmap.py --check
+
+# Generate ROADMAP.md
 python3 scripts/build_semantic_roadmap.py
+
+# Validate roadmap + doc DAG (requires PyYAML)
+python3 scripts/build_semantic_roadmap.py --check --docs
+
+# Generate ROADMAP.md + docs/_meta/doc-graph.json
+python3 scripts/build_semantic_roadmap.py --docs
+
+# Machine-readable output (for /doc-check skill)
+python3 scripts/build_semantic_roadmap.py --check --docs --json
 ```
 
 ## GitHub Project sync

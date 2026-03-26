@@ -1,3 +1,14 @@
+---
+doc_id: bkc.meta-protocol
+doc_kind: foundation
+status: active
+depends_on:
+  - bkc.project-vision
+primary_for:
+  - interoperability
+  - meta-protocol
+---
+
 # Knowledge Commoning Meta-Protocol v0.1
 
 ## Purpose

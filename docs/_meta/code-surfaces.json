@@ -1,0 +1,38 @@
+{
+  "surfaces": [
+    {
+      "doc_id": "bkc.rag-synthesis",
+      "repo": "RegenAI/koi-processor",
+      "paths": [
+        "api/personal_ingest_api.py",
+        "api/contextual_retriever.py",
+        "tests/eval/**"
+      ]
+    },
+    {
+      "doc_id": "bkc.federated-memory-arch",
+      "repo": "RegenAI/koi-processor",
+      "paths": [
+        "api/routers/claims_router.py",
+        "api/routers/commitment_router.py",
+        "api/koi_net_router.py"
+      ]
+    },
+    {
+      "doc_id": "bkc.federation-overview",
+      "repo": "RegenAI/koi-processor",
+      "paths": [
+        "api/koi_net/**",
+        "api/edge_router.py"
+      ]
+    },
+    {
+      "doc_id": "bkc.commitment-pooling",
+      "repo": "RegenAI/koi-processor",
+      "paths": [
+        "api/routers/commitment_router.py",
+        "api/commitment_extractor.py"
+      ]
+    }
+  ]
+}

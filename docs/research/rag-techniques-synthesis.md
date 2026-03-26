@@ -1,3 +1,14 @@
+---
+doc_id: bkc.rag-synthesis
+doc_kind: spec
+status: active
+depends_on:
+  - bkc.federated-memory-arch
+primary_for:
+  - rag-retrieval
+  - eval-pipeline
+---
+
 # RAG Techniques Synthesis: Three-Model Research Report for Octo
 
 **Date:** 2026-03-22

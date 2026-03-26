@@ -1,3 +1,14 @@
+---
+doc_id: bkc.federation-overview
+doc_kind: foundation
+status: active
+depends_on:
+  - bkc.project-vision
+primary_for:
+  - federation-protocol
+  - koi-net
+---
+
 # KOI Federation: A Guide to Federated Knowledge Commons
 
 > **What this document covers:** How organizations with existing knowledge gardens can connect them into a federated network using the KOI protocol — without restructuring their data, surrendering sovereignty, or centralizing control.

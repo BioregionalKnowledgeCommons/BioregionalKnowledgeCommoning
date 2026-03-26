@@ -1,3 +1,14 @@
+---
+doc_id: bkc.commitment-economy-design
+doc_kind: spec
+status: active
+depends_on:
+  - bkc.commitment-economy-vision
+primary_for:
+  - commitment-economy-design
+  - pooling-mechanisms
+---
+
 # Commitment Economy Design
 
 **Companion doc:** [commitment-economy-vision.md](./commitment-economy-vision.md) — philosophy, pattern language, transition path, and situated-transfer metadata for the mechanisms described here.
