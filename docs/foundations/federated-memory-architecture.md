@@ -163,12 +163,30 @@ After initial retrieval, a corrective gate evaluates whether the evidence is suf
 
 ## Graph-model stance
 
-**PostgreSQL-first, storage-agnostic.**
+**Polyglot semantic architecture. PostgreSQL-first, storage-agnostic.**
 
-- **Current**: Apache AGE (Postgres extension) for graph storage and Cypher queries. pgvector for embeddings.
-- **Why not RDF/OWL**: Cypher is more pragmatic for the bioregional domain. SPARQL excels at interoperability queries across formal ontologies, but BKC's graph is primarily navigational (entity neighborhoods, relationship paths) rather than inferential.
-- **AD4M/Coasys**: Optional semantic overlay for personal agent-centric knowledge. Not a required substrate. If real governance use cases demand formal ontology reasoning, AD4M provides a path without replacing the core graph.
-- **Escape hatch**: If corpus exceeds ~50K entities and dynamic community detection becomes critical (LazyGraphRAG territory), the architecture supports swapping to Neo4j or JanusGraph. The QueryPlan IR abstracts over the storage layer.
+Do not choose a single graph substrate. Different graph traditions serve different needs:
+
+| Technology | Role in BKC | Status |
+|------------|-------------|--------|
+| **Apache AGE** (Postgres + openCypher) | Graph storage, path traversal, GraphRAG, neighborhood queries | Production |
+| **pgvector** | Embedding storage, semantic similarity | Production |
+| **JSON-LD** (`bkc-ontology.jsonld`) | Cross-system interoperability bridge — JSON that CAN be read as RDF without requiring RDF tooling | Production |
+| **RDF / SHACL** | Formal ontology alignment, FAIR data interop, semantic web integration | Aspirational — zero RDF in BKC today; relevant if interop with Solid pods, linked open data, or formal ontology systems becomes needed |
+| **AD4M / Coasys** | Personal subjective overlays, agent-local perspectives | Candidate concept — the Perspectives model is the right *idea* for sovereign agent memory; whether AD4M is the right *implementation* depends on their roadmap (SPARQL support is planned, not shipped; runtime uses SurrealDB) |
+| **GQL (ISO 39075:2024)** | Standard direction for property graphs | Not actionable yet — AGE uses openCypher; GQL conformance is partial across vendors |
+
+**AGE specifics**: AGE is a Postgres extension, not a standalone database. Cypher queries run inside SQL via `cypher()` function calls. Hybrid SQL+Cypher works — Cypher results can participate in CTEs, JOINs, IN, and EXISTS clauses. You cannot write arbitrary SQL inside Cypher directly; SQL-in-Cypher requires user-defined functions.
+
+**When to use what**:
+- **Traversal, path queries, entity neighborhoods, GraphRAG** → AGE / Cypher
+- **Cross-system ontology metadata, schema publication** → JSON-LD (current), RDF/SHACL (if formal alignment needed)
+- **Subjective agent-local knowledge, personal overlays** → AD4M Perspectives model (concept); implementation TBD
+- **Embedding search, hybrid retrieval** → pgvector + BM25 via tsvector
+
+**Escape hatch**: If corpus exceeds ~50K entities and dynamic community detection becomes critical (LazyGraphRAG territory), the architecture supports swapping to Neo4j or JanusGraph. The QueryPlan IR abstracts over the storage layer.
+
+**One-line summary**: Property graphs are the retrieval/execution language; JSON-LD is the current interop bridge; RDF becomes relevant at formal ontology boundaries; AD4M is a future candidate for sovereign agent memory.
 
 ## Federation trust model
 
