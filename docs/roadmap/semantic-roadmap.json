@@ -2,8 +2,8 @@
   "@context": "./semantic-roadmap.context.json",
   "roadmap_id": "bkc.roadmap.2026.part-b",
   "program": "Bioregional Knowledge Commons",
-  "version": "0.9.0",
-  "as_of": "2026-03-22",
+  "version": "0.10.0",
+  "as_of": "2026-03-26",
   "owners": [
     {
       "id": "owner.darren",
@@ -61,7 +61,7 @@
       "kind": "outcome",
       "title": "Capital allocation loop is provable end-to-end",
       "summary": "At least one real allocation is linked to machine-readable evidence and provenance receipts.",
-      "status": "in_progress",
+      "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
@@ -74,14 +74,15 @@
         "../bioregional-ai-swarms-positioning.md",
         "../foundations/bioregional-ai-swarms-pattern-language.md"
       ],
-      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/70"
+      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/70",
+      "completed_date": "2026-03-19"
     },
     {
       "id": "outcome.commitment-pools-provable",
       "kind": "outcome",
       "title": "Commitment pooling is provable end-to-end in at least one bioregion",
       "summary": "A community can pledge, pool, fulfill, prove with Evidence, and redeem a commitment within the BKC system. Capital flows are visible, routable, and accountable.",
-      "status": "planned",
+      "status": "in_progress",
       "priority": "P1",
       "horizon": "180-365d",
       "owner": "owner.darren",
@@ -101,7 +102,7 @@
       "kind": "outcome",
       "title": "KG chat roadmap decisions are evaluation-driven",
       "summary": "RAG pipeline changes gated by automated DeepEval + RAGAS evaluation. 20-week phased roadmap from synthesis of 3 independent model research reports. Target: 50-70% retrieval quality improvement.",
-      "status": "planned",
+      "status": "in_progress",
       "priority": "P1",
       "horizon": "30-90d",
       "owner": "owner.darren",
@@ -111,7 +112,7 @@
       ],
       "source_docs": [
         "external:BioregionKnwoledgeCommons/CLAUDE.md",
-        "docs/research/rag-techniques-synthesis.md"
+        "../foundations/federated-memory-architecture.md"
       ],
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/76"
     },
@@ -158,7 +159,7 @@
       "kind": "outcome",
       "title": "Showcase reliability remains high across 4 nodes",
       "summary": "Keep live demo and preflight stable while new capabilities land.",
-      "status": "in_progress",
+      "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
@@ -170,7 +171,8 @@
         "external:BioregionKnwoledgeCommons/DEMO-CHECKPOINT.md",
         "external:BioregionKnwoledgeCommons/CLAUDE.md"
       ],
-      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/73"
+      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/73",
+      "completed_date": "2026-03-15"
     },
     {
       "id": "initiative.build-day-sprint-mar5",
@@ -198,7 +200,7 @@
       "kind": "initiative",
       "title": "Commitment pooling integration — C0/C1/C2 track",
       "summary": "Extend BKC's Capital Plane with commitment pooling as a first-class economic primitive. C0: ontology + registry API. C1: pool mechanics + TBFF threshold gates. C2: KOI-net federation + GE/Sarafu bridge.",
-      "status": "planned",
+      "status": "in_progress",
       "priority": "P1",
       "horizon": "30-90d",
       "owner": "owner.darren",
@@ -335,8 +337,7 @@
         "roadmap"
       ],
       "source_docs": [
-        "external:BioregionKnwoledgeCommons/CLAUDE.md",
-        "docs/research/rag-techniques-synthesis.md"
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
       ],
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/10"
     },
@@ -1136,7 +1137,7 @@
       "kind": "work_item",
       "title": "Implement TBFF flow write-back loop",
       "summary": "Take TBFF from design to running loop: flow decisions become KOI evidence-linked records with provenance.",
-      "status": "in_progress",
+      "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
@@ -1144,26 +1145,27 @@
         "../bioregional-ai-swarms-positioning.md",
         "../foundations/bioregional-ai-swarms-pattern-language.md"
       ],
-      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/20"
+      "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/20",
+      "completed_date": "2026-03-18"
     },
     {
       "id": "work.b5-eval-gates",
       "kind": "work_item",
       "title": "B5 — Automated evaluation pipeline (DeepEval + RAGAS)",
       "summary": "Replace manual 10-question QA with automated regression testing. DeepEval (pytest-style, 7+ RAG metrics) + RAGAS (synthetic test generation). Generate 100-200 Q&A pairs, set thresholds (faithfulness ≥0.7, context relevancy ≥0.6). Gate for all subsequent retrieval changes. Cost: ~$0.10-0.50 per 100-sample run. Research synthesis complete — unblocked and ready for implementation.",
-      "status": "planned",
+      "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
       "source_docs": [
-        "external:BioregionKnwoledgeCommons/CLAUDE.md",
-        "docs/research/rag-techniques-synthesis.md"
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
       ],
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/16",
       "tags": [
         "rag-synthesis",
         "chat"
-      ]
+      ],
+      "completed_date": "2026-03-23"
     },
     {
       "id": "work.c0-commitment-governance-extension",
@@ -1254,7 +1256,7 @@
       "kind": "work_item",
       "title": "C0 — Wire Evidence entities to proves_commitment predicate",
       "summary": "Link existing Evidence entities to Commitment pledges via proves_commitment predicate. TBFF receipt write-back can now reference the commitment it fulfills. Link endpoint: POST /commitments/{rid}/link-evidence.",
-      "status": "planned",
+      "status": "in_progress",
       "priority": "P1",
       "horizon": "0-30d",
       "owner": "owner.darren",
@@ -1433,7 +1435,11 @@
       "priority": "P1",
       "horizon": "0-30d",
       "owner": "owner.darren",
-      "tags": ["intents", "cascadia", "pilot"],
+      "tags": [
+        "intents",
+        "cascadia",
+        "pilot"
+      ],
       "source_docs": [
         "../../pilots/front-range-cascadia-2026/mvis-pilot-spec.md",
         "../ge-integration/intent-publication.md"
@@ -1448,7 +1454,11 @@
       "priority": "P1",
       "horizon": "30-90d",
       "owner": "owner.darren",
-      "tags": ["intents", "cascadia", "matchmaking"]
+      "tags": [
+        "intents",
+        "cascadia",
+        "matchmaking"
+      ]
     },
     {
       "id": "work.mvis-asset-vocabulary",
@@ -1459,7 +1469,11 @@
       "priority": "P1",
       "horizon": "30-90d",
       "owner": "owner.darren",
-      "tags": ["intents", "cascadia", "vocabulary"]
+      "tags": [
+        "intents",
+        "cascadia",
+        "vocabulary"
+      ]
     },
     {
       "id": "work.chat-fanout-scoring",
@@ -2626,7 +2640,7 @@
       "kind": "work_item",
       "title": "B6 — Hybrid BM25 + dense retrieval with RRF",
       "summary": "Add real BM25 via PostgreSQL tsvector + GIN index. Combine with pgvector cosine via Reciprocal Rank Fusion (k=60). Upgrade path: ParadeDB pg_search for true BM25 with IDF. Effort: 0.5-2 days. Impact: 15-30% recall improvement.",
-      "status": "planned",
+      "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
@@ -2636,14 +2650,15 @@
       ],
       "source_docs": [
         "docs/research/rag-techniques-synthesis.md"
-      ]
+      ],
+      "completed_date": "2026-03-23"
     },
     {
       "id": "work.b7-cross-encoder-reranking",
       "kind": "work_item",
       "title": "B7 — Cross-encoder reranking (FlashRank)",
       "summary": "Add FlashRank CPU reranking after hybrid retrieval (top 50 → top 8). MiniLM-L-12, ~200ms on CPU, no PyTorch. Upgrade path: gte-reranker-modernbert-base or Cohere API with GPU. Effort: 0.5-1 day. Impact: 10-25% precision improvement.",
-      "status": "planned",
+      "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
@@ -2653,14 +2668,15 @@
       ],
       "source_docs": [
         "docs/research/rag-techniques-synthesis.md"
-      ]
+      ],
+      "completed_date": "2026-03-23"
     },
     {
       "id": "work.b8-contextual-retrieval",
       "kind": "work_item",
       "title": "B8 — Contextual retrieval",
       "summary": "Batch-process chunks through GPT-4o-mini to generate context snippets explaining each chunk’s position in its source document (Anthropic pattern). Prepend to chunk text, re-embed, update BM25 index. 49-67% fewer retrieval failures. One-time cost ~$1.28 for 4,500 chunks.",
-      "status": "planned",
+      "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
@@ -2670,14 +2686,15 @@
       ],
       "source_docs": [
         "docs/research/rag-techniques-synthesis.md"
-      ]
+      ],
+      "completed_date": "2026-03-24"
     },
     {
       "id": "work.b8a-entity-enrichment",
       "kind": "work_item",
       "title": "B8a — Entity description enrichment",
       "summary": "Batch-generate descriptions for all 2,769 entities (92% are name-only embeddings). Basic level: 2-3 sentence description (~$0.50-1.00). Rich level: name + description + source excerpts + related entities (~$1-3). Re-embed after enrichment. Directly improves every retrieval path.",
-      "status": "planned",
+      "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
@@ -2687,14 +2704,15 @@
       ],
       "source_docs": [
         "docs/research/rag-techniques-synthesis.md"
-      ]
+      ],
+      "completed_date": "2026-03-26"
     },
     {
       "id": "work.b8b-multi-query-expansion",
       "kind": "work_item",
       "title": "B8b — Multi-query expansion",
       "summary": "Generate 2-3 query reformulations per user question, retrieve for each, fuse with RRF. Distinct from query decomposition — same question, different phrasings for recall.",
-      "status": "planned",
+      "status": "done",
       "priority": "P0",
       "horizon": "0-30d",
       "owner": "owner.darren",
@@ -2704,7 +2722,8 @@
       ],
       "source_docs": [
         "docs/research/rag-techniques-synthesis.md"
-      ]
+      ],
+      "completed_date": "2026-03-26"
     },
     {
       "id": "work.b9-agentic-sql-cypher",
@@ -2794,6 +2813,466 @@
       ],
       "source_docs": [
         "docs/research/rag-techniques-synthesis.md"
+      ]
+    },
+    {
+      "id": "outcome.federated-memory-architecture",
+      "kind": "outcome",
+      "title": "Agent memory, retrieval, and federation layers are typed, auditable, and evolvable",
+      "summary": "Five core objects (PolicyScope, QueryPlan IR, EvidenceBundle, ClaimSet, PeerCapabilityRecord) provide structured abstractions across four memory layers (Application, Agent Memory, Retrieval, Protocol). Enables agentic retrieval, federation trust ranking, and evolvable retrieval strategies without monolithic coupling.",
+      "status": "in_progress",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/federated-memory-architecture.md",
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "rag",
+        "federation",
+        "architecture"
+      ]
+    },
+    {
+      "id": "initiative.commitment-economy-celo",
+      "kind": "initiative",
+      "title": "Commitment economy on Celo — VCV token, TBFF settler, SwapPool, routing viz",
+      "summary": "10-day hackathon sprint (Mar 14-22) delivering on-chain commitment economy infrastructure: VCV GiftableToken on Celo mainnet, TBFFSettler multi-participant redistribution, SwapPool with DecimalQuote, dual-chain proof packs (Regen Ledger + Celo EAS), commitment routing visualization, and full production demo loop on Octo.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "completed_date": "2026-03-22",
+      "source_docs": [
+        "../foundations/commitment-economy-design.md",
+        "../foundations/commitment-economy-vision.md",
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "celo",
+        "hackathon",
+        "commitment-economy",
+        "on-chain"
+      ]
+    },
+    {
+      "id": "initiative.federated-memory-architecture",
+      "kind": "initiative",
+      "title": "Federated memory architecture — QueryPlan IR, evidence bundles, agentic retrieval",
+      "summary": "Implement the five-core-object architecture: PolicyScope for deterministic visibility, QueryPlan IR for typed retrieval plans, EvidenceBundle for provenance tracking, and eventually ClaimSet and PeerCapabilityRecord for federation. Phases: Phase 1 RAG closed (B5-B8b), Phase 2 agentic retrieval (B9a+), Phase 3 federation memory.",
+      "status": "in_progress",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/federated-memory-architecture.md",
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "rag",
+        "architecture",
+        "federation"
+      ]
+    },
+    {
+      "id": "work.federation-membrane-governance",
+      "kind": "work_item",
+      "title": "S0 — Federation membrane governance (edge-approval gating)",
+      "summary": "Edge-approval gating on all KOI-net data endpoints (poll, fetch, broadcast, confirm). Unknown handshake deferral (KOI_NET_DEFER_UNKNOWN_HANDSHAKE). POST /edges/reject endpoint. GET /edges?status= admin filter. admin-edges.sh CLI. Migration 061 (edge status index). 15 membrane policy tests. Deployed to all 3 nodes.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "completed_date": "2026-03-05",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "federation",
+        "governance",
+        "security"
+      ]
+    },
+    {
+      "id": "work.mediawiki-graph-densification",
+      "kind": "work_item",
+      "title": "MediaWiki import v1 — Salish Sea Wiki graph densification",
+      "summary": "Salish Sea Wiki import pipeline: parser (api/mediawiki_parser.py), dump reader, bulk importer, migration 063. Pilot: 50 pages → 319 entities created, 13 matched, 565 edges promoted. Entity count 70→~1,005. Three-tier confidence (0.95/0.85/0.7/0.6). Template→BKC type mapping. Idempotent, batched, high-degree quarantine.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "completed_date": "2026-03-06",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "knowledge-graph",
+        "import",
+        "mediawiki"
+      ]
+    },
+    {
+      "id": "work.gv-cv-federation-proof",
+      "kind": "work_item",
+      "title": "GV↔CV direct federation peering proof",
+      "summary": "Direct peering established and verified bidirectionally: GV→CV share (orn:gv-cv.share:zephyr-68569d94) arrived as received. CV→GV share (orn:cv-gv.share:cedar-8e3431c4) arrived as received. CV environment drift fixed (missing migrations 057+060).",
+      "status": "done",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "completed_date": "2026-03-12",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "federation",
+        "proof"
+      ]
+    },
+    {
+      "id": "work.steel-thread-phase-a",
+      "kind": "work_item",
+      "title": "Steel Thread Phase A — end-to-end claims integrity proof",
+      "summary": "Evidence → claim → attestations → state advance → ledger anchor → reconcile → proof pack. 22/22 on Local, Octo, FR. Regen CLI v7.2.0 on Octo, claims-service key funded on regen-upgrade testnet. Proof packs archived at docs/demo-artifacts/.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "completed_date": "2026-03-10",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "claims",
+        "steel-thread",
+        "regen-ledger"
+      ]
+    },
+    {
+      "id": "work.steel-thread-phase-b",
+      "kind": "work_item",
+      "title": "Steel Thread Phase B — artifact-to-Evidence transformation pipeline",
+      "summary": "Published artifacts → Evidence transformation → claim → anchor pipeline. POST /claims/evidence-from-artifacts endpoint creates Evidence from Pattern/Protocol/CaseStudy/Practice artifacts. Visibility inherited (most-restrictive). Migration 067 (derived_from predicate). 25/25 on Local + Octo. TX: 84BCCDA8...",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "completed_date": "2026-03-11",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "claims",
+        "steel-thread",
+        "regen-ledger"
+      ]
+    },
+    {
+      "id": "work.celo-eas-attestation",
+      "kind": "work_item",
+      "title": "Celo EAS attestation — dual-chain proof packs",
+      "summary": "BKC schema registered on Celo mainnet EAS (0xdcf86a...). Attestation for TBFF demo claim (0x4f761a...). Three-way content hash match (BKC, Regen Ledger, Celo). Standalone TypeScript script at Octo/scripts/eas/attest.ts.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "completed_date": "2026-03-14",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "celo",
+        "eas",
+        "attestation",
+        "on-chain"
+      ]
+    },
+    {
+      "id": "work.commitment-extraction-pipeline",
+      "kind": "work_item",
+      "title": "Commitment extraction pipeline — transcript→commitment→claim bridge",
+      "summary": "POST /commitments/extract-from-transcript (LLM batch extraction via OpenAI, few-shot, confidence filtering). POST /commitments/{rid}/create-claim (bridges VERIFIED commitments to claims for EAS attestation). commitment_extractor.py. Interview plugin CommitmentPacket with consent-aware share_policy. Test: 14/14.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "completed_date": "2026-03-15",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "commitment-economy",
+        "extraction",
+        "pipeline"
+      ]
+    },
+    {
+      "id": "work.vcv-token-deployment",
+      "kind": "work_item",
+      "title": "Victoria Commitment Voucher (VCV) token on Celo mainnet",
+      "summary": "GiftableToken deployed to Celo mainnet (0x4CDb98Ff...). 6 decimals, agent wallet authorized as minter. First commitment-derived VCV mint: 100 VCV for watershed restoration (TX 0xbe1f12...). Backend PATCH /commitments/{rid}/metadata for mint tx_hash/token_address.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "completed_date": "2026-03-17",
+      "source_docs": [
+        "../foundations/commitment-economy-design.md",
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "celo",
+        "token",
+        "commitment-economy",
+        "on-chain"
+      ]
+    },
+    {
+      "id": "work.tbff-settler-deployment",
+      "kind": "work_item",
+      "title": "TBFFSettler multi-participant deployment on Celo",
+      "summary": "Multi-participant TBFFSettler deployed (0x2a13c4eB...). 3 dedicated participant wallets (Darren, Victoria Hub, Kinship Earth). Settlement: 3,000 VCV, converged in 2 iterations, post-settle balances match thresholds exactly. GiftableToken safe-approve fix. Foundry installed.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "completed_date": "2026-03-18",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "celo",
+        "tbff",
+        "settlement",
+        "on-chain"
+      ]
+    },
+    {
+      "id": "work.bkc-swappool",
+      "kind": "work_item",
+      "title": "BKC SwapPool — VCV↔cUSD exchange on Celo",
+      "summary": "SwapPool + DecimalQuote deployed on Celo (0x181E36AD...) from GE erc20-pool. 5,000 VCV deposited. getQuote: 100 VCV = 100 cUSD. Real VCV→cUSD swap executed. cUSD acquired via Ubeswap V2. GE SwapPool MEV vulnerability discovered (bot drained 4 cUSD within 16 blocks).",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "completed_date": "2026-03-18",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "celo",
+        "swap",
+        "on-chain"
+      ]
+    },
+    {
+      "id": "work.full-demo-loop",
+      "kind": "work_item",
+      "title": "Full demo loop on Octo production — Whisper→extract→VCV→settle",
+      "summary": "Whisper transcription (9.6s) → GPT-4o-mini extraction (10 candidates, 5 offers + 5 needs) → auto-create → verify → VCV mint (23 total, 28,600 VCV). Agent self-commitment (4 offers + 3 needs). TBFF settle + claim. Needs-based extraction added. demo-full-loop.sh orchestrator (3 acts). Vendor pin 23203afb.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "completed_date": "2026-03-17",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "demo",
+        "commitment-economy",
+        "production"
+      ]
+    },
+    {
+      "id": "work.commitment-routing-viz",
+      "kind": "work_item",
+      "title": "Commitment routing visualization — force-directed graph at /commons/routing",
+      "summary": "Interactive force-directed graph using react-force-graph-2d. Pools as circles with threshold arcs, commitments as rectangles with state accents. Node/edge detail panels with Celoscan links and 5-factor score breakdown. BFF GET /api/routing/overview with 30s cache. Both pools activated (forming→active). broader edge Salish Sea→Cascadia (+15 umbrella match).",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "completed_date": "2026-03-19",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "visualization",
+        "routing",
+        "commitment-economy"
+      ]
+    },
+    {
+      "id": "work.source-aware-corpus-filtering",
+      "kind": "work_item",
+      "title": "Source-aware corpus filtering — exclude code entity chunks from /chat",
+      "summary": "Default /chat excludes code entity chunks (content.entity_name IS NOT NULL), removing 1,869 .py/.ts/.go chunks from retrieval pool. include_code parameter enables developer mode. Context_relevancy: 0.28→0.36 (+29%).",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "completed_date": "2026-03-24",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "rag",
+        "chat",
+        "retrieval"
+      ]
+    },
+    {
+      "id": "work.rag-phase1-closure",
+      "kind": "work_item",
+      "title": "RAG Phase 1 closure — CR 0.18→0.443 (+146%)",
+      "summary": "B8a full entity enrichment (2,524 entities, ~$1.70 OpenAI) + re-embedding with context-rich text. B8b multi-query expansion (_expand_queries() + cross-query RRF fusion, default off). Final: context_relevancy 0.18→0.443 (+146%), 1/20→6/20 golden QA passing. Vendor pin db23de2c.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "completed_date": "2026-03-26",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "rag",
+        "phase1",
+        "milestone"
+      ]
+    },
+    {
+      "id": "work.b9a-queryplan-ir-design",
+      "kind": "work_item",
+      "title": "B9a — QueryPlan IR design (13 Pydantic models, 3-layer router spec)",
+      "summary": "13 Pydantic models in api/schemas/query_plan.py (QueryPlan, PolicyScope v0, QueryTaxonomy 7-class, RetrievalOp 6-type, PlanStep, EvidenceBundle, ClassifierOutput). Spec at docs/specs/b9a-query-plan-spec.md with decision matrix (7 taxonomy→live ops), 3-layer router contract, GPT-4o-mini classifier prompt. Design-complete ACs met. Commit a433d652.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "completed_date": "2026-03-26",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "rag",
+        "architecture",
+        "design"
+      ]
+    },
+    {
+      "id": "work.b5.5-eval-expansion",
+      "kind": "work_item",
+      "title": "B5.5 — Eval expansion to 52 questions with 8-category taxonomy",
+      "summary": "Golden QA expanded 20→52 questions. 8-category taxonomy aligned with B9a QueryTaxonomy. New categories: governance (10), roadmap_status (5), commitment_claim (5). Evidence recall metric (fuzzy 80% overlap threshold). Eval taxonomy doc at tests/eval/eval_taxonomy.md. Migration map for old categories.",
+      "status": "done",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "completed_date": "2026-03-26",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "eval",
+        "rag",
+        "testing"
+      ]
+    },
+    {
+      "id": "work.canonical-doc-dag",
+      "kind": "work_item",
+      "title": "Canonical doc DAG — single-rooted documentation hierarchy with validation",
+      "summary": "Single-rooted doc hierarchy: project-vision.md + federated-memory-architecture.md created. YAML frontmatter on 8 docs. build_semantic_roadmap.py --docs validation (duplicate doc_id + single root enforcement). /doc-check skill (darren-workflow). docs/_meta/ artifacts (doc-graph.json, schema, code-surfaces.json).",
+      "status": "done",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "completed_date": "2026-03-26",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "documentation",
+        "architecture"
+      ]
+    },
+    {
+      "id": "work.commitment-economy-vision-doc",
+      "kind": "work_item",
+      "title": "Commitment economy vision doc — 12-section foundational synthesis",
+      "summary": "Foundations doc (commitment-economy-vision.md, 12 sections) synthesizing Ruddick, CLC, Johar, RC/KE. Four metabolic functions (provisioning, redistribution, activation, repair). Dependency quality reframe. Demurrage as seasonal tool. Composability layers. Pattern language (11 patterns). Two rounds of adversarial review.",
+      "status": "done",
+      "priority": "P1",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "completed_date": "2026-03-22",
+      "source_docs": [
+        "../foundations/commitment-economy-vision.md",
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "commitment-economy",
+        "foundations",
+        "vision"
+      ]
+    },
+    {
+      "id": "work.b9a-implementation",
+      "kind": "work_item",
+      "title": "B9a — QueryPlan IR implementation (classifier, plan assembly, executors)",
+      "summary": "Wire classifier (query→ClassifierOutput via GPT-4o-mini structured output), wire plan assembly (ClassifierOutput→QueryPlan, table-driven from spec), extract 3 live executors from chat_endpoint (entity_lookup, relationship_traverse, text_search — behavior-preserving refactor), add planner=true opt-in to /chat endpoint.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "../foundations/federated-memory-architecture.md",
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "rag",
+        "architecture",
+        "implementation"
+      ]
+    },
+    {
+      "id": "work.b9a-baseline-comparison",
+      "kind": "work_item",
+      "title": "B9a — 52-question dual baseline (default vs planner)",
+      "summary": "Run 52-question eval on Octo: default retrieval path, then planner=true. Before/after comparison on same question set. Update run_eval.py with category normalization, evidence recall metric, per-category reporting.",
+      "status": "planned",
+      "priority": "P0",
+      "horizon": "0-30d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "eval",
+        "rag",
+        "baseline"
+      ]
+    },
+    {
+      "id": "work.golden-qa-100",
+      "kind": "work_item",
+      "title": "Expand golden QA from 52 to 100 questions",
+      "summary": "Fill remaining 48 questions toward 100-question target. Only after baseline comparison validates no regression. Follow labeling rubric in eval_taxonomy.md. Coverage targets: 50% wiki, 30% docs, 20% operational. Difficulty: 40% easy, 40% medium, 20% hard.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "external:BioregionKnwoledgeCommons/CLAUDE.md"
+      ],
+      "tags": [
+        "eval",
+        "rag",
+        "testing"
       ]
     }
   ],
@@ -4142,6 +4621,201 @@
       "from": "work.b13-ad4m-coasys-bridge",
       "to": "outcome.bioregional-swarm-live",
       "type": "informs"
+    },
+    {
+      "from": "work.celo-eas-attestation",
+      "to": "initiative.commitment-economy-celo",
+      "type": "delivers"
+    },
+    {
+      "from": "work.commitment-extraction-pipeline",
+      "to": "initiative.commitment-economy-celo",
+      "type": "delivers"
+    },
+    {
+      "from": "work.vcv-token-deployment",
+      "to": "initiative.commitment-economy-celo",
+      "type": "delivers"
+    },
+    {
+      "from": "work.tbff-settler-deployment",
+      "to": "initiative.commitment-economy-celo",
+      "type": "delivers"
+    },
+    {
+      "from": "work.bkc-swappool",
+      "to": "initiative.commitment-economy-celo",
+      "type": "delivers"
+    },
+    {
+      "from": "work.full-demo-loop",
+      "to": "initiative.commitment-economy-celo",
+      "type": "delivers"
+    },
+    {
+      "from": "work.commitment-routing-viz",
+      "to": "initiative.commitment-economy-celo",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.commitment-economy-celo",
+      "to": "outcome.capital-loop-provable",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.commitment-economy-celo",
+      "to": "outcome.commitment-pools-provable",
+      "type": "delivers"
+    },
+    {
+      "from": "work.federation-membrane-governance",
+      "to": "initiative.part-b-security-addendum",
+      "type": "delivers"
+    },
+    {
+      "from": "work.mediawiki-graph-densification",
+      "to": "initiative.part-b-kg-chat",
+      "type": "delivers"
+    },
+    {
+      "from": "work.gv-cv-federation-proof",
+      "to": "initiative.regen-federation-deepening",
+      "type": "delivers"
+    },
+    {
+      "from": "work.steel-thread-phase-a",
+      "to": "initiative.regen-claims-engine-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.steel-thread-phase-b",
+      "to": "initiative.regen-claims-engine-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "work.source-aware-corpus-filtering",
+      "to": "initiative.federated-memory-architecture",
+      "type": "delivers"
+    },
+    {
+      "from": "work.rag-phase1-closure",
+      "to": "initiative.federated-memory-architecture",
+      "type": "delivers"
+    },
+    {
+      "from": "work.b9a-queryplan-ir-design",
+      "to": "initiative.federated-memory-architecture",
+      "type": "delivers"
+    },
+    {
+      "from": "work.b5.5-eval-expansion",
+      "to": "initiative.federated-memory-architecture",
+      "type": "delivers"
+    },
+    {
+      "from": "work.canonical-doc-dag",
+      "to": "initiative.federated-memory-architecture",
+      "type": "delivers"
+    },
+    {
+      "from": "work.b9a-implementation",
+      "to": "initiative.federated-memory-architecture",
+      "type": "delivers"
+    },
+    {
+      "from": "work.b9a-baseline-comparison",
+      "to": "initiative.federated-memory-architecture",
+      "type": "delivers"
+    },
+    {
+      "from": "work.golden-qa-100",
+      "to": "initiative.federated-memory-architecture",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.federated-memory-architecture",
+      "to": "outcome.federated-memory-architecture",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.federated-memory-architecture",
+      "to": "outcome.eval-driven-kg-chat",
+      "type": "delivers"
+    },
+    {
+      "from": "work.commitment-economy-vision-doc",
+      "to": "initiative.commitment-pooling-integration",
+      "type": "delivers"
+    },
+    {
+      "from": "initiative.federated-memory-architecture",
+      "to": "initiative.part-b-kg-chat",
+      "type": "informs"
+    },
+    {
+      "from": "work.steel-thread-phase-a",
+      "to": "work.steel-thread-phase-b",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.celo-eas-attestation",
+      "to": "work.vcv-token-deployment",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.vcv-token-deployment",
+      "to": "work.tbff-settler-deployment",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.vcv-token-deployment",
+      "to": "work.bkc-swappool",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.tbff-settler-deployment",
+      "to": "work.full-demo-loop",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.full-demo-loop",
+      "to": "work.commitment-routing-viz",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b8a-entity-enrichment",
+      "to": "work.rag-phase1-closure",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b8b-multi-query-expansion",
+      "to": "work.rag-phase1-closure",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.rag-phase1-closure",
+      "to": "work.b9a-queryplan-ir-design",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b9a-queryplan-ir-design",
+      "to": "work.b9a-implementation",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b9a-implementation",
+      "to": "work.b9a-baseline-comparison",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b5.5-eval-expansion",
+      "to": "work.b9a-baseline-comparison",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b9a-baseline-comparison",
+      "to": "work.golden-qa-100",
+      "type": "depends_on"
     }
   ]
 }

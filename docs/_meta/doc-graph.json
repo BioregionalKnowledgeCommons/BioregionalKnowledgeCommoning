@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-26T07:11:24.744357+00:00",
+  "generated_at": "2026-03-26T21:44:37.424003+00:00",
   "nodes": {
     "bkc.commitment-economy-design": {
       "doc_kind": "spec",
@@ -206,6 +206,12 @@
       "work.r0-multi-party-verification",
       "work.r1-challenge-dispute"
     ],
+    "docs/foundations/federated-memory-architecture.md": [
+      "outcome.eval-driven-kg-chat",
+      "outcome.federated-memory-architecture",
+      "initiative.federated-memory-architecture",
+      "work.b9a-implementation"
+    ],
     "docs/foundations/rights-licensing-consent-policy-slots.md": [
       "outcome.policy-governed-sharing",
       "work.s1-data-class-matrix"
@@ -269,6 +275,14 @@
     ],
     "docs/foundations/bioregion-onboarding-playbook.md": [
       "work.node-salt-spring-island"
+    ],
+    "docs/foundations/commitment-economy-design.md": [
+      "initiative.commitment-economy-celo",
+      "work.vcv-token-deployment"
+    ],
+    "docs/foundations/commitment-economy-vision.md": [
+      "initiative.commitment-economy-celo",
+      "work.commitment-economy-vision-doc"
     ]
   },
   "unvalidated_refs": [
