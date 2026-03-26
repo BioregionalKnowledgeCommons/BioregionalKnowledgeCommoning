@@ -172,7 +172,7 @@ Do not choose a single graph substrate. Different graph traditions serve differe
 | **Apache AGE** (Postgres + openCypher) | Graph storage, path traversal, GraphRAG, neighborhood queries | Production |
 | **pgvector** | Embedding storage, semantic similarity | Production |
 | **JSON-LD** (`bkc-ontology.jsonld`) | Cross-system interoperability bridge — JSON that CAN be read as RDF without requiring RDF tooling | Production |
-| **RDF / SHACL** | Formal ontology alignment, FAIR data interop, semantic web integration | Aspirational — zero RDF in BKC today; relevant if interop with Solid pods, linked open data, or formal ontology systems becomes needed |
+| **RDF / SHACL** | Formal ontology alignment, FAIR data interop, semantic web integration | JSON-LD now; no RDF-native toolchain or workflows today. RDF-native workflows become relevant when triggered (see below) |
 | **AD4M / Coasys** | Personal subjective overlays, agent-local perspectives | Candidate concept — the Perspectives model is the right *idea* for sovereign agent memory; whether AD4M is the right *implementation* depends on their roadmap (SPARQL support is planned, not shipped; runtime uses SurrealDB) |
 | **GQL (ISO 39075:2024)** | Standard direction for property graphs | Not actionable yet — AGE uses openCypher; GQL conformance is partial across vendors |
 
@@ -187,6 +187,11 @@ Do not choose a single graph substrate. Different graph traditions serve differe
 **Escape hatch**: If corpus exceeds ~50K entities and dynamic community detection becomes critical (LazyGraphRAG territory), the architecture supports swapping to Neo4j or JanusGraph. The QueryPlan IR abstracts over the storage layer.
 
 **One-line summary**: Property graphs are the retrieval/execution language; JSON-LD is the current interop bridge; RDF becomes relevant at formal ontology boundaries; AD4M is a future candidate for sovereign agent memory.
+
+**RDF adoption triggers** — RDF-native workflows move from aspirational to planned when any of:
+1. Formal ontology exchange with external systems (Solid pods, linked open data catalogs, FAIR data repositories)
+2. AD4M/Coasys integration requiring RDF/SPARQL compatibility at the agent-memory boundary
+3. Cross-node shared profiles (claims, evidence, commitments) need SHACL validation beyond what JSON Schema provides
 
 ## Federation trust model
 

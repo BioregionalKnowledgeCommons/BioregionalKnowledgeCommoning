@@ -313,9 +313,13 @@ class DocNode:
     primary_for: list[str]
 
 
-def scan_docs() -> dict[str, DocNode]:
-    """Scan all markdown files under docs/ for frontmatter with doc_id."""
+def scan_docs() -> tuple[dict[str, DocNode], list[str]]:
+    """Scan all markdown files under docs/ for frontmatter with doc_id.
+
+    Returns (nodes_dict, duplicate_errors).
+    """
     nodes: dict[str, DocNode] = {}
+    duplicates: list[str] = []
     for md_path in sorted(DOCS_DIR.rglob("*.md")):
         if md_path.name.startswith(".") or "_meta" in md_path.parts:
             continue
@@ -323,6 +327,12 @@ def scan_docs() -> dict[str, DocNode]:
         if fm is None:
             continue
         doc_id = fm["doc_id"]
+        if doc_id in nodes:
+            duplicates.append(
+                f"Duplicate doc_id '{doc_id}': {nodes[doc_id].file_path} "
+                f"and {fm['_file_path']}"
+            )
+            continue
         nodes[doc_id] = DocNode(
             doc_id=doc_id,
             doc_kind=fm.get("doc_kind", ""),
@@ -331,12 +341,24 @@ def scan_docs() -> dict[str, DocNode]:
             file_path=fm["_file_path"],
             primary_for=fm.get("primary_for", []),
         )
-    return nodes
+    return nodes, duplicates
 
 
 def validate_doc_dag(nodes: dict[str, DocNode]) -> list[str]:
     """Validate the doc DAG. Returns a list of error messages."""
     errors: list[str] = []
+
+    # Check single vision root
+    vision_roots = [
+        doc_id for doc_id, node in nodes.items()
+        if node.doc_kind == "vision" and not node.depends_on
+    ]
+    if len(vision_roots) == 0:
+        errors.append("No vision root found (need exactly one doc with doc_kind=vision and depends_on=[])")
+    elif len(vision_roots) > 1:
+        errors.append(
+            f"Multiple vision roots found (need exactly one): {vision_roots}"
+        )
 
     # Check doc_kind values
     for doc_id, node in nodes.items():
@@ -505,7 +527,7 @@ def run_docs(check_only: bool, json_output: bool, model: Model) -> bool:
 
     Returns True if validation passed.
     """
-    doc_nodes = scan_docs()
+    doc_nodes, duplicate_errors = scan_docs()
 
     if not doc_nodes:
         msg = "No docs with frontmatter found under docs/"
@@ -515,7 +537,7 @@ def run_docs(check_only: bool, json_output: bool, model: Model) -> bool:
             print(f"WARNING: {msg}")
         return True
 
-    errors = validate_doc_dag(doc_nodes)
+    errors = duplicate_errors + validate_doc_dag(doc_nodes)
     warnings = cross_validate_source_docs(model, doc_nodes)
     unclassified = count_unclassified_docs()
     roadmap_links = build_roadmap_links(model)

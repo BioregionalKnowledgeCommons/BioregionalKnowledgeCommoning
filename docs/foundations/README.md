@@ -2,6 +2,10 @@
 
 Cross-pilot frameworks that can be reused across bioregional knowledge commoning efforts.
 
+## Canonical Architecture
+- [Project vision](../project-vision.md): internal canonical vision — three-plane model, design principles (sovereignty-preserving federation, protocol-not-platform, consent-first, bounded authority, living system economics, holonic structure), scope boundaries.
+- [Federated memory architecture](./federated-memory-architecture.md): canonical architecture for retrieval, agent memory, and federation — 5 core primitives (PolicyScope, QueryPlan, EvidenceBundle, ClaimSet, PeerCapabilityRecord), 4 memory layers, polyglot graph-model stance, safety boundaries, implementation phases.
+
 ## Core Layered Docs
 - [Pattern language v0.1](./pattern-language-for-bioregional-knowledge-commoning-v0.1.md): reusable commoning design patterns (participation, consent boundaries, emergent bridging, holonic nesting).
 - [Bioregional AI swarms pattern language](./bioregional-ai-swarms-pattern-language.md): multi-agent coordination patterns for bioregional knowledge and capital planes (evidence loop, bounded autonomy, stigmergic routing).
