@@ -1,0 +1,10 @@
+{
+  "project_id": "bkc",
+  "project_name": "Bioregional Knowledge Commons",
+  "project_uri": "project:bioregional-knowledge-commons",
+  "docs_root": "docs/",
+  "roadmap_path": "docs/roadmap/semantic-roadmap.json",
+  "code_surfaces_path": "docs/_meta/code-surfaces.json",
+  "repos": ["BioregionalKnowledgeCommoning", "Octo"],
+  "tier": 2
+}
