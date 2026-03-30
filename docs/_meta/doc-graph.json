@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-26T21:44:37.424003+00:00",
+  "generated_at": "2026-03-30T20:21:04.580008+00:00",
   "nodes": {
     "bkc.commitment-economy-design": {
       "doc_kind": "spec",
@@ -61,6 +61,15 @@
         "koi-net"
       ]
     },
+    "bkc.live-retrieval-arch": {
+      "doc_kind": "architecture",
+      "status": "active",
+      "file_path": "docs/foundations/live-retrieval-architecture.md",
+      "depends_on": [
+        "bkc.federated-memory-arch"
+      ],
+      "primary_for": []
+    },
     "bkc.meta-protocol": {
       "doc_kind": "foundation",
       "status": "active",
@@ -94,6 +103,25 @@
         "rag-retrieval",
         "eval-pipeline"
       ]
+    },
+    "bkc.sprint-1-retro": {
+      "doc_kind": "research",
+      "status": "active",
+      "file_path": "docs/research/sprint-1-retrieval-retrospective.md",
+      "depends_on": [
+        "bkc.rag-synthesis",
+        "bkc.federated-memory-arch"
+      ],
+      "primary_for": []
+    },
+    "bkc.technique-ledger": {
+      "doc_kind": "operations",
+      "status": "active",
+      "file_path": "docs/ops/technique-ledger.md",
+      "depends_on": [
+        "bkc.rag-synthesis"
+      ],
+      "primary_for": []
     }
   },
   "edges": [
@@ -123,6 +151,11 @@
       "type": "depends_on"
     },
     {
+      "from": "bkc.live-retrieval-arch",
+      "to": "bkc.federated-memory-arch",
+      "type": "depends_on"
+    },
+    {
       "from": "bkc.meta-protocol",
       "to": "bkc.project-vision",
       "type": "depends_on"
@@ -130,6 +163,21 @@
     {
       "from": "bkc.rag-synthesis",
       "to": "bkc.federated-memory-arch",
+      "type": "depends_on"
+    },
+    {
+      "from": "bkc.sprint-1-retro",
+      "to": "bkc.rag-synthesis",
+      "type": "depends_on"
+    },
+    {
+      "from": "bkc.sprint-1-retro",
+      "to": "bkc.federated-memory-arch",
+      "type": "depends_on"
+    },
+    {
+      "from": "bkc.technique-ledger",
+      "to": "bkc.rag-synthesis",
       "type": "depends_on"
     }
   ],

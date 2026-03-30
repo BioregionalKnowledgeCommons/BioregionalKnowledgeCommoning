@@ -4,17 +4,17 @@
 - Roadmap ID: `bkc.roadmap.2026.part-b`
 - Version: `0.10.0`
 - As of: `2026-03-26`
-- Generated: `2026-03-26 21:52 UTC`
+- Generated: `2026-03-30 20:48 UTC`
 
 ## Status Summary
 
 | Status | Count |
 |---|---|
 | `in_progress` | 21 |
-| `planned` | 91 |
+| `planned` | 88 |
 | `blocked` | 0 |
-| `done` | 83 |
-| `deprecated` | 0 |
+| `done` | 85 |
+| `deprecated` | 1 |
 
 ## Outcomes
 
@@ -67,8 +67,6 @@
 | `work.node-salt-spring-island` | Salt Spring Island KOI node deployment | `in_progress` | `P1` | `30-90d` | `owner.samu` |
 | `work.p2p-mcp-bootstrap-hardening` | Harden MCP bootstrap — cross-platform fixes + first-session verification | `in_progress` | `P2` | `0-30d` | `owner.darren` |
 | `work.s2-security-lane` | Add security lane to operational checkpoints | `planned` | `P0` | `0-30d` | `owner.darren` |
-| `work.b9a-baseline-comparison` | B9a — 52-question dual baseline (default vs planner) | `planned` | `P0` | `0-30d` | `owner.darren` |
-| `work.b9a-implementation` | B9a — QueryPlan IR implementation (classifier, plan assembly, executors) | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.external-pipeline-1-live` | External ingest pipeline #1 live | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.external-pipeline-2-live` | External ingest pipeline #2 live | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.r0-resolver-registration-smoke` | Gate: MsgDefineResolver + MsgRegisterResolver smoke on testnet | `planned` | `P0` | `0-30d` | `owner.darren` |
@@ -84,7 +82,6 @@
 | `work.b10-multi-tool-orchestration` | B10 — Multi-tool retrieval orchestration | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.b11-raptor-tree` | B11 — RAPTOR hierarchical summarization | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.b2-graphrag-v1` | B2 — HippoRAG 2 PPR graph retrieval | `planned` | `P1` | `30-90d` | `owner.darren` |
-| `work.b9-agentic-sql-cypher` | B9 — Agentic retrieval: schema-aware SQL + Text-to-Cypher | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.c1-commitment-pool-api` | C1 — CommitmentPool full mechanics (threshold, activation, governance) | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.c1-tbff-commitment-threshold` | C1 — Extend TBFF threshold policy to include commitment activation gates | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.c1-ge-protocol-study` | C1 — Grassroots Economics / Sarafu protocol compatibility analysis | `planned` | `P1` | `30-90d` | `owner.darren` |
@@ -131,7 +128,9 @@
 | `work.b8-contextual-retrieval` | B8 — Contextual retrieval | `done` | `P0` | `0-30d` | `owner.darren` |
 | `work.b8a-entity-enrichment` | B8a — Entity description enrichment | `done` | `P0` | `0-30d` | `owner.darren` |
 | `work.b8b-multi-query-expansion` | B8b — Multi-query expansion | `done` | `P0` | `0-30d` | `owner.darren` |
+| `work.b9a-baseline-comparison` | B9a — 52-question dual baseline (default vs planner) | `done` | `P0` | `0-30d` | `owner.darren` |
 | `work.b9a-queryplan-ir-design` | B9a — QueryPlan IR design (13 Pydantic models, 3-layer router spec) | `done` | `P0` | `0-30d` | `owner.darren` |
+| `work.b9a-implementation` | B9a — QueryPlan IR implementation (classifier, plan assembly, executors) | `done` | `P0` | `0-30d` | `owner.darren` |
 | `work.bkc-swappool` | BKC SwapPool — VCV↔cUSD exchange on Celo | `done` | `P0` | `0-30d` | `owner.darren` |
 | `work.seed-build-day-entities-script` | Build-day entity seeding operator script | `done` | `P0` | `0-30d` | `owner.darren` |
 | `work.c0-commitment-pooling` | C0: Commitment pooling — ontology, migrations, API router | `done` | `P0` | `0-30d` | `owner.darren` |
@@ -187,6 +186,7 @@
 | `work.native-land-watersheds` | Native Land Digital API + GRDC watershed data integration | `done` | `P1` | `historical` | `owner.darren` |
 | `work.semantic-roadmap-model` | Semantic roadmap model + generator + CI validation | `done` | `P1` | `historical` | `owner.darren` |
 | `work.watershed-realtime-dashboard` | Real-time basin dashboard: reservoirs, snow, stream gauges | `done` | `P2` | `historical` | `owner.aaron` |
+| `work.b9-agentic-sql-cypher` | B9 — Agentic retrieval: schema-aware SQL + Text-to-Cypher (deprecated) | `deprecated` | `P1` | `30-90d` | `owner.darren` |
 
 ### Dependency Execution Order (depends_on)
 
@@ -291,15 +291,15 @@
 99. `work.p2p-three-peer-smoke-test` — Three-peer smoke test — vault sync + agent messaging across darren/shawn/samu (planned)
 100. `work.r0-multi-party-verification` — Multi-party claim verification via commons governance membrane (planned)
 101. `work.passkey-auth` — WebAuthn passkey auth + steward authorization per node (done)
-102. `work.b9-agentic-sql-cypher` — B9 — Agentic retrieval: schema-aware SQL + Text-to-Cypher (planned)
-103. `work.b9a-implementation` — B9a — QueryPlan IR implementation (classifier, plan assembly, executors) (planned)
+102. `work.b9-agentic-sql-cypher` — B9 — Agentic retrieval: schema-aware SQL + Text-to-Cypher (deprecated) (deprecated)
+103. `work.b9a-implementation` — B9a — QueryPlan IR implementation (classifier, plan assembly, executors) (done)
 104. `work.tbff-receipt-to-evidence-v0` — TBFF receipt to Evidence write-back v0 (done)
 105. `work.external-pipeline-1-live` — External ingest pipeline #1 live (planned)
 106. `work.c0-commitment-registry` — C0 — Commitment registry API (create, get, state transition, evidence link) (done)
 107. `work.full-demo-loop` — Full demo loop on Octo production — Whisper→extract→VCV→settle (done)
 108. `work.r0-schema-freeze-gate` — Gate: Schema v2 field mapping finalized and reviewed (planned)
 109. `work.b6-hybrid-bm25-rrf` — B6 — Hybrid BM25 + dense retrieval with RRF (done)
-110. `work.b9a-baseline-comparison` — B9a — 52-question dual baseline (default vs planner) (planned)
+110. `work.b9a-baseline-comparison` — B9a — 52-question dual baseline (default vs planner) (done)
 111. `work.c0-commitment-pooling` — C0: Commitment pooling — ontology, migrations, API router (done)
 112. `work.external-pipeline-2-live` — External ingest pipeline #2 live (planned)
 113. `work.octo-branch-consolidation` — Merge Octo feature branch into canonical main + consolidate overlays into vendor (planned)
