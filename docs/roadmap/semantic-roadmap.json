@@ -3276,6 +3276,25 @@
         "rag",
         "testing"
       ]
+    },
+    {
+      "id": "work.b9.5-crag-gate",
+      "kind": "work_item",
+      "title": "B9.5 — CRAG confidence gate before LLM generation",
+      "summary": "Cheap confidence signals (reranker score threshold, entity match count, BM25 score distribution) gate between reranking and context assembly. Three actions: Confident (proceed), Low-confidence (expand + retry), Very-low-confidence (abstain). Calibrate thresholds using 52-question eval set. Log all signals in plan_trace. Selected as Sprint 2 primary candidate at Summer Solstice 2026 seasonal review.",
+      "status": "planned",
+      "priority": "P1",
+      "horizon": "30-90d",
+      "owner": "owner.darren",
+      "source_docs": [
+        "docs/research/2026-summer-solstice-review.md"
+      ],
+      "tags": [
+        "rag",
+        "chat",
+        "evaluation",
+        "sprint-2"
+      ]
     }
   ],
   "edges": [
@@ -4818,6 +4837,16 @@
       "from": "work.b9a-baseline-comparison",
       "to": "work.golden-qa-100",
       "type": "depends_on"
+    },
+    {
+      "from": "work.b9a-baseline-comparison",
+      "to": "work.b9.5-crag-gate",
+      "type": "depends_on"
+    },
+    {
+      "from": "work.b9.5-crag-gate",
+      "to": "outcome.eval-driven-kg-chat",
+      "type": "delivers"
     }
   ]
 }

@@ -4,14 +4,14 @@
 - Roadmap ID: `bkc.roadmap.2026.part-b`
 - Version: `0.10.0`
 - As of: `2026-03-26`
-- Generated: `2026-03-30 20:49 UTC`
+- Generated: `2026-03-30 21:43 UTC`
 
 ## Status Summary
 
 | Status | Count |
 |---|---|
 | `in_progress` | 21 |
-| `planned` | 88 |
+| `planned` | 89 |
 | `blocked` | 0 |
 | `done` | 85 |
 | `deprecated` | 1 |
@@ -82,6 +82,7 @@
 | `work.b10-multi-tool-orchestration` | B10 — Multi-tool retrieval orchestration | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.b11-raptor-tree` | B11 — RAPTOR hierarchical summarization | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.b2-graphrag-v1` | B2 — HippoRAG 2 PPR graph retrieval | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `work.b9.5-crag-gate` | B9.5 — CRAG confidence gate before LLM generation | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.c1-commitment-pool-api` | C1 — CommitmentPool full mechanics (threshold, activation, governance) | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.c1-tbff-commitment-threshold` | C1 — Extend TBFF threshold policy to include commitment activation gates | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.c1-ge-protocol-study` | C1 — Grassroots Economics / Sarafu protocol compatibility analysis | `planned` | `P1` | `30-90d` | `owner.darren` |
@@ -308,16 +309,17 @@
 116. `work.r0-testnet-anchor-smoke` — Gate: MsgAnchor smoke test on Regen testnet (done)
 117. `work.b5-eval-gates` — B5 — Automated evaluation pipeline (DeepEval + RAGAS) (done)
 118. `work.golden-qa-100` — Expand golden QA from 52 to 100 questions (planned)
-119. `work.r0-resolver-registration-smoke` — Gate: MsgDefineResolver + MsgRegisterResolver smoke on testnet (planned)
-120. `work.s4-ucan-bridge-spike` — UCAN bridge spike (planned)
-121. `work.s5-tee-spike` — TEE confidential RAG spike (planned)
-122. `work.r0-first-claim-from-evidence` — Gate: First claim submitted from existing BKC Evidence entity (testnet) (done)
-123. `work.r1-ledger-msganchor` — Regen Ledger MsgAnchor mainnet integration (planned)
-124. `work.r1-ledger-msgattest` — MsgAttest verifier signature flow (planned)
-125. `work.s1-data-class-matrix` — Define and publish data-class policy matrix (done)
-126. `work.r1-challenge-dispute` — Claim challenge/dispute mechanism (planned)
-127. `work.s2-security-lane` — Add security lane to operational checkpoints (planned)
-128. `work.b3-federated-chat-policy` — Implement federated chat policy boundaries (planned)
+119. `work.b9.5-crag-gate` — B9.5 — CRAG confidence gate before LLM generation (planned)
+120. `work.r0-resolver-registration-smoke` — Gate: MsgDefineResolver + MsgRegisterResolver smoke on testnet (planned)
+121. `work.s4-ucan-bridge-spike` — UCAN bridge spike (planned)
+122. `work.s5-tee-spike` — TEE confidential RAG spike (planned)
+123. `work.r0-first-claim-from-evidence` — Gate: First claim submitted from existing BKC Evidence entity (testnet) (done)
+124. `work.r1-ledger-msganchor` — Regen Ledger MsgAnchor mainnet integration (planned)
+125. `work.r1-ledger-msgattest` — MsgAttest verifier signature flow (planned)
+126. `work.s1-data-class-matrix` — Define and publish data-class policy matrix (done)
+127. `work.r1-challenge-dispute` — Claim challenge/dispute mechanism (planned)
+128. `work.s2-security-lane` — Add security lane to operational checkpoints (planned)
+129. `work.b3-federated-chat-policy` — Implement federated chat policy boundaries (planned)
 
 ## Risks and Mitigations
 

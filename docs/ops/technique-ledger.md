@@ -59,3 +59,4 @@ Maps each recommendation from bkc.rag-synthesis to its actual outcome in the BKC
 | Date | Sprint | Changes |
 |------|--------|---------|
 | 2026-03-30 | Sprint 1 closure | Initial ledger created. All Tier 1-3 techniques mapped. |
+| 2026-03-30 | Summer Solstice review | Revisit-trigger check: zero triggers met. Entity count ~2,500 (HippoRAG threshold 5,000 not met). No thematic demand (RAPTOR). No multi-hop category (query decomposition). No cross-node query demand (federated). All deferred techniques remain correctly deferred. |
