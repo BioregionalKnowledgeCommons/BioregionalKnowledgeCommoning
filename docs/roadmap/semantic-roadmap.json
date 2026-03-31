@@ -3280,11 +3280,12 @@
     {
       "id": "work.b9.5-crag-gate",
       "kind": "work_item",
-      "title": "B9.5 — CRAG confidence gate before LLM generation",
-      "summary": "Cheap confidence signals (reranker score threshold, entity match count, BM25 score distribution) gate between reranking and context assembly. Three actions: Confident (proceed), Low-confidence (expand + retry), Very-low-confidence (abstain). Calibrate thresholds using 52-question eval set. Log all signals in plan_trace. Selected as Sprint 2 primary candidate at Summer Solstice 2026 seasonal review.",
-      "status": "planned",
+      "title": "B9.5 — CRAG confidence gate (telemetry-only)",
+      "summary": "Confidence signals (reranker score, entity match count, text result count, confidence spread) computed after retrieval and logged to plan_trace. Full retry/abstention behavior evaluated in Sprint 2 but disabled after 4 canonical runs showed quality-neutral results (-0.2% to +1.8% CR) with +4s latency. FlashRank scores too compressed (0.05-0.10) for meaningful discrimination. Infrastructure value: signals available for future analysis and v2 gating.",
+      "status": "done",
       "priority": "P1",
       "horizon": "30-90d",
+      "completed_date": "2026-03-31",
       "owner": "owner.darren",
       "source_docs": [
         "docs/research/2026-summer-solstice-review.md"

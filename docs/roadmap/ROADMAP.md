@@ -4,16 +4,16 @@
 - Roadmap ID: `bkc.roadmap.2026.part-b`
 - Version: `0.10.0`
 - As of: `2026-03-26`
-- Generated: `2026-03-30 21:43 UTC`
+- Generated: `2026-03-31 16:12 UTC`
 
 ## Status Summary
 
 | Status | Count |
 |---|---|
 | `in_progress` | 21 |
-| `planned` | 89 |
+| `planned` | 88 |
 | `blocked` | 0 |
-| `done` | 85 |
+| `done` | 86 |
 | `deprecated` | 1 |
 
 ## Outcomes
@@ -82,7 +82,6 @@
 | `work.b10-multi-tool-orchestration` | B10 — Multi-tool retrieval orchestration | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.b11-raptor-tree` | B11 — RAPTOR hierarchical summarization | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.b2-graphrag-v1` | B2 — HippoRAG 2 PPR graph retrieval | `planned` | `P1` | `30-90d` | `owner.darren` |
-| `work.b9.5-crag-gate` | B9.5 — CRAG confidence gate before LLM generation | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.c1-commitment-pool-api` | C1 — CommitmentPool full mechanics (threshold, activation, governance) | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.c1-tbff-commitment-threshold` | C1 — Extend TBFF threshold policy to include commitment activation gates | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.c1-ge-protocol-study` | C1 — Grassroots Economics / Sarafu protocol compatibility analysis | `planned` | `P1` | `30-90d` | `owner.darren` |
@@ -182,6 +181,7 @@
 | `work.commons-prestage-helper` | Commons pre-stage helper (KOI-net share runbook) | `done` | `P1` | `0-30d` | `owner.darren` |
 | `work.gv-cv-federation-proof` | GV↔CV direct federation peering proof | `done` | `P1` | `0-30d` | `owner.darren` |
 | `work.demo-smoke-test-suite` | demo-smoke.sh — automated 6-check preflight for all 4 nodes | `done` | `P1` | `0-30d` | `owner.darren` |
+| `work.b9.5-crag-gate` | B9.5 — CRAG confidence gate (telemetry-only) | `done` | `P1` | `30-90d` | `owner.darren` |
 | `work.nou-agent-auth-wave-a` | Agent bearer-token auth live (Wave A shipped) | `done` | `P1` | `historical` | `owner.todd` |
 | `work.chat-fanout-scoring` | Chat fanout scoring and all-node responses | `done` | `P1` | `historical` | `owner.darren` |
 | `work.native-land-watersheds` | Native Land Digital API + GRDC watershed data integration | `done` | `P1` | `historical` | `owner.darren` |
@@ -309,7 +309,7 @@
 116. `work.r0-testnet-anchor-smoke` — Gate: MsgAnchor smoke test on Regen testnet (done)
 117. `work.b5-eval-gates` — B5 — Automated evaluation pipeline (DeepEval + RAGAS) (done)
 118. `work.golden-qa-100` — Expand golden QA from 52 to 100 questions (planned)
-119. `work.b9.5-crag-gate` — B9.5 — CRAG confidence gate before LLM generation (planned)
+119. `work.b9.5-crag-gate` — B9.5 — CRAG confidence gate (telemetry-only) (done)
 120. `work.r0-resolver-registration-smoke` — Gate: MsgDefineResolver + MsgRegisterResolver smoke on testnet (planned)
 121. `work.s4-ucan-bridge-spike` — UCAN bridge spike (planned)
 122. `work.s5-tee-spike` — TEE confidential RAG spike (planned)
