@@ -49,10 +49,11 @@ Maps each recommendation from bkc.rag-synthesis to its actual outcome in the BKC
 
 | Decision | Synthesis Recommendation | Outcome | Notes |
 |----------|------------------------|---------|-------|
-| Embedding model | Stay with text-embedding-3-small, evaluate after contextual retrieval. | Stayed | No re-evaluation done yet. Re-embedding is cheap (~$0.05-0.09). |
+| Embedding model | Stay with text-embedding-3-small, evaluate after contextual retrieval. | **Switching to Ollama** | Ollama mxbai-embed-large on poly (37.27.48.12) via WireGuard. Eliminates ~30% of OpenAI API cost. Eval gate required (CR regression < 5%). |
 | Vector DB | Stay with pgvector, add pgvectorscale at 100K+ vectors. | Stayed | ~7,500 vectors total. Well within pgvector HNSW capacity. |
 | Graph DB | Keep Apache AGE for current scale. | Stayed | ~7K edges. AGE Cypher was not used for LLM-generated queries (text-search-first beat it). |
 | LLM strategy | Multi-model: cheap for routing, capable for generation. | Yes | Classifier: GPT-4o. Chat: GPT-4o-mini. Expansion: GPT-4o-mini. Eval judge: gpt-4.1 (canonical), gpt-4.1-mini (dev). |
+| Eval batch pricing | Not in original synthesis. | **Not started** | OpenAI batch API gives 50% discount on eval scoring. Requires eval runner changes: collect all /chat responses first, construct scoring prompts, submit as JSONL batch, parse results. Cuts gpt-4.1 canonical runs from ~$35-50 to ~$17-25. ROI: significant for gpt-4.1 gates, marginal for gpt-4.1-mini dev runs. Revisit trigger: next time a canonical gpt-4.1 gate run is needed. |
 | GPU | Start without, add when reranking latency becomes bottleneck. | No GPU needed | FlashRank CPU reranking ~200ms. Not the bottleneck. |
 
 ## Revision History
