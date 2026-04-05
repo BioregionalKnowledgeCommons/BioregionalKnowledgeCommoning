@@ -2,8 +2,8 @@
   "@context": "./semantic-roadmap.context.json",
   "roadmap_id": "bkc.roadmap.2026.part-b",
   "program": "Bioregional Knowledge Commons",
-  "version": "0.10.0",
-  "as_of": "2026-03-26",
+  "version": "0.10.1",
+  "as_of": "2026-04-05",
   "owners": [
     {
       "id": "owner.darren",
@@ -1103,14 +1103,15 @@
       "id": "work.b2-graphrag-v1",
       "kind": "work_item",
       "title": "B2 — HippoRAG 2 PPR graph retrieval",
-      "summary": "Implement Personalized PageRank over existing AGE graph. Add passage nodes linking chunks to entities. Replaces original GraphRAG v1 plan per RAG synthesis consensus — HippoRAG 2 improves multi-hop without degrading simple QA (MuSiQue F1 44.8→51.9).",
+      "summary": "Trigger-based Phase 3 candidate, not near-term sprint work. Revisit only if entity count grows beyond ~5,000 or multi-hop remains weak after B10/query decomposition evaluation. HippoRAG 2 remains the preferred graph-intelligence direction because it improves multi-hop without degrading simple QA.",
       "status": "planned",
-      "priority": "P1",
-      "horizon": "30-90d",
+      "priority": "P2",
+      "horizon": "90-180d",
       "owner": "owner.darren",
       "source_docs": [
         "external:BioregionKnwoledgeCommons/CLAUDE.md",
-        "docs/research/rag-techniques-synthesis.md"
+        "docs/research/rag-techniques-synthesis.md",
+        "docs/research/2026-summer-solstice-review.md"
       ],
       "github_url": "https://github.com/BioregionalKnowledgeCommons/BioregionalKnowledgeCommoning/issues/22",
       "tags": [
@@ -2746,8 +2747,8 @@
     {
       "id": "work.b10-multi-tool-orchestration",
       "kind": "work_item",
-      "title": "B10 — Multi-tool retrieval orchestration",
-      "summary": "Future orchestration beyond B9a/B9c planner: query decomposition for multi-hop, iterative retrieval with sufficiency checks, self-evaluation loops. The original LangGraph/PydanticAI vision is narrowed — B9a proved that a deterministic decision matrix with typed executors outperforms complex orchestration at current scale.",
+      "title": "B10 — Query decomposition + iterative sufficiency over typed executors",
+      "summary": "Next RAG candidate after the closed Phase 2 upgrade. Keep the current B9a planner and typed executors; add bounded sub-query planning for multi-hop, one sufficiency / re-retrieve loop, and explicit eval on multi-hop failures. Do not adopt LangGraph/PydanticAI or revive SQL/Cypher generation unless this narrower path proves insufficient.",
       "status": "planned",
       "priority": "P1",
       "horizon": "30-90d",
@@ -2758,34 +2759,36 @@
         "agentic"
       ],
       "source_docs": [
-        "docs/research/rag-techniques-synthesis.md"
+        "docs/research/rag-techniques-synthesis.md",
+        "docs/research/2026-summer-solstice-review.md"
       ]
     },
     {
       "id": "work.b11-raptor-tree",
       "kind": "work_item",
       "title": "B11 — RAPTOR hierarchical summarization",
-      "summary": "Build tree over chunks: cluster → summarize → re-embed (2-3 levels). Add ~600-1,000 summary nodes to pgvector table. Best for thematic queries. One-time cost ~$0.50-2.00. Zero additional query-time latency.",
+      "summary": "Trigger-based thematic retrieval candidate. Advance only if broad/thematic queries show persistent weakness in eval or production. Not justified by literature appeal alone at current scale. If activated, build a summary tree over chunks (2-3 levels) and evaluate only on thematic subsets first.",
       "status": "planned",
-      "priority": "P1",
-      "horizon": "30-90d",
+      "priority": "P2",
+      "horizon": "90-180d",
       "owner": "owner.darren",
       "tags": [
         "rag-synthesis",
         "chat"
       ],
       "source_docs": [
-        "docs/research/rag-techniques-synthesis.md"
+        "docs/research/rag-techniques-synthesis.md",
+        "docs/research/2026-summer-solstice-review.md"
       ]
     },
     {
       "id": "work.b12-federated-retrieval",
       "kind": "work_item",
       "title": "B12 — QueryPlan IR + federated retrieval",
-      "summary": "Extend existing KOI-net federation to retrieval layer. QueryPlan IR (typed JSON AST) as internal representation. Evidence packets with cross-node provenance chains. MCP retrieval tool contracts.",
+      "summary": "Readiness track, not immediate build. Extend existing KOI-net federation to the retrieval layer only after real cross-node query demand, a stable evidence-bundle contract, and peer capability / trust metadata exist. Same QueryPlan IR, federated execution later via MCP retrieval contracts and cross-node provenance packets.",
       "status": "planned",
-      "priority": "P1",
-      "horizon": "90-180d",
+      "priority": "P2",
+      "horizon": "180-365d",
       "owner": "owner.darren",
       "tags": [
         "rag-synthesis",
@@ -2793,7 +2796,9 @@
         "federation"
       ],
       "source_docs": [
-        "docs/research/rag-techniques-synthesis.md"
+        "docs/research/rag-techniques-synthesis.md",
+        "docs/research/2026-summer-solstice-review.md",
+        "docs/foundations/federated-memory-architecture.md"
       ]
     },
     {

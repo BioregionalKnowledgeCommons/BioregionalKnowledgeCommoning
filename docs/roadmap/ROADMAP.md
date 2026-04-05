@@ -2,9 +2,9 @@
 
 - Program: **Bioregional Knowledge Commons**
 - Roadmap ID: `bkc.roadmap.2026.part-b`
-- Version: `0.10.0`
-- As of: `2026-03-26`
-- Generated: `2026-04-02 05:27 UTC`
+- Version: `0.10.1`
+- As of: `2026-04-05`
+- Generated: `2026-04-05 18:03 UTC`
 
 ## Status Summary
 
@@ -79,9 +79,7 @@
 | `work.weekly-proof-pack` | Weekly proof pack publishing cadence | `planned` | `P0` | `0-30d` | `owner.darren` |
 | `work.c0-commitment-governance-extension` | C0 — Extend commons governance membrane to commitment lifecycle | `planned` | `P1` | `0-30d` | `owner.darren` |
 | `work.p2p-agent-message-rid-and-routing` | Agent-message RID namespace + server-side inbox routing in KOI poller | `planned` | `P1` | `30-90d` | `owner.darren` |
-| `work.b10-multi-tool-orchestration` | B10 — Multi-tool retrieval orchestration | `planned` | `P1` | `30-90d` | `owner.darren` |
-| `work.b11-raptor-tree` | B11 — RAPTOR hierarchical summarization | `planned` | `P1` | `30-90d` | `owner.darren` |
-| `work.b2-graphrag-v1` | B2 — HippoRAG 2 PPR graph retrieval | `planned` | `P1` | `30-90d` | `owner.darren` |
+| `work.b10-multi-tool-orchestration` | B10 — Query decomposition + iterative sufficiency over typed executors | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.c1-commitment-pool-api` | C1 — CommitmentPool full mechanics (threshold, activation, governance) | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.c1-tbff-commitment-threshold` | C1 — Extend TBFF threshold policy to include commitment activation gates | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.c1-ge-protocol-study` | C1 — Grassroots Economics / Sarafu protocol compatibility analysis | `planned` | `P1` | `30-90d` | `owner.darren` |
@@ -100,12 +98,13 @@
 | `work.s5-tee-spike` | TEE confidential RAG spike | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.p2p-three-peer-smoke-test` | Three-peer smoke test — vault sync + agent messaging across darren/shawn/samu | `planned` | `P1` | `30-90d` | `owner.darren` |
 | `work.s4-ucan-bridge-spike` | UCAN bridge spike | `planned` | `P1` | `30-90d` | `owner.darren` |
-| `work.b12-federated-retrieval` | B12 — QueryPlan IR + federated retrieval | `planned` | `P1` | `90-180d` | `owner.darren` |
 | `work.c2-cross-node-pool-aggregation` | C2 — Cross-bioregion commitment pooling via federated events | `planned` | `P1` | `180-365d` | `owner.darren` |
 | `work.c2-commitment-koi-net-events` | C2 — Extend KOI-net protocol to carry ECDSA-signed commitment events | `planned` | `P1` | `180-365d` | `owner.darren` |
 | `work.c2-regenerate-cascadia-pilot` | C2 — Pilot commitment pool with Regenerate Cascadia | `planned` | `P1` | `180-365d` | `owner.darren` |
 | `work.c1-demurrage-policy-spec` | C1 — Design optional demurrage policy for stale unredeemed pledges (spec only) | `planned` | `P2` | `30-90d` | `owner.darren` |
+| `work.b11-raptor-tree` | B11 — RAPTOR hierarchical summarization | `planned` | `P2` | `90-180d` | `owner.darren` |
 | `work.b13-ad4m-coasys-bridge` | B13 — AD4M/Coasys federation substrate integration | `planned` | `P2` | `90-180d` | `owner.darren` |
+| `work.b2-graphrag-v1` | B2 — HippoRAG 2 PPR graph retrieval | `planned` | `P2` | `90-180d` | `owner.darren` |
 | `work.r2-regen-bkc-entity-bridge` | Bidirectional entity federation with sharing policies | `planned` | `P2` | `90-180d` | `owner.darren` |
 | `work.c2-commitment-federation` | C2: Federated commitment pooling across bioregions | `planned` | `P2` | `90-180d` | `owner.darren` |
 | `work.ce-category-taxonomy` | Define 130 CE material/technology categories as BKC Concept entities | `planned` | `P2` | `90-180d` | `owner.darren` |
@@ -118,6 +117,7 @@
 | `work.r2-regen-compute-integration` | Regen Compute ecological credit retirement for BKC AI workloads | `planned` | `P2` | `90-180d` | `owner.darren` |
 | `work.ce-mobile-app-spec` | Write BKC-CE mobile app integration spec (CEMVC-compatible) | `planned` | `P2` | `90-180d` | `owner.darren` |
 | `work.r2-commoning-koi-mcp-split` | commoning-koi-mcp split — 15 shared contract tools | `planned` | `P2` | `90-180d` | `owner.darren` |
+| `work.b12-federated-retrieval` | B12 — QueryPlan IR + federated retrieval | `planned` | `P2` | `180-365d` | `owner.darren` |
 | `work.c2-hypercert-from-commitment` | C2 — Hypercerts minted from REDEEMED commitment + linked Evidence | `planned` | `P2` | `180-365d` | `owner.darren` |
 | `work.a2a-agent-card` | A2A agent card deployment | `done` | `P0` | `0-30d` | `owner.darren` |
 | `work.b1-chat-retrieval-hardening` | B1 — Chat retrieval hardening | `done` | `P0` | `0-30d` | `owner.darren` |
@@ -281,7 +281,7 @@
 88. `work.hub-cultivator-decision-logging` — Hub Cultivator decision logging via /ingest (done)
 89. `work.bff-live-integration` — BFF layer + live KOI node integration + entity browser + search (done)
 90. `work.owocki-tranche-proposal-v1` — Owocki milestone tranche proposal v1 (planned)
-91. `work.b10-multi-tool-orchestration` — B10 — Multi-tool retrieval orchestration (planned)
+91. `work.b10-multi-tool-orchestration` — B10 — Query decomposition + iterative sufficiency over typed executors (planned)
 92. `work.b9a-queryplan-ir-design` — B9a — QueryPlan IR design (13 Pydantic models, 3-layer router spec) (done)
 93. `work.b4-tbff-flow-integration` — Implement TBFF flow write-back loop (done)
 94. `work.c1-commitment-pool-api` — C1 — CommitmentPool full mechanics (threshold, activation, governance) (planned)
