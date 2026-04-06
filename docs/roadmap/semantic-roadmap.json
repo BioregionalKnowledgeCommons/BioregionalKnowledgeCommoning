@@ -2748,7 +2748,7 @@
       "id": "work.b10-multi-tool-orchestration",
       "kind": "work_item",
       "title": "B10 — Query decomposition + iterative sufficiency over typed executors",
-      "summary": "Next RAG candidate after the closed Phase 2 upgrade. Keep the current B9a planner and typed executors; add bounded sub-query planning for multi-hop, one sufficiency / re-retrieve loop, and explicit eval on multi-hop failures. Do not adopt LangGraph/PydanticAI or revive SQL/Cypher generation unless this narrower path proves insufficient.",
+      "summary": "Deferred by the 2026-04 multi-hop failure audit. Revisit only after source/content strategy work reduces the current CONTENT-heavy failure set and leaves at least 3 clear residual DECOMPOSITION cases. If reactivated, keep the current B9a planner and typed executors; add bounded sub-query planning for multi-hop, one sufficiency / re-retrieve loop, and explicit eval on residual failures. Do not adopt LangGraph/PydanticAI or revive SQL/Cypher generation unless this narrower path proves insufficient.",
       "status": "planned",
       "priority": "P1",
       "horizon": "30-90d",
@@ -2760,7 +2760,8 @@
       ],
       "source_docs": [
         "docs/research/rag-techniques-synthesis.md",
-        "docs/research/2026-summer-solstice-review.md"
+        "docs/research/2026-summer-solstice-review.md",
+        "docs/research/kg-chat-follow-on-decision-memo-2026-04.md"
       ]
     },
     {

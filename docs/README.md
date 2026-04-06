@@ -16,6 +16,12 @@ This folder is the documentation index for the Bioregional Knowledge Commoning r
 - [Canonical roadmap model](./roadmap/semantic-roadmap.json): source of truth.
 - [Roadmap schema](./roadmap/semantic-roadmap.schema.json): machine-validation contract.
 
+## Research and Retrospectives
+- [RAG techniques synthesis](./research/rag-techniques-synthesis.md): original 3-model synthesis and candidate technique pool.
+- [Sprint 1 retrieval retrospective](./research/sprint-1-retrieval-retrospective.md): what actually worked and failed in the first retrieval sprint.
+- [KG chat follow-on decision memo](./research/kg-chat-follow-on-decision-memo-2026-04.md): post-Sprint-1 lessons, falsified hypotheses, and what to do next.
+- [Summer solstice review](./research/2026-summer-solstice-review.md): seasonal review of the KG chat / RAG lane.
+
 ## Foundations Documents
 - [Pattern language](./foundations/pattern-language-for-bioregional-knowledge-commoning-v0.1.md): pattern set for participation, consent boundaries, bridges, and holonic nesting.
 - [Meta-protocol](./foundations/knowledge-commoning-meta-protocol-v0.1.md): invariant requirements (`what`, `who attests`, `who can use/how`) plus conformance levels.
