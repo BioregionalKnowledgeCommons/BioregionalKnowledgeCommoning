@@ -76,6 +76,51 @@ The practical rule: do not treat `CLAUDE.md` as the long-term memory for retriev
 - Page co-occurrence expansion.
 - Another packet from the Salish Sea restoration wiki for reef-net / clam-garden questions.
 
+## Source Strategy Decision Table (2026-04-05)
+
+The targeted Salish Sea ecology-packet experiment falsified the current MediaWiki source family for the hardest remaining ecology-heavy multi-hop failures.
+
+| Question | Current best class | Why | Minimum honest next move |
+|---|---|---|---|
+| `multi_hop_3` reef nets as Coast Salish technology | `park` | The current registered wiki source family does not cover this concept, and treating Indigenous practice content as a routine import target would require an explicit provenance / rights / scope decision. | Mark as a known content-limit candidate in eval until source policy changes. |
+| `multi_hop_7` eelgrass -> juvenile Chinook -> SRKW | `authored_synthesis` | The pieces exist in public ecology sources, but the explicit chain is not stated in one clean chunk in the current corpus. | Author a short cited brief and ingest it. |
+| `multi_hop_11` reef net as migration knowledge | `park` | Same as `multi_hop_3`: absent from the current source family, and not appropriate to smuggle in as generic wiki densification. | Mark as a known content-limit candidate in eval until source policy changes. |
+| `multi_hop_13` Fraser lifecycle chain | `different_source_family` | The current wiki has only weak lifecycle coverage. Public fisheries/science sources are a better fit than the restoration wiki. | Narrow DFO / PSF source scout, not broad import. |
+| `multi_hop_14` clam gardens as Indigenous mariculture | `park` | Same as reef nets: this is a source-scope and provenance decision, not a simple missing-page problem. | Mark as a known content-limit candidate in eval until source policy changes. |
+
+### Supporting Source Read
+
+The current best-supported next actions are:
+
+- `multi_hop_7` authored synthesis from public ecology sources
+  - NOAA Fisheries material on Southern Resident killer whale prey dependence on Chinook
+  - Pacific Northwest / DFO-adjacent material on eelgrass as juvenile salmon habitat
+- `multi_hop_13` narrow source-family scout
+  - DFO lifecycle and Lower Fraser habitat-connectivity material
+  - Pacific Salmon Foundation lifecycle/public education material
+
+### Eval Hygiene Recommendation
+
+`multi_hop_3`, `multi_hop_11`, and `multi_hop_14` should not continue to function as ordinary retrieval-gate failures unless and until BKC explicitly decides to include a rights-clear source family for Indigenous ecological practice content.
+
+Recommended next eval-contract change:
+
+- add a `known_limit` or equivalent scope annotation to these questions in `golden_qa.json`
+- teach the eval gate to exclude known-limit questions from canonical pass/fail calculations while still reporting them
+
+This is not a retrieval improvement. It is a scope / evaluation-discipline improvement.
+
+### Smallest Next Implementation
+
+The smallest plausible high-signal move is **not** another source import. It is a tiny authored-synthesis packet for `multi_hop_7`.
+
+Why:
+
+- it uses public, citeable ecology sources
+- it avoids scope creep into culturally sensitive source ingestion
+- it tests whether authored synthesis can move one real failure cleanly
+- it does not require reopening B10, planner work, or another broad wiki experiment
+
 ## Recommended Next Step
 
 The next real RAG/content session should be a **source strategy** session, not another import or planner session.
