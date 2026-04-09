@@ -26,6 +26,14 @@ BKC sits within a three-plane architecture for bioregional AI:
 
 No single project builds all three planes. BKC owns the knowledge plane and connects to capital and coordination planes through protocol-level integration, not monolithic coupling.
 
+## Positioning within the portfolio
+
+BKC is downstream of two upstream projects:
+- **Spore** carries the abstract coordination grammar — holonic structure, federation protocol, claims/evidence/attestation, learning membrane
+- **Intelligence Commons** carries intelligence primitives — retrieval, memory layers, grounding, agentic control
+
+BKC's bounded context is bioregional application: how these abstractions land in real communities, generate operational evidence, and prove (or fail) under actual conditions. This is not a secondary role — it is where the theory meets the ground.
+
 ## Why federation, not aggregation
 
 Bioregions are nested. The Greater Victoria landscape group sits within the Salish Sea bioregion, which sits within Cascadia. Knowledge commons should mirror this structure — each node sovereign, each connection chosen.

@@ -7,6 +7,15 @@ This repository is a shared workspace for bioregional knowledge commoning at mul
 - Support ontological commoning and knowledge sovereignty.
 - Incubate pilots that can inform broader commons infrastructure.
 
+## Relationship to Upstream Projects
+
+BKC applies upstream coordination grammar and intelligence patterns to bioregional knowledge commoning:
+
+- **[Spore](https://github.com/DarrenZal/Spore)** — coordination grammar, federation protocol, claims/evidence/attestation patterns, learning membrane
+- **[Intelligence Commons](https://github.com/DarrenZal/intelligence-commons)** — retrieval and memory layer abstractions, grounding/evidence primitives, agentic control patterns
+
+BKC is the **primary proving ground** where these patterns make contact with real operational commitments and generate genuine evaluation evidence. The boundary: Spore defines the grammar, IC defines the intelligence patterns, BKC applies both to bioregional knowledge sovereignty.
+
 ## Architecture Layers
 This repository uses a three-layer model:
 
@@ -20,6 +29,7 @@ This repository uses a three-layer model:
 - Optional concrete serializations such as CommonsChange.
 
 ## Start Here
+- Coordination stack narrative: `docs/coordination-stack.md`
 - Foundations index: `docs/foundations/README.md`
 - Semantic roadmap index: `docs/roadmap/README.md`
 - Pattern language: `docs/foundations/pattern-language-for-bioregional-knowledge-commoning-v0.1.md`

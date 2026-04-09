@@ -1,4 +1,15 @@
+---
+doc_id: bkc.holonic-swarm-reference-architecture
+doc_kind: architecture
+status: active
+depends_on:
+  - bkc.project-vision
+  - spore.mycelial-holarchy-architecture
+---
+
 # Holonic Swarm Reference Architecture
+
+> **Upstream reference:** `spore.mycelial-holarchy-architecture` carries the abstract holonic model. This doc applies it to nested bioregional swarm coordination.
 
 ## Purpose
 Describe how nested bioregional swarms can interoperate while preserving local sovereignty.

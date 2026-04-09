@@ -4,15 +4,15 @@ Cross-pilot frameworks that can be reused across bioregional knowledge commoning
 
 ## Canonical Architecture
 - [Project vision](../project-vision.md): internal canonical vision — three-plane model, design principles (sovereignty-preserving federation, protocol-not-platform, consent-first, bounded authority, living system economics, holonic structure), scope boundaries.
-- [Federated memory architecture](./federated-memory-architecture.md): canonical architecture for retrieval, agent memory, and federation — 5 core primitives (PolicyScope, QueryPlan, EvidenceBundle, ClaimSet, PeerCapabilityRecord), 4 memory layers, polyglot graph-model stance, safety boundaries, implementation phases.
+- [Federated memory architecture](./federated-memory-architecture.md): canonical architecture for retrieval, agent memory, and federation — 5 core primitives (PolicyScope, QueryPlan, EvidenceBundle, ClaimSet, PeerCapabilityRecord), 4 memory layers, polyglot graph-model stance, safety boundaries, implementation phases. *Upstream reference: `ic.memory-layers` defines the abstract five-layer memory model; this doc applies it to BKC's federated bioregional architecture.*
 
 ## Core Layered Docs
-- [Pattern language v0.1](./pattern-language-for-bioregional-knowledge-commoning-v0.1.md): reusable commoning design patterns (participation, consent boundaries, emergent bridging, holonic nesting).
-- [Bioregional AI swarms pattern language](./bioregional-ai-swarms-pattern-language.md): multi-agent coordination patterns for bioregional knowledge and capital planes (evidence loop, bounded autonomy, stigmergic routing).
+- [Pattern language v0.1](./pattern-language-for-bioregional-knowledge-commoning-v0.1.md): reusable commoning design patterns (participation, consent boundaries, emergent bridging, holonic nesting). *Upstream reference: `spore.mycelial-holarchy-architecture` carries the general holonic coordination grammar; this doc applies bioregional-specific patterns.*
+- [Bioregional AI swarms pattern language](./bioregional-ai-swarms-pattern-language.md): multi-agent coordination patterns for bioregional knowledge and capital planes (evidence loop, bounded autonomy, stigmergic routing). *Upstream reference: general agent coordination patterns live in IC (`ic.memory-layers`) and Spore; this doc applies them to bioregional swarm contexts.*
 - [Meta-protocol v0.1](./knowledge-commoning-meta-protocol-v0.1.md): thin interoperability commitments and conformance levels.
 - [CommonsChange reference profile v0.1](./commonschange-reference-profile-v0.1.md): optional, implementable event/snapshot exchange profile.
 - [Node participation profiles](./node-participation-profiles.md): non-KOI, KOI full, and KOI gateway/partial participation options.
-- [Holonic swarm reference architecture](./holonic-swarm-reference-architecture.md): nested coordinator/leaf boundaries and external interface behavior.
+- [Holonic swarm reference architecture](./holonic-swarm-reference-architecture.md): nested coordinator/leaf boundaries and external interface behavior. *Upstream reference: `spore.mycelial-holarchy-architecture` carries the abstract holonic model; this doc applies it to nested bioregional swarms.*
 - [Rights/licensing/consent policy slots](./rights-licensing-consent-policy-slots.md): required policy metadata slots without universal value mandates.
 - [Bioregion onboarding playbook](./bioregion-onboarding-playbook.md): practical 30/60/90 day onboarding tracks and readiness gates.
 

@@ -1,15 +1,15 @@
 ---
 doc_id: bkc.coordination-stack
 doc_kind: synthesis
-status: draft
+status: active
 date: 2026-04-03
 author: Darren Zal
-relates_to:
+depends_on:
   - bkc.project-vision
   - bkc.commitment-economy-vision
   - bkc.commitment-pooling
   - bkc.flow-funding-foundations
-  - bkc.bioregional-finance
+  - spore.mycelial-holarchy-architecture
 audience: partners, stewards, coalition
 ---
 

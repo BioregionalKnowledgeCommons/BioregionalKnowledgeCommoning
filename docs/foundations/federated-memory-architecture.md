@@ -4,6 +4,7 @@ doc_kind: architecture
 status: draft
 depends_on:
   - bkc.project-vision
+  - ic.memory-layers
 primary_for:
   - federated-memory
   - retrieval-architecture
@@ -11,6 +12,8 @@ primary_for:
 ---
 
 # Federated Memory Architecture
+
+> **Upstream reference:** `ic.memory-layers` defines the abstract five-layer memory model. This doc applies that model to BKC's federated bioregional knowledge architecture.
 
 Canonical architecture for BKC's knowledge retrieval, agent memory, and federated reasoning layers. This doc sits between the [project vision](../project-vision.md) (why) and the [RAG techniques synthesis](../research/rag-techniques-synthesis.md) (subsystem spec for retrieval implementation).
 

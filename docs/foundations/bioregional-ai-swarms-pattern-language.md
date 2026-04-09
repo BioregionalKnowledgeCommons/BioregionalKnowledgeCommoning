@@ -1,6 +1,18 @@
+---
+doc_id: bkc.bioregional-ai-swarms-pattern-language
+doc_kind: foundations
+status: active
+depends_on:
+  - bkc.project-vision
+  - bkc.pattern-language
+  - ic.memory-layers
+---
+
 # Bioregional AI Swarms: A Pattern Language
 *A living document for the bioregional swarm coordination ecosystem*
 *BKC as reference implementation — patterns are framework-agnostic*
+
+> **Upstream reference:** General agent coordination patterns live in Intelligence Commons (`ic.memory-layers`) and Spore. This doc applies them to bioregional swarm contexts.
 
 ---
 

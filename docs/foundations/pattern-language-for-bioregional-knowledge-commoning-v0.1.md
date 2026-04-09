@@ -1,4 +1,15 @@
+---
+doc_id: bkc.pattern-language
+doc_kind: foundations
+status: active
+depends_on:
+  - bkc.project-vision
+  - spore.mycelial-holarchy-architecture
+---
+
 # Pattern Language for Bioregional Knowledge Commoning v0.1
+
+> **Upstream reference:** `spore.mycelial-holarchy-architecture` carries the general holonic coordination grammar. This doc applies bioregional-specific commoning patterns.
 
 ## Purpose
 This document captures reusable design patterns for bioregional knowledge commoning.
