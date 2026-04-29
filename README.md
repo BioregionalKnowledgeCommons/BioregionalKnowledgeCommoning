@@ -7,14 +7,26 @@ This repository is a shared workspace for bioregional knowledge commoning at mul
 - Support ontological commoning and knowledge sovereignty.
 - Incubate pilots that can inform broader commons infrastructure.
 
-## Relationship to Upstream Projects
+## Relationship to Upstream Projects and Peers
 
 BKC applies upstream coordination grammar and intelligence patterns to bioregional knowledge commoning:
 
-- **[Spore](https://github.com/DarrenZal/Spore)** — coordination grammar, federation protocol, claims/evidence/attestation patterns, learning membrane
+- **[Spore](https://github.com/DarrenZal/Spore)** — coordination grammar, federation protocol, claims/evidence/attestation patterns, learning membrane (cited via frontmatter `depends_on: spore.<slug>` on BKC docs)
 - **[Intelligence Commons](https://github.com/DarrenZal/intelligence-commons)** — retrieval and memory layer abstractions, grounding/evidence primitives, agentic control patterns
 
-BKC is the **primary proving ground** where these patterns make contact with real operational commitments and generate genuine evaluation evidence. The boundary: Spore defines the grammar, IC defines the intelligence patterns, BKC applies both to bioregional knowledge sovereignty.
+BKC is also peer-with one canon-bearing instance-family member at the same operational layer:
+
+- **[bioregional-coordination](https://github.com/DarrenZal/bioregional-coordination)** — agentic-bioregionalism meta-articulation; sibling at instance-family layer (neither downstream-of nor parent-to BKC). The two repos cross-cite at peer level. Created 2026-04-28 as a peer canon-bearing repo for broader-than-knowledge-commoning bioregional aspects.
+
+BKC is the **primary proving ground** where Spore + IC patterns make contact with real operational commitments and generate genuine evaluation evidence. The boundary: Spore defines the grammar, IC defines the intelligence patterns, BKC applies both to bioregional knowledge sovereignty.
+
+### What this repo owns
+
+**Cite BKC for:** the seven-layer operational stack (mapping → graph → commitment-pool → flow-funding → AI agents → federation → bioregional finance); BFF financial-instrument typology (Trust / Studio / Investment Co. / Bank with 4-Returns); KOI federation operational machinery (4 federated nodes + Octo agent + Quartz sites); Greater Victoria pilot specifics; the BKC ontology + meta-protocol + reference-profiles three-layer architecture.
+
+**Don't cite BKC for:** coordination-grammar canon (Spore owns); intelligence-primitive canon (IC owns); agentic-bioregionalism meta-articulation (bioregional-coordination owns); the canonical `spore:ADR-NNNN-<slug>` cross-canon citation convention (Spore owns).
+
+For the full inter-canon role-pinning across Spore + bregion + BKC + IC + PM, see [Spore README §Canon scope and inter-canon roles](https://github.com/DarrenZal/Spore#canon-scope-and-inter-canon-roles).
 
 ## Architecture Layers
 This repository uses a three-layer model:
