@@ -40,7 +40,7 @@ external_sources:
   - title: "Free Our Groups: From Platforms to Protocols (Kaliya Young)"
     url: https://identitywoman.net/free-our-groups-from-platforms-to-protocols/
     published: "2026-07-07"
-  - title: "Who Is Tending the Digital Substrate for Bioregional Movements? (Kaliya Young)"
+  - title: "Who Is Tending the Digital Substrate for Bioregional Movements? (Kaliya Young and David Hodgson)"
     url: https://identitywoman.net/who-is-tending-the-digital-substrate-for-bioregional-movements/
     published: "2026-05-25"
 ---
@@ -49,7 +49,7 @@ external_sources:
 
 ## Why this note exists
 
-This note reads the Decentralized Trust Graph (DTG) work that Kaliya Young presented in a public
+This note reads the Decentralized Trust Graph (DTG) work that Kaliya Young and Drummond Reed presented in a public
 [Trust over IP explainer](https://youtu.be/AelpLS2pY18) (video published 2026-10-04) against two
 of BKC's governance slots. It uses the public specifications and implementation pages the talk
 points to. It concerns community membership and roles only. Person-to-person trust is discussed
@@ -186,7 +186,7 @@ revoke.
   complicated questions", and the talk moved on [14:21]-[14:31]. The specifications say who
   revokes (the issuer, ToIP VRC note 3, or the quorum, Sideways). None of the sources read here
   says how a revocation reaches nodes that cache membership.
-- **A roster is sensitive.** Kaliya's warning about public impact claims applies to a
+- **A roster is sensitive.** Kaliya Young and David Hodgson's warning about public impact claims applies to a
   membership roster too, on this note's reading: "a public, verifiable record of 'this community
   is doing conservation work on this land' is also a map for retaliation"
   ([Who Is Tending the Digital Substrate](https://identitywoman.net/who-is-tending-the-digital-substrate-for-bioregional-movements/)).
@@ -233,7 +233,7 @@ commons issuing membership and one steward role credential to a few members, and
 
 ## Provenance
 
-- Kaliya Young, Trust over IP explainer at the Protocols of Place workshop (Kinship Earth, White
+- Kaliya Young and Drummond Reed (co-presenters, per the public video description), Trust over IP explainer at the Protocols of Place workshop (Kinship Earth, White
   Salmon, WA), September 2026, [video](https://youtu.be/AelpLS2pY18) published 2026-10-04.
   Timestamps refer to the video. Speaker turns come from an auto-transcript, and the speaker at
   [13:24] is identified as Drummond Reed by inference.
@@ -244,10 +244,10 @@ commons issuing membership and one steward role credential to a few members, and
   v1.2 (2025-07-01) and [Verifiable Community](https://sideways.earth/verifiable-community/).
 - Project Weave, [technical depth](https://projectweave.tech/technical-depth.html).
 - Kaliya Young, [Free Our Groups](https://identitywoman.net/free-our-groups-from-platforms-to-protocols/)
-  (2026-07-07) and
+  (2026-07-07); Kaliya Young and David Hodgson,
   [Who Is Tending the Digital Substrate for Bioregional Movements?](https://identitywoman.net/who-is-tending-the-digital-substrate-for-bioregional-movements/)
   (2026-05-25).
-- These sources are not independent. Kaliya gave the talk, is listed on the use-case team for
+- These sources are not independent. Kaliya co-presented the talk, is listed on the use-case team for
   Sideways spec v1.2, and is on the Project Weave team ("what we're doing at Project Weave"
   [19:54]). Weave's technical page treats the First Person Project as the anchor of its stack,
   and OpenVTC implements the First Person Protocol from that project's white paper. Their
