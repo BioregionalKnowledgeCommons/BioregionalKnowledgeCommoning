@@ -257,10 +257,10 @@ Kinship Earth's flow funding model is trust-based, low-paperwork, and narrative-
 > "No applications. No bureaucracy. Grounded in collaboration, solidarity, and trusting those who know their communities best to lead the way."
 
 Regenerate Cascadia's Landscape Hub Cultivator program is entering its bioregional mapping and flow funding phase (Phase 2, March–June 2026). Current scale:
-- **13 landscape groups** across Cascadia (10 in the current pilot cohort)
+- **10 landscape groups** across Cascadia in the 2025-26 pilot cohort *(Corrected 2026-10-28: earlier wording said "13 landscape groups across Cascadia (10 in the current pilot cohort)". [RC's pilot page](https://regeneratecascadia.org/biofi/flow-funding-pilots/) names ten groups, and no source for 13 was found.)*
 - **~40 landscape stewards** participated in Phase 1; 2–3 designated per group
-- **$8,000 per landscape group** ($5,000 for mapping/planning + $3,000 for flow funding)
-- **$30,000 total flow funding** across the 10 pilot groups; **$80,000 total support** including mapping
+- **$8,000 per landscape group** (approximately $5,000 for mapping/planning + $3,000 for flow funding), per RC's [flow-funding pilots page](https://regeneratecascadia.org/biofi/flow-funding-pilots/) *(Corrected 2026-10-28: earlier wording said "$5,000 for mapping/planning" and did not name the source. RC's page, re-checked 2026-10-28, calls the $5,000 share approximate.)*
+- **$30,000 total flow funding** across the 10 pilot groups; **$80,000 total support** including mapping (10 groups at $8,000 each, per the same page)
 - **681+ members**, **30 connected organizations**
 
 The flow funding governance is deliberately plural. As the RC site describes: "Some groups may invite applications for a series of micro-grants. Others may convene a local committee to identify and nominate projects." The common thread: "allocation decisions are made by community members who hold direct relationships with the people and places being supported."
@@ -495,9 +495,9 @@ This document practices what it preaches. The patterns and mechanisms described 
 
 | Source | Scale | Status |
 |--------|-------|--------|
-| **Sarafu Network** (Grassroots Economics, Celo mainnet) | 26,367 users, 188 active pools, 745 vouchers, $320K swap volume, 1,200+ acres restored | Production since July 2023 |
-| **Kinship Earth Flow Funding** | 10 landscape groups in pilot, $30K flow funding | Phase 2 pilot (2026) |
-| **Regenerate Cascadia Hub Cultivator** | 13 landscape groups, ~40 stewards, $80K total support | Phase 2 pilot (2026) |
+| **Sarafu Network** (Grassroots Economics, Celo mainnet) | 26,367 users, 188 active pools and 745 vouchers from 5 July 2023 to 20 July 2025, by Grassroots Economics' own counts ([research page](https://grassrootseconomics.org/research)). GE's own 2024 report, not independently verified, says over 1,200 acres were restored ([archived](https://web.archive.org/web/20250624141243/https://grassecon.net/impacts-2024)). *(Corrected 2026-10-28: earlier wording gave "$320K swap volume, 1,200+ acres restored" with no source or date.)* | Production since July 2023 |
+| **Kinship Earth Flow Funding** | Flow funds in Barichara, Cascadia and the Greater Tkaronto Bioregion by February 2025, including Flow Funding grants to Regenerate Cascadia *(Corrected 2026-10-28: earlier wording credited RC's pilot figures ("10 landscape groups in pilot, $30K flow funding") to Kinship Earth. Source: [Bioregional Earth blog](https://www.bioregionalearth.org/blog/flow-funding), 2025-02-12.)* | Active as of February 2025 |
+| **Regenerate Cascadia Hub Cultivator** | 10 landscape groups, ~40 stewards, $30K flow funding within $80K total support *(Corrected 2026-10-28: earlier wording said "13 landscape groups". [RC's pilot page](https://regeneratecascadia.org/biofi/flow-funding-pilots/) names ten.)* | 2025-26 pilot |
 | **Mycopunks TBFF** | 5 participants, $32K simulated scenario | Experimental (2025–2026) |
 | **CLC DAO** | Whitepaper spec | Pre-deployment design |
 | **BKC Commitment Routing** | 4 nodes, 23 verified commitments, 33,400 VCV minted | Hackathon demo (March 2026) |

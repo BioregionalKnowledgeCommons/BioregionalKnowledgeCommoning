@@ -37,13 +37,15 @@ The BKC knowledge graph is the shared substrate: both versions read from it (evi
 |---|---|---|
 | **Governance** | Trust-based, human steward decisions | Algorithmic, threshold overflow redistribution |
 | **Core mechanism** | Funder → Hub Cultivator → small grants to projects | `x' = min(x, t) + P^T · max(0, x - t)` — iterate until convergence |
-| **Financial infrastructure** | DAFs (Donor-Advised Funds) | Superfluid CFA streaming on Base |
-| **Reporting** | 4 reflective questions (annual): *What inspired you? What surprised you? What challenged you? What moved you?* | On-chain settlement events with full balance snapshots |
+| **Financial infrastructure** | Fiscal sponsor: RC's pilot money flows through the Department of Bioregion, a 501(c)(3). RC's BioFi page says its initial pilots operate through DAFs, and a DAF grant to an individual is a taxable distribution | Superfluid CFA streaming on Base |
+| **Reporting** | Narrative: RC's Landscape Hub Cultivator team documents where funds flow. Kinship Earth asks its recipients four reflective questions (annual): *What inspired you? What surprised you? What challenged you? What moved you?* | On-chain settlement events with full balance snapshots |
 | **Decision authority** | Hub Cultivator steward (human judgment) | Allocation preferences matrix (set by participants, executed by contract) |
 | **Convergence** | Continuous relational process | Mathematical: typically 1–4 iterations |
 | **Originators** | Kinship Earth, Earth Regeneration Fund, Regenerate Cascadia | MycoFi / Mycopunks collective |
-| **Pilot scope** | 6 bioregions (Cascadia, Barichara, NE Forests, Tkaronto, Northern Andes, Ogallala) | 5 Mycopunks members (Victoria-based experiment) |
+| **Pilot scope** | Regenerate Cascadia's 2025-26 Landscape Hub Cultivator pilot: 10 landscape groups, $3,000 of flow funding each | 5 Mycopunks members (Victoria-based experiment) |
 | **BKC integration** | Steward decision logging via `/ingest` → Evidence entities | Settlement evidence via dedicated endpoint → Evidence entities |
+
+*(Corrected 2026-10-28: earlier rows gave Financial infrastructure as "DAFs (Donor-Advised Funds)", Reporting as "4 reflective questions (annual)" and Pilot scope as "6 bioregions (Cascadia, Barichara, NE Forests, Tkaronto, Northern Andes, Ogallala)". Regenerate Cascadia's [pilots page](https://regeneratecascadia.org/biofi/flow-funding-pilots/) names the Department of Bioregion as fiscal sponsor, while its [BioFi page](https://regeneratecascadia.org/biofi/bioregional-funding/) names DAFs, and a DAF grant to an individual is a taxable distribution ([IRS Notice 2017-73](https://www.irs.gov/pub/irs-drop/n-17-73.pdf)). The four questions are the "four learning questions" of Marion Weber's Flow Fund Circle ([Alliance](https://www.alliancemagazine.org/interview/interview-marion-rockefeller-weber/)), which [Kinship Earth](https://www.bioregionalearth.org/blog/flow-funding) asks its recipients. RC's pilots page does not mention them. The six bioregions launched the separate Earth Regeneration Fund in September 2024 and are not RC's pilot.)*
 
 ---
 
@@ -71,7 +73,7 @@ Regenerate Cascadia's BioFi infrastructure maps directly: landscape-level regene
 
 ### 3.4 Transparency Through Knowledge Graph, Not Metrics
 
-Both versions reject metrics-heavy reporting in favor of knowledge-graph-grounded transparency. Hub Cultivator reporting asks four reflective questions — narrative, not numeric. TBFF transparency comes from on-chain settlement events — mathematically verifiable, not self-reported.
+Both versions reject metrics-heavy reporting in favor of knowledge-graph-grounded transparency. Hub Cultivator reporting is narrative, not numeric: RC's Landscape Hub Cultivator team documents the stories of where funds flow, and Kinship Earth asks its own recipients four reflective questions. *(Corrected 2026-10-28: earlier wording said "Hub Cultivator reporting asks four reflective questions". The questions are Marion Weber's Flow Fund Circle practice, which Kinship Earth follows. Regenerate Cascadia's pilots page does not mention them.)* TBFF transparency comes from on-chain settlement events — mathematically verifiable, not self-reported.
 
 The BKC knowledge graph provides a third path: provenance-tracked Evidence entities linked to specific projects, decisions, and outcomes. Transparency emerges from the graph structure (who funded what, based on what evidence, with what result) rather than compliance reports.
 
@@ -105,9 +107,9 @@ The Victoria group's participation means Hub Cultivator decisions can be immedia
 
 ### 4.4 Kinship Earth and the Six Bioregions
 
-Kinship Earth / Earth Regeneration Fund launched flow funding in September 2024 across six pilot bioregions: Barichara, Cascadia, Forests of the NE, Greater Tkaronto Bioregion, Northern Andes, and Ogallala. Each bioregion has its own Hub Cultivator structure. Cascadia's implementation through Regenerate Cascadia is the most directly connected to BKC infrastructure.
+Six bioregional contexts (Barichara, Cascadia, Forests of the NE, Greater Tkaronto Bioregion, Northern Andes and Ogallala) launched the Earth Regeneration Fund in September 2024, and the fund works with Kinship Earth toward a flow fund for every bioregion. By February 2025 Kinship Earth had brought flow funds to Barichara, Cascadia and the Greater Tkaronto Bioregion, including Flow Funding grants to Regenerate Cascadia. *(Corrected 2026-10-28: earlier wording said "Kinship Earth / Earth Regeneration Fund launched flow funding in September 2024 across six pilot bioregions ... Each bioregion has its own Hub Cultivator structure." The [Bioregional Earth blog post](https://www.bioregionalearth.org/blog/flow-funding) (2025-02-12), the source for this paragraph, does not mention Hub Cultivators. The Landscape Hub Cultivator is RC's separate 2025-26 pilot of ten landscape groups ([RC](https://regeneratecascadia.org/biofi/flow-funding-pilots/)).)* Cascadia's implementation through Regenerate Cascadia is the most directly connected to BKC infrastructure.
 
-Community-led conservation through this model proves "2.5 times more cost-effective" than traditional approaches, with "50% higher success rates" due to local knowledge and ownership.
+The [Bioregional Earth blog post](https://www.bioregionalearth.org/blog/flow-funding) also cites two outcome statistics: community-led conservation is "2.5 times more cost-effective" (attributed to the International Institute for Environment and Development), and community-driven projects have a "50% higher success rate" (attributed to the World Bank). It links no study for either, and none could be found, so they are not evidence for this model. *(Corrected 2026-10-28: earlier wording said this model "proves" these figures. A 2026-10-24 search found no source for the World Bank figure, and a 2026-10-28 search found none for the IIED figure. The World Bank's own review of the participatory projects it funded, [Localizing Development: Does Participation Work?](https://www.worldbank.org/en/research/publication/localizing-development-does-participation-work) by Ghazala Mansuri and Vijayendra Rao, finds the majority lacking in several arenas.)*
 
 ---
 
@@ -191,7 +193,7 @@ Commitment pooling (C0 live) is the bridge between flow funding versions:
 
 ```
 Track 1: Hub Cultivator          Track 2: TBFF
-(human-mediated, DAFs)           (algorithmic, Superfluid)
+(human, fiscal sponsor)          (algorithmic, Superfluid)
          \                          /
           \   Shared Infrastructure /
            \  (CAT receipt chain)  /
@@ -214,7 +216,7 @@ Track 1: Hub Cultivator          Track 2: TBFF
 
 **30 days:** Victoria Landscape Hub entities seeded in knowledge graph. Decision helper script wraps `/ingest` with Hub Cultivator conventions (deterministic RIDs, standard relationships).
 
-**60 days:** When Kinship Earth's annual reflective questions come due, Evidence entities are already anchored with full provenance. Reporting becomes a graph query, not a form.
+**60 days:** When reporting comes due (RC's documentation of where funds flow, or reflective questions if a funder such as Kinship Earth asks them), Evidence entities are already anchored with full provenance. *(Corrected 2026-10-28: earlier wording said "When Kinship Earth's annual reflective questions come due". Kinship Earth's blog names Regenerate Cascadia as a flow-funding grantee, and RC's pilots page does not say landscape groups answer the questions.)* Reporting becomes a graph query, not a form.
 
 ### Track 2 — TBFF (Experimental)
 

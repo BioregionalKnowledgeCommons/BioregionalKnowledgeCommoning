@@ -15,12 +15,12 @@ Member organizations include Kinship Earth, Mycopunks, and Regenerate Cascadia's
 
 ## Kinship Earth
 
-Kinship Earth is a bioregional stewardship organization that operates the Earth Regeneration Fund. It launched flow funding across six pilot bioregions in September 2024: Barichara, Cascadia, Forests of the Northeast, Greater Tkaronto Bioregion, Northern Andes, and Ogallala. Cascadia's implementation flows through Regenerate Cascadia, making Kinship Earth a key upstream funder for the Greater Victoria network.
+Kinship Earth is a bioregional stewardship organization that works with the Earth Regeneration Fund, which six bioregional contexts launched in September 2024: Barichara, Cascadia, Forests of the Northeast, Greater Tkaronto Bioregion, Northern Andes, and Ogallala. By February 2025 Kinship Earth had brought flow funds to Barichara, Cascadia and the Greater Tkaronto Bioregion. *(Corrected 2026-10-28: earlier wording said Kinship Earth "operates the Earth Regeneration Fund" and "launched flow funding across six pilot bioregions". The [Bioregional Earth blog post](https://www.bioregionalearth.org/blog/flow-funding) (2025-02-12) says the six contexts launched the fund, which works with Kinship Earth.)* Cascadia's implementation flows through Regenerate Cascadia, making Kinship Earth a key upstream funder for the Greater Victoria network.
 
 Restoration contributions from Kinship Earth in Greater Victoria:
 - **Soil monitoring**: Randy from Kinship Earth provides soil monitoring equipment loans (4 kits) and ecological assessment expertise (80 hours) to local restoration projects.
 - **Ecological assessment**: Professional ecological surveys that inform watershed restoration planning.
-- **Narrative accountability**: Kinship Earth governs reporting through four reflective questions rather than quantitative metrics: *What inspired you? What surprised you? What challenged you? What moved you?* This trust-based model prioritizes narrative over compliance.
+- **Narrative accountability**: Kinship Earth asks its own flow-funding recipients four reflective questions rather than quantitative metrics: *What inspired you? What surprised you? What challenged you? What moved you?* This trust-based model prioritizes narrative over compliance. *(Corrected 2026-10-28: earlier wording said "Kinship Earth governs reporting through four reflective questions". The questions are the "four learning questions" of Marion Weber's Flow Fund Circle ([Alliance](https://www.alliancemagazine.org/interview/interview-marion-rockefeller-weber/)), which [Kinship Earth](https://www.bioregionalearth.org/blog/flow-funding) asks its recipients. Regenerate Cascadia's [pilots page](https://regeneratecascadia.org/biofi/flow-funding-pilots/) does not say landscape groups answer them.)*
 
 Kinship Earth's flow funding model is trust-based and low-paperwork: a funder provides capital to landscape-connected stewards who distribute smaller grants based on direct knowledge of local needs.
 
@@ -39,7 +39,7 @@ Mycopunks receives flow funding through the Hub Cultivator program and participa
 
 Regenerate Cascadia is the parent program for bioregional organizing across the Cascadia bioregion, founded by Brandon Letsinger and Clare Attwell. Its BioFi infrastructure maps landscape-level regeneration teams to ecoregional coordination to bioregional aggregation — "like water through a watershed."
 
-The Landscape Hub Cultivator program supports up to 10 landscape groups across Cascadia, with 13 landscape groups, approximately 40 stewards, and $80K total support in Phase 2 (March–June 2026). The Victoria Landscape Hub is one of these landscape groups.
+The Landscape Hub Cultivator's 2025-26 pilot supports 10 landscape groups across Cascadia, with approximately 40 stewards and $80K total direct support over the pilot year. *(Corrected 2026-10-28: earlier wording said "up to 10 landscape groups across Cascadia, with 13 landscape groups" and placed the $80K in Phase 2 (March–June 2026). [RC's pilot page](https://regeneratecascadia.org/biofi/flow-funding-pilots/) names 10 groups, each with $8,000 of direct support over the pilot year. No source for 13 groups was found.)* The Victoria Landscape Hub is one of these landscape groups.
 
 Regenerate Cascadia provides:
 - **Capital allocation**: Flow funding from Kinship Earth and other sources distributed through Hub Cultivator stewards.

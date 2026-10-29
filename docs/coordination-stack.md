@@ -123,7 +123,7 @@ Regenerate Cascadia's model. A trusted steward (Darren and Polly in Victoria, an
 
 Every decision is documented: recipient, amount, need addressed, rationale. The decision feeds back into the knowledge graph as an Evidence entity. The loop closes: **need → commitment → capital → work → outcome → evidence → learning**.
 
-Kinship Earth's four reflective questions govern the reporting: *What inspired you? What surprised you? What challenged you? What moved you?* Narrative, not metrics. Trust, not compliance.
+Reporting is narrative: RC's Landscape Hub Cultivator team documents the stories of where funds flow ([RC](https://regeneratecascadia.org/biofi/flow-funding-pilots/)). [Kinship Earth](https://www.bioregionalearth.org/blog/flow-funding), which funds RC, asks its own flow-funding recipients the four learning questions used in Marion Weber's Flow Fund Circle ([Alliance](https://www.alliancemagazine.org/interview/interview-marion-rockefeller-weber/)): *What inspired you? What surprised you? What challenged you? What moved you?* Narrative, not metrics. Trust, not compliance. *(Corrected 2026-10-28: earlier wording said "Kinship Earth's four reflective questions govern the reporting". Regenerate Cascadia's pilots page does not say they govern landscape-group reporting.)*
 
 ### TBFF — Threshold-Based Algorithmic Redistribution
 
