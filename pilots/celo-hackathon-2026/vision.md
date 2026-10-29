@@ -116,7 +116,7 @@ Post-hackathon convergence (C1/C2), not scope. But naming it shows where this go
 
 ## Why This Matters
 
-The Sarafu Network has proven commitment pooling works at scale: 26,367 users, 188 active pools, 745 vouchers, over 1,200 acres restored, 84% positive income impact. What it hasn't yet solved is the *routing problem* — how commitments from one community find matching needs in another, with governance that scales beyond personal relationships.
+The Sarafu Network shows commitment pooling running at scale: by Grassroots Economics' own figures, 26,367 users, 188 active pools and 745 vouchers between 5 July 2023 and 20 July 2025 ([Dune dashboard](https://dune.com/grassrootseconomics/sarafu-network)). These count activity, not outcomes, and its restoration and income figures are its own unverified reports (see [commitment-pooling-foundations](../../docs/foundations/commitment-pooling-foundations.md)). *(Corrected 2026-10-29: earlier wording said Sarafu "has proven commitment pooling works" and cited "over 1,200 acres restored, 84% positive income impact" without a source.)* What it hasn't yet solved is the *routing problem* — how commitments from one community find matching needs in another, with governance that scales beyond personal relationships.
 
 BKC adds three things the existing infrastructure lacks:
 

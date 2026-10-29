@@ -121,7 +121,7 @@ New predicates:
 
 ### 4.1 TBFF Bridge (extend)
 
-The existing TBFF Evidence write-back loop creates `Evidence` entities from capital flow decisions. New seam: Evidence entities can now reference which `Commitment` pledge they fulfill via `proves_commitment`. A single TBFF allocation can prove multiple commitment pledges.
+The existing TBFF Evidence write-back loop creates `Evidence` entities from capital flow decisions. New seam: Evidence entities can now reference which `Commitment` pledge they fulfill via `proves_commitment`. A single TBFF allocation can be linked to several commitment pledges, but it records payment, not delivery. *(Corrected 2026-10-29: earlier wording said a single allocation can prove multiple pledges. Renaming `proves_commitment` to match what it records is an open schema item.)*
 
 ### 4.2 owockibot (extend, C1)
 
@@ -232,7 +232,7 @@ Declining a pledge is implicit — the commitment is simply not pledged to that 
 
 ### 7.3 Verify — Trust Attestation Through Witnessed Follow-Through
 
-Verification is an independent trust signal: a steward or peer attests that the pledger can deliver. `PATCH /commitments/{rid}/state` (PROPOSED → VERIFIED) records who verified and when.
+Verification is a steward's pre-delivery attestation, not an independent signal: a steward or peer attests that the pledger can deliver. *(Corrected 2026-10-29: earlier wording called it an independent trust signal.)* `PATCH /commitments/{rid}/state` (PROPOSED → VERIFIED) records who verified and when.
 
 **Principle:** Trust emerges from witnessed follow-through, not pre-approval. A commitment can be VERIFIED without being in any pool (verified but uncurated), or pledged to a pool without being verified (curated but unverified). Verification and curation serve different social functions — conflating them creates bottlenecks.
 

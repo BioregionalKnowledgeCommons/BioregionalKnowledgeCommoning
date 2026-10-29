@@ -188,7 +188,7 @@ settle() event → POST /claims/evidence-from-settlement
 Commitment pooling (C0 live) is the bridge between flow funding versions:
 
 - Hub Cultivator participants' pledges become commitment pool entries (`pledges_commitment` predicate)
-- TBFF settlements can prove commitment fulfillment (`proves_commitment` predicate)
+- A TBFF settlement records a payment. It does not by itself prove that a commitment was delivered, so evidence of delivery is linked separately (`proves_commitment` predicate). *(Corrected 2026-10-29: earlier wording said TBFF settlements can prove commitment fulfillment.)*
 - Pool activation can be triggered by either human steward verification (Hub Cultivator) or cumulative TBFF settlement evidence exceeding a threshold (C1 planned)
 
 ```
@@ -239,7 +239,7 @@ Flow funding and commitment pooling are complementary layers of the Capital Plan
 - **Commitment pooling** answers: *What can we offer?* Communities make capacity legible and poolable.
 - **Flow funding** answers: *How does capital move?* Trust relationships and thresholds govern allocation.
 
-The connection is direct: commitment pool entries represent pledged capacity; flow funding mechanisms allocate capital to fulfill those commitments. Evidence entities from flow funding decisions prove commitment fulfillment (`proves_commitment` predicate), advancing commitments through the state machine (VERIFIED → ACTIVE → EVIDENCE_LINKED → REDEEMED).
+The connection is direct: commitment pool entries represent pledged capacity; flow funding mechanisms allocate capital to fulfill those commitments. Evidence entities from flow funding decisions are linked to the commitments they pay for (`proves_commitment` predicate), advancing commitments through the state machine (VERIFIED → ACTIVE → EVIDENCE_LINKED → REDEEMED). A payment record does not by itself prove that a commitment was delivered. *(Corrected 2026-10-29: earlier wording said these Evidence entities prove commitment fulfillment.)*
 
 See [commitment-pooling-foundations.md](./commitment-pooling-foundations.md) for the commitment lifecycle, state machine, and Grassroots Economics heritage.
 
