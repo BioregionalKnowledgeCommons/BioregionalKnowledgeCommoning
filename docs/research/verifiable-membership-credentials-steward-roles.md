@@ -93,7 +93,7 @@ Both slots name a set of people, and today both resolve inside one node.
 
 In the talk, "the community itself can be an entity in this network of nodes, and the community
 can issue credentials, a verifiable membership credential of belonging to a community" [14:40].
-Issuance should not rest on one person: "we need multi-sigs on the wallets that issue these
+Issuance should not rest on one person: "we need [multi-sigs] on the wallets that issue these
 credentials and community stewardship of community credential issuance" [15:39]. The public
 specifications fill in that shape.
 
